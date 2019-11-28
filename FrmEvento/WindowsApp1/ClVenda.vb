@@ -70,7 +70,8 @@
         sql = " SELECT B.COD_ITEM, 
                        B.DES_ITEM ,
                        SUM(A.QTD_ITEM)AS QTDE,
-                       SUM(A.VAL_TOTAL_ITEM) AS VAL_TOTAL ,
+                      SUM(A.QTD_ITEM) * (select t.val_preco_venda from tab_item t 
+						    where t.cod_item = b.cod_item) as VAL_TOTAL, 
                        (SELECT SUM(AA.QTD_ITEM)
                           FROM  TAB_VENDA AA 
                           WHERE AA.cod_evento =  A.COD_EVENTO

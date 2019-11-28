@@ -139,14 +139,13 @@
                b.des_observacao1,
                b.des_observacao2 ,
 			   coalesce((SELECT sum(i.qtd_impressa) from tab_ingresso_impresso i 
-			   where i.cod_evento = a.cod_evento
-			     and i.seq_ingresso = b.seq_ingresso ),0) as qtd_impressa,
+			             where i.cod_evento = a.cod_evento
+			               and i.seq_ingresso = b.seq_ingresso ),0) as qtd_impressa,
 			   coalesce((SELECT sum(i.qtd_impressa) from tab_ingresso_impresso i 
 			   where i.cod_evento = a.cod_evento ),0) as qtd_total_impressa
-
                From tab_evento a  
                Join tab_ingresso b  on (a.cod_evento = b.cod_evento)
-               where b.ind_aberto = 'S'"
+               where a.ind_aberto = 'S'"
         ds = con.Listar(sql)
         Return ds
     End Function

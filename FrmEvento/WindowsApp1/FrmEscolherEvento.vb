@@ -36,6 +36,8 @@
     Private Sub DgvEvento_DoubleClick(sender As Object, e As EventArgs) Handles DgvEvento.DoubleClick
         Try
             FrmPrincipal.LbCodEvento.Text = DgvEvento.CurrentRow.Cells(0).Value
+            FrmPdv1.LbCodEvento.Text = DgvEvento.CurrentRow.Cells(0).Value
+
             Dim nome1, nome2, nome3 As String
             nome1 = DgvEvento.CurrentRow.Cells(1).Value
             nome2 = DgvEvento.CurrentRow.Cells(2).Value
@@ -50,6 +52,7 @@
                 nome3 = ""
             End If
             FrmPrincipal.LbNomEvento.Text = nome1 & " " & nome2 & " " & nome3
+            FrmPdv1.LbNomEvento.Text = nome1 & " " & nome2 & " " & nome3
             Me.Close()
         Catch ex As Exception
 
@@ -66,6 +69,7 @@
     End Sub
     Public Sub carregaEvento()
         FrmPrincipal.LbCodEvento.Text = DgvEvento.CurrentRow.Cells(0).Value
+        FrmPdv1.LbCodEvento.Text = DgvEvento.CurrentRow.Cells(0).Value
         Dim nome1 As String
         nome1 = DgvEvento.CurrentRow.Cells(1).Value
 
@@ -74,6 +78,7 @@
         End If
 
         FrmPrincipal.LbNomEvento.Text = nome1
+        FrmPdv1.LbNomEvento.Text = nome1
         Me.Close()
 
     End Sub

@@ -11,7 +11,6 @@
     Dim clLicencia As New ClLicencia
     Dim emp As New ClEmpresa
     Dim valTotalItem, valCustoTotal As String
-    Dim dataVectoLicencia As String
     Public nomEmpresa, nomEvento As String
     Public codEvento As Integer
     Dim linha As Integer = 0
@@ -147,11 +146,12 @@
     End Sub
 
     Private Sub BarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BarToolStripMenuItem.Click
+        Exit Sub
         licenciaVerifica()
 
         Try
-            If Today > dataVectoLicencia Then
-                MsgBox("LICENCIA VENCIDA " & dataVectoLicencia & "ENTRE EM CONTATO COM ADMINISTRADOR PARA RENOVAR A LICENCIA")
+            If Today > clLicencia.dataVectoLicencia Then
+                MsgBox("LICENCIA VENCIDA " & clLicencia.dataVectoLicencia & "ENTRE EM CONTATO COM ADMINISTRADOR PARA RENOVAR A LICENCIA")
                 Exit Sub
             End If
 
@@ -243,27 +243,8 @@
         End With
     End Sub
     Public Sub licenciaVerifica()
-        Try
-            Dim ds1 As New DataSet
-            '  Dim tabela As New DataTable
-            ds1 = clLicencia.buscaLicencia()
-            ' tabela = ds1.Tables(0)
-            Dim linha As DataRow
-            linha = ds1.Tables(0).Rows(0)
-            Dim chave As String = linha.Item(0).ToString
+        clLicencia.verificarLicencia()
 
-            lbLicencia.Text = ((Convert.ToInt32(chave.Chars(16) & chave.Chars(17) & chave.Chars(18) & chave.Chars(19)) / 83).ToString & "/" &
-             (Convert.ToInt32(chave.Chars(10) & chave.Chars(11) & chave.Chars(12)) / 83).ToString & "/20" &
-             (Convert.ToInt32(chave.Chars(2) & chave.Chars(3) & chave.Chars(4) & chave.Chars(5)) / 83).ToString)
-            lbLicencia.Text = (Convert.ToDateTime(lbLicencia.Text).AddMonths(2)).ToString
-            dataVectoLicencia = lbLicencia.Text
-            If Today.AddDays(16) > dataVectoLicencia Then
-                MsgBox("LICENCIA VÁLIDA ATE " & dataVectoLicencia & "ENTRE EM CONTATO COM ADMINISTRADOR PARA RENOVAR A LICENCIA")
-
-            End If
-        Catch ex As Exception
-
-        End Try
     End Sub
 
 
@@ -643,8 +624,8 @@
     Public Sub imprimirIngresso()
         Try
             licenciaVerifica()
-            If Today > dataVectoLicencia Then
-                MsgBox("LICENCIA VENCIDA " & dataVectoLicencia & " PRECISA ENTRAR EM CONTATO COM ADMINISTRADOR PARA RENOVAR A LICENCIA")
+            If Today > clLicencia.dataVectoLicencia Then
+                MsgBox("LICENCIA VENCIDA " & clLicencia.dataVectoLicencia & " PRECISA ENTRAR EM CONTATO COM ADMINISTRADOR PARA RENOVAR A LICENCIA")
                 Exit Sub
             End If
             DescarregarTelaVenda()
@@ -848,8 +829,52 @@
         TabControl1.SelectedIndex = 0
     End Sub
 
-    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+    Private Sub ImprimirIngressoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirIngressoToolStripMenuItem.Click
+        imprimirIngresso()
+    End Sub
 
+    Private Sub PDV1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PDV1ToolStripMenuItem.Click
+        licenciaVerifica()
+
+        Try
+            If Today > clLicencia.dataVectoLicencia Then
+                MsgBox("LICENCIA VENCIDA " & clLicencia.dataVectoLicencia & "ENTRE EM CONTATO COM ADMINISTRADOR PARA RENOVAR A LICENCIA")
+                Exit Sub
+            End If
+
+            FrmEscolherEvento.ShowDialog()
+            If LbCodEvento.Text = "" Then
+                Exit Sub
+            End If
+            FrmPdv1.ShowDialog()
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub AnimalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnimalToolStripMenuItem.Click
+        FrmAnimal.ShowDialog()
+    End Sub
+
+    Private Sub EspécieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EspécieToolStripMenuItem.Click
+        FrmAnimalEspecie.ShowDialog()
+    End Sub
+
+    Private Sub ParasitaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ParasitaToolStripMenuItem.Click
+        FrmAnimalControleParasita.ShowDialog()
+    End Sub
+
+    Private Sub VacinaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VacinaToolStripMenuItem.Click
+        FrmAnimalVacina.ShowDialog()
+    End Sub
+
+    Private Sub PelagemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PelagemToolStripMenuItem.Click
+        FrmAnimalPelagem.ShowDialog()
+    End Sub
+
+    Private Sub RaçaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RaçaToolStripMenuItem.Click
+        FrmAnimalRaca.ShowDialog()
     End Sub
 
     Private Sub TxbValorPagto_TextChanged_1(sender As Object, e As EventArgs) Handles TxbValorPagto.TextChanged

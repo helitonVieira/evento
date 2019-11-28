@@ -2,6 +2,8 @@
     Dim sql As String
     Dim ds As New DataSet
     Dim con As New ConexaoSQ
+    Public dataVectoLicencia As String
+
     ' Dim ultimoItem As Integer
 
     Private des_chave_ As String
@@ -27,4 +29,32 @@
         ds = con.Listar(sql)
         Return ds
     End Function
+    Public Sub verificarLicencia()
+        Try
+            Dim ds1 As New DataSet
+            '  Dim lbLicencia As String
+
+            '  Dim tabela As New DataTable
+            ds1 = buscaLicencia()
+            ' tabela = ds1.Tables(0)
+            Dim linha As DataRow
+            linha = ds1.Tables(0).Rows(0)
+            Dim chave As String = linha.Item(0).ToString
+
+            FrmPrincipal.lbLicencia.Text = ((Convert.ToInt32(chave.Chars(16) & chave.Chars(17) & chave.Chars(18) & chave.Chars(19)) / 83).ToString & "/" &
+                                            (Convert.ToInt32(chave.Chars(10) & chave.Chars(11) & chave.Chars(12)) / 83).ToString & "/20" &
+                                            (Convert.ToInt32(chave.Chars(2) & chave.Chars(3) & chave.Chars(4) & chave.Chars(5)) / 83).ToString)
+            'quantidade de mes que valera a licencia 
+            FrmPrincipal.lbLicencia.Text = (Convert.ToDateTime(FrmPrincipal.lbLicencia.Text).AddMonths(1)).ToString
+            dataVectoLicencia = FrmPrincipal.lbLicencia.Text
+            FrmPdv1.lbLicencia.Text = FrmPrincipal.lbLicencia.Text
+
+            If Today.AddDays(9) > dataVectoLicencia Then
+                MsgBox("LICENCIA VÁLIDA ATE " & dataVectoLicencia & "ENTRE EM CONTATO COM ADMINISTRADOR PARA RENOVAR A LICENCIA")
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

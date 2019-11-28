@@ -4,7 +4,7 @@
     Dim item As New ClItem
     Dim atualizar As Integer = 1
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtPresquisa.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnPresquisa.Click
         atualizaDados()
         limpar()
     End Sub
@@ -23,7 +23,7 @@
 
     End Sub
 
-    Private Sub BtSalvar_Click(sender As Object, e As EventArgs) Handles BtSalvar.Click
+    Private Sub BtSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
         Try
             'Dim ultimo As DataSet
             ' ultimo = item.ConsultarItemVenda
@@ -71,7 +71,7 @@
         End Try
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtExcluir.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnExcluir.Click
         If MsgBox("Deseja excluir o item" & TxtDesItem.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
             Try
                 item.cod_item = TxtCodItem.Text
@@ -86,7 +86,7 @@
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtLimpar.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnLimpar.Click
         limpar()
 
     End Sub

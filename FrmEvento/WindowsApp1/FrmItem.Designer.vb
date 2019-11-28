@@ -37,10 +37,10 @@ Partial Class FrmItem
         Me.TxtDesItem = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.BtPresquisa = New System.Windows.Forms.Button()
-        Me.BtLimpar = New System.Windows.Forms.Button()
-        Me.BtSalvar = New System.Windows.Forms.Button()
-        Me.BtExcluir = New System.Windows.Forms.Button()
+        Me.BtnPresquisa = New System.Windows.Forms.Button()
+        Me.BtnLimpar = New System.Windows.Forms.Button()
+        Me.BtnSalvar = New System.Windows.Forms.Button()
+        Me.BtnExcluir = New System.Windows.Forms.Button()
         CType(Me.DgvItem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -171,51 +171,51 @@ Partial Class FrmItem
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.BtPresquisa)
-        Me.GroupBox2.Controls.Add(Me.BtLimpar)
-        Me.GroupBox2.Controls.Add(Me.BtSalvar)
-        Me.GroupBox2.Controls.Add(Me.BtExcluir)
+        Me.GroupBox2.Controls.Add(Me.BtnPresquisa)
+        Me.GroupBox2.Controls.Add(Me.BtnLimpar)
+        Me.GroupBox2.Controls.Add(Me.BtnSalvar)
+        Me.GroupBox2.Controls.Add(Me.BtnExcluir)
         Me.GroupBox2.Location = New System.Drawing.Point(11, 1)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(360, 65)
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
         '
-        'BtPresquisa
+        'BtnPresquisa
         '
-        Me.BtPresquisa.Image = CType(resources.GetObject("BtPresquisa.Image"), System.Drawing.Image)
-        Me.BtPresquisa.Location = New System.Drawing.Point(116, 11)
-        Me.BtPresquisa.Name = "BtPresquisa"
-        Me.BtPresquisa.Size = New System.Drawing.Size(48, 50)
-        Me.BtPresquisa.TabIndex = 0
-        Me.BtPresquisa.UseVisualStyleBackColor = True
+        Me.BtnPresquisa.Image = CType(resources.GetObject("BtnPresquisa.Image"), System.Drawing.Image)
+        Me.BtnPresquisa.Location = New System.Drawing.Point(116, 11)
+        Me.BtnPresquisa.Name = "BtnPresquisa"
+        Me.BtnPresquisa.Size = New System.Drawing.Size(48, 50)
+        Me.BtnPresquisa.TabIndex = 0
+        Me.BtnPresquisa.UseVisualStyleBackColor = True
         '
-        'BtLimpar
+        'BtnLimpar
         '
-        Me.BtLimpar.Image = CType(resources.GetObject("BtLimpar.Image"), System.Drawing.Image)
-        Me.BtLimpar.Location = New System.Drawing.Point(170, 11)
-        Me.BtLimpar.Name = "BtLimpar"
-        Me.BtLimpar.Size = New System.Drawing.Size(48, 50)
-        Me.BtLimpar.TabIndex = 7
-        Me.BtLimpar.UseVisualStyleBackColor = True
+        Me.BtnLimpar.Image = CType(resources.GetObject("BtnLimpar.Image"), System.Drawing.Image)
+        Me.BtnLimpar.Location = New System.Drawing.Point(170, 11)
+        Me.BtnLimpar.Name = "BtnLimpar"
+        Me.BtnLimpar.Size = New System.Drawing.Size(48, 50)
+        Me.BtnLimpar.TabIndex = 7
+        Me.BtnLimpar.UseVisualStyleBackColor = True
         '
-        'BtSalvar
+        'BtnSalvar
         '
-        Me.BtSalvar.Image = CType(resources.GetObject("BtSalvar.Image"), System.Drawing.Image)
-        Me.BtSalvar.Location = New System.Drawing.Point(8, 11)
-        Me.BtSalvar.Name = "BtSalvar"
-        Me.BtSalvar.Size = New System.Drawing.Size(48, 50)
-        Me.BtSalvar.TabIndex = 2
-        Me.BtSalvar.UseVisualStyleBackColor = True
+        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
+        Me.BtnSalvar.Location = New System.Drawing.Point(8, 11)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(48, 50)
+        Me.BtnSalvar.TabIndex = 2
+        Me.BtnSalvar.UseVisualStyleBackColor = True
         '
-        'BtExcluir
+        'BtnExcluir
         '
-        Me.BtExcluir.Image = CType(resources.GetObject("BtExcluir.Image"), System.Drawing.Image)
-        Me.BtExcluir.Location = New System.Drawing.Point(62, 11)
-        Me.BtExcluir.Name = "BtExcluir"
-        Me.BtExcluir.Size = New System.Drawing.Size(48, 50)
-        Me.BtExcluir.TabIndex = 6
-        Me.BtExcluir.UseVisualStyleBackColor = True
+        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
+        Me.BtnExcluir.Location = New System.Drawing.Point(62, 11)
+        Me.BtnExcluir.Name = "BtnExcluir"
+        Me.BtnExcluir.Size = New System.Drawing.Size(48, 50)
+        Me.BtnExcluir.TabIndex = 6
+        Me.BtnExcluir.UseVisualStyleBackColor = True
         '
         'FrmItem
         '
@@ -236,9 +236,9 @@ Partial Class FrmItem
 
     End Sub
 
-    Friend WithEvents BtPresquisa As Button
+    Friend WithEvents BtnPresquisa As Button
     Friend WithEvents DgvItem As DataGridView
-    Friend WithEvents BtSalvar As Button
+    Friend WithEvents BtnSalvar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtCodItem As TextBox
     Friend WithEvents GroupBox1 As GroupBox
@@ -250,8 +250,8 @@ Partial Class FrmItem
     Friend WithEvents Label4 As Label
     Friend WithEvents TxtPrecoVenda As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents BtExcluir As Button
-    Friend WithEvents BtLimpar As Button
+    Friend WithEvents BtnExcluir As Button
+    Friend WithEvents BtnLimpar As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents CkbAtivo As CheckBox
 End Class

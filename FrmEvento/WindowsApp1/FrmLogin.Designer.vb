@@ -37,75 +37,77 @@ Partial Class FrmLogin
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.CbExibirSenha)
+        Me.GroupBox1.Controls.Add(Me.BtCancelar)
         Me.GroupBox1.Controls.Add(Me.TxtSenha)
+        Me.GroupBox1.Controls.Add(Me.BtEntrar)
         Me.GroupBox1.Controls.Add(Me.TxtUsuario)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(2, 3)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 1)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(294, 104)
+        Me.GroupBox1.Size = New System.Drawing.Size(271, 98)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
         'CbExibirSenha
         '
         Me.CbExibirSenha.AutoSize = True
-        Me.CbExibirSenha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CbExibirSenha.ForeColor = System.Drawing.Color.White
-        Me.CbExibirSenha.Location = New System.Drawing.Point(176, 78)
+        Me.CbExibirSenha.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CbExibirSenha.ForeColor = System.Drawing.Color.Black
+        Me.CbExibirSenha.Location = New System.Drawing.Point(186, 64)
         Me.CbExibirSenha.Name = "CbExibirSenha"
-        Me.CbExibirSenha.Size = New System.Drawing.Size(117, 24)
+        Me.CbExibirSenha.Size = New System.Drawing.Size(75, 16)
         Me.CbExibirSenha.TabIndex = 6
         Me.CbExibirSenha.Text = "Exibir Senha"
         Me.CbExibirSenha.UseVisualStyleBackColor = True
         '
         'TxtSenha
         '
-        Me.TxtSenha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSenha.Location = New System.Drawing.Point(6, 75)
+        Me.TxtSenha.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSenha.Location = New System.Drawing.Point(57, 39)
         Me.TxtSenha.Name = "TxtSenha"
         Me.TxtSenha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtSenha.Size = New System.Drawing.Size(165, 26)
+        Me.TxtSenha.Size = New System.Drawing.Size(204, 20)
         Me.TxtSenha.TabIndex = 2
         '
         'TxtUsuario
         '
-        Me.TxtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtUsuario.Location = New System.Drawing.Point(6, 23)
+        Me.TxtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtUsuario.Location = New System.Drawing.Point(57, 13)
         Me.TxtUsuario.Name = "TxtUsuario"
-        Me.TxtUsuario.Size = New System.Drawing.Size(256, 26)
+        Me.TxtUsuario.Size = New System.Drawing.Size(204, 20)
         Me.TxtUsuario.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(8, 52)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(10, 42)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 20)
+        Me.Label2.Size = New System.Drawing.Size(41, 13)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Senha"
+        Me.Label2.Text = "Senha:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(10, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 20)
+        Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Usuario"
+        Me.Label1.Text = "Usuário:"
         '
         'BtCancelar
         '
         Me.BtCancelar.BackColor = System.Drawing.Color.White
         Me.BtCancelar.ForeColor = System.Drawing.Color.White
         Me.BtCancelar.Image = CType(resources.GetObject("BtCancelar.Image"), System.Drawing.Image)
-        Me.BtCancelar.Location = New System.Drawing.Point(154, 112)
+        Me.BtCancelar.Location = New System.Drawing.Point(45, 64)
         Me.BtCancelar.Name = "BtCancelar"
-        Me.BtCancelar.Size = New System.Drawing.Size(121, 51)
+        Me.BtCancelar.Size = New System.Drawing.Size(29, 29)
         Me.BtCancelar.TabIndex = 5
         Me.BtCancelar.UseVisualStyleBackColor = False
         '
@@ -114,9 +116,9 @@ Partial Class FrmLogin
         Me.BtEntrar.BackColor = System.Drawing.Color.White
         Me.BtEntrar.ForeColor = System.Drawing.Color.White
         Me.BtEntrar.Image = CType(resources.GetObject("BtEntrar.Image"), System.Drawing.Image)
-        Me.BtEntrar.Location = New System.Drawing.Point(8, 112)
+        Me.BtEntrar.Location = New System.Drawing.Point(10, 64)
         Me.BtEntrar.Name = "BtEntrar"
-        Me.BtEntrar.Size = New System.Drawing.Size(121, 51)
+        Me.BtEntrar.Size = New System.Drawing.Size(29, 29)
         Me.BtEntrar.TabIndex = 4
         Me.BtEntrar.UseVisualStyleBackColor = False
         '
@@ -124,11 +126,9 @@ Partial Class FrmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(302, 168)
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(288, 107)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.BtCancelar)
-        Me.Controls.Add(Me.BtEntrar)
         Me.MaximizeBox = False
         Me.Name = "FrmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

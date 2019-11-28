@@ -10,6 +10,8 @@
     Dim nome1, nome2, nome3, dtaEvento, obs1, obs2, lote As String
     Dim posicaoNome As Integer = 0
     Dim numIngresso As Integer
+    Dim cod_evento As Integer
+
 
 
     Public Sub atribuirNome()
@@ -91,16 +93,7 @@
         TxtCodItem.Select()
     End Sub
 
-    Private Sub DgvEvento_CellContentClic(sender As Object, e As DataGridViewCellEventArgs) Handles DgvEvento.CellContentClick
-        Try
-            TxtCodItem.Text = DgvEvento.CurrentRow.Cells(0).Value
-            LbDescricao.Text = DgvEvento.CurrentRow.Cells(2).Value
-            TxtQtde.Enabled = True
-            TxtQtde.Select()
-        Catch ex As Exception
-        End Try
 
-    End Sub
 
     Private Sub FrmImprimirIngresso_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         'TECLA ENTER
@@ -111,7 +104,8 @@
 
         '   TxtCodItem.Select()
         Try
-            IngressoImpresso.cod_evento = TxtCodItem.Text
+            IngressoImpresso.cod_evento = cod_evento
+
             IngressoImpresso.seq_ingresso = TxtCodItem.Text
             'verificar qtd
             If TxtQtde.Text = "" Then
@@ -141,6 +135,7 @@
 
             Next
             limpar()
+            atualizarDados()
             TxtCodItem.Select()
         Catch ex As Exception
             MsgBox("ERRO AO SALVAR EVENTO" & ex.Message, MsgBoxStyle.Critical, "Erro")
@@ -165,6 +160,21 @@
         If Not IsNumeric(TxtQtde.Text) Then
             TxtQtde.Text = ""
         End If
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub DgvEvento_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvEvento.CellClick
+        Try
+            TxtCodItem.Text = DgvEvento.CurrentRow.Cells(0).Value
+            cod_evento = DgvEvento.CurrentRow.Cells(1).Value
+            LbDescricao.Text = DgvEvento.CurrentRow.Cells(2).Value
+            TxtQtde.Enabled = True
+            TxtQtde.Select()
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -268,16 +278,16 @@
             e.Graphics.DrawString(nomEmpresa & " " & nomEmpresa & " " & nomEmpresa, reportFont6, Brushes.Black, 0, 10)
 
 
-            e.Graphics.DrawString(nome1, reportFont20, Brushes.Black, paramSistem.posicaoTamanho20(nome1.Count), 85)
-            e.Graphics.DrawString(nome2, reportFont20, Brushes.Black, paramSistem.posicaoTamanho20(nome2.Count), 115)
-            e.Graphics.DrawString(nome3, reportFont20, Brushes.Black, paramSistem.posicaoTamanho20(nome3.Count), 145)
-            e.Graphics.DrawString(lote, reportFont14, Brushes.Black, paramSistem.posicaoTamanho14(lote.Count), 195)
+            e.Graphics.DrawString(nome1, reportFont20, Brushes.Black, paramSistem.posicaoTamanho20(nome1.Count), 115)
+            e.Graphics.DrawString(nome2, reportFont20, Brushes.Black, paramSistem.posicaoTamanho20(nome2.Count), 145)
+            e.Graphics.DrawString(nome3, reportFont20, Brushes.Black, paramSistem.posicaoTamanho20(nome3.Count), 175)
+            e.Graphics.DrawString(lote, reportFont14, Brushes.Black, paramSistem.posicaoTamanho14(lote.Count), 225)
             Dim totalIngresso As String = ""
             totalIngresso = "R$ " & valTotalItem & ".00"
-            e.Graphics.DrawString(totalIngresso, reportFont14, Brushes.Black, paramSistem.posicaoTamanho14(totalIngresso.Count) + 10, 225)
-            e.Graphics.DrawString(obs1, reportFont8, Brushes.Black, 5, 255)
-            e.Graphics.DrawString(obs2, reportFont8, Brushes.Black, 5, 275)
-            e.Graphics.DrawString("Válido apenas para dia:" & dtaEvento, reportFont8, Brushes.Black, 20, 305)
+            e.Graphics.DrawString(totalIngresso, reportFont14, Brushes.Black, paramSistem.posicaoTamanho14(totalIngresso.Count) + 10, 255)
+            e.Graphics.DrawString(obs1, reportFont8, Brushes.Black, 5, 285)
+            e.Graphics.DrawString(obs2, reportFont8, Brushes.Black, 5, 305)
+            e.Graphics.DrawString("Válido apenas para dia:" & dtaEvento, reportFont8, Brushes.Black, 20, 335)
             Dim newImage As Image = Image.FromFile("C:\evento\imagem\CODBARRA.png")
 
             ' Create coordinates for upper-left corner
@@ -290,8 +300,8 @@
 
             ' Draw image to screen.
             e.Graphics.DrawImage(newImage, x, y, width, height)
-            e.Graphics.DrawString(nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa, reportFont6, Brushes.Black, 0, 385)
-            e.Graphics.DrawString(nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa, reportFont6, Brushes.Black, 0, 395)
+            e.Graphics.DrawString(nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa, reportFont6, Brushes.Black, 0, 415)
+            e.Graphics.DrawString(nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa, reportFont6, Brushes.Black, 0, 425)
 
             ' e.Graphics.DrawString(" ", reportFont1, Brushes.Black, 100, 160)
         Catch ex As Exception

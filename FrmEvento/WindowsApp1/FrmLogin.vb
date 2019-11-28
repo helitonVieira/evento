@@ -55,6 +55,7 @@
                     FrmPrincipal.Show()
                     FrmPrincipal.LbNomeUsuario.Text = linha.Item(1)
                     FrmPrincipal.LbPermissaoUsuario.Text = linha.Item(3)
+
                     Me.Hide()
                     Exit Sub
                 End If

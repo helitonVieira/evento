@@ -60,7 +60,7 @@
         End Sub
 
     Public Function ConsultarEvento()
-        sql = "Select * From tab_evento"
+        sql = "Select * From tab_evento order by cod_evento desc"
         ds = con.Listar(sql)
         Return ds
     End Function

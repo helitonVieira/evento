@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D69329AF-19F3-43EB-920E-C5F68D093C92}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WindowsApp1.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsApp1</RootNamespace>
+    <AssemblyName>WindowsApp1</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WindowsApp1.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WindowsApp1.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>WindowsApp1.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>WindowsApp1.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>WindowsApp1.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>WindowsApp1.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClAnimalRaca.vb" />
+    <Compile Include="ClAnimalPelagem.vb" />
+    <Compile Include="ClAnimalControleParasita.vb" />
+    <Compile Include="ClPessoaDependente .vb" />
+    <Compile Include="ClAnimalVacina .vb" />
+    <Compile Include="ClEmpresa.vb" />
+    <Compile Include="ClIngressoPessoa.vb" />
+    <Compile Include="ClIngressoImpresso.vb" />
+    <Compile Include="ClIngresso.vb" />
+    <Compile Include="ClEvento.vb" />
+    <Compile Include="ClGeral.vb" />
+    <Compile Include="ClInventarioRapido.vb" />
+    <Compile Include="ClDespesa.vb" />
+    <Compile Include="ClAnimalEspecie.vb" />
+    <Compile Include="ClPessoa .vb" />
+    <Compile Include="ClLicencia.vb" />
+    <Compile Include="ClParametroSistema.vb" />
+    <Compile Include="ClRelatorioGerencial.vb" />
+    <Compile Include="ClRelatorios.vb" />
+    <Compile Include="ClTipoDespesa.vb" />
+    <Compile Include="ClFormaPagtoPdv.vb" />
+    <Compile Include="ClTipoMovimento.vb" />
+    <Compile Include="ClUsuario.vb" />
+    <Compile Include="ClVenda.vb" />
+    <Compile Include="ConexaoSQL.vb" />
+    <Compile Include="FrmAnimal.Designer.vb">
+      <DependentUpon>FrmAnimal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAnimal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnimalEspecie.Designer.vb">
+      <DependentUpon>FrmAnimalEspecie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAnimalEspecie.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnimalPelagem.Designer.vb">
+      <DependentUpon>FrmAnimalPelagem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAnimalPelagem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnimalRaca.Designer.vb">
+      <DependentUpon>FrmAnimalRaca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAnimalRaca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnimalVacina.Designer.vb">
+      <DependentUpon>FrmAnimalVacina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAnimalVacina.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnimalControleParasita.Designer.vb">
+      <DependentUpon>FrmAnimalControleParasita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAnimalControleParasita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDespesa.Designer.vb">
+      <DependentUpon>FrmDespesa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDespesa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPadrao.Designer.vb">
+      <DependentUpon>FrmPadrao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPadrao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPdv1.Designer.vb">
+      <DependentUpon>FrmPdv1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPdv1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPesquisa.Designer.vb">
+      <DependentUpon>FrmPesquisa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPesquisa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInventarioRapido.Designer.vb">
+      <DependentUpon>FrmInventarioRapido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInventarioRapido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmParametroSistema.Designer.vb">
+      <DependentUpon>FrmParametroSistema.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmParametroSistema.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImprimirIngressos.Designer.vb">
+      <DependentUpon>FrmImprimirIngressos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmImprimirIngressos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLicencia.Designer.vb">
+      <DependentUpon>FrmLicencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLicencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPessoa.Designer.vb">
+      <DependentUpon>FrmPessoa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPessoa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRelListaItens.Designer.vb">
+      <DependentUpon>FrmRelListaItens.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRelListaItens.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEscolherEvento.Designer.vb">
+      <DependentUpon>FrmEscolherEvento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEscolherEvento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEvento.Designer.vb">
+      <DependentUpon>FrmEvento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEvento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.vb">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmItem.Designer.vb">
+      <DependentUpon>FrmItem.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClItem.vb" />
+    <Compile Include="ModTabEnter.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Reports\ClRelGerencial.vb" />
+    <Compile Include="Reports\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmAnimal.resx">
+      <DependentUpon>FrmAnimal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnimalEspecie.resx">
+      <DependentUpon>FrmAnimalEspecie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnimalPelagem.resx">
+      <DependentUpon>FrmAnimalPelagem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnimalRaca.resx">
+      <DependentUpon>FrmAnimalRaca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnimalVacina.resx">
+      <DependentUpon>FrmAnimalVacina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnimalControleParasita.resx">
+      <DependentUpon>FrmAnimalControleParasita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDespesa.resx">
+      <DependentUpon>FrmDespesa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPadrao.resx">
+      <DependentUpon>FrmPadrao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPdv1.resx">
+      <DependentUpon>FrmPdv1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPesquisa.resx">
+      <DependentUpon>FrmPesquisa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEscolherEvento.resx">
+      <DependentUpon>FrmEscolherEvento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEvento.resx">
+      <DependentUpon>FrmEvento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmImprimirIngressos.resx">
+      <DependentUpon>FrmImprimirIngressos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInventarioRapido.resx">
+      <DependentUpon>FrmInventarioRapido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLicencia.resx">
+      <DependentUpon>FrmLicencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmParametroSistema.resx">
+      <DependentUpon>FrmParametroSistema.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPessoa.resx">
+      <DependentUpon>FrmPessoa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmItem.resx">
+      <DependentUpon>FrmItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRelListaItens.resx">
+      <DependentUpon>FrmRelListaItens.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Beira Via.jpg" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

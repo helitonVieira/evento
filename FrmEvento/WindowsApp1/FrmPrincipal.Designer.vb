@@ -30,6 +30,8 @@ Partial Class FrmPrincipal
         Me.PessoaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PDV1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImprimirIngressoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatóriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ResumoVendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelMargemDeLucroBrutoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,6 +44,9 @@ Partial Class FrmPrincipal
         Me.InventarioRapidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrativoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DespesaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AnimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EspécieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TxbCodItem = New System.Windows.Forms.TextBox()
         Me.LbDescricaoItem = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -110,6 +115,10 @@ Partial Class FrmPrincipal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BtPagamento = New System.Windows.Forms.Button()
+        Me.RaçaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PelagemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VacinaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ParasitaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DgvItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgvVenda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -133,7 +142,7 @@ Partial Class FrmPrincipal
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Purple
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EventoToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.LicenciaToolStripMenuItem, Me.ParametrosToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.AdministrativoToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EventoToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.LicenciaToolStripMenuItem, Me.ParametrosToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.AdministrativoToolStripMenuItem, Me.PetToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1094, 29)
@@ -176,7 +185,7 @@ Partial Class FrmPrincipal
         'VendasToolStripMenuItem
         '
         Me.VendasToolStripMenuItem.BackColor = System.Drawing.Color.Purple
-        Me.VendasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarToolStripMenuItem})
+        Me.VendasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarToolStripMenuItem, Me.ImprimirIngressoToolStripMenuItem})
         Me.VendasToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.VendasToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.VendasToolStripMenuItem.Name = "VendasToolStripMenuItem"
@@ -186,10 +195,23 @@ Partial Class FrmPrincipal
         'BarToolStripMenuItem
         '
         Me.BarToolStripMenuItem.BackColor = System.Drawing.Color.Purple
+        Me.BarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PDV1ToolStripMenuItem})
         Me.BarToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.BarToolStripMenuItem.Name = "BarToolStripMenuItem"
-        Me.BarToolStripMenuItem.Size = New System.Drawing.Size(110, 26)
+        Me.BarToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
         Me.BarToolStripMenuItem.Text = "PDV"
+        '
+        'PDV1ToolStripMenuItem
+        '
+        Me.PDV1ToolStripMenuItem.Name = "PDV1ToolStripMenuItem"
+        Me.PDV1ToolStripMenuItem.Size = New System.Drawing.Size(123, 26)
+        Me.PDV1ToolStripMenuItem.Text = "PDV 1"
+        '
+        'ImprimirIngressoToolStripMenuItem
+        '
+        Me.ImprimirIngressoToolStripMenuItem.Name = "ImprimirIngressoToolStripMenuItem"
+        Me.ImprimirIngressoToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
+        Me.ImprimirIngressoToolStripMenuItem.Text = "Imprimir Ingresso"
         '
         'RelatóriosToolStripMenuItem
         '
@@ -271,6 +293,27 @@ Partial Class FrmPrincipal
         Me.DespesaToolStripMenuItem.Name = "DespesaToolStripMenuItem"
         Me.DespesaToolStripMenuItem.Size = New System.Drawing.Size(138, 26)
         Me.DespesaToolStripMenuItem.Text = "Despesa"
+        '
+        'PetToolStripMenuItem
+        '
+        Me.PetToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AnimalToolStripMenuItem})
+        Me.PetToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.PetToolStripMenuItem.Name = "PetToolStripMenuItem"
+        Me.PetToolStripMenuItem.Size = New System.Drawing.Size(43, 25)
+        Me.PetToolStripMenuItem.Text = "Pet"
+        '
+        'AnimalToolStripMenuItem
+        '
+        Me.AnimalToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EspécieToolStripMenuItem, Me.RaçaToolStripMenuItem, Me.PelagemToolStripMenuItem, Me.VacinaToolStripMenuItem, Me.ParasitaToolStripMenuItem})
+        Me.AnimalToolStripMenuItem.Name = "AnimalToolStripMenuItem"
+        Me.AnimalToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.AnimalToolStripMenuItem.Text = "Animal"
+        '
+        'EspécieToolStripMenuItem
+        '
+        Me.EspécieToolStripMenuItem.Name = "EspécieToolStripMenuItem"
+        Me.EspécieToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.EspécieToolStripMenuItem.Text = "Espécie"
         '
         'TxbCodItem
         '
@@ -1069,6 +1112,30 @@ Partial Class FrmPrincipal
         Me.BtPagamento.Text = "Pagamento - F5"
         Me.BtPagamento.UseVisualStyleBackColor = False
         '
+        'RaçaToolStripMenuItem
+        '
+        Me.RaçaToolStripMenuItem.Name = "RaçaToolStripMenuItem"
+        Me.RaçaToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.RaçaToolStripMenuItem.Text = "Raça"
+        '
+        'PelagemToolStripMenuItem
+        '
+        Me.PelagemToolStripMenuItem.Name = "PelagemToolStripMenuItem"
+        Me.PelagemToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.PelagemToolStripMenuItem.Text = "Pelagem"
+        '
+        'VacinaToolStripMenuItem
+        '
+        Me.VacinaToolStripMenuItem.Name = "VacinaToolStripMenuItem"
+        Me.VacinaToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.VacinaToolStripMenuItem.Text = "Vacina"
+        '
+        'ParasitaToolStripMenuItem
+        '
+        Me.ParasitaToolStripMenuItem.Name = "ParasitaToolStripMenuItem"
+        Me.ParasitaToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.ParasitaToolStripMenuItem.Text = "Parasita"
+        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1200,4 +1267,13 @@ Partial Class FrmPrincipal
     Friend WithEvents Label14 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ImprimirIngressoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PDV1ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PetToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AnimalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EspécieToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RaçaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PelagemToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VacinaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ParasitaToolStripMenuItem As ToolStripMenuItem
 End Class

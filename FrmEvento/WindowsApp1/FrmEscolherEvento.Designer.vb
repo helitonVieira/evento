@@ -28,19 +28,21 @@ Partial Class FrmEscolherEvento
         '
         'DgvEvento
         '
-        Me.DgvEvento.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.DgvEvento.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DgvEvento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvEvento.Location = New System.Drawing.Point(3, 2)
         Me.DgvEvento.Name = "DgvEvento"
         Me.DgvEvento.ReadOnly = True
-        Me.DgvEvento.Size = New System.Drawing.Size(322, 251)
+        Me.DgvEvento.Size = New System.Drawing.Size(331, 251)
         Me.DgvEvento.TabIndex = 0
         '
         'FrmEscolherEvento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(328, 257)
+        Me.ClientSize = New System.Drawing.Size(337, 257)
         Me.Controls.Add(Me.DgvEvento)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Black

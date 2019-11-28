@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 15 for Windows Desktop
-VisualStudioVersion = 15.0.28010.2003
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Eventos", "WindowsApp1\Eventos.vbproj", "{D69329AF-19F3-43EB-920E-C5F68D093C92}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Evento", "WindowsApp1\Evento.vbproj", "{D69329AF-19F3-43EB-920E-C5F68D093C92}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupEventos", "SetupEventos\SetupEventos.vdproj", "{8B244C11-7332-445E-A989-CE30ED076B01}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{94595A8B-89FA-43EC-874C-5D15F17803F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,14 +29,12 @@ Global
 		{D69329AF-19F3-43EB-920E-C5F68D093C92}.Release|x64.Build.0 = Release|x64
 		{D69329AF-19F3-43EB-920E-C5F68D093C92}.Release|x86.ActiveCfg = Release|x86
 		{D69329AF-19F3-43EB-920E-C5F68D093C92}.Release|x86.Build.0 = Release|x86
-		{8B244C11-7332-445E-A989-CE30ED076B01}.Debug|Any CPU.ActiveCfg = Debug
-		{8B244C11-7332-445E-A989-CE30ED076B01}.Debug|x64.ActiveCfg = Debug
-		{8B244C11-7332-445E-A989-CE30ED076B01}.Debug|x64.Build.0 = Debug
-		{8B244C11-7332-445E-A989-CE30ED076B01}.Debug|x86.ActiveCfg = Debug
-		{8B244C11-7332-445E-A989-CE30ED076B01}.Release|Any CPU.ActiveCfg = Release
-		{8B244C11-7332-445E-A989-CE30ED076B01}.Release|x64.ActiveCfg = Release
-		{8B244C11-7332-445E-A989-CE30ED076B01}.Release|x64.Build.0 = Release
-		{8B244C11-7332-445E-A989-CE30ED076B01}.Release|x86.ActiveCfg = Release
+		{94595A8B-89FA-43EC-874C-5D15F17803F9}.Debug|Any CPU.ActiveCfg = Debug
+		{94595A8B-89FA-43EC-874C-5D15F17803F9}.Debug|x64.ActiveCfg = Debug
+		{94595A8B-89FA-43EC-874C-5D15F17803F9}.Debug|x86.ActiveCfg = Debug
+		{94595A8B-89FA-43EC-874C-5D15F17803F9}.Release|Any CPU.ActiveCfg = Release
+		{94595A8B-89FA-43EC-874C-5D15F17803F9}.Release|x64.ActiveCfg = Release
+		{94595A8B-89FA-43EC-874C-5D15F17803F9}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

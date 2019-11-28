@@ -68,6 +68,9 @@
     End Sub
 
     Private Sub BtSalvar_Click(sender As Object, e As EventArgs) Handles BtSalvar.Click
+        salvaEvento()
+    End Sub
+    Private Sub salvaEvento()
         Try
             If TxtNome1.Text = "" Then
                 MsgBox("Um nome para o evento deve ser informado", MsgBoxStyle.Information, "Informação")
@@ -77,9 +80,9 @@
 
             evento.nom_evento = TxtNome1.Text
             evento.dta_evento = DtpDtaEvento.Value.ToShortDateString
-            ds1 = evento.UltimoEventoCadastrado
-            Dim linha As DataRow
-            linha = ds1.Tables(0).Rows(0)
+            'ds1 = evento.UltimoEventoCadastrado
+            'Dim linha As DataRow
+            'linha = ds1.Tables(0).Rows(0)
 
             If CbIndAberto.Text = "NAO" Then
                 evento.ind_aberto = "N"
@@ -125,6 +128,9 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtLimpar.Click
         limpar()
         limparIngresso()
+        TabControl1.TabPages.Remove(TabPage2)
+        TabControl1.TabPages.Remove(TabPage3)
+
 
     End Sub
     Public Sub limpar()
@@ -220,9 +226,6 @@
     End Sub
 
 
-
-
-
     Private Sub TxtNome2_TextChanged(sender As Object, e As EventArgs) Handles TxtNome2.TextChanged
 
     End Sub
@@ -281,7 +284,10 @@
     End Sub
 
     Private Sub FrmEvento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TabControl1.SelectedIndex = 0
         limpar()
+        TabControl1.TabPages.Remove(TabPage2)
+        TabControl1.TabPages.Remove(TabPage3)
         DtpDtaEvento.Value = Today
     End Sub
 
@@ -346,8 +352,17 @@
 
     Private Sub BtSalvaIngresso_Click(sender As Object, e As EventArgs) Handles BtSalvaIngresso.Click
         Try
-            If TxtNome2.Text = "" And TxtNome3.Text = "" Then
+            If TxtNome1.Text <> "" And TxtCodEvento.Text = "" And atualizar = 1 Then
+                salvaEvento()
+            End If
+            If TxtNome2.Text = "" Then
                 MsgBox("Para melhor impressão do ingresso preencha as descrições", MsgBoxStyle.Information, "Informação")
+                TxtNome2.Select()
+                Exit Sub
+            End If
+            If TxtNome3.Text = "" And TxtNome3.Text = "" Then
+                MsgBox("Para melhor impressão do ingresso preencha as descrições", MsgBoxStyle.Information, "Informação")
+                TxtNome3.Select()
                 Exit Sub
             End If
 
@@ -362,9 +377,9 @@
             ingresso.des_observacao1 = Txt_observacao1.Text
             ingresso.des_observacao2 = Txt_observacao2.Text
 
-            ds1 = evento.UltimoEventoCadastrado
-            Dim linha As DataRow
-            linha = ds1.Tables(0).Rows(0)
+            'ds1 = evento.UltimoEventoCadastrado
+            '' Dim linha As DataRow
+            '  linha = ds1.Tables(0).Rows(0)
 
 
             If CbIndAberto.Text = "NAO" Then
@@ -373,15 +388,15 @@
                 evento.ind_aberto = "S"
             End If
 
-            If atualizar = 1 Then
+            If atualizarIngresso = 1 Then
 
                 ingresso.CadastrarIngresso()
-
-
                 MsgBox("Ingresso cadastrado com sucesso", MsgBoxStyle.OkOnly, "Sucesso")
-                atualizarDados()
+                atualizarDadosIngresso()
             Else
+
                 ingresso.cod_evento = TxtCodEvento.Text
+                ingresso.seq_ingresso = LbSequenciaIngresso.Text
                 ingresso.AtualizarIngresso()
 
                 MsgBox("Ingresso Alterado com sucesso", MsgBoxStyle.OkOnly, "Sucesso")
@@ -414,6 +429,7 @@
             End If
             atualizarDadosIngresso()
             atualizarIngressoPessoa()
+
         Catch ex As Exception
 
         End Try
@@ -676,6 +692,19 @@
         If Not IsNumeric(TxtCodEvento.Text) Then
             TxtCodEvento.Text = ""
         End If
+        If TxtCodEvento.Text <> "" Then
+            If Not TabControl1.TabPages.Contains(TabPage2) Then
+                TabControl1.TabPages.Add(TabPage2)
+                TabControl1.TabPages.Add(TabPage3)
+            End If
+        Else
+                TabControl1.TabPages.Remove(TabPage2)
+                TabControl1.TabPages.Remove(TabPage3)
+
+            End If
+
+
+
     End Sub
 
     Private Sub TxbQtdeImpressa_TextChanged(sender As Object, e As EventArgs) Handles TxbQtdeImpressa.TextChanged

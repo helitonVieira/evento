@@ -1,6 +1,6 @@
 ﻿Public Class ClPessoa
     Dim sql As String
-    Dim ds As New DataSet
+    Dim ds, dsUltimo As New DataSet
     Dim con As New ConexaoSQ
     Dim ultimoItem As Integer
 
@@ -219,28 +219,29 @@
 
 
     Public Sub CadastrarPessoa()
-        sql = "Insert Into tab_pessoa(      
-                               NOM_PESSOA                  ,    
-                               NOM_FANTASIA                ,    
-                               NUM_CNPJ_CPF                ,    
-                               NUM_IE_RG                   ,    
-                               DTA_NASCIMENTO              ,    
-                               DES_LOGRADOURO              ,    
-                               DES_COMPLEMENTO             ,    
-                               COD_CIDADE                  ,    
-                               NOM_BAIRRO                  ,    
-                               NUM_CEP                     ,    
-                               NUM_TELEFONE_1              ,    
-                               NUM_TELEFONE_2              ,    
-                               NUM_TELEFONE_3              ,    
-                               DES_OBSERVACAO              ,    
-                               DTA_CADASTRO                ,    
-                               IND_CLIENTE                 ,    
-                               IND_FORNECEDOR              ,    
-                               IND_FUNCIONARIO             ,    
-                               IND_ATIVO                   ,
+        sql = "Insert Into tab_pessoa(
+                               COD_PESSOA        ,   
+                               NOM_PESSOA        ,    
+                               NOM_FANTASIA      ,    
+                               NUM_CNPJ_CPF      ,    
+                               NUM_IE_RG         ,    
+                               DTA_NASCIMENTO    ,    
+                               DES_LOGRADOURO    ,    
+                               DES_COMPLEMENTO   ,    
+                               COD_CIDADE        ,    
+                               NOM_BAIRRO        ,    
+                               NUM_CEP           ,    
+                               NUM_TELEFONE_1    ,    
+                               NUM_TELEFONE_2    ,    
+                               NUM_TELEFONE_3    ,    
+                               DES_OBSERVACAO    ,    
+                               DTA_CADASTRO      ,    
+                               IND_CLIENTE       ,    
+                               IND_FORNECEDOR    ,    
+                               IND_FUNCIONARIO   ,    
+                               IND_ATIVO         ,
                                DES_EMAIL )
-                 Values ('" & nom_pessoa & "' , '" & nom_fantasia & "','" & num_cnpj_cpf & "','" & num_ie_rg & "','" & dta_nascimento & "'
+                 Values (" & cod_pessoa & ",'" & nom_pessoa & "' , '" & nom_fantasia & "','" & num_cnpj_cpf & "','" & num_ie_rg & "','" & dta_nascimento & "'
                          , '" & des_logradouro & "','" & des_complemento & "','" & cod_cidade & "','" & nom_bairro & "'
                          , '" & num_cep & "','" & num_fone_1 & "','" & num_fone_2 & "','" & num_fone_3 & "' 
                          , '" & des_observacao & "','" & dta_cadastro & "','" & ind_cliente & "','" & ind_fornecedor & "'
@@ -266,7 +267,7 @@
                                     IND_FORNECEDOR  ='" & ind_fornecedor & "' ,
                                     IND_FUNCIONARIO ='" & ind_funcionario & "',
                                     IND_ATIVO       ='" & ind_ativo & "',
-                                    DES_EMAIL       ='" & des_email & "'
+                                    DES_EMAIL      ='" & des_email & "'
                                   
                                    Where cod_pessoa   =" & cod_pessoa & ""
         con.Operar(sql)
@@ -281,6 +282,61 @@
         sql = "Select * From tab_pessoa 
                where nom_pessoa like ('%" & busca & "%')
                  and ind_ativo = 'S'
+               order by nom_pessoa"
+        ds = con.Listar(sql)
+        Return ds
+    End Function
+    Public Function ConsultarPessoaBusca(COD_PESSOA_OLD As Integer, NOM_PESSOA_OLD As String, NOM_FANTASIA_OLD As String,
+                                         NUM_CNPJ_CPF_OLD As String, NUM_IE_RG_OLD As String, DES_LOGRADOURO_OLD As String,
+                                         COD_CIDADE_OLD As String, NOM_BAIRRO_OLD As String, NUM_CEP_OLD As String,
+                                         NUM_TELEFONE_1_OLD As String, NUM_TELEFONE_2_OLD As String, NUM_TELEFONE_3_OLD As String,
+                                         DES_OBSERVACAO_OLD As String, IND_CLIENTE_OLD As String,
+                                         IND_FORNECEDOR_OLD As String, IND_FUNCIONARIO_OLD As String, IND_ATIVO_OLD As String,
+                                         DES_EMAIL_OLD As String, IND_PE As String)
+
+        Dim indCliente, indFornecedor, indFuncionario, indAtivo As String
+        indCliente = ""
+        indFornecedor = ""
+        indFuncionario = ""
+        indAtivo = ""
+        If IND_PE = "S" Then
+            If IND_CLIENTE_OLD = "S" Then
+                indCliente = " and ind_cliente = 'S' "
+            End If
+            If IND_FORNECEDOR_OLD = "S" Then
+                indFornecedor = " and ind_fornecedor = 'S' "
+            End If
+            If IND_FUNCIONARIO_OLD = "S" Then
+                indFuncionario = " and ind_funcionario = 'S' "
+            End If
+            If IND_ATIVO_OLD = "S" Then
+                indAtivo = " and ind_ativo = 'S' "
+            End If
+        End If
+
+        If COD_CIDADE_OLD = "" Then
+            COD_CIDADE_OLD = Convert.ToInt16("0")
+        Else
+            COD_CIDADE_OLD = Convert.ToInt16(COD_CIDADE_OLD)
+        End If
+
+        sql = "Select * From tab_pessoa 
+               where nom_pessoa like ('%" & NOM_PESSOA_OLD & "%') 
+                 and ((cod_pessoa = " & COD_PESSOA_OLD & " )or (0 = " & COD_PESSOA_OLD & "))
+                 and nom_fantasia like ('%" & NOM_FANTASIA_OLD & "%') 
+                 and ((num_cnpj_cpf = '" & NUM_CNPJ_CPF_OLD & "') or ('' = '" & NUM_CNPJ_CPF_OLD & "' ))
+                 and ((num_ie_rg = '" & NUM_IE_RG_OLD & "') or ('' = '" & NUM_IE_RG_OLD & "' ))
+                 and des_logradouro like ('%" & DES_LOGRADOURO_OLD & "%')
+                 and ((cod_cidade = " & COD_CIDADE_OLD & " )or (0 = " & COD_CIDADE_OLD & "))
+                 and nom_bairro like ('%" & NOM_BAIRRO_OLD & "%')
+                 and ((num_cep = '" & NUM_CEP_OLD & "') or ('' = '" & NUM_CEP_OLD & "' ))
+                 and ((num_telefone_1 = '" & NUM_TELEFONE_1_OLD & "') or ('' = '" & NUM_TELEFONE_1_OLD & "' ))
+                 and ((num_telefone_2 = '" & NUM_TELEFONE_2_OLD & "') or ('' = '" & NUM_TELEFONE_2_OLD & "' ))
+                 and ((num_telefone_3 = '" & NUM_TELEFONE_3_OLD & "') or ('' = '" & NUM_TELEFONE_3_OLD & "' ))
+                 and des_observacao like ('%" & DES_OBSERVACAO_OLD & "%') 
+                 and des_email like ('%" & DES_EMAIL_OLD & "%') 
+                 " & indCliente & indFornecedor & indFuncionario & indAtivo & "
+                                                                         
                order by nom_pessoa"
         ds = con.Listar(sql)
         Return ds
@@ -325,8 +381,9 @@
     End Function
 
     Public Function UltimaPessoaCadastrado()
-        sql = "Select cast( max(cod_pessoa) as varchar(5)) From tab_pessoa"
-        ds = con.Listar(sql)
-        Return ds
+        sql = "Select coalesce(cast( max(cod_pessoa) as varchar(5)),0)as ultimo From tab_pessoa"
+        dsUltimo = con.Listar(sql)
+        Return dsUltimo
     End Function
+
 End Class

@@ -21,11 +21,12 @@
             MsgBox("CHAVE ESTA INCORRETA")
             Exit Sub
         End If
-        If TxtChave.Text.Chars(1) <> "E" Then
-            MsgBox("CHAVE ESTA INCORRETA")
-            Exit Sub
-        End If
-        ano = data1.ToString.Chars(8) & data1.ToString.Chars(9)
+            If TxtChave.Text.Chars(1) <> "E" Then
+                MsgBox("CHAVE ESTA INCORRETA")
+                Exit Sub
+            End If
+            'data de hoje separando
+            ano = data1.ToString.Chars(8) & data1.ToString.Chars(9)
         mes = data1.ToString.Chars(3) & data1.ToString.Chars(4)
         dia = data1.ToString.Chars(0) & data1.ToString.Chars(1)
         ' MsgBox(data1 & "dia" & dia & "mes" & mes & "ano" & ano)

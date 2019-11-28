@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BtPresquisa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnPresquisa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACcAAAAsCAYAAADmZKH2AAAABGdBTUEAALGPC/xhBQAAAiNJREFUWEft
         mM1LVFEYhydLLCnFAluUIboQAheCtIlwLf0HfRGCS/8G0ZVLIQmhXW105x8hugsigmilLgzcFNEXldbz
@@ -133,7 +133,7 @@
         I3M7cJtyXDUAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtLimpar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnLimpar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGPC/xhBQAAAUJJREFUWEft
         2b1KA1EUReFRQWwkWIhvINgLPoCQRl9CW0tra3s7sfEdtE8hFtraWWprKYiCP2sXgUOYjDN37rkjeBZ8
@@ -144,7 +144,7 @@
         FlNoU2O3qHvhECYwVdUPTTIVvMbX86wAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtSalvar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnSalvar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGPC/xhBQAAAldJREFUWEft
         2b1rFEEcxvEzanxBDIiFQWstRLQwKWIaQcF0lhIQa/8EtVcLUVARJASSwkoEu5QiBlLYWYQUoqCksFEU
@@ -160,7 +160,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="BtExcluir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnExcluir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGPC/xhBQAAAQRJREFUWEft
         2DEOAUEUxvFVi1KjQOkCWu7gBBqtQqvAKVzDBYhO4iIuoBGC7yVTTPF2581M3sbG+ye/bm2+2E12KSzL
