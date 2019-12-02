@@ -118,6 +118,7 @@
                 evento.ExcluirEvento()
                 MsgBox("Evento excluido com sucesso", MsgBoxStyle.Information, "Informação")
                 atualizarDados()
+                limpar()
             Catch ex As Exception
                 MsgBox("Erro ao excluir Evento, " & ex.Message & "!", MsgBoxStyle.Critical, "Erro")
 

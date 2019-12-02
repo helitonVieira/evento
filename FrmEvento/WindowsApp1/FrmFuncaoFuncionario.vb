@@ -2,36 +2,35 @@
 Imports System.Data
 Imports System.Data.OleDb
 Imports System.IO
-Public Class FrmAnimalRaca
-
+Public Class FrmFuncaoFuncionario
     Dim conectar As New ConexaoSQ
     Dim ds, dsUltimo As New DataSet
-    Dim raca, raca2 As New ClAnimalRaca
+    Dim funcao, funcao2 As New ClFuncaoFuncionario
     Dim atualizar As Integer = 1
     Dim cod As Integer
     Dim desc As String
     Dim i As Integer = 0
 
     Private Sub BtnPesquisa_Click(sender As Object, e As EventArgs) Handles BtnPesquisa.Click
-        verificarAuteracao()
+        verificarAutefuncaoo()
 
-        If TxbCodRaca.Text = "" Then
+        If TxbCodFuncao.Text = "" Then
             cod = 0
         Else
-            cod = TxbCodRaca.Text
+            cod = TxbCodFuncao.Text
         End If
-        desc = TxbDesRaca.Text
+        desc = TxbDesFuncao.Text
         atualizaDados()
 
     End Sub
     Public Sub atualizaDados()
         Dim tabela As DataTable
-        ds = raca.ConsultarRaca(cod, desc)
+        ds = funcao.ConsultarFuncaoFuncionario(cod, desc)
         tabela = ds.Tables(0)
 
         If tabela.Rows.Count > 0 Then
-            DgvRaca.DataSource = Nothing
-            DgvRaca.DataSource = ds.Tables(0)
+            DgvFuncao.DataSource = Nothing
+            DgvFuncao.DataSource = ds.Tables(0)
             formatarGrid()
         End If
     End Sub
@@ -42,30 +41,30 @@ Public Class FrmAnimalRaca
     End Sub
     Public Sub salvaRegistro()
         Try
-            If TxbDesRaca.Text = "" Then
+            If TxbDesFuncao.Text = "" Then
                 MsgBox("INFORME NOME DO ITEM")
-                TxbDesRaca.Select()
+                TxbDesFuncao.Select()
                 Exit Sub
             End If
 
-            raca.des_raca = TxbDesRaca.Text
-            desc = TxbDesRaca.Text
+            funcao.des_funcao_funcionario = TxbDesFuncao.Text
+            desc = TxbDesFuncao.Text
 
             If atualizar = 1 Then
                 'pegar o ultimo registro
                 Dim ultimo As New DataSet
-                ultimo = raca2.UltimoRacaCadastrado
+                ultimo = funcao2.UltimoFuncaoFuncionarioCadastrado
                 Dim ult As String = ultimo.Tables(0).Rows(0)("ultimo")
-                raca.cod_raca = Convert.ToInt16(ult) + 1
+                funcao.cod_funcao_funcionario = Convert.ToInt16(ult) + 1
 
-                raca.CadastrarRaca()
+                funcao.CadastrarFuncaoFuncionario()
                 ultimo.Clear()
-                MsgBox("Raca cadastrado com sucesso", MsgBoxStyle.OkOnly, "Sucesso")
+                MsgBox("Função Funcionario cadastrado com sucesso", MsgBoxStyle.OkOnly, "Sucesso")
                 atualizaDados()
             Else
-                raca.cod_raca = TxbCodRaca.Text
-                raca.AtualizarRaca()
-                MsgBox("Raca Alterado com sucesso", MsgBoxStyle.OkOnly, "Sucesso")
+                funcao.cod_funcao_funcionario = TxbCodFuncao.Text
+                funcao.AtualizarFuncaoFuncionario()
+                MsgBox("Função Funcionario Alterado com sucesso", MsgBoxStyle.OkOnly, "Sucesso")
                 atualizaDados()
             End If
         Catch ex As Exception
@@ -73,41 +72,42 @@ Public Class FrmAnimalRaca
         End Try
     End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnExcluir.Click
-        If TxbCodRaca.Text = "" Then
+        If TxbCodFuncao.Text = "" Then
             Exit Sub
         End If
-        If MsgBox("Deseja excluir a Raca:   " & TxbDesRaca.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
+        If MsgBox("Deseja excluir a Função Funcionario:   " & TxbDesFuncao.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
             Try
-                raca.cod_raca = TxbCodRaca.Text
-                raca.ExcluirRaca()
-                MsgBox("Raca excluido com sucesso", MsgBoxStyle.Information, "Informação")
+                funcao.cod_funcao_funcionario = TxbCodFuncao.Text
+                funcao.ExcluirFuncaoFuncionario()
+                MsgBox("Função Funcionario excluido com sucesso", MsgBoxStyle.Information, "Informação")
                 atualizaDados()
                 limpar()
+
             Catch ex As Exception
-                MsgBox("Erro ao excluir Raca, " & ex.Message & "!", MsgBoxStyle.Critical, "Erro")
+                MsgBox("Erro ao excluir Função Funcionario, " & ex.Message & "!", MsgBoxStyle.Critical, "Erro")
 
             End Try
         End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnLimpar.Click
-        verificarAuteracao()
+        verificarAutefuncaoo()
         limpar()
-        DgvRaca.DataSource = Nothing
-        TxbCodRaca.Enabled = True
+        DgvFuncao.DataSource = Nothing
+        TxbCodFuncao.Enabled = True
         TabControl1.SelectedIndex = 0
 
     End Sub
     Public Sub limpar()
-        TxbCodRaca.Text = ""
-        TxbDesRaca.Text = ""
+        TxbCodFuncao.Text = ""
+        TxbDesFuncao.Text = ""
         atualizar = 1
 
 
     End Sub
     Public Sub formatarGrid()
         Try
-            With DgvRaca
+            With DgvFuncao
                 .Columns(0).HeaderText = "Código"
                 .Columns(1).HeaderText = "Descrição"
                 .Columns(0).Width = 60
@@ -125,31 +125,31 @@ Public Class FrmAnimalRaca
         Try
             limpar()
             atualizar = 2
-            TxbCodRaca.Text = ds.Tables(0).Rows(i)("cod_raca").ToString
-            TxbDesRaca.Text = ds.Tables(0).Rows(i)("des_raca").ToString
-            desc = TxbDesRaca.Text
-            TxbCodRaca.Enabled = False
+            TxbCodFuncao.Text = ds.Tables(0).Rows(i)("cod_funcao_funcionario").ToString
+            TxbDesFuncao.Text = ds.Tables(0).Rows(i)("des_funcao_funcionario").ToString
+            desc = TxbDesFuncao.Text
+            TxbCodFuncao.Enabled = False
         Catch ex As Exception
 
         End Try
     End Sub
-    Public Sub verificarAuteracao()
-        If TxbCodRaca.Text = "" Then
+    Public Sub verificarAutefuncaoo()
+        If TxbCodFuncao.Text = "" Then
             Exit Sub
         End If
-        If desc <> TxbDesRaca.Text Then
-            If MsgBox("Descrição foi alterada deseja salvar alteração?       Anterior: " & desc & "     Nova Descrição: " & TxbDesRaca.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
+        If desc <> TxbDesFuncao.Text Then
+            If MsgBox("Descrição foi alterada deseja salvar alteração?       Anterior: " & desc & "     Nova Descrição: " & TxbDesFuncao.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
                 salvaRegistro()
             End If
         End If
     End Sub
 
-    Private Sub FrmRaca_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FrmFuncaoFuncionario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpar()
     End Sub
 
-    Private Sub DgvRaca_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DgvRaca.CellEnter
-        i = DgvRaca.CurrentRow.Index
+    Private Sub DgvFuncao_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DgvFuncao.CellEnter
+        i = DgvFuncao.CurrentRow.Index
         carregaFormulario()
     End Sub
 
@@ -163,7 +163,7 @@ Public Class FrmAnimalRaca
 
     End Sub
     Private Sub BtnPrimeiroReg_Click(sender As Object, e As EventArgs) Handles BtnPrimeiroReg.Click
-        verificarAuteracao()
+        verificarAutefuncaoo()
 
         If ds.Tables(0).Rows.Count > 0 Then
             i = 0
@@ -172,7 +172,7 @@ Public Class FrmAnimalRaca
 
     End Sub
     Private Sub BtnAnterior_Click(sender As Object, e As EventArgs) Handles BtnAnterior.Click
-        verificarAuteracao()
+        verificarAutefuncaoo()
 
         If ds.Tables(0).Rows.Count > 0 Then
             If i = 0 Then
@@ -185,7 +185,7 @@ Public Class FrmAnimalRaca
     End Sub
 
     Private Sub BtnUltimoReg_Click(sender As Object, e As EventArgs) Handles BtnUltimoReg.Click
-        verificarAuteracao()
+        verificarAutefuncaoo()
 
         If ds.Tables(0).Rows.Count > 0 Then
             i = ds.Tables(0).Rows.Count - 1
@@ -194,7 +194,7 @@ Public Class FrmAnimalRaca
     End Sub
 
     Private Sub BtnProximo_Click(sender As Object, e As EventArgs) Handles BtnProximo.Click
-        verificarAuteracao()
+        verificarAutefuncaoo()
 
         If ds.Tables(0).Rows.Count > 0 Then
             If i < ds.Tables(0).Rows.Count - 1 Then
@@ -206,9 +206,9 @@ Public Class FrmAnimalRaca
         carregaFormulario()
     End Sub
 
-    Private Sub TxbCodRaca_TextChanged_1(sender As Object, e As EventArgs) Handles TxbCodRaca.TextChanged
-        If Not IsNumeric(TxbCodRaca.Text) Then
-            TxbCodRaca.Text = ""
+    Private Sub TxbCodFuncao_TextChanged_1(sender As Object, e As EventArgs) Handles TxbCodFuncao.TextChanged
+        If Not IsNumeric(TxbCodFuncao.Text) Then
+            TxbCodFuncao.Text = ""
         End If
     End Sub
 
@@ -236,17 +236,17 @@ Public Class FrmAnimalRaca
 
 
 
-        nomArquivo = "AnimalRaca_" & dataAtual & "_" & horaMin
+        nomArquivo = "FuncaoFuncionario_" & dataAtual & "_" & horaMin
 
-        Dim CSV As System.IO.StreamWriter = New System.IO.StreamWriter(nomPasta & "\AnimalRaca_" & nomArquivo & ".csv"
-                                                                           )
+        Dim CSV As System.IO.StreamWriter = New System.IO.StreamWriter(nomPasta & "\FuncaoFuncionario_" & nomArquivo & ".csv"
+                                                                               )
         Dim i As Integer, x As Integer
 
-        Dim QtdColunas As Integer = DgvRaca.ColumnCount - 1
+        Dim QtdColunas As Integer = DgvFuncao.ColumnCount - 1
 
         For i = 0 To QtdColunas
-            If DgvRaca.Columns(i).HeaderText.Substring(0, 6) <> "Column" Then
-                CSV.Write(DgvRaca.Columns(i).HeaderText)
+            If DgvFuncao.Columns(i).HeaderText.Substring(0, 6) <> "Column" Then
+                CSV.Write(DgvFuncao.Columns(i).HeaderText)
 
                 If (i < QtdColunas) Then
 
@@ -258,14 +258,14 @@ Public Class FrmAnimalRaca
 
         ' CSV.Write(CSV.NewLine)
 
-        Dim QtdRows As Integer = DgvRaca.Rows.Count - 1
+        Dim QtdRows As Integer = DgvFuncao.Rows.Count - 1
 
         For i = 0 To QtdRows
 
             For x = 0 To QtdColunas
 
-                If (Not DgvRaca.Rows(i).Cells(x).Value Is Nothing) Then
-                    CSV.Write(DgvRaca.Rows(i).Cells(x).Value.ToString())
+                If (Not DgvFuncao.Rows(i).Cells(x).Value Is Nothing) Then
+                    CSV.Write(DgvFuncao.Rows(i).Cells(x).Value.ToString())
 
                 End If
 
@@ -281,16 +281,16 @@ Public Class FrmAnimalRaca
         CSV.Close()
     End Sub
 
-    Private Sub TxbCodRaca_TextChanged(sender As Object, e As EventArgs)
-        If Not IsNumeric(TxbCodRaca.Text) Then
-            TxbCodRaca.Text = ""
+    Private Sub TxbCodFuncao_TextChanged(sender As Object, e As EventArgs)
+        If Not IsNumeric(TxbCodFuncao.Text) Then
+            TxbCodFuncao.Text = ""
         End If
     End Sub
 
-    Private Sub DgvRaca_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvRaca.CellClick
-        Me.TxbCodRaca.Text = DgvRaca.CurrentRow.Cells(0).Value
-        Me.TxbDesRaca.Text = DgvRaca.CurrentRow.Cells(1).Value
+    Private Sub DgvFuncao_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvFuncao.CellClick
+        Me.TxbCodFuncao.Text = DgvFuncao.CurrentRow.Cells(0).Value
+        Me.TxbDesFuncao.Text = DgvFuncao.CurrentRow.Cells(1).Value
         TabControl1.SelectedIndex = 0
-        Me.TxbDesRaca.Select()
+        Me.TxbDesFuncao.Select()
     End Sub
-    End Class
+End Class

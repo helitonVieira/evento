@@ -81,7 +81,7 @@ Public Class FrmAnimalVacina
                 vacina.ExcluirVacina()
                 MsgBox("Vacina excluido com sucesso", MsgBoxStyle.Information, "Informação")
                 atualizaDados()
-
+                limpar()
             Catch ex As Exception
                 MsgBox("Erro ao excluir Vacina, " & ex.Message & "!", MsgBoxStyle.Critical, "Erro")
 
@@ -145,6 +145,11 @@ Public Class FrmAnimalVacina
 
     Private Sub FrmVacina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpar()
+        'Me.Width = Me.Width + 200
+        TabControl1.SelectedIndex = 0
+        Me.Height = 162
+
+
     End Sub
 
     Private Sub DgvVacina_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DgvVacina.CellEnter
@@ -155,8 +160,10 @@ Public Class FrmAnimalVacina
     Private Sub BtnGrid_Click(sender As Object, e As EventArgs) Handles BtnGrid.Click
         If TabControl1.SelectedIndex = 1 Then
             TabControl1.SelectedIndex = 0
+            Me.Height = 162
         Else
             TabControl1.SelectedIndex = 1
+            Me.Height = 322
         End If
 
 

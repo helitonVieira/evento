@@ -208,14 +208,12 @@
         LbCodEvento.Visible = False
 
     End Sub
-    Private Sub EventoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EventoToolStripMenuItem1.Click
-        DescarregarTelaVenda()
-        FrmEvento.ShowDialog()
+    Private Sub EventoToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub ItemToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ItemToolStripMenuItem1.Click
-        DescarregarTelaVenda()
-        FrmItem.ShowDialog()
+    Private Sub ItemToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -278,7 +276,7 @@
             Exit Sub
         End If
         If TxbQtde.Enabled = False Then
-            TxbQtde .Text = "1"
+            TxbQtde.Text = "1"
         End If
         TxbQtde.Enabled = True
         If TxbCodItem.Text = "" Then
@@ -444,13 +442,13 @@
         End If
     End Function
 
-    Private Sub LicenciaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LicenciaToolStripMenuItem1.Click
-        FrmLicencia.ShowDialog()
+    Private Sub LicenciaToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
 
     End Sub
 
     Private Sub ParametrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ParametrosToolStripMenuItem.Click
-        FrmParametroSistema.ShowDialog()
+
 
     End Sub
     Private Sub PessoaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PessoaToolStripMenuItem.Click
@@ -617,7 +615,7 @@
         salvarBancoImprimirFicha()
     End Sub
 
-    Private Sub ImToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImToolStripMenuItem.Click
+    Private Sub ImToolStripMenuItem_Click(sender As Object, e As EventArgs)
         imprimirIngresso()
     End Sub
 
@@ -871,6 +869,32 @@
 
     Private Sub PelagemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PelagemToolStripMenuItem.Click
         FrmAnimalPelagem.ShowDialog()
+    End Sub
+
+    Private Sub ItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItemToolStripMenuItem.Click
+        DescarregarTelaVenda()
+        FrmItem.ShowDialog()
+    End Sub
+
+    Private Sub EventoToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles EventoToolStripMenuItem2.Click
+        DescarregarTelaVenda()
+        FrmEvento.ShowDialog()
+    End Sub
+
+    Private Sub ImprimirIngressoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ImprimirIngressoToolStripMenuItem1.Click
+        imprimirIngresso()
+    End Sub
+
+    Private Sub ParametrosSistemaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ParametrosSistemaToolStripMenuItem.Click
+        FrmParametroSistema.ShowDialog()
+    End Sub
+
+    Private Sub LicençaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LicençaToolStripMenuItem.Click
+        FrmLicencia.ShowDialog()
+    End Sub
+
+    Private Sub FunçãoFuncionarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FunçãoFuncionarioToolStripMenuItem.Click
+        FrmFuncaoFuncionario.ShowDialog()
     End Sub
 
     Private Sub RaçaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RaçaToolStripMenuItem.Click

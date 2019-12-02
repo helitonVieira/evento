@@ -78,7 +78,7 @@
                 item.ExcluirItem()
                 MsgBox("Item excluido com sucesso", MsgBoxStyle.Information, "Informação")
                 atualizaDados()
-
+                limpar()
             Catch ex As Exception
                 MsgBox("Erro ao excluir Item, " & ex.Message & "!", MsgBoxStyle.Critical, "Erro")
 

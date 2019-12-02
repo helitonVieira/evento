@@ -301,16 +301,16 @@
         indAtivo = ""
         If IND_PE = "S" Then
             If IND_CLIENTE_OLD = "S" Then
-                indCliente = " and ind_cliente = 'S' "
+                indCliente = " and a.ind_cliente = 'S' "
             End If
             If IND_FORNECEDOR_OLD = "S" Then
-                indFornecedor = " and ind_fornecedor = 'S' "
+                indFornecedor = " and a.ind_fornecedor = 'S' "
             End If
             If IND_FUNCIONARIO_OLD = "S" Then
-                indFuncionario = " and ind_funcionario = 'S' "
+                indFuncionario = " and a.ind_funcionario = 'S' "
             End If
             If IND_ATIVO_OLD = "S" Then
-                indAtivo = " and ind_ativo = 'S' "
+                indAtivo = " and a.ind_ativo = 'S' "
             End If
         End If
 
@@ -320,21 +320,33 @@
             COD_CIDADE_OLD = Convert.ToInt16(COD_CIDADE_OLD)
         End If
 
-        sql = "Select * From tab_pessoa 
-               where nom_pessoa like ('%" & NOM_PESSOA_OLD & "%') 
-                 and ((cod_pessoa = " & COD_PESSOA_OLD & " )or (0 = " & COD_PESSOA_OLD & "))
-                 and nom_fantasia like ('%" & NOM_FANTASIA_OLD & "%') 
-                 and ((num_cnpj_cpf = '" & NUM_CNPJ_CPF_OLD & "') or ('' = '" & NUM_CNPJ_CPF_OLD & "' ))
-                 and ((num_ie_rg = '" & NUM_IE_RG_OLD & "') or ('' = '" & NUM_IE_RG_OLD & "' ))
-                 and des_logradouro like ('%" & DES_LOGRADOURO_OLD & "%')
-                 and ((cod_cidade = " & COD_CIDADE_OLD & " )or (0 = " & COD_CIDADE_OLD & "))
-                 and nom_bairro like ('%" & NOM_BAIRRO_OLD & "%')
-                 and ((num_cep = '" & NUM_CEP_OLD & "') or ('' = '" & NUM_CEP_OLD & "' ))
-                 and ((num_telefone_1 = '" & NUM_TELEFONE_1_OLD & "') or ('' = '" & NUM_TELEFONE_1_OLD & "' ))
-                 and ((num_telefone_2 = '" & NUM_TELEFONE_2_OLD & "') or ('' = '" & NUM_TELEFONE_2_OLD & "' ))
-                 and ((num_telefone_3 = '" & NUM_TELEFONE_3_OLD & "') or ('' = '" & NUM_TELEFONE_3_OLD & "' ))
-                 and des_observacao like ('%" & DES_OBSERVACAO_OLD & "%') 
-                 and des_email like ('%" & DES_EMAIL_OLD & "%') 
+        sql = "select a.*,b.cod_funcao, 
+                        c.des_funcao,
+                        b.val_salario,
+                        b.val_custo_hora,
+                        b.ind_tipo_salario,
+                        b.dta_admissao,
+                        b.dta_demissao,
+                        b.dta_ultimo_reajuste,
+                        b.des_observacao as des_observacao_func
+               from tab_pessoa a
+               left  Join tab_pessoa_funcionario b on (a.cod_pessoa = b.cod_pessoa)
+               left join tab_funcao_funcionario c on (c.cod_funcao = b.cod_funcao)
+
+               where a.nom_pessoa like ('%" & NOM_PESSOA_OLD & "%') 
+                 and ((a.cod_pessoa = " & COD_PESSOA_OLD & " )or (0 = " & COD_PESSOA_OLD & "))
+                 and a.nom_fantasia like ('%" & NOM_FANTASIA_OLD & "%') 
+                 and ((a.num_cnpj_cpf = '" & NUM_CNPJ_CPF_OLD & "') or ('' = '" & NUM_CNPJ_CPF_OLD & "' ))
+                 and ((a.num_ie_rg = '" & NUM_IE_RG_OLD & "') or ('' = '" & NUM_IE_RG_OLD & "' ))
+                 and a.des_logradouro like ('%" & DES_LOGRADOURO_OLD & "%')
+                 and ((a.cod_cidade = " & COD_CIDADE_OLD & " )or (0 = " & COD_CIDADE_OLD & "))
+                 and a.nom_bairro like ('%" & NOM_BAIRRO_OLD & "%')
+                 and ((a.num_cep = '" & NUM_CEP_OLD & "') or ('' = '" & NUM_CEP_OLD & "' ))
+                 and ((a.num_telefone_1 = '" & NUM_TELEFONE_1_OLD & "') or ('' = '" & NUM_TELEFONE_1_OLD & "' ))
+                 and ((a.num_telefone_2 = '" & NUM_TELEFONE_2_OLD & "') or ('' = '" & NUM_TELEFONE_2_OLD & "' ))
+                 and ((a.num_telefone_3 = '" & NUM_TELEFONE_3_OLD & "') or ('' = '" & NUM_TELEFONE_3_OLD & "' ))
+                 and a.des_observacao like ('%" & DES_OBSERVACAO_OLD & "%') 
+                 and a.des_email like ('%" & DES_EMAIL_OLD & "%') 
                  " & indCliente & indFornecedor & indFuncionario & indAtivo & "
                                                                          
                order by nom_pessoa"

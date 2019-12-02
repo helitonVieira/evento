@@ -81,6 +81,7 @@ Public Class FrmAnimalEspecie
                 especie.ExcluirEspecie()
                 MsgBox("Especie excluido com sucesso", MsgBoxStyle.Information, "Informação")
                 atualizaDados()
+                limpar()
 
             Catch ex As Exception
                 MsgBox("Erro ao excluir Especie, " & ex.Message & "!", MsgBoxStyle.Critical, "Erro")

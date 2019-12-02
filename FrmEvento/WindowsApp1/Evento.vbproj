@@ -138,9 +138,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClFuncaoFuncionario.vb" />
     <Compile Include="ClAnimalRaca.vb" />
     <Compile Include="ClAnimalPelagem.vb" />
     <Compile Include="ClAnimalControleParasita.vb" />
+    <Compile Include="ClPessoaFuncionario .vb" />
     <Compile Include="ClPessoaDependente .vb" />
     <Compile Include="ClAnimalVacina .vb" />
     <Compile Include="ClEmpresa.vb" />
@@ -203,6 +205,12 @@
       <DependentUpon>FrmDespesa.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmDespesa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFuncaoFuncionario.Designer.vb">
+      <DependentUpon>FrmFuncaoFuncionario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFuncaoFuncionario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPadrao.Designer.vb">
@@ -336,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDespesa.resx">
       <DependentUpon>FrmDespesa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFuncaoFuncionario.resx">
+      <DependentUpon>FrmFuncaoFuncionario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPadrao.resx">
       <DependentUpon>FrmPadrao.vb</DependentUpon>

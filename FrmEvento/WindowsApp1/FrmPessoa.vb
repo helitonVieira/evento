@@ -3,7 +3,8 @@
     Dim ds, dsDependente As New DataSet
     Dim pessoa, pessoa2 As New ClPessoa
 
-    Dim pessoaDependente As New ClPessoaDependente
+    Dim dependente As New ClPessoaDependente
+    Dim funcionario As New ClPessoaFuncionario
     Dim atualizar As Integer = 1
     Dim atualizarDependente As Integer = 1
     Dim i As Integer = 0
@@ -14,8 +15,10 @@
         ind_funcionario_old, ind_ativo_old, des_email_old, ind_pe_old As String
     Dim cod_dependente_old, nom_dependente_old, num_fone_depte_old, nom_apelido_old,
         dta_nascimento_depte_old, des_observacao_depte_old As String
+    Dim cod_funcao_old, des_funcao_old, val_salario_old, val_custo_hora_old, ind_tipo_salario_old,
+        dta_admissao_old, dta_demissao_old, dta_ultimo_reajuste_old, des_observacao_func_old As String
 
-    Private Sub BtnPesquisa_Click(sender As Object, e As EventArgs) Handles BtnPresquisa.Click
+    Private Sub BtnPesquisa_Click(sender As Object, e As EventArgs) Handles BtnPesquisa.Click
         verificarAuteracaoPessoa()
 
         If TxbCodPessoa.Text = "" Then
@@ -55,7 +58,7 @@
     Public Sub atualizaDadosDependente()
         Try
             Dim tabela As DataTable
-            dsDependente = pessoaDependente.ConsultarDependente(cod_pessoa_old)
+            dsDependente = dependente.ConsultarDependente(cod_pessoa_old)
             tabela = dsDependente.Tables(0)
 
             If tabela.Rows.Count > 0 Then
@@ -139,7 +142,6 @@
     End Sub
     Private Sub BtSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
         salvaRegistro()
-
     End Sub
     Public Sub salvaRegistro()
         Try
@@ -201,12 +203,17 @@
                 pessoa.cod_pessoa = Convert.ToInt16(ult) + 1
 
                 pessoa.CadastrarPessoa()
+                'SALVAR FUNCIONARIO
+                salvaFuncionario(Convert.ToInt16(ult) + 1)
+
                 MsgBox("Cadastrado com Sucesso", MsgBoxStyle.OkOnly, "Sucesso")
                 atualizaDados()
                 carregaFormulario()
             Else
                 pessoa.cod_pessoa = TxbCodPessoa.Text
                 pessoa.AtualizarPessoa()
+                'ATUALIZAR FUNCIONARIO
+                salvaFuncionario(TxbCodPessoa.Text)
                 MsgBox("Alterado com Sucesso", MsgBoxStyle.OkOnly, "Sucesso")
                 atualizaDados()
             End If
@@ -215,7 +222,48 @@
             MsgBox("Não foi possivel Salvar no banco" & ex.Message, MsgBoxStyle.Critical, "Erro")
         End Try
     End Sub
+    Public Sub salvaFuncionario(cod_pessoa As Integer)
+        If CkbFuncionario.Checked = False Or TxbCodFuncaoFunc.Text = "" Then
+            Exit Sub
+        End If
+        funcionario.cod_pessoa = cod_pessoa
+        funcionario.cod_funcao = TxbCodFuncaoFunc.Text
+        funcionario.val_salario = TxbSalarioFunc.Text
+        funcionario.Val_custo_hora = TxbCustoHrFunc.Text
 
+        If RbHoraFunc.Checked = True Then
+            funcionario.ind_tipo_salario = "H"
+        ElseIf RbDiaFunc.Checked = True Then
+            funcionario.ind_tipo_salario = "D"
+        ElseIf RbSemanaFunc.Checked = True Then
+            funcionario.ind_tipo_salario = "S"
+        ElseIf RbQuinzenaFunc.Checked = True Then
+            funcionario.ind_tipo_salario = "Q"
+        ElseIf RbMesFunc.Checked = True Then
+            funcionario.ind_tipo_salario = "M"
+        End If
+
+
+        funcionario.dta_admissao = DtpAdmissaoFunc.Value.ToShortDateString
+        If TxbDtaDemissaoFunc.Text = "" Then
+            funcionario.dta_demissao = "Null"
+        Else
+            funcionario.dta_demissao = TxbDtaDemissaoFunc.Text
+        End If
+        If TxbDtaReajusteFunc.Text = "" Then
+            funcionario.dta_ultimo_reajuste = "Null"
+        Else
+            funcionario.dta_ultimo_reajuste = TxbDtaReajusteFunc.Text
+        End If
+        funcionario.des_observacao = TxbObsFunc.Text
+
+        If atualizar = 1 Then
+            funcionario.CadastrarFuncionario()
+        Else
+            funcionario.AtualizarFuncionario()
+        End If
+
+    End Sub
     Private Sub FrmPessoa_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim count As Integer
         For count = 1 To 100
@@ -233,7 +281,7 @@
                 pessoa.ExcluirPessoa()
                 MsgBox("Excluido com sucesso", MsgBoxStyle.Information, "Informação")
                 atualizaDados()
-
+                limpar()
             Catch ex As Exception
                 MsgBox("Erro ao tentar excluir Pessoa , " & ex.Message & "!", MsgBoxStyle.Critical, "Erro")
             End Try
@@ -305,8 +353,8 @@
         End If
         If MsgBox("Deseja excluir o Dependente :" & vbCrLf & txbNomDepte.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
             Try
-                pessoaDependente.cod_dependente = txbCodDepte.Text
-                pessoaDependente.ExcluirDependente()
+                dependente.cod_dependente = txbCodDepte.Text
+                dependente.ExcluirDependente()
                 MsgBox("Dependente excluido com sucesso", MsgBoxStyle.Information, "Informação")
                 atualizaDados()
 
@@ -335,27 +383,27 @@
                 Exit Sub
             End If
 
-            pessoaDependente.nom_dependente = txbNomDepte.Text
-            pessoaDependente.cod_pessoa = TxbCodPessoa.Text
-            pessoaDependente.nom_apelido = txbApelidoDepte.Text
-            pessoaDependente.dta_nascimento = DtpDtaNascDept.Value.ToShortDateString
-            pessoaDependente.des_observacao = txbObsDepte.Text
-            pessoaDependente.num_telefone = txbFoneDepte.Text
+            dependente.nom_dependente = txbNomDepte.Text
+            dependente.cod_pessoa = TxbCodPessoa.Text
+            dependente.nom_apelido = txbApelidoDepte.Text
+            dependente.dta_nascimento = DtpDtaNascDept.Value.ToShortDateString
+            dependente.des_observacao = txbObsDepte.Text
+            dependente.num_telefone = txbFoneDepte.Text
 
             If atualizarDependente = 1 Then
                 'pegar o ultimo registro
                 Dim ultimo As New DataSet
-                ultimo = pessoaDependente.UltimoDependenteCadastrado
+                ultimo = dependente.UltimoDependenteCadastrado
                 Dim ult As String = ultimo.Tables(0).Rows(0)("ultimo")
-                pessoaDependente.cod_dependente = Convert.ToInt16(ult) + 1
+                dependente.cod_dependente = Convert.ToInt16(ult) + 1
 
-                pessoaDependente.CadastrarDependente()
+                dependente.CadastrarDependente()
                 ultimo.Clear()
                 MsgBox("Dependente cadastrado com sucesso", MsgBoxStyle.OkOnly, "Sucesso")
                 atualizaDadosDependente()
             Else
-                pessoaDependente.cod_dependente = txbCodDepte.Text
-                pessoaDependente.AtualizarDependente()
+                dependente.cod_dependente = txbCodDepte.Text
+                dependente.AtualizarDependente()
                 MsgBox("Pelagem Alterado com sucesso", MsgBoxStyle.OkOnly, "Sucesso")
                 atualizaDadosDependente()
             End If
@@ -410,6 +458,26 @@
         ind_funcionario_old = ""
         ind_ativo_old = ""
         des_email_old = ""
+
+        'limpar funcionario
+        TxbCodFuncaoFunc.Text = ""
+        txbDesFuncaoFunc.Text = ""
+        TxbSalarioFunc.Text = ""
+        TxbCustoHrFunc.Text = ""
+        TxbDtaDemissaoFunc.Text = ""
+        TxbDtaReajusteFunc.Text = ""
+        TxbObsFunc.Text = ""
+
+        cod_funcao_old = ""
+        val_salario_old = ""
+        val_custo_hora_old = ""
+        ind_tipo_salario_old = "M"
+        RbMesFunc.Checked = True
+        dta_admissao_old = ""
+        dta_demissao_old = ""
+        dta_ultimo_reajuste_old = ""
+        des_observacao_func_old = ""
+
 
         'DgvPessoa.DataSource = Nothing
         'DgvDependente.DataSource = Nothing
@@ -545,9 +613,41 @@
             des_observacao_old = ds.Tables(0).Rows(i)("des_observacao").ToString
             ind_cliente_old = ds.Tables(0).Rows(i)("ind_cliente").ToString
             ind_fornecedor_old = ds.Tables(0).Rows(i)("ind_fornecedor").ToString
-            ind_funcionario_old = ds.Tables(0).Rows(i)("ind_funcionario").ToString = "S"
+            ind_funcionario_old = ds.Tables(0).Rows(i)("ind_funcionario").ToString
             ind_ativo_old = ds.Tables(0).Rows(i)("ind_ativo").ToString
             des_email_old = ds.Tables(0).Rows(i)("des_email").ToString
+
+
+            TxbCodFuncaoFunc.Text = ds.Tables(0).Rows(i)("cod_funcao").ToString
+            txbDesFuncaoFunc.Text = ds.Tables(0).Rows(i)("des_funcao").ToString
+            TxbSalarioFunc.Text = ds.Tables(0).Rows(i)("val_salario").ToString
+            TxbCustoHrFunc.Text = ds.Tables(0).Rows(i)("val_custo_hora").ToString
+            DtpAdmissaoFunc.Value = ds.Tables(0).Rows(i)("dta_admissao").ToString
+            TxbDtaDemissaoFunc.Text = ds.Tables(0).Rows(i)("dta_demissao").ToString
+            TxbDtaReajusteFunc.Text = ds.Tables(0).Rows(i)("dta_ultimo_reajuste").ToString
+            TxbObsFunc.Text = ds.Tables(0).Rows(i)("des_observacao_func").ToString
+
+            If ds.Tables(0).Rows(i)("ind_tipo_salario").ToString = "H" Then
+                RbHoraFunc.Checked = True
+            ElseIf ds.Tables(0).Rows(i)("ind_tipo_salario").ToString = "D" Then
+                RbDiaFunc.Checked = True
+            ElseIf ds.Tables(0).Rows(i)("ind_tipo_salario").ToString = "S" Then
+                RbSemanaFunc.Checked = True
+            ElseIf ds.Tables(0).Rows(i)("ind_tipo_salario").ToString = "Q" Then
+                RbQuinzenaFunc.Checked = True
+            ElseIf ds.Tables(0).Rows(i)("ind_tipo_salario").ToString = "M" Then
+                RbMesFunc.Checked = True
+            End If
+
+            cod_funcao_old = ds.Tables(0).Rows(i)("cod_funcao").ToString
+            des_funcao_old = ds.Tables(0).Rows(i)("des_funcao").ToString
+            val_salario_old = ds.Tables(0).Rows(i)("val_salario").ToString
+            val_custo_hora_old = ds.Tables(0).Rows(i)("val_custo_hora").ToString
+            ind_tipo_salario_old = ds.Tables(0).Rows(i)("ind_tipo_salario").ToString
+            dta_admissao_old = ds.Tables(0).Rows(i)("dta_admissao").ToString.Substring(0, 10)
+            dta_demissao_old = ds.Tables(0).Rows(i)("dta_demissao").ToString
+            dta_ultimo_reajuste_old = ds.Tables(0).Rows(i)("dta_ultimo_reajuste").ToString
+            des_observacao_func_old = ds.Tables(0).Rows(i)("des_observacao_func").ToString
 
             If TxbCodPessoa.Text <> "" Then
                 BtnDependente.Enabled = True
@@ -562,6 +662,8 @@
     Private Sub FrmItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpar()
         BtnPrincipal.Enabled = False
+        BtnDependente.Enabled = False
+        BtnFuncionario.Enabled = False
     End Sub
 
     Private Sub DgvPessoa_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvPessoa.CellClick
@@ -679,6 +781,32 @@
         If des_observacao_old <> TxbObservacao.Text Then
             msg = msg & vbCrLf & "Observação" & vbCrLf & "Anterior: " & des_observacao_old & vbCrLf & " Nova : " & TxbObservacao.Text
         End If
+
+        '*******************************************************
+        'FUNCIONARIO
+        '*******************************************************
+        If cod_funcao_old <> TxbCodFuncaoFunc.Text Then
+            msg = msg & vbCrLf & "Função Funcionario" & vbCrLf & "Anterior: " & des_funcao_old & vbCrLf & " Nova : " & txbDesFuncaoFunc.Text
+        End If
+        If val_salario_old <> TxbSalarioFunc.Text Then
+            msg = msg & vbCrLf & "Salario Funcionario" & vbCrLf & "Anterior: " & val_salario_old & vbCrLf & " Nova : " & TxbSalarioFunc.Text
+        End If
+        If val_custo_hora_old <> TxbCustoHrFunc.Text Then
+            msg = msg & vbCrLf & "Custo Hora Funcionario" & vbCrLf & "Anterior: " & val_custo_hora_old & vbCrLf & " Nova : " & TxbCustoHrFunc.Text
+        End If
+        If dta_admissao_old <> DtpAdmissaoFunc.Value.ToShortDateString Then
+            msg = msg & vbCrLf & "Data Admissão Funcionario" & vbCrLf & "Anterior: " & dta_admissao_old & vbCrLf & " Nova : " & DtpAdmissaoFunc.Value.ToShortDateString
+        End If
+        If dta_demissao_old <> TxbDtaDemissaoFunc.Text Then
+            msg = msg & vbCrLf & "Data Demissão Funcionario" & vbCrLf & "Anterior: " & dta_nascimento_old & vbCrLf & " Nova : " & TxbDtaDemissaoFunc.Text
+        End If
+        If dta_ultimo_reajuste_old <> TxbDtaReajusteFunc.Text Then
+            msg = msg & vbCrLf & "Data Ultimo Reajuste" & vbCrLf & "Anterior: " & dta_ultimo_reajuste_old & vbCrLf & " Nova : " & TxbDtaReajusteFunc.Text
+        End If
+        If des_observacao_func_old <> TxbObsFunc.Text Then
+            msg = msg & vbCrLf & "Observação Funcionario" & vbCrLf & "Anterior: " & des_observacao_func_old & vbCrLf & " Nova : " & TxbObsFunc.Text
+        End If
+
 
         If msg <> "" Then
             If MsgBox("Deseja salvar a alteraçã em:" & vbCrLf & msg & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then

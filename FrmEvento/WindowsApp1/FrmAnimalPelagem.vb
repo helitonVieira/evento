@@ -83,7 +83,7 @@ Public Class FrmAnimalPelagem
                 pelagem.ExcluirPelagem()
                 MsgBox("Pelagem excluido com sucesso", MsgBoxStyle.Information, "Informação")
                 atualizaDados()
-
+                limpar()
             Catch ex As Exception
                 MsgBox("Erro ao excluir Pelagem, " & ex.Message & "!", MsgBoxStyle.Critical, "Erro")
 

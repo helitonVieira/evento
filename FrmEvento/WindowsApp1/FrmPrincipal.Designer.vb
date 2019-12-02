@@ -23,11 +23,13 @@ Partial Class FrmPrincipal
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.AdministrativoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DespesaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EventoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EventoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ItemToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PessoaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InventarioRapidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PDV1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,16 +39,19 @@ Partial Class FrmPrincipal
         Me.RelMargemDeLucroBrutoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelResumoIngressosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelDespesaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LicenciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LicenciaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ParametrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InventarioRapidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AdministrativoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DespesaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AnimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EspécieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RaçaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PelagemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VacinaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ParasitaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EventosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EventoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImprimirIngressoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ParametrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ParametrosSistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LicençaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TxbCodItem = New System.Windows.Forms.TextBox()
         Me.LbDescricaoItem = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -115,10 +120,7 @@ Partial Class FrmPrincipal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BtPagamento = New System.Windows.Forms.Button()
-        Me.RaçaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PelagemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VacinaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ParasitaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FunçãoFuncionarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DgvItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgvVenda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,46 +143,62 @@ Partial Class FrmPrincipal
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Purple
-        Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EventoToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.LicenciaToolStripMenuItem, Me.ParametrosToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.AdministrativoToolStripMenuItem, Me.PetToolStripMenuItem})
+        Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrativoToolStripMenuItem, Me.EventoToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.PetToolStripMenuItem, Me.EventosToolStripMenuItem, Me.ParametrosToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1094, 29)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1094, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'AdministrativoToolStripMenuItem
+        '
+        Me.AdministrativoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DespesaToolStripMenuItem})
+        Me.AdministrativoToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.AdministrativoToolStripMenuItem.Name = "AdministrativoToolStripMenuItem"
+        Me.AdministrativoToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
+        Me.AdministrativoToolStripMenuItem.Text = "Administrativo"
+        '
+        'DespesaToolStripMenuItem
+        '
+        Me.DespesaToolStripMenuItem.Name = "DespesaToolStripMenuItem"
+        Me.DespesaToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.DespesaToolStripMenuItem.Text = "Despesa"
+        '
         'EventoToolStripMenuItem
         '
-        Me.EventoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EventoToolStripMenuItem1, Me.ItemToolStripMenuItem1, Me.PessoaToolStripMenuItem})
+        Me.EventoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PessoaToolStripMenuItem})
         Me.EventoToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.EventoToolStripMenuItem.Name = "EventoToolStripMenuItem"
-        Me.EventoToolStripMenuItem.Size = New System.Drawing.Size(84, 25)
-        Me.EventoToolStripMenuItem.Text = "Cadastro"
-        '
-        'EventoToolStripMenuItem1
-        '
-        Me.EventoToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImToolStripMenuItem})
-        Me.EventoToolStripMenuItem1.Name = "EventoToolStripMenuItem1"
-        Me.EventoToolStripMenuItem1.Size = New System.Drawing.Size(127, 26)
-        Me.EventoToolStripMenuItem1.Text = "Evento"
-        '
-        'ImToolStripMenuItem
-        '
-        Me.ImToolStripMenuItem.Name = "ImToolStripMenuItem"
-        Me.ImToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
-        Me.ImToolStripMenuItem.Text = "Imprimir Ingresso"
-        '
-        'ItemToolStripMenuItem1
-        '
-        Me.ItemToolStripMenuItem1.Name = "ItemToolStripMenuItem1"
-        Me.ItemToolStripMenuItem1.Size = New System.Drawing.Size(127, 26)
-        Me.ItemToolStripMenuItem1.Text = "Item"
+        Me.EventoToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
+        Me.EventoToolStripMenuItem.Text = "Pessoa"
         '
         'PessoaToolStripMenuItem
         '
+        Me.PessoaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FunçãoFuncionarioToolStripMenuItem})
         Me.PessoaToolStripMenuItem.Name = "PessoaToolStripMenuItem"
-        Me.PessoaToolStripMenuItem.Size = New System.Drawing.Size(127, 26)
+        Me.PessoaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PessoaToolStripMenuItem.Text = "Pessoa"
+        '
+        'EstoqueToolStripMenuItem
+        '
+        Me.EstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemToolStripMenuItem, Me.InventarioRapidoToolStripMenuItem})
+        Me.EstoqueToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.EstoqueToolStripMenuItem.Name = "EstoqueToolStripMenuItem"
+        Me.EstoqueToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.EstoqueToolStripMenuItem.Text = "Estoque"
+        '
+        'ItemToolStripMenuItem
+        '
+        Me.ItemToolStripMenuItem.Name = "ItemToolStripMenuItem"
+        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.ItemToolStripMenuItem.Text = "Item"
+        '
+        'InventarioRapidoToolStripMenuItem
+        '
+        Me.InventarioRapidoToolStripMenuItem.Name = "InventarioRapidoToolStripMenuItem"
+        Me.InventarioRapidoToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.InventarioRapidoToolStripMenuItem.Text = "Inventario Rapido"
         '
         'VendasToolStripMenuItem
         '
@@ -189,7 +207,7 @@ Partial Class FrmPrincipal
         Me.VendasToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.VendasToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.VendasToolStripMenuItem.Name = "VendasToolStripMenuItem"
-        Me.VendasToolStripMenuItem.Size = New System.Drawing.Size(72, 25)
+        Me.VendasToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
         Me.VendasToolStripMenuItem.Text = "Vendas"
         '
         'BarToolStripMenuItem
@@ -198,19 +216,19 @@ Partial Class FrmPrincipal
         Me.BarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PDV1ToolStripMenuItem})
         Me.BarToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.BarToolStripMenuItem.Name = "BarToolStripMenuItem"
-        Me.BarToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
+        Me.BarToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.BarToolStripMenuItem.Text = "PDV"
         '
         'PDV1ToolStripMenuItem
         '
         Me.PDV1ToolStripMenuItem.Name = "PDV1ToolStripMenuItem"
-        Me.PDV1ToolStripMenuItem.Size = New System.Drawing.Size(123, 26)
+        Me.PDV1ToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
         Me.PDV1ToolStripMenuItem.Text = "PDV 1"
         '
         'ImprimirIngressoToolStripMenuItem
         '
         Me.ImprimirIngressoToolStripMenuItem.Name = "ImprimirIngressoToolStripMenuItem"
-        Me.ImprimirIngressoToolStripMenuItem.Size = New System.Drawing.Size(204, 26)
+        Me.ImprimirIngressoToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.ImprimirIngressoToolStripMenuItem.Text = "Imprimir Ingresso"
         '
         'RelatóriosToolStripMenuItem
@@ -218,102 +236,118 @@ Partial Class FrmPrincipal
         Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ResumoVendasToolStripMenuItem, Me.RelMargemDeLucroBrutoToolStripMenuItem, Me.RelResumoIngressosToolStripMenuItem, Me.RelDespesaToolStripMenuItem})
         Me.RelatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
-        Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(92, 25)
+        Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.RelatóriosToolStripMenuItem.Text = "Relatórios"
         '
         'ResumoVendasToolStripMenuItem
         '
         Me.ResumoVendasToolStripMenuItem.Name = "ResumoVendasToolStripMenuItem"
-        Me.ResumoVendasToolStripMenuItem.Size = New System.Drawing.Size(274, 26)
+        Me.ResumoVendasToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.ResumoVendasToolStripMenuItem.Text = "Rel. Resumo Vendas"
         '
         'RelMargemDeLucroBrutoToolStripMenuItem
         '
         Me.RelMargemDeLucroBrutoToolStripMenuItem.Name = "RelMargemDeLucroBrutoToolStripMenuItem"
-        Me.RelMargemDeLucroBrutoToolStripMenuItem.Size = New System.Drawing.Size(274, 26)
+        Me.RelMargemDeLucroBrutoToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.RelMargemDeLucroBrutoToolStripMenuItem.Text = "Rel. Margem de Lucro Bruto"
         '
         'RelResumoIngressosToolStripMenuItem
         '
         Me.RelResumoIngressosToolStripMenuItem.Name = "RelResumoIngressosToolStripMenuItem"
-        Me.RelResumoIngressosToolStripMenuItem.Size = New System.Drawing.Size(274, 26)
+        Me.RelResumoIngressosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.RelResumoIngressosToolStripMenuItem.Text = "Rel. Resumo Ingressos"
         '
         'RelDespesaToolStripMenuItem
         '
         Me.RelDespesaToolStripMenuItem.Name = "RelDespesaToolStripMenuItem"
-        Me.RelDespesaToolStripMenuItem.Size = New System.Drawing.Size(274, 26)
+        Me.RelDespesaToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.RelDespesaToolStripMenuItem.Text = "Rel. Despesa"
-        '
-        'LicenciaToolStripMenuItem
-        '
-        Me.LicenciaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LicenciaToolStripMenuItem1})
-        Me.LicenciaToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.LicenciaToolStripMenuItem.Name = "LicenciaToolStripMenuItem"
-        Me.LicenciaToolStripMenuItem.Size = New System.Drawing.Size(77, 25)
-        Me.LicenciaToolStripMenuItem.Text = "Licencia"
-        '
-        'LicenciaToolStripMenuItem1
-        '
-        Me.LicenciaToolStripMenuItem1.Name = "LicenciaToolStripMenuItem1"
-        Me.LicenciaToolStripMenuItem1.Size = New System.Drawing.Size(135, 26)
-        Me.LicenciaToolStripMenuItem1.Text = "Licencia"
-        '
-        'ParametrosToolStripMenuItem
-        '
-        Me.ParametrosToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.ParametrosToolStripMenuItem.Name = "ParametrosToolStripMenuItem"
-        Me.ParametrosToolStripMenuItem.Size = New System.Drawing.Size(101, 25)
-        Me.ParametrosToolStripMenuItem.Text = "Parametros"
-        '
-        'EstoqueToolStripMenuItem
-        '
-        Me.EstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InventarioRapidoToolStripMenuItem})
-        Me.EstoqueToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.EstoqueToolStripMenuItem.Name = "EstoqueToolStripMenuItem"
-        Me.EstoqueToolStripMenuItem.Size = New System.Drawing.Size(77, 25)
-        Me.EstoqueToolStripMenuItem.Text = "Estoque"
-        '
-        'InventarioRapidoToolStripMenuItem
-        '
-        Me.InventarioRapidoToolStripMenuItem.Name = "InventarioRapidoToolStripMenuItem"
-        Me.InventarioRapidoToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
-        Me.InventarioRapidoToolStripMenuItem.Text = "Inventario Rapido"
-        '
-        'AdministrativoToolStripMenuItem
-        '
-        Me.AdministrativoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DespesaToolStripMenuItem})
-        Me.AdministrativoToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.AdministrativoToolStripMenuItem.Name = "AdministrativoToolStripMenuItem"
-        Me.AdministrativoToolStripMenuItem.Size = New System.Drawing.Size(124, 25)
-        Me.AdministrativoToolStripMenuItem.Text = "Administrativo"
-        '
-        'DespesaToolStripMenuItem
-        '
-        Me.DespesaToolStripMenuItem.Name = "DespesaToolStripMenuItem"
-        Me.DespesaToolStripMenuItem.Size = New System.Drawing.Size(138, 26)
-        Me.DespesaToolStripMenuItem.Text = "Despesa"
         '
         'PetToolStripMenuItem
         '
         Me.PetToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AnimalToolStripMenuItem})
         Me.PetToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.PetToolStripMenuItem.Name = "PetToolStripMenuItem"
-        Me.PetToolStripMenuItem.Size = New System.Drawing.Size(43, 25)
+        Me.PetToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
         Me.PetToolStripMenuItem.Text = "Pet"
         '
         'AnimalToolStripMenuItem
         '
         Me.AnimalToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EspécieToolStripMenuItem, Me.RaçaToolStripMenuItem, Me.PelagemToolStripMenuItem, Me.VacinaToolStripMenuItem, Me.ParasitaToolStripMenuItem})
         Me.AnimalToolStripMenuItem.Name = "AnimalToolStripMenuItem"
-        Me.AnimalToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.AnimalToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
         Me.AnimalToolStripMenuItem.Text = "Animal"
         '
         'EspécieToolStripMenuItem
         '
         Me.EspécieToolStripMenuItem.Name = "EspécieToolStripMenuItem"
-        Me.EspécieToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.EspécieToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.EspécieToolStripMenuItem.Text = "Espécie"
+        '
+        'RaçaToolStripMenuItem
+        '
+        Me.RaçaToolStripMenuItem.Name = "RaçaToolStripMenuItem"
+        Me.RaçaToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.RaçaToolStripMenuItem.Text = "Raça"
+        '
+        'PelagemToolStripMenuItem
+        '
+        Me.PelagemToolStripMenuItem.Name = "PelagemToolStripMenuItem"
+        Me.PelagemToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.PelagemToolStripMenuItem.Text = "Pelagem"
+        '
+        'VacinaToolStripMenuItem
+        '
+        Me.VacinaToolStripMenuItem.Name = "VacinaToolStripMenuItem"
+        Me.VacinaToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.VacinaToolStripMenuItem.Text = "Vacina"
+        '
+        'ParasitaToolStripMenuItem
+        '
+        Me.ParasitaToolStripMenuItem.Name = "ParasitaToolStripMenuItem"
+        Me.ParasitaToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.ParasitaToolStripMenuItem.Text = "Parasita"
+        '
+        'EventosToolStripMenuItem
+        '
+        Me.EventosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EventoToolStripMenuItem2})
+        Me.EventosToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.EventosToolStripMenuItem.Name = "EventosToolStripMenuItem"
+        Me.EventosToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
+        Me.EventosToolStripMenuItem.Text = "Eventos"
+        '
+        'EventoToolStripMenuItem2
+        '
+        Me.EventoToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImprimirIngressoToolStripMenuItem1})
+        Me.EventoToolStripMenuItem2.Name = "EventoToolStripMenuItem2"
+        Me.EventoToolStripMenuItem2.Size = New System.Drawing.Size(109, 22)
+        Me.EventoToolStripMenuItem2.Text = "Evento"
+        '
+        'ImprimirIngressoToolStripMenuItem1
+        '
+        Me.ImprimirIngressoToolStripMenuItem1.Name = "ImprimirIngressoToolStripMenuItem1"
+        Me.ImprimirIngressoToolStripMenuItem1.Size = New System.Drawing.Size(163, 22)
+        Me.ImprimirIngressoToolStripMenuItem1.Text = "Imprimir Ingresso"
+        '
+        'ParametrosToolStripMenuItem
+        '
+        Me.ParametrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ParametrosSistemaToolStripMenuItem, Me.LicençaToolStripMenuItem})
+        Me.ParametrosToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.ParametrosToolStripMenuItem.Name = "ParametrosToolStripMenuItem"
+        Me.ParametrosToolStripMenuItem.Size = New System.Drawing.Size(58, 20)
+        Me.ParametrosToolStripMenuItem.Text = "Sistema"
+        '
+        'ParametrosSistemaToolStripMenuItem
+        '
+        Me.ParametrosSistemaToolStripMenuItem.Name = "ParametrosSistemaToolStripMenuItem"
+        Me.ParametrosSistemaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.ParametrosSistemaToolStripMenuItem.Text = "Parametros Sistema"
+        '
+        'LicençaToolStripMenuItem
+        '
+        Me.LicençaToolStripMenuItem.Name = "LicençaToolStripMenuItem"
+        Me.LicençaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.LicençaToolStripMenuItem.Text = "Licença"
         '
         'TxbCodItem
         '
@@ -1112,29 +1146,11 @@ Partial Class FrmPrincipal
         Me.BtPagamento.Text = "Pagamento - F5"
         Me.BtPagamento.UseVisualStyleBackColor = False
         '
-        'RaçaToolStripMenuItem
+        'FunçãoFuncionarioToolStripMenuItem
         '
-        Me.RaçaToolStripMenuItem.Name = "RaçaToolStripMenuItem"
-        Me.RaçaToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.RaçaToolStripMenuItem.Text = "Raça"
-        '
-        'PelagemToolStripMenuItem
-        '
-        Me.PelagemToolStripMenuItem.Name = "PelagemToolStripMenuItem"
-        Me.PelagemToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.PelagemToolStripMenuItem.Text = "Pelagem"
-        '
-        'VacinaToolStripMenuItem
-        '
-        Me.VacinaToolStripMenuItem.Name = "VacinaToolStripMenuItem"
-        Me.VacinaToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.VacinaToolStripMenuItem.Text = "Vacina"
-        '
-        'ParasitaToolStripMenuItem
-        '
-        Me.ParasitaToolStripMenuItem.Name = "ParasitaToolStripMenuItem"
-        Me.ParasitaToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.ParasitaToolStripMenuItem.Text = "Parasita"
+        Me.FunçãoFuncionarioToolStripMenuItem.Name = "FunçãoFuncionarioToolStripMenuItem"
+        Me.FunçãoFuncionarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FunçãoFuncionarioToolStripMenuItem.Text = "Função Funcionario"
         '
         'FrmPrincipal
         '
@@ -1193,14 +1209,10 @@ Partial Class FrmPrincipal
     Friend WithEvents RelatóriosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VendasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EventoToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ItemToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents DgvItem As DataGridView
     Friend WithEvents ResumoVendasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PrintDocRelResumoVenda As Printing.PrintDocument
-    Friend WithEvents LicenciaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LicenciaToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents lbLicencia As Label
     Friend WithEvents ParametrosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EstoqueToolStripMenuItem As ToolStripMenuItem
@@ -1223,7 +1235,6 @@ Partial Class FrmPrincipal
     Friend WithEvents TxbTotalGeral As TextBox
     Friend WithEvents btnRemoverLinha As Button
     Friend WithEvents BtnImprimirFicha As Button
-    Friend WithEvents ImToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
@@ -1276,4 +1287,11 @@ Partial Class FrmPrincipal
     Friend WithEvents PelagemToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VacinaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ParasitaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ItemToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EventosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EventoToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ImprimirIngressoToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ParametrosSistemaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LicençaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FunçãoFuncionarioToolStripMenuItem As ToolStripMenuItem
 End Class

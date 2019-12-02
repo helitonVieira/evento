@@ -133,3 +133,4 @@ D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalPelagem
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalRaca.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalVacina.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalControleParasita.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmFuncaoFuncionario.resources
