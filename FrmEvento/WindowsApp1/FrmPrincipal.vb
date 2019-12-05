@@ -897,6 +897,14 @@
         FrmFuncaoFuncionario.ShowDialog()
     End Sub
 
+    Private Sub AlmoxarifadoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AlmoxarifadoToolStripMenuItem1.Click
+        FrmAlmoxarifado.ShowDialog()
+    End Sub
+
+    Private Sub SeçãoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SeçãoToolStripMenuItem.Click
+        FrmSecao.Show()
+    End Sub
+
     Private Sub RaçaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RaçaToolStripMenuItem.Click
         FrmAnimalRaca.ShowDialog()
     End Sub

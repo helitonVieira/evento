@@ -106,7 +106,6 @@ D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\pt-BR\Microsoft.VisualStudio
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\Evento.vbprojAssemblyReference.cache
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.exe.config
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmDespesa.resources
-D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmPadrao.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmPdv1.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmPesquisa.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmEscolherEvento.resources
@@ -134,3 +133,9 @@ D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalRaca.re
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalVacina.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalControleParasita.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmFuncaoFuncionario.resources
+D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\Controles.dll
+D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\Controles.pdb
+D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\Controles.xml
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmCadPadrao.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAlmoxarifado.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmSecao.resources

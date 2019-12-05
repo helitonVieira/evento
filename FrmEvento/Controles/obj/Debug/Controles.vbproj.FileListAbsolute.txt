@@ -1,0 +1,10 @@
+D:\source\repos\FrmEvento\Controles\bin\Debug\Controles.dll
+D:\source\repos\FrmEvento\Controles\bin\Debug\Controles.pdb
+D:\source\repos\FrmEvento\Controles\bin\Debug\Controles.xml
+D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.Resources.resources
+D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.vbproj.GenerateResource.cache
+D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.dll
+D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.xml
+D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.pdb
+D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.FrmPadrao.resources
+D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.vbprojAssemblyReference.cache

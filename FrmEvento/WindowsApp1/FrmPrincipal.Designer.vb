@@ -27,9 +27,15 @@ Partial Class FrmPrincipal
         Me.DespesaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EventoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PessoaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FunçãoFuncionarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AlmoxarifadoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SeçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CategoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SubCategoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InventarioRapidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AlmoxarifadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PDV1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -117,10 +123,9 @@ Partial Class FrmPrincipal
         Me.LbCodCliente = New System.Windows.Forms.Label()
         Me.LbNomCliente = New System.Windows.Forms.Label()
         Me.GbBotaoAtalho = New System.Windows.Forms.GroupBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BtPagamento = New System.Windows.Forms.Button()
-        Me.FunçãoFuncionarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DgvItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgvVenda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -177,12 +182,18 @@ Partial Class FrmPrincipal
         '
         Me.PessoaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FunçãoFuncionarioToolStripMenuItem})
         Me.PessoaToolStripMenuItem.Name = "PessoaToolStripMenuItem"
-        Me.PessoaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PessoaToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
         Me.PessoaToolStripMenuItem.Text = "Pessoa"
+        '
+        'FunçãoFuncionarioToolStripMenuItem
+        '
+        Me.FunçãoFuncionarioToolStripMenuItem.Name = "FunçãoFuncionarioToolStripMenuItem"
+        Me.FunçãoFuncionarioToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.FunçãoFuncionarioToolStripMenuItem.Text = "Função Funcionario"
         '
         'EstoqueToolStripMenuItem
         '
-        Me.EstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemToolStripMenuItem, Me.InventarioRapidoToolStripMenuItem})
+        Me.EstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemToolStripMenuItem, Me.InventarioRapidoToolStripMenuItem, Me.AlmoxarifadoToolStripMenuItem})
         Me.EstoqueToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.EstoqueToolStripMenuItem.Name = "EstoqueToolStripMenuItem"
         Me.EstoqueToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
@@ -190,15 +201,46 @@ Partial Class FrmPrincipal
         '
         'ItemToolStripMenuItem
         '
+        Me.ItemToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlmoxarifadoToolStripMenuItem1, Me.SeçãoToolStripMenuItem, Me.CategoriaToolStripMenuItem, Me.SubCategoriaToolStripMenuItem})
         Me.ItemToolStripMenuItem.Name = "ItemToolStripMenuItem"
-        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ItemToolStripMenuItem.Text = "Item"
+        '
+        'AlmoxarifadoToolStripMenuItem1
+        '
+        Me.AlmoxarifadoToolStripMenuItem1.Name = "AlmoxarifadoToolStripMenuItem1"
+        Me.AlmoxarifadoToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.AlmoxarifadoToolStripMenuItem1.Text = "Almoxarifado"
+        '
+        'SeçãoToolStripMenuItem
+        '
+        Me.SeçãoToolStripMenuItem.Name = "SeçãoToolStripMenuItem"
+        Me.SeçãoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SeçãoToolStripMenuItem.Text = "Seção"
+        '
+        'CategoriaToolStripMenuItem
+        '
+        Me.CategoriaToolStripMenuItem.Name = "CategoriaToolStripMenuItem"
+        Me.CategoriaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CategoriaToolStripMenuItem.Text = "Categoria"
+        '
+        'SubCategoriaToolStripMenuItem
+        '
+        Me.SubCategoriaToolStripMenuItem.Name = "SubCategoriaToolStripMenuItem"
+        Me.SubCategoriaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SubCategoriaToolStripMenuItem.Text = "SubCategoria"
         '
         'InventarioRapidoToolStripMenuItem
         '
         Me.InventarioRapidoToolStripMenuItem.Name = "InventarioRapidoToolStripMenuItem"
-        Me.InventarioRapidoToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.InventarioRapidoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.InventarioRapidoToolStripMenuItem.Text = "Inventario Rapido"
+        '
+        'AlmoxarifadoToolStripMenuItem
+        '
+        Me.AlmoxarifadoToolStripMenuItem.Name = "AlmoxarifadoToolStripMenuItem"
+        Me.AlmoxarifadoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AlmoxarifadoToolStripMenuItem.Text = "Almoxarifado"
         '
         'VendasToolStripMenuItem
         '
@@ -1114,14 +1156,6 @@ Partial Class FrmPrincipal
         Me.GbBotaoAtalho.TabIndex = 16
         Me.GbBotaoAtalho.TabStop = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(26, 287)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(273, 193)
-        Me.PictureBox1.TabIndex = 29
-        Me.PictureBox1.TabStop = False
-        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Purple
@@ -1146,11 +1180,13 @@ Partial Class FrmPrincipal
         Me.BtPagamento.Text = "Pagamento - F5"
         Me.BtPagamento.UseVisualStyleBackColor = False
         '
-        'FunçãoFuncionarioToolStripMenuItem
+        'PictureBox1
         '
-        Me.FunçãoFuncionarioToolStripMenuItem.Name = "FunçãoFuncionarioToolStripMenuItem"
-        Me.FunçãoFuncionarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.FunçãoFuncionarioToolStripMenuItem.Text = "Função Funcionario"
+        Me.PictureBox1.Location = New System.Drawing.Point(26, 287)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(273, 193)
+        Me.PictureBox1.TabIndex = 29
+        Me.PictureBox1.TabStop = False
         '
         'FrmPrincipal
         '
@@ -1294,4 +1330,9 @@ Partial Class FrmPrincipal
     Friend WithEvents ParametrosSistemaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LicençaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FunçãoFuncionarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AlmoxarifadoToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents SeçãoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CategoriaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SubCategoriaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AlmoxarifadoToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -25,6 +25,15 @@ Partial Class FrmPessoa
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPessoa))
         Me.GbNavegador = New System.Windows.Forms.GroupBox()
         Me.BtnCsv = New System.Windows.Forms.Button()
+        Me.BtnUltimoReg = New System.Windows.Forms.Button()
+        Me.BtnAnterior = New System.Windows.Forms.Button()
+        Me.BtnProximo = New System.Windows.Forms.Button()
+        Me.BtnPrimeiroReg = New System.Windows.Forms.Button()
+        Me.BtnGrid = New System.Windows.Forms.Button()
+        Me.BtnPesquisa = New System.Windows.Forms.Button()
+        Me.BtnLimpar = New System.Windows.Forms.Button()
+        Me.BtnSalvar = New System.Windows.Forms.Button()
+        Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TxbCep = New System.Windows.Forms.TextBox()
         Me.TxbIeRg = New System.Windows.Forms.TextBox()
@@ -76,6 +85,9 @@ Partial Class FrmPessoa
         Me.txbObsDepte = New System.Windows.Forms.TextBox()
         Me.Label = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
+        Me.BtnLimpaDept = New System.Windows.Forms.Button()
+        Me.BtnSalvaDepte = New System.Windows.Forms.Button()
+        Me.BtnExcluiDept = New System.Windows.Forms.Button()
         Me.txbFoneDepte = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txbApelidoDepte = New System.Windows.Forms.TextBox()
@@ -104,24 +116,12 @@ Partial Class FrmPessoa
         Me.Label20 = New System.Windows.Forms.Label()
         Me.TxbSalarioFunc = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
+        Me.BtnBuscaFuncaoFunc = New System.Windows.Forms.Button()
         Me.txbDesFuncaoFunc = New System.Windows.Forms.TextBox()
         Me.TxbCodFuncaoFunc = New System.Windows.Forms.TextBox()
         Me.BtnDependente = New System.Windows.Forms.Button()
         Me.BtnFuncionario = New System.Windows.Forms.Button()
         Me.BtnPrincipal = New System.Windows.Forms.Button()
-        Me.BtnUltimoReg = New System.Windows.Forms.Button()
-        Me.BtnAnterior = New System.Windows.Forms.Button()
-        Me.BtnProximo = New System.Windows.Forms.Button()
-        Me.BtnPrimeiroReg = New System.Windows.Forms.Button()
-        Me.BtnGrid = New System.Windows.Forms.Button()
-        Me.BtnPesquisa = New System.Windows.Forms.Button()
-        Me.BtnLimpar = New System.Windows.Forms.Button()
-        Me.BtnSalvar = New System.Windows.Forms.Button()
-        Me.BtnExcluir = New System.Windows.Forms.Button()
-        Me.BtnLimpaDept = New System.Windows.Forms.Button()
-        Me.BtnSalvaDepte = New System.Windows.Forms.Button()
-        Me.BtnExcluiDept = New System.Windows.Forms.Button()
-        Me.BtnBuscaFuncaoFunc = New System.Windows.Forms.Button()
         Me.GbNavegador.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -165,6 +165,89 @@ Partial Class FrmPessoa
         Me.BtnCsv.TabIndex = 26
         Me.BtnCsv.Text = "CSV"
         Me.BtnCsv.UseVisualStyleBackColor = True
+        '
+        'BtnUltimoReg
+        '
+        Me.BtnUltimoReg.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.BtnUltimoReg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BtnUltimoReg.Image = CType(resources.GetObject("BtnUltimoReg.Image"), System.Drawing.Image)
+        Me.BtnUltimoReg.Location = New System.Drawing.Point(355, 10)
+        Me.BtnUltimoReg.Name = "BtnUltimoReg"
+        Me.BtnUltimoReg.Size = New System.Drawing.Size(32, 31)
+        Me.BtnUltimoReg.TabIndex = 30
+        Me.BtnUltimoReg.UseVisualStyleBackColor = True
+        '
+        'BtnAnterior
+        '
+        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
+        Me.BtnAnterior.Location = New System.Drawing.Point(287, 10)
+        Me.BtnAnterior.Name = "BtnAnterior"
+        Me.BtnAnterior.Size = New System.Drawing.Size(32, 31)
+        Me.BtnAnterior.TabIndex = 28
+        Me.BtnAnterior.UseVisualStyleBackColor = True
+        '
+        'BtnProximo
+        '
+        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
+        Me.BtnProximo.Location = New System.Drawing.Point(321, 10)
+        Me.BtnProximo.Name = "BtnProximo"
+        Me.BtnProximo.Size = New System.Drawing.Size(32, 31)
+        Me.BtnProximo.TabIndex = 29
+        Me.BtnProximo.UseVisualStyleBackColor = True
+        '
+        'BtnPrimeiroReg
+        '
+        Me.BtnPrimeiroReg.Image = CType(resources.GetObject("BtnPrimeiroReg.Image"), System.Drawing.Image)
+        Me.BtnPrimeiroReg.Location = New System.Drawing.Point(253, 10)
+        Me.BtnPrimeiroReg.Name = "BtnPrimeiroReg"
+        Me.BtnPrimeiroReg.Size = New System.Drawing.Size(32, 31)
+        Me.BtnPrimeiroReg.TabIndex = 27
+        Me.BtnPrimeiroReg.UseVisualStyleBackColor = True
+        '
+        'BtnGrid
+        '
+        Me.BtnGrid.Image = CType(resources.GetObject("BtnGrid.Image"), System.Drawing.Image)
+        Me.BtnGrid.Location = New System.Drawing.Point(150, 10)
+        Me.BtnGrid.Name = "BtnGrid"
+        Me.BtnGrid.Size = New System.Drawing.Size(32, 31)
+        Me.BtnGrid.TabIndex = 25
+        Me.BtnGrid.UseVisualStyleBackColor = True
+        '
+        'BtnPesquisa
+        '
+        Me.BtnPesquisa.Image = CType(resources.GetObject("BtnPesquisa.Image"), System.Drawing.Image)
+        Me.BtnPesquisa.Location = New System.Drawing.Point(78, 10)
+        Me.BtnPesquisa.Name = "BtnPesquisa"
+        Me.BtnPesquisa.Size = New System.Drawing.Size(32, 31)
+        Me.BtnPesquisa.TabIndex = 23
+        Me.BtnPesquisa.UseVisualStyleBackColor = True
+        '
+        'BtnLimpar
+        '
+        Me.BtnLimpar.Image = CType(resources.GetObject("BtnLimpar.Image"), System.Drawing.Image)
+        Me.BtnLimpar.Location = New System.Drawing.Point(114, 10)
+        Me.BtnLimpar.Name = "BtnLimpar"
+        Me.BtnLimpar.Size = New System.Drawing.Size(32, 31)
+        Me.BtnLimpar.TabIndex = 24
+        Me.BtnLimpar.UseVisualStyleBackColor = True
+        '
+        'BtnSalvar
+        '
+        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
+        Me.BtnSalvar.Location = New System.Drawing.Point(6, 10)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(32, 31)
+        Me.BtnSalvar.TabIndex = 21
+        Me.BtnSalvar.UseVisualStyleBackColor = True
+        '
+        'BtnExcluir
+        '
+        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
+        Me.BtnExcluir.Location = New System.Drawing.Point(42, 10)
+        Me.BtnExcluir.Name = "BtnExcluir"
+        Me.BtnExcluir.Size = New System.Drawing.Size(32, 31)
+        Me.BtnExcluir.TabIndex = 22
+        Me.BtnExcluir.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -674,6 +757,33 @@ Partial Class FrmPessoa
         Me.Label26.TabIndex = 42
         Me.Label26.Text = "Dta.Nasc:"
         '
+        'BtnLimpaDept
+        '
+        Me.BtnLimpaDept.Image = CType(resources.GetObject("BtnLimpaDept.Image"), System.Drawing.Image)
+        Me.BtnLimpaDept.Location = New System.Drawing.Point(424, 85)
+        Me.BtnLimpaDept.Name = "BtnLimpaDept"
+        Me.BtnLimpaDept.Size = New System.Drawing.Size(33, 33)
+        Me.BtnLimpaDept.TabIndex = 42
+        Me.BtnLimpaDept.UseVisualStyleBackColor = True
+        '
+        'BtnSalvaDepte
+        '
+        Me.BtnSalvaDepte.Image = CType(resources.GetObject("BtnSalvaDepte.Image"), System.Drawing.Image)
+        Me.BtnSalvaDepte.Location = New System.Drawing.Point(351, 85)
+        Me.BtnSalvaDepte.Name = "BtnSalvaDepte"
+        Me.BtnSalvaDepte.Size = New System.Drawing.Size(33, 33)
+        Me.BtnSalvaDepte.TabIndex = 40
+        Me.BtnSalvaDepte.UseVisualStyleBackColor = True
+        '
+        'BtnExcluiDept
+        '
+        Me.BtnExcluiDept.Image = CType(resources.GetObject("BtnExcluiDept.Image"), System.Drawing.Image)
+        Me.BtnExcluiDept.Location = New System.Drawing.Point(388, 85)
+        Me.BtnExcluiDept.Name = "BtnExcluiDept"
+        Me.BtnExcluiDept.Size = New System.Drawing.Size(33, 33)
+        Me.BtnExcluiDept.TabIndex = 41
+        Me.BtnExcluiDept.UseVisualStyleBackColor = True
+        '
         'txbFoneDepte
         '
         Me.txbFoneDepte.Location = New System.Drawing.Point(72, 59)
@@ -947,6 +1057,15 @@ Partial Class FrmPessoa
         Me.Label19.TabIndex = 40
         Me.Label19.Text = "Salário:"
         '
+        'BtnBuscaFuncaoFunc
+        '
+        Me.BtnBuscaFuncaoFunc.Image = CType(resources.GetObject("BtnBuscaFuncaoFunc.Image"), System.Drawing.Image)
+        Me.BtnBuscaFuncaoFunc.Location = New System.Drawing.Point(427, 14)
+        Me.BtnBuscaFuncaoFunc.Name = "BtnBuscaFuncaoFunc"
+        Me.BtnBuscaFuncaoFunc.Size = New System.Drawing.Size(25, 22)
+        Me.BtnBuscaFuncaoFunc.TabIndex = 45
+        Me.BtnBuscaFuncaoFunc.UseVisualStyleBackColor = True
+        '
         'txbDesFuncaoFunc
         '
         Me.txbDesFuncaoFunc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -988,125 +1107,6 @@ Partial Class FrmPessoa
         Me.BtnPrincipal.TabIndex = 31
         Me.BtnPrincipal.Text = "Principal"
         Me.BtnPrincipal.UseVisualStyleBackColor = True
-        '
-        'BtnUltimoReg
-        '
-        Me.BtnUltimoReg.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.BtnUltimoReg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.BtnUltimoReg.Image = CType(resources.GetObject("BtnUltimoReg.Image"), System.Drawing.Image)
-        Me.BtnUltimoReg.Location = New System.Drawing.Point(355, 10)
-        Me.BtnUltimoReg.Name = "BtnUltimoReg"
-        Me.BtnUltimoReg.Size = New System.Drawing.Size(32, 31)
-        Me.BtnUltimoReg.TabIndex = 30
-        Me.BtnUltimoReg.UseVisualStyleBackColor = True
-        '
-        'BtnAnterior
-        '
-        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
-        Me.BtnAnterior.Location = New System.Drawing.Point(287, 10)
-        Me.BtnAnterior.Name = "BtnAnterior"
-        Me.BtnAnterior.Size = New System.Drawing.Size(32, 31)
-        Me.BtnAnterior.TabIndex = 28
-        Me.BtnAnterior.UseVisualStyleBackColor = True
-        '
-        'BtnProximo
-        '
-        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
-        Me.BtnProximo.Location = New System.Drawing.Point(321, 10)
-        Me.BtnProximo.Name = "BtnProximo"
-        Me.BtnProximo.Size = New System.Drawing.Size(32, 31)
-        Me.BtnProximo.TabIndex = 29
-        Me.BtnProximo.UseVisualStyleBackColor = True
-        '
-        'BtnPrimeiroReg
-        '
-        Me.BtnPrimeiroReg.Image = CType(resources.GetObject("BtnPrimeiroReg.Image"), System.Drawing.Image)
-        Me.BtnPrimeiroReg.Location = New System.Drawing.Point(253, 10)
-        Me.BtnPrimeiroReg.Name = "BtnPrimeiroReg"
-        Me.BtnPrimeiroReg.Size = New System.Drawing.Size(32, 31)
-        Me.BtnPrimeiroReg.TabIndex = 27
-        Me.BtnPrimeiroReg.UseVisualStyleBackColor = True
-        '
-        'BtnGrid
-        '
-        Me.BtnGrid.Image = CType(resources.GetObject("BtnGrid.Image"), System.Drawing.Image)
-        Me.BtnGrid.Location = New System.Drawing.Point(150, 10)
-        Me.BtnGrid.Name = "BtnGrid"
-        Me.BtnGrid.Size = New System.Drawing.Size(32, 31)
-        Me.BtnGrid.TabIndex = 25
-        Me.BtnGrid.UseVisualStyleBackColor = True
-        '
-        'BtnPesquisa
-        '
-        Me.BtnPesquisa.Image = CType(resources.GetObject("BtnPesquisa.Image"), System.Drawing.Image)
-        Me.BtnPesquisa.Location = New System.Drawing.Point(78, 10)
-        Me.BtnPesquisa.Name = "BtnPesquisa"
-        Me.BtnPesquisa.Size = New System.Drawing.Size(32, 31)
-        Me.BtnPesquisa.TabIndex = 23
-        Me.BtnPesquisa.UseVisualStyleBackColor = True
-        '
-        'BtnLimpar
-        '
-        Me.BtnLimpar.Image = CType(resources.GetObject("BtnLimpar.Image"), System.Drawing.Image)
-        Me.BtnLimpar.Location = New System.Drawing.Point(114, 10)
-        Me.BtnLimpar.Name = "BtnLimpar"
-        Me.BtnLimpar.Size = New System.Drawing.Size(32, 31)
-        Me.BtnLimpar.TabIndex = 24
-        Me.BtnLimpar.UseVisualStyleBackColor = True
-        '
-        'BtnSalvar
-        '
-        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
-        Me.BtnSalvar.Location = New System.Drawing.Point(6, 10)
-        Me.BtnSalvar.Name = "BtnSalvar"
-        Me.BtnSalvar.Size = New System.Drawing.Size(32, 31)
-        Me.BtnSalvar.TabIndex = 21
-        Me.BtnSalvar.UseVisualStyleBackColor = True
-        '
-        'BtnExcluir
-        '
-        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(42, 10)
-        Me.BtnExcluir.Name = "BtnExcluir"
-        Me.BtnExcluir.Size = New System.Drawing.Size(32, 31)
-        Me.BtnExcluir.TabIndex = 22
-        Me.BtnExcluir.UseVisualStyleBackColor = True
-        '
-        'BtnLimpaDept
-        '
-        Me.BtnLimpaDept.Image = CType(resources.GetObject("BtnLimpaDept.Image"), System.Drawing.Image)
-        Me.BtnLimpaDept.Location = New System.Drawing.Point(424, 85)
-        Me.BtnLimpaDept.Name = "BtnLimpaDept"
-        Me.BtnLimpaDept.Size = New System.Drawing.Size(33, 33)
-        Me.BtnLimpaDept.TabIndex = 42
-        Me.BtnLimpaDept.UseVisualStyleBackColor = True
-        '
-        'BtnSalvaDepte
-        '
-        Me.BtnSalvaDepte.Image = CType(resources.GetObject("BtnSalvaDepte.Image"), System.Drawing.Image)
-        Me.BtnSalvaDepte.Location = New System.Drawing.Point(351, 85)
-        Me.BtnSalvaDepte.Name = "BtnSalvaDepte"
-        Me.BtnSalvaDepte.Size = New System.Drawing.Size(33, 33)
-        Me.BtnSalvaDepte.TabIndex = 40
-        Me.BtnSalvaDepte.UseVisualStyleBackColor = True
-        '
-        'BtnExcluiDept
-        '
-        Me.BtnExcluiDept.Image = CType(resources.GetObject("BtnExcluiDept.Image"), System.Drawing.Image)
-        Me.BtnExcluiDept.Location = New System.Drawing.Point(388, 85)
-        Me.BtnExcluiDept.Name = "BtnExcluiDept"
-        Me.BtnExcluiDept.Size = New System.Drawing.Size(33, 33)
-        Me.BtnExcluiDept.TabIndex = 41
-        Me.BtnExcluiDept.UseVisualStyleBackColor = True
-        '
-        'BtnBuscaFuncaoFunc
-        '
-        Me.BtnBuscaFuncaoFunc.Image = CType(resources.GetObject("BtnBuscaFuncaoFunc.Image"), System.Drawing.Image)
-        Me.BtnBuscaFuncaoFunc.Location = New System.Drawing.Point(427, 14)
-        Me.BtnBuscaFuncaoFunc.Name = "BtnBuscaFuncaoFunc"
-        Me.BtnBuscaFuncaoFunc.Size = New System.Drawing.Size(25, 22)
-        Me.BtnBuscaFuncaoFunc.TabIndex = 45
-        Me.BtnBuscaFuncaoFunc.UseVisualStyleBackColor = True
         '
         'FrmPessoa
         '

@@ -93,6 +93,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LogoVSystem.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -115,6 +118,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
@@ -138,6 +142,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClSecaoItem.vb" />
+    <Compile Include="ClAlmoxarifado.vb" />
     <Compile Include="ClFuncaoFuncionario.vb" />
     <Compile Include="ClAnimalRaca.vb" />
     <Compile Include="ClAnimalPelagem.vb" />
@@ -165,6 +171,18 @@
     <Compile Include="ClUsuario.vb" />
     <Compile Include="ClVenda.vb" />
     <Compile Include="ConexaoSQL.vb" />
+    <Compile Include="FrmSecao.Designer.vb">
+      <DependentUpon>FrmSecao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSecao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAlmoxarifado.Designer.vb">
+      <DependentUpon>FrmAlmoxarifado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAlmoxarifado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmAnimal.Designer.vb">
       <DependentUpon>FrmAnimal.vb</DependentUpon>
     </Compile>
@@ -201,6 +219,12 @@
     <Compile Include="FrmAnimalControleParasita.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmCadPadrao.Designer.vb">
+      <DependentUpon>FrmCadPadrao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCadPadrao.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmDespesa.Designer.vb">
       <DependentUpon>FrmDespesa.vb</DependentUpon>
     </Compile>
@@ -211,12 +235,6 @@
       <DependentUpon>FrmFuncaoFuncionario.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmFuncaoFuncionario.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPadrao.Designer.vb">
-      <DependentUpon>FrmPadrao.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPadrao.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPdv1.Designer.vb">
@@ -324,6 +342,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmSecao.resx">
+      <DependentUpon>FrmSecao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAlmoxarifado.resx">
+      <DependentUpon>FrmAlmoxarifado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAnimal.resx">
       <DependentUpon>FrmAnimal.vb</DependentUpon>
     </EmbeddedResource>
@@ -342,14 +366,14 @@
     <EmbeddedResource Include="FrmAnimalControleParasita.resx">
       <DependentUpon>FrmAnimalControleParasita.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadPadrao.resx">
+      <DependentUpon>FrmCadPadrao.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDespesa.resx">
       <DependentUpon>FrmDespesa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFuncaoFuncionario.resx">
       <DependentUpon>FrmFuncaoFuncionario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPadrao.resx">
-      <DependentUpon>FrmPadrao.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPdv1.resx">
       <DependentUpon>FrmPdv1.vb</DependentUpon>
@@ -417,6 +441,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo Beira Via.jpg" />
+    <Content Include="LogoVieiraSystem.ico" />
+    <Content Include="LogoVSystem.ico" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -431,6 +457,12 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controles\Controles.vbproj">
+      <Project>{a7339b44-0462-4561-a50b-bc17ec49a94a}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

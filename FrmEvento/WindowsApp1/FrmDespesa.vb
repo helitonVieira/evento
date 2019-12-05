@@ -305,4 +305,8 @@
             TxbValDespesa.Text = ""
         End If
     End Sub
+
+    Private Sub txbnomEvento_TextChanged(sender As Object, e As EventArgs) Handles txbnomEvento.TextChanged
+
+    End Sub
 End Class

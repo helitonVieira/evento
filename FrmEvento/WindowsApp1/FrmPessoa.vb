@@ -580,13 +580,17 @@
             End If
             If ds.Tables(0).Rows(i)("ind_fornecedor").ToString = "S" Then
                 CkbFornecedor.Checked = True
+                'btnFornecedor.enable = true
             Else
                 CkbFornecedor.Checked = False
+                'btnFornecedor.enable = False
             End If
             If ds.Tables(0).Rows(i)("ind_funcionario").ToString = "S" Then
                 CkbFuncionario.Checked = True
+                BtnFuncionario.Enabled = True
             Else
                 CkbFuncionario.Checked = False
+                BtnFuncionario.Enabled = False
             End If
             If ds.Tables(0).Rows(i)("ind_ativo").ToString = "S" Then
                 CkbAtivo.Checked = True
@@ -617,9 +621,11 @@
             ind_ativo_old = ds.Tables(0).Rows(i)("ind_ativo").ToString
             des_email_old = ds.Tables(0).Rows(i)("des_email").ToString
 
-
-            TxbCodFuncaoFunc.Text = ds.Tables(0).Rows(i)("cod_funcao").ToString
-            txbDesFuncaoFunc.Text = ds.Tables(0).Rows(i)("des_funcao").ToString
+            '**************************************
+            'FUNCIONARIO
+            '***************************************
+            TxbCodFuncaoFunc.Text = ds.Tables(0).Rows(i)("cod_funcao_funcionario").ToString
+            txbDesFuncaoFunc.Text = ds.Tables(0).Rows(i)("des_funcao_funcionario").ToString
             TxbSalarioFunc.Text = ds.Tables(0).Rows(i)("val_salario").ToString
             TxbCustoHrFunc.Text = ds.Tables(0).Rows(i)("val_custo_hora").ToString
             DtpAdmissaoFunc.Value = ds.Tables(0).Rows(i)("dta_admissao").ToString
@@ -639,7 +645,7 @@
                 RbMesFunc.Checked = True
             End If
 
-            cod_funcao_old = ds.Tables(0).Rows(i)("cod_funcao").ToString
+            cod_funcao_old = ds.Tables(0).Rows(i)("cod_funcao_funcionario").ToString
             des_funcao_old = ds.Tables(0).Rows(i)("des_funcao").ToString
             val_salario_old = ds.Tables(0).Rows(i)("val_salario").ToString
             val_custo_hora_old = ds.Tables(0).Rows(i)("val_custo_hora").ToString
@@ -712,6 +718,9 @@
         If TxbCodPessoa.Text <> "" Then
             BtnDependente.Enabled = True
         End If
+        Dim frm As New Controles.FrmPadrao
+        frm.Show()
+
 
     End Sub
 
@@ -733,7 +742,7 @@
     End Sub
     Public Sub verificarAuteracaoPessoa()
         Dim msg As String = ""
-        If TxbCodPessoa.Text = "" Then
+        If TxbCodPessoa.Text = "" Or atualizar = 1 Then
             Exit Sub
         End If
         If nom_pessoa_old <> TxbNomPessoa.Text Then

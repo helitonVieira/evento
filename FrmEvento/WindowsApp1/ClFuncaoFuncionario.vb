@@ -1,7 +1,6 @@
 ﻿Public Class ClFuncaoFuncionario
     Dim sql As String
     Dim ds, dsUltimo As New DataSet
-
     Dim con As New ConexaoSQ
     Dim ultimoFuncaoFuncionario As Integer
 
@@ -14,7 +13,6 @@
             cod_funcao_funcionario_ = value
         End Set
     End Property
-
     Private des_funcao_funcionario_ As String
     Public Property des_funcao_funcionario() As String
         Get
@@ -28,7 +26,6 @@
         sql = "Insert Into tab_funcao_funcionario( cod_funcao_funcionario ,des_funcao_funcionario) Values (" & cod_funcao_funcionario & ",'" & des_funcao_funcionario & "')"
         con.Operar(sql)
     End Sub
-
     Public Sub AtualizarFuncaoFuncionario()
         sql = "Update tab_funcao_funcionario Set des_funcao_funcionario = '" & des_funcao_funcionario & "'  Where cod_funcao_funcionario = " & cod_funcao_funcionario & ""
         con.Operar(sql)
@@ -37,7 +34,6 @@
         sql = " Delete from tab_funcao_funcionario Where cod_funcao_funcionario =" & cod_funcao_funcionario & ""
         con.Operar(sql)
     End Sub
-
     Public Function ConsultarFuncaoFuncionario(cod As Integer, desc As String)
         sql = "Select cod_funcao_funcionario,
                       des_funcao_funcionario
@@ -53,7 +49,6 @@
         ds = con.Listar(sql)
         Return ds
     End Function
-
     Public Function ConsultarFuncaoFuncionarioPesquisa(busca As String)
         sql = "Select * 
               From tab_funcao_funcionario

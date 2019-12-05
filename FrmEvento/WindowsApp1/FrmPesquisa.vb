@@ -5,6 +5,13 @@
     Dim inventario As New FrmInventarioRapido
     Dim clTipoMovto As New ClTipoMovimento
     Dim clTipoDespesa As New ClTipoDespesa
+    Dim clAlmoxarifado As New ClAlmoxarifado
+    Dim clFuncao As New ClFuncaoFuncionario
+    Dim clAnimalVacina As ClAnimalVacina
+    Dim clAnimaControleParasita As ClAnimalControleParasita
+    Dim clAnimalraca As ClAnimalRaca
+    Dim clAnimalPelagem As ClAnimalPelagem
+    Dim clAnimalEspecie As ClAnimalEspecie
     Dim pessoa As New ClPessoa
     Dim ingressoImpresso As New ClIngressoImpresso
     Dim evento As New ClEvento
@@ -36,128 +43,47 @@
     Public Sub carrega(tabela As String, busca As String)
         Try
             ds.Clear()
+            cbBusca.Items.Clear()
+            cbBusca.Items.Add("Codigo")
+            cbBusca.Items.Add("Descricao")
+            Dim tab As DataTable
             If tabela = "tab_item" Then
-                cbBusca.Items.Clear()
-                cbBusca.Items.Add("Codigo")
-                cbBusca.Items.Add("Descricao")
-                Dim tab As DataTable
                 ds = item.ConsultarItemPesquisa(busca)
-                tab = ds.Tables(0)
-                If tab.Rows.Count > 0 Then
-                    dgvBusca.DataSource = ds.Tables(0)
-                    With dgvBusca
-                        .Columns(0).HeaderText = "Código"
-                        .Columns(1).HeaderText = "Descrição"
-                        .Columns(0).Width = 60
-                        .Columns(1).Width = 200
-                    End With
-                End If
-            End If
-
-            If tabela = "tab_tipo_despesa" Then
-                cbBusca.Items.Clear()
-                cbBusca.Items.Add("Codigo")
-                cbBusca.Items.Add("Descricao")
-                Dim tab As DataTable
+            ElseIf tabela = "tab_tipo_despesa" Then
                 ds = clTipoDespesa.ConsultarTipoDespesa(busca)
-                tab = ds.Tables(0)
-                If tab.Rows.Count > 0 Then
-                    dgvBusca.DataSource = ds.Tables(0)
-                    With dgvBusca
-                        .Columns(0).HeaderText = "Código"
-                        .Columns(1).HeaderText = "Descrição"
-                        .Columns(0).Width = 60
-                        .Columns(1).Width = 200
-                    End With
-                End If
-            End If
-
-            If tabela = "tab_tipo_movimento" Then
-                cbBusca.Items.Clear()
-                cbBusca.Items.Add("Codigo")
-                cbBusca.Items.Add("Descricao")
-                Dim tab As DataTable
+            ElseIf tabela = "tab_tipo_movimento" Then
                 ds = clTipoMovto.ConsultarTipoMovtoPesquisa(busca)
-                tab = ds.Tables(0)
-                If tab.Rows.Count > 0 Then
-                    dgvBusca.DataSource = ds.Tables(0)
-                    With dgvBusca
-                        .Columns(0).HeaderText = "Código"
-                        .Columns(1).HeaderText = "Descrição"
-                        .Columns(0).Width = 60
-                        .Columns(1).Width = 200
-                    End With
-                End If
-            End If
-
-            If tabela = "tab_pessoa" Or tabela = "tab_pessoa_despesa" Or tabela = "funcionarioDespesa" Then
-                cbBusca.Items.Clear()
-                cbBusca.Items.Add("Codigo")
-                cbBusca.Items.Add("Descricao")
-                Dim tab As DataTable
-                If tabela = "funcionarioDespesa" Then
-                    ds = pessoa.ConsultarPessoaFuncionario(busca)
-                Else
-                    ds = pessoa.ConsultarPessoa(busca)
-                End If
-                tab = ds.Tables(0)
-                If tab.Rows.Count > 0 Then
-                    dgvBusca.DataSource = ds.Tables(0)
-                    With dgvBusca
-                        .Columns(0).HeaderText = "Código"
-                        .Columns(1).HeaderText = "Descrição"
-                        .Columns(0).Width = 60
-                        .Columns(1).Width = 200
-                    End With
-                End If
-            End If
-
-            If tabela = "tab_ingresso_impresso" Then
-                cbBusca.Items.Clear()
-                cbBusca.Items.Add("Codigo")
-                cbBusca.Items.Add("Descricao")
-                Dim tab As DataTable
+            ElseIf tabela = "tab_pessoa" Or tabela = "tab_pessoa_despesa" Then
+                ds = pessoa.ConsultarPessoa(busca)
+            ElseIf tabela = "funcionarioDespesa" Then
+                ds = pessoa.ConsultarPessoaFuncionario(busca)
+            ElseIf tabela = "tab_ingresso_impresso" Then
                 ingressoImpresso.cod_evento = cod_evento
                 ds = ingressoImpresso.ConsultarIngressoImpressoAberto()
-                tab = ds.Tables(0)
-                If tab.Rows.Count > 0 Then
-                    dgvBusca.DataSource = ds.Tables(0)
-                    With dgvBusca
-                        .Columns(0).HeaderText = "Código"
-                        .Columns(1).HeaderText = "Descrição"
-                        .Columns(0).Width = 60
-                        .Columns(1).Width = 200
-                    End With
-                End If
+            ElseIf tabela = "tab_evento_despesa" Or tabela = "tab_evento_principal" Then
+                ds = evento.ConsultarEvento()
+            ElseIf tabela = "tab_evento" Then
+                ds = evento.ConsultarEventoAberto()
+            ElseIf tabela = "tab_almoxarifado_secao" Then
+                ds = clAlmoxarifado.ConsultarPesquisa(busca)
+            ElseIf tabela = "tab_secao_categoria" Then
+                ' ds = clAlmoxarifado.ConsultarPesquisa(busca)
+            ElseIf tabela = "tab_categoria_subcategoria" Then
+                'ds = clAlmoxarifado.ConsultarPesquisa(busca)
+            ElseIf tabela = "tab_subcategoria_item" Then
+                'ds = clAlmoxarifado.ConsultarPesquisa(busca)
+            End If
+            tab = ds.Tables(0)
+            If tab.Rows.Count > 0 Then
+                dgvBusca.DataSource = ds.Tables(0)
+                With dgvBusca
+                    .Columns(0).HeaderText = "Código"
+                    .Columns(1).HeaderText = "Descrição"
+                    .Columns(0).Width = 60
+                    .Columns(1).Width = 240
+                End With
             End If
 
-            If tabela = "tab_evento" Or tabela = "tab_evento_despesa" Or tabela = "tab_evento_principal" Then
-                cbBusca.Items.Clear()
-                cbBusca.Items.Add("Data")
-                cbBusca.Items.Add("Descricao")
-                Dim tab As DataTable
-                If tabela = "tab_evento" Then
-                    ds = evento.ConsultarEventoAberto()
-                Else
-                    ds = evento.ConsultarEvento()
-                End If
-
-                tab = ds.Tables(0)
-                If tab.Rows.Count > 0 Then
-                    dgvBusca.DataSource = ds.Tables(0)
-                    With dgvBusca
-                        .Columns(0).HeaderText = "Código"
-                        .Columns(1).HeaderText = "Descrição"
-                        .Columns(2).HeaderText = "Descrição"
-                        .Columns(3).HeaderText = "Descrição"
-                        .Columns(4).HeaderText = "Data"
-                        .Columns(0).Width = 40
-                        .Columns(1).Width = 100
-                        .Columns(0).Width = 100
-                        .Columns(1).Width = 100
-                    End With
-                End If
-            End If
         Catch ex As Exception
 
         End Try
@@ -212,6 +138,10 @@
         If tabela = "tab_tipo_movimento" Then
             FrmInventarioRapido.txtCodTipoMovimento.Text = dgvBusca.CurrentRow.Cells(0).Value
             FrmInventarioRapido.txtDesTipoMovimento.Text = dgvBusca.CurrentRow.Cells(1).Value
+        End If
+        If tabela = "tab_almoxarifado_secao" Then
+            FrmSecao.TxbCodAlmoxarifado.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmSecao.txbDesAlmoxarifado.Text = dgvBusca.CurrentRow.Cells(1).Value
         End If
         Me.Close()
     End Sub

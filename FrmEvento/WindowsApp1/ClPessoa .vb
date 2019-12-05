@@ -320,8 +320,9 @@
             COD_CIDADE_OLD = Convert.ToInt16(COD_CIDADE_OLD)
         End If
 
-        sql = "select a.*,b.cod_funcao, 
-                        c.des_funcao,
+        sql = "select   a.*,
+                        b.cod_funcao_funcionario, 
+                        c.des_funcao_funcionario,
                         b.val_salario,
                         b.val_custo_hora,
                         b.ind_tipo_salario,
@@ -331,7 +332,7 @@
                         b.des_observacao as des_observacao_func
                from tab_pessoa a
                left  Join tab_pessoa_funcionario b on (a.cod_pessoa = b.cod_pessoa)
-               left join tab_funcao_funcionario c on (c.cod_funcao = b.cod_funcao)
+               left join tab_funcao_funcionario c on (c.cod_funcao_funcionario = b.cod_funcao_funcionario)
 
                where a.nom_pessoa like ('%" & NOM_PESSOA_OLD & "%') 
                  and ((a.cod_pessoa = " & COD_PESSOA_OLD & " )or (0 = " & COD_PESSOA_OLD & "))

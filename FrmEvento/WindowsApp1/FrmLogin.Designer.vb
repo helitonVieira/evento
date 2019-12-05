@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmLogin
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,17 +20,17 @@ Partial Class FrmLogin
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLogin))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CbExibirSenha = New System.Windows.Forms.CheckBox()
+        Me.BtCancelar = New System.Windows.Forms.Button()
         Me.TxtSenha = New System.Windows.Forms.TextBox()
+        Me.BtEntrar = New System.Windows.Forms.Button()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BtCancelar = New System.Windows.Forms.Button()
-        Me.BtEntrar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,6 +61,17 @@ Partial Class FrmLogin
         Me.CbExibirSenha.Text = "Exibir Senha"
         Me.CbExibirSenha.UseVisualStyleBackColor = True
         '
+        'BtCancelar
+        '
+        Me.BtCancelar.BackColor = System.Drawing.Color.White
+        Me.BtCancelar.ForeColor = System.Drawing.Color.White
+        Me.BtCancelar.Image = CType(resources.GetObject("BtCancelar.Image"), System.Drawing.Image)
+        Me.BtCancelar.Location = New System.Drawing.Point(45, 64)
+        Me.BtCancelar.Name = "BtCancelar"
+        Me.BtCancelar.Size = New System.Drawing.Size(29, 29)
+        Me.BtCancelar.TabIndex = 5
+        Me.BtCancelar.UseVisualStyleBackColor = False
+        '
         'TxtSenha
         '
         Me.TxtSenha.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -69,6 +80,17 @@ Partial Class FrmLogin
         Me.TxtSenha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtSenha.Size = New System.Drawing.Size(204, 20)
         Me.TxtSenha.TabIndex = 2
+        '
+        'BtEntrar
+        '
+        Me.BtEntrar.BackColor = System.Drawing.Color.White
+        Me.BtEntrar.ForeColor = System.Drawing.Color.White
+        Me.BtEntrar.Image = CType(resources.GetObject("BtEntrar.Image"), System.Drawing.Image)
+        Me.BtEntrar.Location = New System.Drawing.Point(10, 64)
+        Me.BtEntrar.Name = "BtEntrar"
+        Me.BtEntrar.Size = New System.Drawing.Size(29, 29)
+        Me.BtEntrar.TabIndex = 4
+        Me.BtEntrar.UseVisualStyleBackColor = False
         '
         'TxtUsuario
         '
@@ -99,28 +121,6 @@ Partial Class FrmLogin
         Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Usuário:"
-        '
-        'BtCancelar
-        '
-        Me.BtCancelar.BackColor = System.Drawing.Color.White
-        Me.BtCancelar.ForeColor = System.Drawing.Color.White
-        Me.BtCancelar.Image = CType(resources.GetObject("BtCancelar.Image"), System.Drawing.Image)
-        Me.BtCancelar.Location = New System.Drawing.Point(45, 64)
-        Me.BtCancelar.Name = "BtCancelar"
-        Me.BtCancelar.Size = New System.Drawing.Size(29, 29)
-        Me.BtCancelar.TabIndex = 5
-        Me.BtCancelar.UseVisualStyleBackColor = False
-        '
-        'BtEntrar
-        '
-        Me.BtEntrar.BackColor = System.Drawing.Color.White
-        Me.BtEntrar.ForeColor = System.Drawing.Color.White
-        Me.BtEntrar.Image = CType(resources.GetObject("BtEntrar.Image"), System.Drawing.Image)
-        Me.BtEntrar.Location = New System.Drawing.Point(10, 64)
-        Me.BtEntrar.Name = "BtEntrar"
-        Me.BtEntrar.Size = New System.Drawing.Size(29, 29)
-        Me.BtEntrar.TabIndex = 4
-        Me.BtEntrar.UseVisualStyleBackColor = False
         '
         'FrmLogin
         '
