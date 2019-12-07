@@ -142,15 +142,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClSubCategoriaItem.vb" />
+    <Compile Include="ClCategoriaItem.vb" />
     <Compile Include="ClSecaoItem.vb" />
     <Compile Include="ClAlmoxarifado.vb" />
     <Compile Include="ClFuncaoFuncionario.vb" />
-    <Compile Include="ClAnimalRaca.vb" />
-    <Compile Include="ClAnimalPelagem.vb" />
-    <Compile Include="ClAnimalControleParasita.vb" />
     <Compile Include="ClPessoaFuncionario .vb" />
     <Compile Include="ClPessoaDependente .vb" />
-    <Compile Include="ClAnimalVacina .vb" />
     <Compile Include="ClEmpresa.vb" />
     <Compile Include="ClIngressoPessoa.vb" />
     <Compile Include="ClIngressoImpresso.vb" />
@@ -159,7 +157,6 @@
     <Compile Include="ClGeral.vb" />
     <Compile Include="ClInventarioRapido.vb" />
     <Compile Include="ClDespesa.vb" />
-    <Compile Include="ClAnimalEspecie.vb" />
     <Compile Include="ClPessoa .vb" />
     <Compile Include="ClLicencia.vb" />
     <Compile Include="ClParametroSistema.vb" />
@@ -171,52 +168,16 @@
     <Compile Include="ClUsuario.vb" />
     <Compile Include="ClVenda.vb" />
     <Compile Include="ConexaoSQL.vb" />
-    <Compile Include="FrmSecao.Designer.vb">
-      <DependentUpon>FrmSecao.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmSecao.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FrmAlmoxarifado.Designer.vb">
       <DependentUpon>FrmAlmoxarifado.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmAlmoxarifado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAnimal.Designer.vb">
-      <DependentUpon>FrmAnimal.vb</DependentUpon>
+    <Compile Include="FrmCategoria.Designer.vb">
+      <DependentUpon>FrmCategoria.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmAnimal.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAnimalEspecie.Designer.vb">
-      <DependentUpon>FrmAnimalEspecie.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAnimalEspecie.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAnimalPelagem.Designer.vb">
-      <DependentUpon>FrmAnimalPelagem.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAnimalPelagem.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAnimalRaca.Designer.vb">
-      <DependentUpon>FrmAnimalRaca.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAnimalRaca.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAnimalVacina.Designer.vb">
-      <DependentUpon>FrmAnimalVacina.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAnimalVacina.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAnimalControleParasita.Designer.vb">
-      <DependentUpon>FrmAnimalControleParasita.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAnimalControleParasita.vb">
+    <Compile Include="FrmCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCadPadrao.Designer.vb">
@@ -317,6 +278,18 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClItem.vb" />
+    <Compile Include="FrmSecao.Designer.vb">
+      <DependentUpon>FrmSecao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSecao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSubCategoria.Designer.vb">
+      <DependentUpon>FrmSubCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSubCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModTabEnter.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -342,29 +315,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmSecao.resx">
-      <DependentUpon>FrmSecao.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmAlmoxarifado.resx">
       <DependentUpon>FrmAlmoxarifado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAnimal.resx">
-      <DependentUpon>FrmAnimal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAnimalEspecie.resx">
-      <DependentUpon>FrmAnimalEspecie.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAnimalPelagem.resx">
-      <DependentUpon>FrmAnimalPelagem.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAnimalRaca.resx">
-      <DependentUpon>FrmAnimalRaca.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAnimalVacina.resx">
-      <DependentUpon>FrmAnimalVacina.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAnimalControleParasita.resx">
-      <DependentUpon>FrmAnimalControleParasita.vb</DependentUpon>
+    <EmbeddedResource Include="FrmCategoria.resx">
+      <DependentUpon>FrmCategoria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCadPadrao.resx">
       <DependentUpon>FrmCadPadrao.vb</DependentUpon>
@@ -414,6 +369,12 @@
     <EmbeddedResource Include="FrmRelListaItens.resx">
       <DependentUpon>FrmRelListaItens.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSecao.resx">
+      <DependentUpon>FrmSecao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSubCategoria.resx">
+      <DependentUpon>FrmSubCategoria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -441,8 +402,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo Beira Via.jpg" />
-    <Content Include="LogoVieiraSystem.ico" />
     <Content Include="LogoVSystem.ico" />
+    <None Include="Resources\LogoVSystem2.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -462,6 +423,14 @@
     <ProjectReference Include="..\Controles\Controles.vbproj">
       <Project>{a7339b44-0462-4561-a50b-bc17ec49a94a}</Project>
       <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventoSystem\EventoSystem.vbproj">
+      <Project>{1b3b6050-44b6-4d7b-bc48-061c18f79bf5}</Project>
+      <Name>EventoSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetSystem\PetSystem.vbproj">
+      <Project>{3e9b907a-793f-444c-9991-6ae966ed9e8e}</Project>
+      <Name>PetSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

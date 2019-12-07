@@ -126,12 +126,6 @@ D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\Evento.vbproj.CopyComplete
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.exe
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.xml
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.pdb
-D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimal.resources
-D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalEspecie.resources
-D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalPelagem.resources
-D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalRaca.resources
-D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalVacina.resources
-D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAnimalControleParasita.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmFuncaoFuncionario.resources
 D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\Controles.dll
 D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\Controles.pdb
@@ -139,3 +133,11 @@ D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\Controles.xml
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmCadPadrao.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmAlmoxarifado.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmSecao.resources
+D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\EventoSystem.dll
+D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\PetSystem.dll
+D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\EventoSystem.pdb
+D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\EventoSystem.xml
+D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\PetSystem.pdb
+D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\PetSystem.xml
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmCategoria.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmSubCategoria.resources

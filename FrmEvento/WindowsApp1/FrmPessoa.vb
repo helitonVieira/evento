@@ -718,7 +718,7 @@
         If TxbCodPessoa.Text <> "" Then
             BtnDependente.Enabled = True
         End If
-        Dim frm As New Controles.FrmPadrao
+        Dim frm As New Controles.FrmCad1Padrao
         frm.Show()
 
 

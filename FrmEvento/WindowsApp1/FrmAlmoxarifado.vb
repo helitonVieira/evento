@@ -161,7 +161,7 @@ Public Class FrmAlmoxarifado
         limpar()
         'Me.Width = Me.Width + 200
         TabControl1.SelectedIndex = 0
-        Me.Height = 162
+        Me.Height = 145
         Dgv.DataSource = Nothing
 
 
@@ -170,7 +170,7 @@ Public Class FrmAlmoxarifado
     Private Sub BtnGrid_Click(sender As Object, e As EventArgs) Handles BtnGrid.Click
         If TabControl1.SelectedIndex = 1 Then
             TabControl1.SelectedIndex = 0
-            Me.Height = 162
+            Me.Height = 158
         Else
             TabControl1.SelectedIndex = 1
             Me.Height = 322
@@ -307,17 +307,16 @@ Public Class FrmAlmoxarifado
             TxbCodigo.Text = ""
         End If
     End Sub
-
-    Private Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Overloads Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellClick
         Me.TxbCodigo.Text = Dgv.CurrentRow.Cells(0).Value
         Me.TxbDescricao.Text = Dgv.CurrentRow.Cells(1).Value
         TabControl1.SelectedIndex = 0
+        Me.Height = 145
         Me.TxbDescricao.Select()
     End Sub
-    Private Sub Dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs)
+    Private Overloads Sub Dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellEnter
         i = Dgv.CurrentRow.Index
         carregaFormulario()
     End Sub
-
 
 End Class

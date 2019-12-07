@@ -188,4 +188,9 @@
             TxtCodEvento.Text = ""
         End If
     End Sub
+
+    Private Sub BtnSubCategoria_Click(sender As Object, e As EventArgs) Handles BtnSubCategoria.Click
+        FrmPesquisa.tabela = "tab_subcategoria_item"
+        FrmPesquisa.ShowDialog()
+    End Sub
 End Class

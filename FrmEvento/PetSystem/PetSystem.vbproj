@@ -46,6 +46,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -64,7 +66,54 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClControleParasita.vb" />
+    <Compile Include="ClEspecie.vb" />
+    <Compile Include="ClPelagem.vb" />
+    <Compile Include="ClRaca.vb" />
+    <Compile Include="ClVacina .vb" />
     <Compile Include="Class1.vb" />
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnimal.Designer.vb">
+      <DependentUpon>FrmAnimal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAnimal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmControleParasita.Designer.vb">
+      <DependentUpon>FrmControleParasita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmControleParasita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEspecie.Designer.vb">
+      <DependentUpon>FrmEspecie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEspecie.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPelagem.Designer.vb">
+      <DependentUpon>FrmPelagem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPelagem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRaca.Designer.vb">
+      <DependentUpon>FrmRaca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRaca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVacina.Designer.vb">
+      <DependentUpon>FrmVacina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVacina.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -82,6 +131,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmAnimal.resx">
+      <DependentUpon>FrmAnimal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmControleParasita.resx">
+      <DependentUpon>FrmControleParasita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEspecie.resx">
+      <DependentUpon>FrmEspecie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPelagem.resx">
+      <DependentUpon>FrmPelagem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRaca.resx">
+      <DependentUpon>FrmRaca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVacina.resx">
+      <DependentUpon>FrmVacina.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -99,6 +166,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controles\Controles.vbproj">
+      <Project>{a7339b44-0462-4561-a50b-bc17ec49a94a}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

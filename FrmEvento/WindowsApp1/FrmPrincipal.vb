@@ -1,4 +1,5 @@
-﻿Public Class FrmPrincipal
+﻿Imports PetSystem.FrmControleParasita
+Public Class FrmPrincipal
     Dim conectar As New ConexaoSQ
     Dim dsParamSist, dsVenda, dsItem, dsPessoa, dsFormaPgto As New DataSet
     Dim item As New ClItem
@@ -19,7 +20,12 @@
     Dim saldoRestante As Double = 0
     Dim cod_item As Integer
     Dim des_item As String
- 
+    Dim frmContoleParasita As New PetSystem.FrmControleParasita
+    Dim frmVacina As New PetSystem.FrmVacina
+    Dim frmPelagem As New PetSystem.FrmPelagem
+    Dim frmRaca As New PetSystem.FrmRaca
+    Dim frmEspecie As New PetSystem.FrmEspecie
+    Dim frmAnimal As New PetSystem.FrmAnimal
 
     Public Sub carregarGropVenda()
 
@@ -34,7 +40,7 @@
         LbCodCliente.Text = DgvPessoa.Rows(0).Cells(0).Value.ToString
         LbNomCliente.Text = DgvPessoa.Rows(0).Cells(1).Value.ToString
         buscaFormaPagto()
-        
+
         TxbCodItem.Select()
         TxbQtde.Enabled = False
         TabControl1.SelectedIndex = 0
@@ -856,19 +862,19 @@
     End Sub
 
     Private Sub EspécieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EspécieToolStripMenuItem.Click
-        FrmAnimalEspecie.ShowDialog()
+        frmEspecie.ShowDialog()
     End Sub
 
     Private Sub ParasitaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ParasitaToolStripMenuItem.Click
-        FrmAnimalControleParasita.ShowDialog()
+        frmContoleParasita.ShowDialog()
     End Sub
 
     Private Sub VacinaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VacinaToolStripMenuItem.Click
-        FrmAnimalVacina.ShowDialog()
+        frmVacina.ShowDialog()
     End Sub
 
     Private Sub PelagemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PelagemToolStripMenuItem.Click
-        FrmAnimalPelagem.ShowDialog()
+        frmPelagem.ShowDialog()
     End Sub
 
     Private Sub ItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItemToolStripMenuItem.Click
@@ -905,8 +911,20 @@
         FrmSecao.Show()
     End Sub
 
+    Private Sub FrmPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        FrmLogin.Close()
+    End Sub
+
+    Private Sub CategoriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategoriaToolStripMenuItem.Click
+        FrmCategoria.ShowDialog()
+    End Sub
+
+    Private Sub SubCategoriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubCategoriaToolStripMenuItem.Click
+        FrmSubCategoria.ShowDialog()
+    End Sub
+
     Private Sub RaçaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RaçaToolStripMenuItem.Click
-        FrmAnimalRaca.ShowDialog()
+        frmRaca.ShowDialog()
     End Sub
 
     Private Sub TxbValorPagto_TextChanged_1(sender As Object, e As EventArgs) Handles TxbValorPagto.TextChanged

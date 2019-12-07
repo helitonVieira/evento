@@ -123,9 +123,10 @@ Partial Class FrmPrincipal
         Me.LbCodCliente = New System.Windows.Forms.Label()
         Me.LbNomCliente = New System.Windows.Forms.Label()
         Me.GbBotaoAtalho = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BtPagamento = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DgvItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgvVenda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,6 +144,7 @@ Partial Class FrmPrincipal
         Me.GbCabecalho.SuspendLayout()
         Me.GbBotaoAtalho.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -1152,9 +1154,17 @@ Partial Class FrmPrincipal
         Me.GbBotaoAtalho.Controls.Add(Me.BtnImprimirFicha)
         Me.GbBotaoAtalho.Location = New System.Drawing.Point(0, 106)
         Me.GbBotaoAtalho.Name = "GbBotaoAtalho"
-        Me.GbBotaoAtalho.Size = New System.Drawing.Size(361, 480)
+        Me.GbBotaoAtalho.Size = New System.Drawing.Size(208, 480)
         Me.GbBotaoAtalho.TabIndex = 16
         Me.GbBotaoAtalho.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(26, 287)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(273, 193)
+        Me.PictureBox1.TabIndex = 29
+        Me.PictureBox1.TabStop = False
         '
         'Button1
         '
@@ -1180,13 +1190,14 @@ Partial Class FrmPrincipal
         Me.BtPagamento.Text = "Pagamento - F5"
         Me.BtPagamento.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'PictureBox2
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(26, 287)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(273, 193)
-        Me.PictureBox1.TabIndex = 29
-        Me.PictureBox1.TabStop = False
+        Me.PictureBox2.Image = Global.WindowsApp1.My.Resources.Resources.LogoVSystem2
+        Me.PictureBox2.Location = New System.Drawing.Point(501, 72)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(571, 522)
+        Me.PictureBox2.TabIndex = 28
+        Me.PictureBox2.TabStop = False
         '
         'FrmPrincipal
         '
@@ -1194,6 +1205,7 @@ Partial Class FrmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1094, 611)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.GbBotaoAtalho)
         Me.Controls.Add(Me.GbCabecalho)
         Me.Controls.Add(Me.TabControl1)
@@ -1227,6 +1239,7 @@ Partial Class FrmPrincipal
         Me.GbCabecalho.PerformLayout()
         Me.GbBotaoAtalho.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1335,4 +1348,5 @@ Partial Class FrmPrincipal
     Friend WithEvents CategoriaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SubCategoriaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AlmoxarifadoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

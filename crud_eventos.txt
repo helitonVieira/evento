@@ -323,6 +323,21 @@ create table tab_secao_item	 (
 ALTER TABLE TAB_SECAO_ITEM ADD CONSTRAINT REF_TAB_SECAO_COD_ALMOXARIFADO FOREIGN KEY (COD_ALMOXARIFADO) REFERENCES TAB_ALMOXARIFADO (COD_ALMOXARIFADO);
 
 
+create table tab_categoria_item	 (
+    cod_categoria  integer not null,
+    des_categoria  varchar(60) not null,
+	cod_secao integer not null,
+	primary key (cod_categoria));
+
+ALTER TABLE TAB_CATEGORIA_ITEM ADD CONSTRAINT REF_TAB_CATEGORIA_COD_SECAO FOREIGN KEY (COD_SECAO) REFERENCES TAB_SECAO_ITEM (COD_SECAO);
+
+create table tab_subcategoria_item	 (
+    cod_subcategoria  integer not null,
+    des_subcategoria  varchar(60) not null,
+	cod_categoria integer not null,
+	primary key (cod_subcategoria));
+
+ALTER TABLE TAB_SUBCATEGORIA_ITEM ADD CONSTRAINT REF_TAB_SUBCATEGORIA_COD_CATEGORIA FOREIGN KEY (COD_CATEGORIA) REFERENCES TAB_CATEGORIA_ITEM (COD_CATEGORIA);
 
 
 

@@ -1,0 +1,9 @@
+D:\source\repos\FrmEvento\EventoSystem\bin\Debug\EventoSystem.dll
+D:\source\repos\FrmEvento\EventoSystem\bin\Debug\EventoSystem.pdb
+D:\source\repos\FrmEvento\EventoSystem\bin\Debug\EventoSystem.xml
+D:\source\repos\FrmEvento\EventoSystem\obj\Debug\EventoSystem.Resources.resources
+D:\source\repos\FrmEvento\EventoSystem\obj\Debug\EventoSystem.vbproj.GenerateResource.cache
+D:\source\repos\FrmEvento\EventoSystem\obj\Debug\EventoSystem.dll
+D:\source\repos\FrmEvento\EventoSystem\obj\Debug\EventoSystem.xml
+D:\source\repos\FrmEvento\EventoSystem\obj\Debug\EventoSystem.pdb
+D:\source\repos\FrmEvento\EventoSystem\obj\Debug\EventoSystem.vbprojAssemblyReference.cache

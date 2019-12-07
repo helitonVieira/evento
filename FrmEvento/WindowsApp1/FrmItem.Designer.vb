@@ -27,6 +27,10 @@ Partial Class FrmItem
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtCodItem = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.BtnSubCategoria = New System.Windows.Forms.Button()
+        Me.txbDesSubCategoria = New System.Windows.Forms.TextBox()
+        Me.TxbCodSubCategoria = New Controles.TxbCodigo()
         Me.CkbAtivo = New System.Windows.Forms.CheckBox()
         Me.TxtCodEvento = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -51,9 +55,9 @@ Partial Class FrmItem
         Me.DgvItem.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvItem.Location = New System.Drawing.Point(12, 184)
+        Me.DgvItem.Location = New System.Drawing.Point(12, 226)
         Me.DgvItem.Name = "DgvItem"
-        Me.DgvItem.Size = New System.Drawing.Size(359, 147)
+        Me.DgvItem.Size = New System.Drawing.Size(441, 105)
         Me.DgvItem.TabIndex = 1
         '
         'Label1
@@ -75,6 +79,10 @@ Partial Class FrmItem
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.BtnSubCategoria)
+        Me.GroupBox1.Controls.Add(Me.txbDesSubCategoria)
+        Me.GroupBox1.Controls.Add(Me.TxbCodSubCategoria)
         Me.GroupBox1.Controls.Add(Me.CkbAtivo)
         Me.GroupBox1.Controls.Add(Me.TxtCodEvento)
         Me.GroupBox1.Controls.Add(Me.Label5)
@@ -88,10 +96,42 @@ Partial Class FrmItem
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 67)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(360, 111)
+        Me.GroupBox1.Size = New System.Drawing.Size(393, 153)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Item"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(-7, 111)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(74, 13)
+        Me.Label6.TabIndex = 46
+        Me.Label6.Text = "SubCategoria:"
+        '
+        'BtnSubCategoria
+        '
+        Me.BtnSubCategoria.Image = CType(resources.GetObject("BtnSubCategoria.Image"), System.Drawing.Image)
+        Me.BtnSubCategoria.Location = New System.Drawing.Point(368, 107)
+        Me.BtnSubCategoria.Name = "BtnSubCategoria"
+        Me.BtnSubCategoria.Size = New System.Drawing.Size(25, 21)
+        Me.BtnSubCategoria.TabIndex = 49
+        Me.BtnSubCategoria.UseVisualStyleBackColor = True
+        '
+        'txbDesSubCategoria
+        '
+        Me.txbDesSubCategoria.Location = New System.Drawing.Point(136, 107)
+        Me.txbDesSubCategoria.Name = "txbDesSubCategoria"
+        Me.txbDesSubCategoria.Size = New System.Drawing.Size(228, 20)
+        Me.txbDesSubCategoria.TabIndex = 48
+        '
+        'TxbCodSubCategoria
+        '
+        Me.TxbCodSubCategoria.Location = New System.Drawing.Point(69, 107)
+        Me.TxbCodSubCategoria.Name = "TxbCodSubCategoria"
+        Me.TxbCodSubCategoria.Size = New System.Drawing.Size(61, 20)
+        Me.TxbCodSubCategoria.TabIndex = 47
         '
         'CkbAtivo
         '
@@ -221,7 +261,7 @@ Partial Class FrmItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(383, 338)
+        Me.ClientSize = New System.Drawing.Size(465, 338)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DgvItem)
@@ -254,4 +294,8 @@ Partial Class FrmItem
     Friend WithEvents BtnLimpar As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents CkbAtivo As CheckBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents BtnSubCategoria As Button
+    Friend WithEvents txbDesSubCategoria As TextBox
+    Friend WithEvents TxbCodSubCategoria As Controles.TxbCodigo
 End Class

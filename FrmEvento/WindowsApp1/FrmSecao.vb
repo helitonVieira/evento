@@ -8,8 +8,7 @@ Public Class FrmSecao
     Dim ds, dsUltimo As New DataSet
     Dim secao, secao2 As New ClSecaoItem
     Dim atualizar As Integer = 1
-    Dim cod_old As Integer
-    Dim desc_old, cod_almoxarifado_old As String
+    Dim cod_old, desc_old, cod_almoxarifado_old As String
     Dim i As Integer = 0
     Private Sub Frm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpar()
@@ -322,16 +321,18 @@ Public Class FrmSecao
         FrmPesquisa.tabela = "tab_almoxarifado_secao"
         FrmPesquisa.ShowDialog()
     End Sub
-    Private Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellClick
+    Private Overloads Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellClick
         Me.TxbCodigo.Text = Dgv.CurrentRow.Cells(0).Value
         Me.TxbDescricao.Text = Dgv.CurrentRow.Cells(1).Value
         Me.TxbCodAlmoxarifado.Text = Dgv.CurrentRow.Cells(2).Value
         Me.txbDesAlmoxarifado.Text = Dgv.CurrentRow.Cells(3).Value
-        tab_control1Selelct()
+        TabControl1.SelectedIndex = 0
+        Me.Height = 162
         Me.TxbDescricao.Select()
     End Sub
-    Private Sub Dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellEnter
+    Private Overloads Sub Dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellEnter
         i = Dgv.CurrentRow.Index
         carregaFormulario()
     End Sub
+
 End Class

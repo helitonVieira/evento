@@ -67,16 +67,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConexaoSQL.vb" />
     <Compile Include="TxbCodigo.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="TxbMonetario.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FrmPadrao.Designer.vb">
-      <DependentUpon>FrmPadrao.vb</DependentUpon>
+    <Compile Include="FrmCad1Padrao.Designer.vb">
+      <DependentUpon>FrmCad1Padrao.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmPadrao.vb">
+    <Compile Include="FrmCad1Padrao.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -96,8 +97,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmPadrao.resx">
-      <DependentUpon>FrmPadrao.vb</DependentUpon>
+    <EmbeddedResource Include="FrmCad1Padrao.resx">
+      <DependentUpon>FrmCad1Padrao.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

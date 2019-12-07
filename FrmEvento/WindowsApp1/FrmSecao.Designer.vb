@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class FrmSecao
-    Inherits WindowsApp1.FrmCadPadrao
+    Inherits Controles.FrmCad1Padrao
 
     'Descartar substituições de formulário para limpar a lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -20,32 +20,19 @@ Partial Class FrmSecao
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSecao))
-        Me.TxbCodAlmoxarifado = New Controles.TxbCodigo()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.BtAlmoxarifado = New System.Windows.Forms.Button()
         Me.txbDesAlmoxarifado = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxbCodAlmoxarifado = New Controles.TxbCodigo()
+        Me.Dgv = New System.Windows.Forms.DataGridView()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.Dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'BtnExcluir
-        '
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.Label1)
-        Me.GroupBox4.Controls.Add(Me.BtAlmoxarifado)
-        Me.GroupBox4.Controls.Add(Me.txbDesAlmoxarifado)
-        Me.GroupBox4.Controls.Add(Me.TxbCodAlmoxarifado)
-        Me.GroupBox4.Size = New System.Drawing.Size(404, 77)
-        Me.GroupBox4.Controls.SetChildIndex(Me.Label18, 0)
-        Me.GroupBox4.Controls.SetChildIndex(Me.TxbCodAlmoxarifado, 0)
-        Me.GroupBox4.Controls.SetChildIndex(Me.txbDesAlmoxarifado, 0)
-        Me.GroupBox4.Controls.SetChildIndex(Me.BtAlmoxarifado, 0)
-        Me.GroupBox4.Controls.SetChildIndex(Me.Label1, 0)
         '
         'BtnCsv
         '
@@ -67,26 +54,60 @@ Partial Class FrmSecao
         '
         Me.BtnGrid.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         '
-        'BtnLimpar
-        '
-        '
         'BtnPesquisa
+        '
+        '
+        'BtnLimpar
         '
         '
         'BtnSalvar
         '
         '
+        'BtnExcluir
+        '
+        '
         'GroupBox1
         '
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 118)
-        Me.GroupBox1.Size = New System.Drawing.Size(407, 108)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 103)
+        Me.GroupBox1.Size = New System.Drawing.Size(407, 123)
         '
-        'TxbCodAlmoxarifado
+        'GroupBox4
         '
-        Me.TxbCodAlmoxarifado.Location = New System.Drawing.Point(64, 45)
-        Me.TxbCodAlmoxarifado.Name = "TxbCodAlmoxarifado"
-        Me.TxbCodAlmoxarifado.Size = New System.Drawing.Size(61, 20)
-        Me.TxbCodAlmoxarifado.TabIndex = 35
+        Me.GroupBox4.Controls.Add(Me.Label1)
+        Me.GroupBox4.Controls.Add(Me.BtAlmoxarifado)
+        Me.GroupBox4.Controls.Add(Me.txbDesAlmoxarifado)
+        Me.GroupBox4.Controls.Add(Me.TxbCodAlmoxarifado)
+        Me.GroupBox4.Size = New System.Drawing.Size(404, 72)
+        Me.GroupBox4.Controls.SetChildIndex(Me.TxbCodigo, 0)
+        Me.GroupBox4.Controls.SetChildIndex(Me.Label18, 0)
+        Me.GroupBox4.Controls.SetChildIndex(Me.TxbDescricao, 0)
+        Me.GroupBox4.Controls.SetChildIndex(Me.TxbCodAlmoxarifado, 0)
+        Me.GroupBox4.Controls.SetChildIndex(Me.txbDesAlmoxarifado, 0)
+        Me.GroupBox4.Controls.SetChildIndex(Me.BtAlmoxarifado, 0)
+        Me.GroupBox4.Controls.SetChildIndex(Me.Label1, 0)
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Dgv)
+        '
+        'TxbDescricao
+        '
+        Me.TxbDescricao.Location = New System.Drawing.Point(144, 21)
+        Me.TxbDescricao.Size = New System.Drawing.Size(254, 20)
+        '
+        'TxbCodigo
+        '
+        Me.TxbCodigo.Location = New System.Drawing.Point(78, 21)
+        Me.TxbCodigo.Size = New System.Drawing.Size(61, 20)
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(2, 49)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(70, 13)
+        Me.Label1.TabIndex = 46
+        Me.Label1.Text = "Almoxarifado:"
         '
         'BtAlmoxarifado
         '
@@ -94,24 +115,35 @@ Partial Class FrmSecao
         Me.BtAlmoxarifado.Location = New System.Drawing.Point(375, 45)
         Me.BtAlmoxarifado.Name = "BtAlmoxarifado"
         Me.BtAlmoxarifado.Size = New System.Drawing.Size(25, 21)
-        Me.BtAlmoxarifado.TabIndex = 37
+        Me.BtAlmoxarifado.TabIndex = 49
         Me.BtAlmoxarifado.UseVisualStyleBackColor = True
         '
         'txbDesAlmoxarifado
         '
-        Me.txbDesAlmoxarifado.Location = New System.Drawing.Point(131, 45)
+        Me.txbDesAlmoxarifado.Location = New System.Drawing.Point(144, 45)
         Me.txbDesAlmoxarifado.Name = "txbDesAlmoxarifado"
-        Me.txbDesAlmoxarifado.Size = New System.Drawing.Size(240, 20)
-        Me.txbDesAlmoxarifado.TabIndex = 36
+        Me.txbDesAlmoxarifado.Size = New System.Drawing.Size(227, 20)
+        Me.txbDesAlmoxarifado.TabIndex = 48
         '
-        'Label1
+        'TxbCodAlmoxarifado
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 45)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Almoxarif:"
+        Me.TxbCodAlmoxarifado.Location = New System.Drawing.Point(78, 45)
+        Me.TxbCodAlmoxarifado.Name = "TxbCodAlmoxarifado"
+        Me.TxbCodAlmoxarifado.Size = New System.Drawing.Size(61, 20)
+        Me.TxbCodAlmoxarifado.TabIndex = 47
+        '
+        'Dgv
+        '
+        Me.Dgv.AllowUserToOrderColumns = True
+        Me.Dgv.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv.Location = New System.Drawing.Point(-1, 4)
+        Me.Dgv.Name = "Dgv"
+        Me.Dgv.Size = New System.Drawing.Size(412, 218)
+        Me.Dgv.TabIndex = 2
+        Me.Dgv.VirtualMode = True
         '
         'FrmSecao
         '
@@ -120,17 +152,20 @@ Partial Class FrmSecao
         Me.Name = "FrmSecao"
         Me.Text = "FrmSecao"
         Me.GroupBox2.ResumeLayout(False)
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        CType(Me.Dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TxbCodAlmoxarifado As Controles.TxbCodigo
     Friend WithEvents Label1 As Label
     Friend WithEvents BtAlmoxarifado As Button
     Friend WithEvents txbDesAlmoxarifado As TextBox
+    Friend WithEvents TxbCodAlmoxarifado As Controles.TxbCodigo
+    Public WithEvents Dgv As DataGridView
 End Class

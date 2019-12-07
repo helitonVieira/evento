@@ -6,12 +6,15 @@
     Dim clTipoMovto As New ClTipoMovimento
     Dim clTipoDespesa As New ClTipoDespesa
     Dim clAlmoxarifado As New ClAlmoxarifado
+    Dim clSecao As New ClSecaoItem
+    Dim clCategoria As New ClCategoriaItem
+    Dim clSubCategoria As New ClSubCategoriaItem
     Dim clFuncao As New ClFuncaoFuncionario
-    Dim clAnimalVacina As ClAnimalVacina
-    Dim clAnimaControleParasita As ClAnimalControleParasita
-    Dim clAnimalraca As ClAnimalRaca
-    Dim clAnimalPelagem As ClAnimalPelagem
-    Dim clAnimalEspecie As ClAnimalEspecie
+    Dim clAnimalVacina As PetSystem.ClVacina
+    Dim clAnimaControleParasita As PetSystem.ClControleParasita
+    Dim clAnimalraca As PetSystem.ClRaca
+    Dim clAnimalPelagem As PetSystem.ClPelagem
+    Dim clAnimalEspecie As PetSystem.ClEspecie
     Dim pessoa As New ClPessoa
     Dim ingressoImpresso As New ClIngressoImpresso
     Dim evento As New ClEvento
@@ -67,11 +70,11 @@
             ElseIf tabela = "tab_almoxarifado_secao" Then
                 ds = clAlmoxarifado.ConsultarPesquisa(busca)
             ElseIf tabela = "tab_secao_categoria" Then
-                ' ds = clAlmoxarifado.ConsultarPesquisa(busca)
+                ds = clSecao.ConsultarPesquisa(busca)
             ElseIf tabela = "tab_categoria_subcategoria" Then
-                'ds = clAlmoxarifado.ConsultarPesquisa(busca)
+                ds = clCategoria.ConsultarPesquisa(busca)
             ElseIf tabela = "tab_subcategoria_item" Then
-                'ds = clAlmoxarifado.ConsultarPesquisa(busca)
+                ds = clSubCategoria.ConsultarPesquisa(busca)
             End If
             tab = ds.Tables(0)
             If tab.Rows.Count > 0 Then
@@ -143,6 +146,19 @@
             FrmSecao.TxbCodAlmoxarifado.Text = dgvBusca.CurrentRow.Cells(0).Value
             FrmSecao.txbDesAlmoxarifado.Text = dgvBusca.CurrentRow.Cells(1).Value
         End If
+        If tabela = "tab_secao_categoria" Then
+            FrmCategoria.TxbCodSecao.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmCategoria.txbDesSecao.Text = dgvBusca.CurrentRow.Cells(1).Value
+        End If
+        If tabela = "tab_categoria_subcategoria" Then
+            FrmSubCategoria.TxbCodCategoria.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmSubCategoria.txbDesCategoria.Text = dgvBusca.CurrentRow.Cells(1).Value
+        End If
+        If tabela = "tab_subcategoria_item" Then
+            FrmItem.TxbCodSubCategoria.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmItem.txbDesSubCategoria.Text = dgvBusca.CurrentRow.Cells(1).Value
+        End If
+
         Me.Close()
     End Sub
 End Class
