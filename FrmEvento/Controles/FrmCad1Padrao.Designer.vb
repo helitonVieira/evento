@@ -25,15 +25,6 @@ Partial Class FrmCad1Padrao
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCad1Padrao))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnCsv = New System.Windows.Forms.Button()
-        Me.BtnUltimoReg = New System.Windows.Forms.Button()
-        Me.BtnAnterior = New System.Windows.Forms.Button()
-        Me.BtnProximo = New System.Windows.Forms.Button()
-        Me.BtnPrimeiroReg = New System.Windows.Forms.Button()
-        Me.BtnGrid = New System.Windows.Forms.Button()
-        Me.BtnPesquisa = New System.Windows.Forms.Button()
-        Me.BtnLimpar = New System.Windows.Forms.Button()
-        Me.BtnSalvar = New System.Windows.Forms.Button()
-        Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -43,6 +34,15 @@ Partial Class FrmCad1Padrao
         Me.TxbCodigo = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.BtnUltimoReg = New System.Windows.Forms.Button()
+        Me.BtnAnterior = New System.Windows.Forms.Button()
+        Me.BtnProximo = New System.Windows.Forms.Button()
+        Me.BtnPrimeiroReg = New System.Windows.Forms.Button()
+        Me.BtnGrid = New System.Windows.Forms.Button()
+        Me.BtnPesquisa = New System.Windows.Forms.Button()
+        Me.BtnLimpar = New System.Windows.Forms.Button()
+        Me.BtnSalvar = New System.Windows.Forms.Button()
+        Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -80,91 +80,6 @@ Partial Class FrmCad1Padrao
         Me.BtnCsv.TabIndex = 7
         Me.BtnCsv.Text = "CSV"
         Me.BtnCsv.UseVisualStyleBackColor = True
-        '
-        'BtnUltimoReg
-        '
-        Me.BtnUltimoReg.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.BtnUltimoReg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.BtnUltimoReg.Image = CType(resources.GetObject("BtnUltimoReg.Image"), System.Drawing.Image)
-        Me.BtnUltimoReg.Location = New System.Drawing.Point(312, 10)
-        Me.BtnUltimoReg.Name = "BtnUltimoReg"
-        Me.BtnUltimoReg.Size = New System.Drawing.Size(31, 31)
-        Me.BtnUltimoReg.TabIndex = 11
-        Me.BtnUltimoReg.UseVisualStyleBackColor = True
-        '
-        'BtnAnterior
-        '
-        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
-        Me.BtnAnterior.Location = New System.Drawing.Point(244, 10)
-        Me.BtnAnterior.Name = "BtnAnterior"
-        Me.BtnAnterior.Size = New System.Drawing.Size(31, 31)
-        Me.BtnAnterior.TabIndex = 9
-        Me.BtnAnterior.UseVisualStyleBackColor = True
-        '
-        'BtnProximo
-        '
-        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
-        Me.BtnProximo.Location = New System.Drawing.Point(278, 10)
-        Me.BtnProximo.Name = "BtnProximo"
-        Me.BtnProximo.Size = New System.Drawing.Size(31, 31)
-        Me.BtnProximo.TabIndex = 10
-        Me.BtnProximo.UseVisualStyleBackColor = True
-        '
-        'BtnPrimeiroReg
-        '
-        Me.BtnPrimeiroReg.Image = CType(resources.GetObject("BtnPrimeiroReg.Image"), System.Drawing.Image)
-        Me.BtnPrimeiroReg.Location = New System.Drawing.Point(210, 10)
-        Me.BtnPrimeiroReg.Name = "BtnPrimeiroReg"
-        Me.BtnPrimeiroReg.Size = New System.Drawing.Size(31, 31)
-        Me.BtnPrimeiroReg.TabIndex = 8
-        Me.BtnPrimeiroReg.UseVisualStyleBackColor = True
-        '
-        'BtnGrid
-        '
-        Me.BtnGrid.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.BtnGrid.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.BtnGrid.Image = CType(resources.GetObject("BtnGrid.Image"), System.Drawing.Image)
-        Me.BtnGrid.Location = New System.Drawing.Point(142, 10)
-        Me.BtnGrid.Name = "BtnGrid"
-        Me.BtnGrid.Size = New System.Drawing.Size(31, 31)
-        Me.BtnGrid.TabIndex = 6
-        Me.BtnGrid.UseVisualStyleBackColor = True
-        '
-        'BtnPesquisa
-        '
-        Me.BtnPesquisa.Image = CType(resources.GetObject("BtnPesquisa.Image"), System.Drawing.Image)
-        Me.BtnPesquisa.Location = New System.Drawing.Point(74, 10)
-        Me.BtnPesquisa.Name = "BtnPesquisa"
-        Me.BtnPesquisa.Size = New System.Drawing.Size(31, 31)
-        Me.BtnPesquisa.TabIndex = 4
-        Me.BtnPesquisa.UseVisualStyleBackColor = True
-        '
-        'BtnLimpar
-        '
-        Me.BtnLimpar.Image = CType(resources.GetObject("BtnLimpar.Image"), System.Drawing.Image)
-        Me.BtnLimpar.Location = New System.Drawing.Point(108, 10)
-        Me.BtnLimpar.Name = "BtnLimpar"
-        Me.BtnLimpar.Size = New System.Drawing.Size(31, 31)
-        Me.BtnLimpar.TabIndex = 5
-        Me.BtnLimpar.UseVisualStyleBackColor = True
-        '
-        'BtnSalvar
-        '
-        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
-        Me.BtnSalvar.Location = New System.Drawing.Point(6, 10)
-        Me.BtnSalvar.Name = "BtnSalvar"
-        Me.BtnSalvar.Size = New System.Drawing.Size(31, 31)
-        Me.BtnSalvar.TabIndex = 2
-        Me.BtnSalvar.UseVisualStyleBackColor = True
-        '
-        'BtnExcluir
-        '
-        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(40, 10)
-        Me.BtnExcluir.Name = "BtnExcluir"
-        Me.BtnExcluir.Size = New System.Drawing.Size(31, 31)
-        Me.BtnExcluir.TabIndex = 3
-        Me.BtnExcluir.UseVisualStyleBackColor = True
         '
         'TabControl1
         '
@@ -263,10 +178,96 @@ Partial Class FrmCad1Padrao
         Me.GroupBox3.TabIndex = 15
         Me.GroupBox3.TabStop = False
         '
+        'BtnUltimoReg
+        '
+        Me.BtnUltimoReg.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.BtnUltimoReg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BtnUltimoReg.Image = CType(resources.GetObject("BtnUltimoReg.Image"), System.Drawing.Image)
+        Me.BtnUltimoReg.Location = New System.Drawing.Point(312, 10)
+        Me.BtnUltimoReg.Name = "BtnUltimoReg"
+        Me.BtnUltimoReg.Size = New System.Drawing.Size(31, 31)
+        Me.BtnUltimoReg.TabIndex = 11
+        Me.BtnUltimoReg.UseVisualStyleBackColor = True
+        '
+        'BtnAnterior
+        '
+        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
+        Me.BtnAnterior.Location = New System.Drawing.Point(244, 10)
+        Me.BtnAnterior.Name = "BtnAnterior"
+        Me.BtnAnterior.Size = New System.Drawing.Size(31, 31)
+        Me.BtnAnterior.TabIndex = 9
+        Me.BtnAnterior.UseVisualStyleBackColor = True
+        '
+        'BtnProximo
+        '
+        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
+        Me.BtnProximo.Location = New System.Drawing.Point(278, 10)
+        Me.BtnProximo.Name = "BtnProximo"
+        Me.BtnProximo.Size = New System.Drawing.Size(31, 31)
+        Me.BtnProximo.TabIndex = 10
+        Me.BtnProximo.UseVisualStyleBackColor = True
+        '
+        'BtnPrimeiroReg
+        '
+        Me.BtnPrimeiroReg.Image = CType(resources.GetObject("BtnPrimeiroReg.Image"), System.Drawing.Image)
+        Me.BtnPrimeiroReg.Location = New System.Drawing.Point(210, 10)
+        Me.BtnPrimeiroReg.Name = "BtnPrimeiroReg"
+        Me.BtnPrimeiroReg.Size = New System.Drawing.Size(31, 31)
+        Me.BtnPrimeiroReg.TabIndex = 8
+        Me.BtnPrimeiroReg.UseVisualStyleBackColor = True
+        '
+        'BtnGrid
+        '
+        Me.BtnGrid.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.BtnGrid.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BtnGrid.Image = CType(resources.GetObject("BtnGrid.Image"), System.Drawing.Image)
+        Me.BtnGrid.Location = New System.Drawing.Point(142, 10)
+        Me.BtnGrid.Name = "BtnGrid"
+        Me.BtnGrid.Size = New System.Drawing.Size(31, 31)
+        Me.BtnGrid.TabIndex = 6
+        Me.BtnGrid.UseVisualStyleBackColor = True
+        '
+        'BtnPesquisa
+        '
+        Me.BtnPesquisa.Image = CType(resources.GetObject("BtnPesquisa.Image"), System.Drawing.Image)
+        Me.BtnPesquisa.Location = New System.Drawing.Point(74, 10)
+        Me.BtnPesquisa.Name = "BtnPesquisa"
+        Me.BtnPesquisa.Size = New System.Drawing.Size(31, 31)
+        Me.BtnPesquisa.TabIndex = 4
+        Me.BtnPesquisa.UseVisualStyleBackColor = True
+        '
+        'BtnLimpar
+        '
+        Me.BtnLimpar.Image = CType(resources.GetObject("BtnLimpar.Image"), System.Drawing.Image)
+        Me.BtnLimpar.Location = New System.Drawing.Point(108, 10)
+        Me.BtnLimpar.Name = "BtnLimpar"
+        Me.BtnLimpar.Size = New System.Drawing.Size(31, 31)
+        Me.BtnLimpar.TabIndex = 5
+        Me.BtnLimpar.UseVisualStyleBackColor = True
+        '
+        'BtnSalvar
+        '
+        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
+        Me.BtnSalvar.Location = New System.Drawing.Point(6, 10)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(31, 31)
+        Me.BtnSalvar.TabIndex = 2
+        Me.BtnSalvar.UseVisualStyleBackColor = True
+        '
+        'BtnExcluir
+        '
+        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
+        Me.BtnExcluir.Location = New System.Drawing.Point(40, 10)
+        Me.BtnExcluir.Name = "BtnExcluir"
+        Me.BtnExcluir.Size = New System.Drawing.Size(31, 31)
+        Me.BtnExcluir.TabIndex = 3
+        Me.BtnExcluir.UseVisualStyleBackColor = True
+        '
         'FrmCad1Padrao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(439, 283)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.TabControl1)

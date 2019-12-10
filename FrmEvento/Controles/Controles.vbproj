@@ -68,6 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexaoSQL.vb" />
+    <Compile Include="TxbData.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TxbCodigo.vb">
       <SubType>Component</SubType>
     </Compile>

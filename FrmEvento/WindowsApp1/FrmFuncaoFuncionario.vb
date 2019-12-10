@@ -14,12 +14,12 @@ Public Class FrmFuncaoFuncionario
     Private Sub BtnPesquisa_Click(sender As Object, e As EventArgs) Handles BtnPesquisa.Click
         verificarAutefuncaoo()
 
-        If TxbCodFuncao.Text = "" Then
+        If TxbCodigo.Text = "" Then
             cod = 0
         Else
-            cod = TxbCodFuncao.Text
+            cod = TxbCodigo.Text
         End If
-        desc = TxbDesFuncao.Text
+        desc = TxbDescricao.Text
         atualizaDados()
 
     End Sub
@@ -29,8 +29,8 @@ Public Class FrmFuncaoFuncionario
         tabela = ds.Tables(0)
 
         If tabela.Rows.Count > 0 Then
-            DgvFuncao.DataSource = Nothing
-            DgvFuncao.DataSource = ds.Tables(0)
+            Dgv.DataSource = Nothing
+            Dgv.DataSource = ds.Tables(0)
             formatarGrid()
         End If
     End Sub
@@ -41,14 +41,14 @@ Public Class FrmFuncaoFuncionario
     End Sub
     Public Sub salvaRegistro()
         Try
-            If TxbDesFuncao.Text = "" Then
+            If TxbDescricao.Text = "" Then
                 MsgBox("INFORME NOME DO ITEM")
-                TxbDesFuncao.Select()
+                TxbDescricao.Select()
                 Exit Sub
             End If
 
-            funcao.des_funcao_funcionario = TxbDesFuncao.Text
-            desc = TxbDesFuncao.Text
+            funcao.des_funcao_funcionario = TxbDescricao.Text
+            desc = TxbDescricao.Text
 
             If atualizar = 1 Then
                 'pegar o ultimo registro
@@ -62,7 +62,7 @@ Public Class FrmFuncaoFuncionario
                 MsgBox("Função Funcionario cadastrado com sucesso", MsgBoxStyle.OkOnly, "Sucesso")
                 atualizaDados()
             Else
-                funcao.cod_funcao_funcionario = TxbCodFuncao.Text
+                funcao.cod_funcao_funcionario = TxbCodigo.Text
                 funcao.AtualizarFuncaoFuncionario()
                 MsgBox("Função Funcionario Alterado com sucesso", MsgBoxStyle.OkOnly, "Sucesso")
                 atualizaDados()
@@ -72,12 +72,12 @@ Public Class FrmFuncaoFuncionario
         End Try
     End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnExcluir.Click
-        If TxbCodFuncao.Text = "" Then
+        If TxbCodigo.Text = "" Then
             Exit Sub
         End If
-        If MsgBox("Deseja excluir a Função Funcionario:   " & TxbDesFuncao.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
+        If MsgBox("Deseja excluir a Função Funcionario:   " & TxbDescricao.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
             Try
-                funcao.cod_funcao_funcionario = TxbCodFuncao.Text
+                funcao.cod_funcao_funcionario = TxbCodigo.Text
                 funcao.ExcluirFuncaoFuncionario()
                 MsgBox("Função Funcionario excluido com sucesso", MsgBoxStyle.Information, "Informação")
                 atualizaDados()
@@ -93,21 +93,21 @@ Public Class FrmFuncaoFuncionario
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnLimpar.Click
         verificarAutefuncaoo()
         limpar()
-        DgvFuncao.DataSource = Nothing
-        TxbCodFuncao.Enabled = True
+        Dgv.DataSource = Nothing
+        TxbCodigo.Enabled = True
         TabControl1.SelectedIndex = 0
 
     End Sub
     Public Sub limpar()
-        TxbCodFuncao.Text = ""
-        TxbDesFuncao.Text = ""
+        TxbCodigo.Text = ""
+        TxbDescricao.Text = ""
         atualizar = 1
 
 
     End Sub
     Public Sub formatarGrid()
         Try
-            With DgvFuncao
+            With Dgv
                 .Columns(0).HeaderText = "Código"
                 .Columns(1).HeaderText = "Descrição"
                 .Columns(0).Width = 60
@@ -125,20 +125,20 @@ Public Class FrmFuncaoFuncionario
         Try
             limpar()
             atualizar = 2
-            TxbCodFuncao.Text = ds.Tables(0).Rows(i)("cod_funcao_funcionario").ToString
-            TxbDesFuncao.Text = ds.Tables(0).Rows(i)("des_funcao_funcionario").ToString
-            desc = TxbDesFuncao.Text
-            TxbCodFuncao.Enabled = False
+            TxbCodigo.Text = ds.Tables(0).Rows(i)("cod_funcao_funcionario").ToString
+            TxbDescricao.Text = ds.Tables(0).Rows(i)("des_funcao_funcionario").ToString
+            desc = TxbDescricao.Text
+            TxbCodigo.Enabled = False
         Catch ex As Exception
 
         End Try
     End Sub
     Public Sub verificarAutefuncaoo()
-        If TxbCodFuncao.Text = "" Then
+        If TxbCodigo.Text = "" Then
             Exit Sub
         End If
-        If desc <> TxbDesFuncao.Text Then
-            If MsgBox("Descrição foi alterada deseja salvar alteração?       Anterior: " & desc & "     Nova Descrição: " & TxbDesFuncao.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
+        If desc <> TxbDescricao.Text Then
+            If MsgBox("Descrição foi alterada deseja salvar alteração?       Anterior: " & desc & "     Nova Descrição: " & TxbDescricao.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
                 salvaRegistro()
             End If
         End If
@@ -146,11 +146,6 @@ Public Class FrmFuncaoFuncionario
 
     Private Sub FrmFuncaoFuncionario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpar()
-    End Sub
-
-    Private Sub DgvFuncao_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DgvFuncao.CellEnter
-        i = DgvFuncao.CurrentRow.Index
-        carregaFormulario()
     End Sub
 
     Private Sub BtnGrid_Click(sender As Object, e As EventArgs) Handles BtnGrid.Click
@@ -206,9 +201,9 @@ Public Class FrmFuncaoFuncionario
         carregaFormulario()
     End Sub
 
-    Private Sub TxbCodFuncao_TextChanged_1(sender As Object, e As EventArgs) Handles TxbCodFuncao.TextChanged
-        If Not IsNumeric(TxbCodFuncao.Text) Then
-            TxbCodFuncao.Text = ""
+    Private Sub TxbCodigo_TextChanged_1(sender As Object, e As EventArgs) Handles TxbCodigo.TextChanged
+        If Not IsNumeric(TxbCodigo.Text) Then
+            TxbCodigo.Text = ""
         End If
     End Sub
 
@@ -242,11 +237,11 @@ Public Class FrmFuncaoFuncionario
                                                                                )
         Dim i As Integer, x As Integer
 
-        Dim QtdColunas As Integer = DgvFuncao.ColumnCount - 1
+        Dim QtdColunas As Integer = Dgv.ColumnCount - 1
 
         For i = 0 To QtdColunas
-            If DgvFuncao.Columns(i).HeaderText.Substring(0, 6) <> "Column" Then
-                CSV.Write(DgvFuncao.Columns(i).HeaderText)
+            If Dgv.Columns(i).HeaderText.Substring(0, 6) <> "Column" Then
+                CSV.Write(Dgv.Columns(i).HeaderText)
 
                 If (i < QtdColunas) Then
 
@@ -258,14 +253,14 @@ Public Class FrmFuncaoFuncionario
 
         ' CSV.Write(CSV.NewLine)
 
-        Dim QtdRows As Integer = DgvFuncao.Rows.Count - 1
+        Dim QtdRows As Integer = Dgv.Rows.Count - 1
 
         For i = 0 To QtdRows
 
             For x = 0 To QtdColunas
 
-                If (Not DgvFuncao.Rows(i).Cells(x).Value Is Nothing) Then
-                    CSV.Write(DgvFuncao.Rows(i).Cells(x).Value.ToString())
+                If (Not Dgv.Rows(i).Cells(x).Value Is Nothing) Then
+                    CSV.Write(Dgv.Rows(i).Cells(x).Value.ToString())
 
                 End If
 
@@ -281,16 +276,15 @@ Public Class FrmFuncaoFuncionario
         CSV.Close()
     End Sub
 
-    Private Sub TxbCodFuncao_TextChanged(sender As Object, e As EventArgs)
-        If Not IsNumeric(TxbCodFuncao.Text) Then
-            TxbCodFuncao.Text = ""
-        End If
-    End Sub
-
-    Private Sub DgvFuncao_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvFuncao.CellClick
-        Me.TxbCodFuncao.Text = DgvFuncao.CurrentRow.Cells(0).Value
-        Me.TxbDesFuncao.Text = DgvFuncao.CurrentRow.Cells(1).Value
+    Private Overloads Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellClick
+        Me.TxbCodigo.Text = Dgv.CurrentRow.Cells(0).Value
+        Me.TxbDescricao.Text = Dgv.CurrentRow.Cells(1).Value
         TabControl1.SelectedIndex = 0
-        Me.TxbDesFuncao.Select()
+        Me.Height = 145
+        Me.TxbDescricao.Select()
+    End Sub
+    Private Overloads Sub Dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellEnter
+        i = Dgv.CurrentRow.Index
+        carregaFormulario()
     End Sub
 End Class

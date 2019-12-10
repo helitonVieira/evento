@@ -15,13 +15,13 @@
         End Set
     End Property
 
-    Private cod_funcao_ As Integer
-    Public Property cod_funcao() As Integer
+    Private cod_funcao_funcionario_ As Integer
+    Public Property cod_funcao_funcionario() As Integer
         Get
-            Return cod_funcao_
+            Return cod_funcao_funcionario_
         End Get
         Set(ByVal value As Integer)
-            cod_funcao_ = value
+            cod_funcao_funcionario_ = value
         End Set
     End Property
 
@@ -97,8 +97,29 @@
     End Property
 
     Public Sub CadastrarFuncionario()
+        If val_salario = "" Then
+            val_salario = "0"
+        Else
+            val_salario = Replace(val_salario, ".", "")
+            val_salario = Replace(val_salario, ",", "")
+        End If
+        If Val_custo_hora = "" Then
+            Val_custo_hora = "0"
+        Else
+            Val_custo_hora = Replace(Val_custo_hora, ".", "")
+            Val_custo_hora = Replace(Val_custo_hora, ",", "")
+        End If
+        If dta_admissao = "Null" Then
+            String.IsNullOrEmpty(dta_admissao)
+        End If
+        If dta_demissao = "Null" Then
+            String.IsNullOrEmpty(dta_demissao)
+        End If
+        If dta_ultimo_reajuste = "Null" Then
+            String.IsNullOrEmpty(dta_ultimo_reajuste)
+        End If
         sql = "Insert Into tab_pessoa_funcionario( cod_pessoa ,
-                                                  cod_funcao, 
+                                                  cod_funcao_funcionario, 
                                                   val_salario,
                                                   val_custo_hora,
                                                   ind_tipo_salario,
@@ -107,7 +128,7 @@
                                                   dta_ultimo_reajuste,
                                                   des_observacao) 
                                         Values (" & cod_pessoa & ",
-                                                " & cod_funcao & ",
+                                                " & cod_funcao_funcionario & ",
                                                 '" & val_salario & "',
                                                 '" & Val_custo_hora & "', 
                                                 '" & ind_tipo_salario & "',
@@ -118,12 +139,16 @@
         con.Operar(sql)
     End Sub
 
+    Private Function IsDBNull() As String
+        Throw New NotImplementedException()
+    End Function
+
     Public Sub AtualizarFuncionario()
         sql = "Update tab_pessoa_funcionario Set  
-                                      cod_funcao ='" & cod_funcao & "',
+                                      cod_funcao_funcionario ='" & cod_funcao_funcionario & "',
                                       val_salario ='" & val_salario & "' ,
                                       val_custo_hora ='" & Val_custo_hora & "',
-                                      ind_tipo_salario ='" & ind_tipo_salario & "' 
+                                      ind_tipo_salario ='" & ind_tipo_salario & "', 
                                       dta_admissao ='" & dta_admissao & "' ,
                                       dta_demissao ='" & dta_demissao & "' ,
                                       dta_ultimo_reajuste ='" & dta_ultimo_reajuste & "' ,

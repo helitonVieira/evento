@@ -25,20 +25,11 @@ Partial Class FrmPessoa
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPessoa))
         Me.GbNavegador = New System.Windows.Forms.GroupBox()
         Me.BtnCsv = New System.Windows.Forms.Button()
-        Me.BtnUltimoReg = New System.Windows.Forms.Button()
-        Me.BtnAnterior = New System.Windows.Forms.Button()
-        Me.BtnProximo = New System.Windows.Forms.Button()
-        Me.BtnPrimeiroReg = New System.Windows.Forms.Button()
-        Me.BtnGrid = New System.Windows.Forms.Button()
-        Me.BtnPesquisa = New System.Windows.Forms.Button()
-        Me.BtnLimpar = New System.Windows.Forms.Button()
-        Me.BtnSalvar = New System.Windows.Forms.Button()
-        Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.DtpDtaNasc = New System.Windows.Forms.DateTimePicker()
         Me.TxbCep = New System.Windows.Forms.TextBox()
         Me.TxbIeRg = New System.Windows.Forms.TextBox()
         Me.TxbComplemento = New System.Windows.Forms.TextBox()
-        Me.DtpDtaNasc = New System.Windows.Forms.DateTimePicker()
         Me.TxbRua = New System.Windows.Forms.TextBox()
         Me.TxbCnpjCpf = New System.Windows.Forms.TextBox()
         Me.TxbEmail = New System.Windows.Forms.TextBox()
@@ -85,9 +76,6 @@ Partial Class FrmPessoa
         Me.txbObsDepte = New System.Windows.Forms.TextBox()
         Me.Label = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.BtnLimpaDept = New System.Windows.Forms.Button()
-        Me.BtnSalvaDepte = New System.Windows.Forms.Button()
-        Me.BtnExcluiDept = New System.Windows.Forms.Button()
         Me.txbFoneDepte = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txbApelidoDepte = New System.Windows.Forms.TextBox()
@@ -103,25 +91,42 @@ Partial Class FrmPessoa
         Me.RbQuinzenaFunc = New System.Windows.Forms.RadioButton()
         Me.RbMesFunc = New System.Windows.Forms.RadioButton()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.TxbDtaDemissaoFunc = New System.Windows.Forms.TextBox()
+        Me.DtpDtaReajusteFunc = New System.Windows.Forms.DateTimePicker()
+        Me.DtpDtaDemissaoFunc = New System.Windows.Forms.DateTimePicker()
         Me.DtpAdmissaoFunc = New System.Windows.Forms.DateTimePicker()
-        Me.TxbDtaReajusteFunc = New System.Windows.Forms.TextBox()
         Me.TxbObsFunc = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.TxbCustoHrFunc = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.TxbSalarioFunc = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.BtnBuscaFuncaoFunc = New System.Windows.Forms.Button()
         Me.txbDesFuncaoFunc = New System.Windows.Forms.TextBox()
         Me.TxbCodFuncaoFunc = New System.Windows.Forms.TextBox()
         Me.BtnDependente = New System.Windows.Forms.Button()
         Me.BtnFuncionario = New System.Windows.Forms.Button()
         Me.BtnPrincipal = New System.Windows.Forms.Button()
+        Me.BtnUltimoReg = New System.Windows.Forms.Button()
+        Me.BtnAnterior = New System.Windows.Forms.Button()
+        Me.BtnProximo = New System.Windows.Forms.Button()
+        Me.BtnPrimeiroReg = New System.Windows.Forms.Button()
+        Me.BtnGrid = New System.Windows.Forms.Button()
+        Me.BtnPesquisa = New System.Windows.Forms.Button()
+        Me.BtnLimpar = New System.Windows.Forms.Button()
+        Me.BtnSalvar = New System.Windows.Forms.Button()
+        Me.BtnExcluir = New System.Windows.Forms.Button()
+        Me.BtnLimpaDept = New System.Windows.Forms.Button()
+        Me.BtnSalvaDepte = New System.Windows.Forms.Button()
+        Me.BtnExcluiDept = New System.Windows.Forms.Button()
+        Me.BtnBuscaFuncaoFunc = New System.Windows.Forms.Button()
+        Me.TxbDtaNasc = New Controles.TxbData()
+        Me.TxbDtaNascDept = New Controles.TxbData()
+        Me.TxbDtaReajusteFunc = New Controles.TxbData()
+        Me.TxbDtaDemissaoFunc = New Controles.TxbData()
+        Me.TxbCustoHrFunc = New Controles.TxbMonetario()
+        Me.TxbSalarioFunc = New Controles.TxbMonetario()
+        Me.TxbDtaAdmissaoFunc = New Controles.TxbData()
         Me.GbNavegador.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -140,6 +145,7 @@ Partial Class FrmPessoa
         '
         'GbNavegador
         '
+        Me.GbNavegador.BackColor = System.Drawing.Color.White
         Me.GbNavegador.Controls.Add(Me.BtnCsv)
         Me.GbNavegador.Controls.Add(Me.BtnUltimoReg)
         Me.GbNavegador.Controls.Add(Me.BtnAnterior)
@@ -166,95 +172,13 @@ Partial Class FrmPessoa
         Me.BtnCsv.Text = "CSV"
         Me.BtnCsv.UseVisualStyleBackColor = True
         '
-        'BtnUltimoReg
-        '
-        Me.BtnUltimoReg.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.BtnUltimoReg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.BtnUltimoReg.Image = CType(resources.GetObject("BtnUltimoReg.Image"), System.Drawing.Image)
-        Me.BtnUltimoReg.Location = New System.Drawing.Point(355, 10)
-        Me.BtnUltimoReg.Name = "BtnUltimoReg"
-        Me.BtnUltimoReg.Size = New System.Drawing.Size(32, 31)
-        Me.BtnUltimoReg.TabIndex = 30
-        Me.BtnUltimoReg.UseVisualStyleBackColor = True
-        '
-        'BtnAnterior
-        '
-        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
-        Me.BtnAnterior.Location = New System.Drawing.Point(287, 10)
-        Me.BtnAnterior.Name = "BtnAnterior"
-        Me.BtnAnterior.Size = New System.Drawing.Size(32, 31)
-        Me.BtnAnterior.TabIndex = 28
-        Me.BtnAnterior.UseVisualStyleBackColor = True
-        '
-        'BtnProximo
-        '
-        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
-        Me.BtnProximo.Location = New System.Drawing.Point(321, 10)
-        Me.BtnProximo.Name = "BtnProximo"
-        Me.BtnProximo.Size = New System.Drawing.Size(32, 31)
-        Me.BtnProximo.TabIndex = 29
-        Me.BtnProximo.UseVisualStyleBackColor = True
-        '
-        'BtnPrimeiroReg
-        '
-        Me.BtnPrimeiroReg.Image = CType(resources.GetObject("BtnPrimeiroReg.Image"), System.Drawing.Image)
-        Me.BtnPrimeiroReg.Location = New System.Drawing.Point(253, 10)
-        Me.BtnPrimeiroReg.Name = "BtnPrimeiroReg"
-        Me.BtnPrimeiroReg.Size = New System.Drawing.Size(32, 31)
-        Me.BtnPrimeiroReg.TabIndex = 27
-        Me.BtnPrimeiroReg.UseVisualStyleBackColor = True
-        '
-        'BtnGrid
-        '
-        Me.BtnGrid.Image = CType(resources.GetObject("BtnGrid.Image"), System.Drawing.Image)
-        Me.BtnGrid.Location = New System.Drawing.Point(150, 10)
-        Me.BtnGrid.Name = "BtnGrid"
-        Me.BtnGrid.Size = New System.Drawing.Size(32, 31)
-        Me.BtnGrid.TabIndex = 25
-        Me.BtnGrid.UseVisualStyleBackColor = True
-        '
-        'BtnPesquisa
-        '
-        Me.BtnPesquisa.Image = CType(resources.GetObject("BtnPesquisa.Image"), System.Drawing.Image)
-        Me.BtnPesquisa.Location = New System.Drawing.Point(78, 10)
-        Me.BtnPesquisa.Name = "BtnPesquisa"
-        Me.BtnPesquisa.Size = New System.Drawing.Size(32, 31)
-        Me.BtnPesquisa.TabIndex = 23
-        Me.BtnPesquisa.UseVisualStyleBackColor = True
-        '
-        'BtnLimpar
-        '
-        Me.BtnLimpar.Image = CType(resources.GetObject("BtnLimpar.Image"), System.Drawing.Image)
-        Me.BtnLimpar.Location = New System.Drawing.Point(114, 10)
-        Me.BtnLimpar.Name = "BtnLimpar"
-        Me.BtnLimpar.Size = New System.Drawing.Size(32, 31)
-        Me.BtnLimpar.TabIndex = 24
-        Me.BtnLimpar.UseVisualStyleBackColor = True
-        '
-        'BtnSalvar
-        '
-        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
-        Me.BtnSalvar.Location = New System.Drawing.Point(6, 10)
-        Me.BtnSalvar.Name = "BtnSalvar"
-        Me.BtnSalvar.Size = New System.Drawing.Size(32, 31)
-        Me.BtnSalvar.TabIndex = 21
-        Me.BtnSalvar.UseVisualStyleBackColor = True
-        '
-        'BtnExcluir
-        '
-        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(42, 10)
-        Me.BtnExcluir.Name = "BtnExcluir"
-        Me.BtnExcluir.Size = New System.Drawing.Size(32, 31)
-        Me.BtnExcluir.TabIndex = 22
-        Me.BtnExcluir.UseVisualStyleBackColor = True
-        '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.TxbDtaNasc)
+        Me.GroupBox1.Controls.Add(Me.DtpDtaNasc)
         Me.GroupBox1.Controls.Add(Me.TxbCep)
         Me.GroupBox1.Controls.Add(Me.TxbIeRg)
         Me.GroupBox1.Controls.Add(Me.TxbComplemento)
-        Me.GroupBox1.Controls.Add(Me.DtpDtaNasc)
         Me.GroupBox1.Controls.Add(Me.TxbRua)
         Me.GroupBox1.Controls.Add(Me.TxbCnpjCpf)
         Me.GroupBox1.Controls.Add(Me.TxbEmail)
@@ -285,6 +209,15 @@ Partial Class FrmPessoa
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Principal"
         '
+        'DtpDtaNasc
+        '
+        Me.DtpDtaNasc.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtpDtaNasc.Location = New System.Drawing.Point(296, 88)
+        Me.DtpDtaNasc.Name = "DtpDtaNasc"
+        Me.DtpDtaNasc.Size = New System.Drawing.Size(14, 20)
+        Me.DtpDtaNasc.TabIndex = 40
+        Me.DtpDtaNasc.Value = New Date(2018, 8, 31, 0, 0, 0, 0)
+        '
         'TxbCep
         '
         Me.TxbCep.Location = New System.Drawing.Point(369, 88)
@@ -307,15 +240,6 @@ Partial Class FrmPessoa
         Me.TxbComplemento.Name = "TxbComplemento"
         Me.TxbComplemento.Size = New System.Drawing.Size(221, 20)
         Me.TxbComplemento.TabIndex = 11
-        '
-        'DtpDtaNasc
-        '
-        Me.DtpDtaNasc.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpDtaNasc.Location = New System.Drawing.Point(228, 88)
-        Me.DtpDtaNasc.Name = "DtpDtaNasc"
-        Me.DtpDtaNasc.Size = New System.Drawing.Size(80, 20)
-        Me.DtpDtaNasc.TabIndex = 8
-        Me.DtpDtaNasc.Value = New Date(2018, 8, 31, 0, 0, 0, 0)
         '
         'TxbRua
         '
@@ -583,7 +507,7 @@ Partial Class FrmPessoa
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Location = New System.Drawing.Point(129, 35)
+        Me.TabControl1.Location = New System.Drawing.Point(129, 19)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(477, 351)
@@ -700,6 +624,7 @@ Partial Class FrmPessoa
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.TxbDtaNascDept)
         Me.GroupBox4.Controls.Add(Me.DtpDtaNascDept)
         Me.GroupBox4.Controls.Add(Me.txbObsDepte)
         Me.GroupBox4.Controls.Add(Me.Label)
@@ -724,10 +649,10 @@ Partial Class FrmPessoa
         'DtpDtaNascDept
         '
         Me.DtpDtaNascDept.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpDtaNascDept.Location = New System.Drawing.Point(251, 59)
+        Me.DtpDtaNascDept.Location = New System.Drawing.Point(325, 59)
         Me.DtpDtaNascDept.Name = "DtpDtaNascDept"
-        Me.DtpDtaNascDept.Size = New System.Drawing.Size(79, 20)
-        Me.DtpDtaNascDept.TabIndex = 38
+        Me.DtpDtaNascDept.Size = New System.Drawing.Size(14, 20)
+        Me.DtpDtaNascDept.TabIndex = 46
         Me.DtpDtaNascDept.Value = New Date(2018, 8, 31, 0, 0, 0, 0)
         '
         'txbObsDepte
@@ -756,33 +681,6 @@ Partial Class FrmPessoa
         Me.Label26.Size = New System.Drawing.Size(55, 13)
         Me.Label26.TabIndex = 42
         Me.Label26.Text = "Dta.Nasc:"
-        '
-        'BtnLimpaDept
-        '
-        Me.BtnLimpaDept.Image = CType(resources.GetObject("BtnLimpaDept.Image"), System.Drawing.Image)
-        Me.BtnLimpaDept.Location = New System.Drawing.Point(424, 85)
-        Me.BtnLimpaDept.Name = "BtnLimpaDept"
-        Me.BtnLimpaDept.Size = New System.Drawing.Size(33, 33)
-        Me.BtnLimpaDept.TabIndex = 42
-        Me.BtnLimpaDept.UseVisualStyleBackColor = True
-        '
-        'BtnSalvaDepte
-        '
-        Me.BtnSalvaDepte.Image = CType(resources.GetObject("BtnSalvaDepte.Image"), System.Drawing.Image)
-        Me.BtnSalvaDepte.Location = New System.Drawing.Point(351, 85)
-        Me.BtnSalvaDepte.Name = "BtnSalvaDepte"
-        Me.BtnSalvaDepte.Size = New System.Drawing.Size(33, 33)
-        Me.BtnSalvaDepte.TabIndex = 40
-        Me.BtnSalvaDepte.UseVisualStyleBackColor = True
-        '
-        'BtnExcluiDept
-        '
-        Me.BtnExcluiDept.Image = CType(resources.GetObject("BtnExcluiDept.Image"), System.Drawing.Image)
-        Me.BtnExcluiDept.Location = New System.Drawing.Point(388, 85)
-        Me.BtnExcluiDept.Name = "BtnExcluiDept"
-        Me.BtnExcluiDept.Size = New System.Drawing.Size(33, 33)
-        Me.BtnExcluiDept.TabIndex = 41
-        Me.BtnExcluiDept.UseVisualStyleBackColor = True
         '
         'txbFoneDepte
         '
@@ -873,7 +771,7 @@ Partial Class FrmPessoa
         Me.RbHoraFunc.Location = New System.Drawing.Point(250, 19)
         Me.RbHoraFunc.Name = "RbHoraFunc"
         Me.RbHoraFunc.Size = New System.Drawing.Size(48, 17)
-        Me.RbHoraFunc.TabIndex = 56
+        Me.RbHoraFunc.TabIndex = 17
         Me.RbHoraFunc.TabStop = True
         Me.RbHoraFunc.Text = "Hora"
         Me.RbHoraFunc.UseVisualStyleBackColor = True
@@ -884,7 +782,7 @@ Partial Class FrmPessoa
         Me.RbDiaFunc.Location = New System.Drawing.Point(203, 19)
         Me.RbDiaFunc.Name = "RbDiaFunc"
         Me.RbDiaFunc.Size = New System.Drawing.Size(41, 17)
-        Me.RbDiaFunc.TabIndex = 55
+        Me.RbDiaFunc.TabIndex = 16
         Me.RbDiaFunc.TabStop = True
         Me.RbDiaFunc.Text = "Dia"
         Me.RbDiaFunc.UseVisualStyleBackColor = True
@@ -895,7 +793,7 @@ Partial Class FrmPessoa
         Me.RbSemanaFunc.Location = New System.Drawing.Point(133, 19)
         Me.RbSemanaFunc.Name = "RbSemanaFunc"
         Me.RbSemanaFunc.Size = New System.Drawing.Size(64, 17)
-        Me.RbSemanaFunc.TabIndex = 54
+        Me.RbSemanaFunc.TabIndex = 15
         Me.RbSemanaFunc.TabStop = True
         Me.RbSemanaFunc.Text = "Semana"
         Me.RbSemanaFunc.UseVisualStyleBackColor = True
@@ -906,7 +804,7 @@ Partial Class FrmPessoa
         Me.RbQuinzenaFunc.Location = New System.Drawing.Point(57, 19)
         Me.RbQuinzenaFunc.Name = "RbQuinzenaFunc"
         Me.RbQuinzenaFunc.Size = New System.Drawing.Size(70, 17)
-        Me.RbQuinzenaFunc.TabIndex = 53
+        Me.RbQuinzenaFunc.TabIndex = 14
         Me.RbQuinzenaFunc.TabStop = True
         Me.RbQuinzenaFunc.Text = "Quinzena"
         Me.RbQuinzenaFunc.UseVisualStyleBackColor = True
@@ -917,25 +815,28 @@ Partial Class FrmPessoa
         Me.RbMesFunc.Location = New System.Drawing.Point(6, 19)
         Me.RbMesFunc.Name = "RbMesFunc"
         Me.RbMesFunc.Size = New System.Drawing.Size(45, 17)
-        Me.RbMesFunc.TabIndex = 52
+        Me.RbMesFunc.TabIndex = 13
         Me.RbMesFunc.TabStop = True
         Me.RbMesFunc.Text = "Mês"
         Me.RbMesFunc.UseVisualStyleBackColor = True
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.TxbDtaDemissaoFunc)
-        Me.GroupBox5.Controls.Add(Me.DtpAdmissaoFunc)
         Me.GroupBox5.Controls.Add(Me.TxbDtaReajusteFunc)
+        Me.GroupBox5.Controls.Add(Me.DtpDtaReajusteFunc)
+        Me.GroupBox5.Controls.Add(Me.TxbDtaDemissaoFunc)
+        Me.GroupBox5.Controls.Add(Me.DtpDtaDemissaoFunc)
+        Me.GroupBox5.Controls.Add(Me.TxbCustoHrFunc)
+        Me.GroupBox5.Controls.Add(Me.TxbSalarioFunc)
+        Me.GroupBox5.Controls.Add(Me.TxbDtaAdmissaoFunc)
+        Me.GroupBox5.Controls.Add(Me.DtpAdmissaoFunc)
         Me.GroupBox5.Controls.Add(Me.TxbObsFunc)
         Me.GroupBox5.Controls.Add(Me.Label25)
-        Me.GroupBox5.Controls.Add(Me.TxbCustoHrFunc)
         Me.GroupBox5.Controls.Add(Me.Label24)
         Me.GroupBox5.Controls.Add(Me.Label23)
         Me.GroupBox5.Controls.Add(Me.Label22)
         Me.GroupBox5.Controls.Add(Me.Label21)
         Me.GroupBox5.Controls.Add(Me.Label20)
-        Me.GroupBox5.Controls.Add(Me.TxbSalarioFunc)
         Me.GroupBox5.Controls.Add(Me.Label19)
         Me.GroupBox5.Controls.Add(Me.BtnBuscaFuncaoFunc)
         Me.GroupBox5.Controls.Add(Me.txbDesFuncaoFunc)
@@ -947,29 +848,32 @@ Partial Class FrmPessoa
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Funcionário"
         '
-        'TxbDtaDemissaoFunc
+        'DtpDtaReajusteFunc
         '
-        Me.TxbDtaDemissaoFunc.Location = New System.Drawing.Point(368, 61)
-        Me.TxbDtaDemissaoFunc.Name = "TxbDtaDemissaoFunc"
-        Me.TxbDtaDemissaoFunc.Size = New System.Drawing.Size(84, 20)
-        Me.TxbDtaDemissaoFunc.TabIndex = 49
+        Me.DtpDtaReajusteFunc.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtpDtaReajusteFunc.Location = New System.Drawing.Point(438, 85)
+        Me.DtpDtaReajusteFunc.Name = "DtpDtaReajusteFunc"
+        Me.DtpDtaReajusteFunc.Size = New System.Drawing.Size(14, 20)
+        Me.DtpDtaReajusteFunc.TabIndex = 12
+        Me.DtpDtaReajusteFunc.Value = New Date(2018, 8, 31, 0, 0, 0, 0)
+        '
+        'DtpDtaDemissaoFunc
+        '
+        Me.DtpDtaDemissaoFunc.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtpDtaDemissaoFunc.Location = New System.Drawing.Point(438, 61)
+        Me.DtpDtaDemissaoFunc.Name = "DtpDtaDemissaoFunc"
+        Me.DtpDtaDemissaoFunc.Size = New System.Drawing.Size(14, 20)
+        Me.DtpDtaDemissaoFunc.TabIndex = 10
+        Me.DtpDtaDemissaoFunc.Value = New Date(2018, 8, 31, 0, 0, 0, 0)
         '
         'DtpAdmissaoFunc
         '
         Me.DtpAdmissaoFunc.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpAdmissaoFunc.Location = New System.Drawing.Point(368, 38)
+        Me.DtpAdmissaoFunc.Location = New System.Drawing.Point(438, 38)
         Me.DtpAdmissaoFunc.Name = "DtpAdmissaoFunc"
-        Me.DtpAdmissaoFunc.Size = New System.Drawing.Size(84, 20)
-        Me.DtpAdmissaoFunc.TabIndex = 47
+        Me.DtpAdmissaoFunc.Size = New System.Drawing.Size(14, 20)
+        Me.DtpAdmissaoFunc.TabIndex = 8
         Me.DtpAdmissaoFunc.Value = New Date(2018, 8, 31, 0, 0, 0, 0)
-        '
-        'TxbDtaReajusteFunc
-        '
-        Me.TxbDtaReajusteFunc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TxbDtaReajusteFunc.Location = New System.Drawing.Point(368, 84)
-        Me.TxbDtaReajusteFunc.Name = "TxbDtaReajusteFunc"
-        Me.TxbDtaReajusteFunc.Size = New System.Drawing.Size(84, 20)
-        Me.TxbDtaReajusteFunc.TabIndex = 51
         '
         'TxbObsFunc
         '
@@ -978,7 +882,7 @@ Partial Class FrmPessoa
         Me.TxbObsFunc.Multiline = True
         Me.TxbObsFunc.Name = "TxbObsFunc"
         Me.TxbObsFunc.Size = New System.Drawing.Size(192, 20)
-        Me.TxbObsFunc.TabIndex = 50
+        Me.TxbObsFunc.TabIndex = 6
         '
         'Label25
         '
@@ -988,13 +892,6 @@ Partial Class FrmPessoa
         Me.Label25.Size = New System.Drawing.Size(68, 13)
         Me.Label25.TabIndex = 51
         Me.Label25.Text = "Observação:"
-        '
-        'TxbCustoHrFunc
-        '
-        Me.TxbCustoHrFunc.Location = New System.Drawing.Point(77, 61)
-        Me.TxbCustoHrFunc.Name = "TxbCustoHrFunc"
-        Me.TxbCustoHrFunc.Size = New System.Drawing.Size(84, 20)
-        Me.TxbCustoHrFunc.TabIndex = 48
         '
         'Label24
         '
@@ -1041,13 +938,6 @@ Partial Class FrmPessoa
         Me.Label20.TabIndex = 41
         Me.Label20.Text = "Função:"
         '
-        'TxbSalarioFunc
-        '
-        Me.TxbSalarioFunc.Location = New System.Drawing.Point(77, 38)
-        Me.TxbSalarioFunc.Name = "TxbSalarioFunc"
-        Me.TxbSalarioFunc.Size = New System.Drawing.Size(84, 20)
-        Me.TxbSalarioFunc.TabIndex = 46
-        '
         'Label19
         '
         Me.Label19.AutoSize = True
@@ -1057,29 +947,20 @@ Partial Class FrmPessoa
         Me.Label19.TabIndex = 40
         Me.Label19.Text = "Salário:"
         '
-        'BtnBuscaFuncaoFunc
-        '
-        Me.BtnBuscaFuncaoFunc.Image = CType(resources.GetObject("BtnBuscaFuncaoFunc.Image"), System.Drawing.Image)
-        Me.BtnBuscaFuncaoFunc.Location = New System.Drawing.Point(427, 14)
-        Me.BtnBuscaFuncaoFunc.Name = "BtnBuscaFuncaoFunc"
-        Me.BtnBuscaFuncaoFunc.Size = New System.Drawing.Size(25, 22)
-        Me.BtnBuscaFuncaoFunc.TabIndex = 45
-        Me.BtnBuscaFuncaoFunc.UseVisualStyleBackColor = True
-        '
         'txbDesFuncaoFunc
         '
         Me.txbDesFuncaoFunc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txbDesFuncaoFunc.Location = New System.Drawing.Point(135, 15)
         Me.txbDesFuncaoFunc.Name = "txbDesFuncaoFunc"
         Me.txbDesFuncaoFunc.Size = New System.Drawing.Size(288, 20)
-        Me.txbDesFuncaoFunc.TabIndex = 44
+        Me.txbDesFuncaoFunc.TabIndex = 2
         '
         'TxbCodFuncaoFunc
         '
         Me.TxbCodFuncaoFunc.Location = New System.Drawing.Point(77, 15)
         Me.TxbCodFuncaoFunc.Name = "TxbCodFuncaoFunc"
         Me.TxbCodFuncaoFunc.Size = New System.Drawing.Size(52, 20)
-        Me.TxbCodFuncaoFunc.TabIndex = 43
+        Me.TxbCodFuncaoFunc.TabIndex = 1
         '
         'BtnDependente
         '
@@ -1108,11 +989,184 @@ Partial Class FrmPessoa
         Me.BtnPrincipal.Text = "Principal"
         Me.BtnPrincipal.UseVisualStyleBackColor = True
         '
+        'BtnUltimoReg
+        '
+        Me.BtnUltimoReg.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.BtnUltimoReg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BtnUltimoReg.Image = CType(resources.GetObject("BtnUltimoReg.Image"), System.Drawing.Image)
+        Me.BtnUltimoReg.Location = New System.Drawing.Point(355, 10)
+        Me.BtnUltimoReg.Name = "BtnUltimoReg"
+        Me.BtnUltimoReg.Size = New System.Drawing.Size(32, 31)
+        Me.BtnUltimoReg.TabIndex = 30
+        Me.BtnUltimoReg.UseVisualStyleBackColor = True
+        '
+        'BtnAnterior
+        '
+        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
+        Me.BtnAnterior.Location = New System.Drawing.Point(287, 10)
+        Me.BtnAnterior.Name = "BtnAnterior"
+        Me.BtnAnterior.Size = New System.Drawing.Size(32, 31)
+        Me.BtnAnterior.TabIndex = 28
+        Me.BtnAnterior.UseVisualStyleBackColor = True
+        '
+        'BtnProximo
+        '
+        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
+        Me.BtnProximo.Location = New System.Drawing.Point(321, 10)
+        Me.BtnProximo.Name = "BtnProximo"
+        Me.BtnProximo.Size = New System.Drawing.Size(32, 31)
+        Me.BtnProximo.TabIndex = 29
+        Me.BtnProximo.UseVisualStyleBackColor = True
+        '
+        'BtnPrimeiroReg
+        '
+        Me.BtnPrimeiroReg.Image = CType(resources.GetObject("BtnPrimeiroReg.Image"), System.Drawing.Image)
+        Me.BtnPrimeiroReg.Location = New System.Drawing.Point(253, 10)
+        Me.BtnPrimeiroReg.Name = "BtnPrimeiroReg"
+        Me.BtnPrimeiroReg.Size = New System.Drawing.Size(32, 31)
+        Me.BtnPrimeiroReg.TabIndex = 27
+        Me.BtnPrimeiroReg.UseVisualStyleBackColor = True
+        '
+        'BtnGrid
+        '
+        Me.BtnGrid.Image = CType(resources.GetObject("BtnGrid.Image"), System.Drawing.Image)
+        Me.BtnGrid.Location = New System.Drawing.Point(150, 10)
+        Me.BtnGrid.Name = "BtnGrid"
+        Me.BtnGrid.Size = New System.Drawing.Size(32, 31)
+        Me.BtnGrid.TabIndex = 25
+        Me.BtnGrid.UseVisualStyleBackColor = True
+        '
+        'BtnPesquisa
+        '
+        Me.BtnPesquisa.Image = CType(resources.GetObject("BtnPesquisa.Image"), System.Drawing.Image)
+        Me.BtnPesquisa.Location = New System.Drawing.Point(78, 10)
+        Me.BtnPesquisa.Name = "BtnPesquisa"
+        Me.BtnPesquisa.Size = New System.Drawing.Size(32, 31)
+        Me.BtnPesquisa.TabIndex = 23
+        Me.BtnPesquisa.UseVisualStyleBackColor = True
+        '
+        'BtnLimpar
+        '
+        Me.BtnLimpar.Image = CType(resources.GetObject("BtnLimpar.Image"), System.Drawing.Image)
+        Me.BtnLimpar.Location = New System.Drawing.Point(114, 10)
+        Me.BtnLimpar.Name = "BtnLimpar"
+        Me.BtnLimpar.Size = New System.Drawing.Size(32, 31)
+        Me.BtnLimpar.TabIndex = 24
+        Me.BtnLimpar.UseVisualStyleBackColor = True
+        '
+        'BtnSalvar
+        '
+        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
+        Me.BtnSalvar.Location = New System.Drawing.Point(6, 10)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(32, 31)
+        Me.BtnSalvar.TabIndex = 21
+        Me.BtnSalvar.UseVisualStyleBackColor = True
+        '
+        'BtnExcluir
+        '
+        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
+        Me.BtnExcluir.Location = New System.Drawing.Point(42, 10)
+        Me.BtnExcluir.Name = "BtnExcluir"
+        Me.BtnExcluir.Size = New System.Drawing.Size(32, 31)
+        Me.BtnExcluir.TabIndex = 22
+        Me.BtnExcluir.UseVisualStyleBackColor = True
+        '
+        'BtnLimpaDept
+        '
+        Me.BtnLimpaDept.Image = CType(resources.GetObject("BtnLimpaDept.Image"), System.Drawing.Image)
+        Me.BtnLimpaDept.Location = New System.Drawing.Point(424, 85)
+        Me.BtnLimpaDept.Name = "BtnLimpaDept"
+        Me.BtnLimpaDept.Size = New System.Drawing.Size(33, 33)
+        Me.BtnLimpaDept.TabIndex = 42
+        Me.BtnLimpaDept.UseVisualStyleBackColor = True
+        '
+        'BtnSalvaDepte
+        '
+        Me.BtnSalvaDepte.Image = CType(resources.GetObject("BtnSalvaDepte.Image"), System.Drawing.Image)
+        Me.BtnSalvaDepte.Location = New System.Drawing.Point(351, 85)
+        Me.BtnSalvaDepte.Name = "BtnSalvaDepte"
+        Me.BtnSalvaDepte.Size = New System.Drawing.Size(33, 33)
+        Me.BtnSalvaDepte.TabIndex = 40
+        Me.BtnSalvaDepte.UseVisualStyleBackColor = True
+        '
+        'BtnExcluiDept
+        '
+        Me.BtnExcluiDept.Image = CType(resources.GetObject("BtnExcluiDept.Image"), System.Drawing.Image)
+        Me.BtnExcluiDept.Location = New System.Drawing.Point(388, 85)
+        Me.BtnExcluiDept.Name = "BtnExcluiDept"
+        Me.BtnExcluiDept.Size = New System.Drawing.Size(33, 33)
+        Me.BtnExcluiDept.TabIndex = 41
+        Me.BtnExcluiDept.UseVisualStyleBackColor = True
+        '
+        'BtnBuscaFuncaoFunc
+        '
+        Me.BtnBuscaFuncaoFunc.Image = CType(resources.GetObject("BtnBuscaFuncaoFunc.Image"), System.Drawing.Image)
+        Me.BtnBuscaFuncaoFunc.Location = New System.Drawing.Point(427, 14)
+        Me.BtnBuscaFuncaoFunc.Name = "BtnBuscaFuncaoFunc"
+        Me.BtnBuscaFuncaoFunc.Size = New System.Drawing.Size(25, 22)
+        Me.BtnBuscaFuncaoFunc.TabIndex = 3
+        Me.BtnBuscaFuncaoFunc.UseVisualStyleBackColor = True
+        '
+        'TxbDtaNasc
+        '
+        Me.TxbDtaNasc.Location = New System.Drawing.Point(228, 88)
+        Me.TxbDtaNasc.MaxLength = 10
+        Me.TxbDtaNasc.Name = "TxbDtaNasc"
+        Me.TxbDtaNasc.Size = New System.Drawing.Size(66, 20)
+        Me.TxbDtaNasc.TabIndex = 8
+        '
+        'TxbDtaNascDept
+        '
+        Me.TxbDtaNascDept.Location = New System.Drawing.Point(257, 59)
+        Me.TxbDtaNascDept.MaxLength = 10
+        Me.TxbDtaNascDept.Name = "TxbDtaNascDept"
+        Me.TxbDtaNascDept.Size = New System.Drawing.Size(66, 20)
+        Me.TxbDtaNascDept.TabIndex = 45
+        '
+        'TxbDtaReajusteFunc
+        '
+        Me.TxbDtaReajusteFunc.Location = New System.Drawing.Point(368, 85)
+        Me.TxbDtaReajusteFunc.MaxLength = 10
+        Me.TxbDtaReajusteFunc.Name = "TxbDtaReajusteFunc"
+        Me.TxbDtaReajusteFunc.Size = New System.Drawing.Size(68, 20)
+        Me.TxbDtaReajusteFunc.TabIndex = 11
+        '
+        'TxbDtaDemissaoFunc
+        '
+        Me.TxbDtaDemissaoFunc.Location = New System.Drawing.Point(368, 61)
+        Me.TxbDtaDemissaoFunc.MaxLength = 10
+        Me.TxbDtaDemissaoFunc.Name = "TxbDtaDemissaoFunc"
+        Me.TxbDtaDemissaoFunc.Size = New System.Drawing.Size(68, 20)
+        Me.TxbDtaDemissaoFunc.TabIndex = 9
+        '
+        'TxbCustoHrFunc
+        '
+        Me.TxbCustoHrFunc.Location = New System.Drawing.Point(77, 61)
+        Me.TxbCustoHrFunc.Name = "TxbCustoHrFunc"
+        Me.TxbCustoHrFunc.Size = New System.Drawing.Size(100, 20)
+        Me.TxbCustoHrFunc.TabIndex = 5
+        '
+        'TxbSalarioFunc
+        '
+        Me.TxbSalarioFunc.Location = New System.Drawing.Point(77, 38)
+        Me.TxbSalarioFunc.Name = "TxbSalarioFunc"
+        Me.TxbSalarioFunc.Size = New System.Drawing.Size(100, 20)
+        Me.TxbSalarioFunc.TabIndex = 4
+        '
+        'TxbDtaAdmissaoFunc
+        '
+        Me.TxbDtaAdmissaoFunc.Location = New System.Drawing.Point(368, 38)
+        Me.TxbDtaAdmissaoFunc.MaxLength = 10
+        Me.TxbDtaAdmissaoFunc.Name = "TxbDtaAdmissaoFunc"
+        Me.TxbDtaAdmissaoFunc.Size = New System.Drawing.Size(68, 20)
+        Me.TxbDtaAdmissaoFunc.TabIndex = 7
+        '
         'FrmPessoa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(609, 398)
         Me.Controls.Add(Me.BtnPrincipal)
         Me.Controls.Add(Me.BtnFuncionario)
@@ -1186,7 +1240,6 @@ Partial Class FrmPessoa
     Friend WithEvents Label10 As Label
     Friend WithEvents TxbComplemento As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents DtpDtaNasc As DateTimePicker
     Friend WithEvents Label8 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents CkbAtivo As CheckBox
@@ -1208,10 +1261,8 @@ Partial Class FrmPessoa
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents BtnDependente As Button
     Friend WithEvents BtnFuncionario As Button
-    Friend WithEvents TxbDtaReajusteFunc As TextBox
     Friend WithEvents Label21 As Label
     Friend WithEvents Label20 As Label
-    Friend WithEvents TxbSalarioFunc As TextBox
     Friend WithEvents Label19 As Label
     Friend WithEvents BtnBuscaFuncaoFunc As Button
     Friend WithEvents txbDesFuncaoFunc As TextBox
@@ -1222,13 +1273,10 @@ Partial Class FrmPessoa
     Friend WithEvents RbSemanaFunc As RadioButton
     Friend WithEvents RbQuinzenaFunc As RadioButton
     Friend WithEvents RbMesFunc As RadioButton
-    Friend WithEvents TxbDtaDemissaoFunc As TextBox
     Friend WithEvents Label23 As Label
-    Friend WithEvents DtpAdmissaoFunc As DateTimePicker
     Friend WithEvents Label22 As Label
     Friend WithEvents TxbObsFunc As TextBox
     Friend WithEvents Label25 As Label
-    Friend WithEvents TxbCustoHrFunc As TextBox
     Friend WithEvents Label24 As Label
     Friend WithEvents BtnPrincipal As Button
     Friend WithEvents BtnLimpaDept As Button
@@ -1241,8 +1289,19 @@ Partial Class FrmPessoa
     Friend WithEvents BtnAnterior As Button
     Friend WithEvents BtnProximo As Button
     Friend WithEvents BtnPrimeiroReg As Button
-    Friend WithEvents DtpDtaNascDept As DateTimePicker
     Friend WithEvents Label26 As Label
     Friend WithEvents txbObsDepte As TextBox
     Friend WithEvents Label As Label
+    Friend WithEvents TxbDtaNasc As Controles.TxbData
+    Friend WithEvents DtpDtaNasc As DateTimePicker
+    Friend WithEvents TxbDtaNascDept As Controles.TxbData
+    Friend WithEvents DtpDtaNascDept As DateTimePicker
+    Friend WithEvents TxbDtaReajusteFunc As Controles.TxbData
+    Friend WithEvents DtpDtaReajusteFunc As DateTimePicker
+    Friend WithEvents TxbDtaDemissaoFunc As Controles.TxbData
+    Friend WithEvents DtpDtaDemissaoFunc As DateTimePicker
+    Friend WithEvents TxbCustoHrFunc As Controles.TxbMonetario
+    Friend WithEvents TxbSalarioFunc As Controles.TxbMonetario
+    Friend WithEvents TxbDtaAdmissaoFunc As Controles.TxbData
+    Friend WithEvents DtpAdmissaoFunc As DateTimePicker
 End Class

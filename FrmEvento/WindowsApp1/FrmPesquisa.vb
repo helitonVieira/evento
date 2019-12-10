@@ -18,6 +18,7 @@
     Dim pessoa As New ClPessoa
     Dim ingressoImpresso As New ClIngressoImpresso
     Dim evento As New ClEvento
+    Dim clFuncao_func As New ClFuncaoFuncionario
 
     Private cod_evento_ As Integer
     Public Property cod_evento() As Integer
@@ -75,6 +76,8 @@
                 ds = clCategoria.ConsultarPesquisa(busca)
             ElseIf tabela = "tab_subcategoria_item" Then
                 ds = clSubCategoria.ConsultarPesquisa(busca)
+            ElseIf tabela = "tab_funcao_func_pessoa" Then
+                ds = clFuncao_func.ConsultarFuncaoFuncionarioPesquisa(busca)
             End If
             tab = ds.Tables(0)
             If tab.Rows.Count > 0 Then
@@ -157,6 +160,10 @@
         If tabela = "tab_subcategoria_item" Then
             FrmItem.TxbCodSubCategoria.Text = dgvBusca.CurrentRow.Cells(0).Value
             FrmItem.txbDesSubCategoria.Text = dgvBusca.CurrentRow.Cells(1).Value
+        End If
+        If tabela = "tab_funcao_func_pessoa" Then
+            FrmPessoa.TxbCodFuncaoFunc.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmPessoa.txbDesFuncaoFunc.Text = dgvBusca.CurrentRow.Cells(1).Value
         End If
 
         Me.Close()

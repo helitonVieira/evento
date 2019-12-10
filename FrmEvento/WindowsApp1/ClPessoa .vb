@@ -292,7 +292,7 @@
                                          NUM_TELEFONE_1_OLD As String, NUM_TELEFONE_2_OLD As String, NUM_TELEFONE_3_OLD As String,
                                          DES_OBSERVACAO_OLD As String, IND_CLIENTE_OLD As String,
                                          IND_FORNECEDOR_OLD As String, IND_FUNCIONARIO_OLD As String, IND_ATIVO_OLD As String,
-                                         DES_EMAIL_OLD As String, IND_PE As String)
+                                         DES_EMAIL_OLD As String, IND_PE As String, COD_FUNCAO_FUNCIONARIO_OLD As String)
 
         Dim indCliente, indFornecedor, indFuncionario, indAtivo As String
         indCliente = ""
@@ -318,6 +318,11 @@
             COD_CIDADE_OLD = Convert.ToInt16("0")
         Else
             COD_CIDADE_OLD = Convert.ToInt16(COD_CIDADE_OLD)
+        End If
+        If COD_FUNCAO_FUNCIONARIO_OLD = "" Then
+            COD_FUNCAO_FUNCIONARIO_OLD = Convert.ToInt16("0")
+        Else
+            COD_FUNCAO_FUNCIONARIO_OLD = Convert.ToInt16(COD_FUNCAO_FUNCIONARIO_OLD)
         End If
 
         sql = "select   a.*,
@@ -348,6 +353,8 @@
                  and ((a.num_telefone_3 = '" & NUM_TELEFONE_3_OLD & "') or ('' = '" & NUM_TELEFONE_3_OLD & "' ))
                  and a.des_observacao like ('%" & DES_OBSERVACAO_OLD & "%') 
                  and a.des_email like ('%" & DES_EMAIL_OLD & "%') 
+                 and ((c.cod_funcao_funcionario = " & COD_FUNCAO_FUNCIONARIO_OLD & " )or (0 = " & COD_FUNCAO_FUNCIONARIO_OLD & "))
+                
                  " & indCliente & indFornecedor & indFuncionario & indAtivo & "
                                                                          
                order by nom_pessoa"
