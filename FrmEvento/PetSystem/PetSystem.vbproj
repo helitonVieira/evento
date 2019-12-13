@@ -66,9 +66,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClAnimalControleParasita.vb" />
     <Compile Include="ClControleParasita.vb" />
     <Compile Include="ClEspecie.vb" />
     <Compile Include="ClPelagem.vb" />
+    <Compile Include="ClAnimal .vb" />
+    <Compile Include="ClPessoa .vb" />
+    <Compile Include="ClAnimalVacina.vb" />
     <Compile Include="ClRaca.vb" />
     <Compile Include="ClVacina .vb" />
     <Compile Include="Class1.vb" />
@@ -102,6 +106,12 @@
     <Compile Include="FrmPelagem.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmPesquisa.Designer.vb">
+      <DependentUpon>FrmPesquisa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPesquisa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmRaca.Designer.vb">
       <DependentUpon>FrmRaca.vb</DependentUpon>
     </Compile>
@@ -114,6 +124,7 @@
     <Compile Include="FrmVacina.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ModuleVariavelGlobal.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -142,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPelagem.resx">
       <DependentUpon>FrmPelagem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPesquisa.resx">
+      <DependentUpon>FrmPesquisa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRaca.resx">
       <DependentUpon>FrmRaca.vb</DependentUpon>
@@ -172,6 +186,9 @@
       <Project>{a7339b44-0462-4561-a50b-bc17ec49a94a}</Project>
       <Name>Controles</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

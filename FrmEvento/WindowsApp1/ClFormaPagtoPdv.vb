@@ -1,7 +1,7 @@
 ﻿Public Class ClFormaPagtoPdv
     Dim sql As String
     Dim ds As New DataSet
-    Dim con As New ConexaoSQ
+    Dim con As New ConexaoSQL
 
     Private cod_forma_pagto_ As Integer
     Public Property cod_forma_pagto() As Integer

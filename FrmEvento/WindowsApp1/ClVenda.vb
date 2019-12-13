@@ -1,7 +1,7 @@
 ﻿Public Class ClVenda
     Dim sql As String
     Dim ds As New DataSet
-    Dim con As New ConexaoSQ
+    Dim con As New ConexaoSQL
 
     Private cod_evento_ As String
     Public Property cod_evento() As Integer

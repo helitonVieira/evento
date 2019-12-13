@@ -1,7 +1,7 @@
 ﻿Public Class ClPessoa
     Dim sql As String
     Dim ds, dsUltimo As New DataSet
-    Dim con As New ConexaoSQL
+    Dim con As New Controles.ConexaoSQL
     Dim ultimoItem As Integer
 
     Private cod_pessoa_ As Integer

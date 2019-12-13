@@ -2,7 +2,7 @@
 Imports System.IO
 Imports System.Windows.Forms
 
-Public Class ConexaoSQ
+Public Class ConexaoSQL
     Private con As SqlConnection
     Private adpt As SqlDataAdapter
     Public ds As New DataSet

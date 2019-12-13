@@ -1,7 +1,7 @@
 ﻿Public Class ClUsuario
     Dim sql As String
     Dim ds As New DataSet
-    Dim con As New ConexaoSQ
+    Dim con As New ConexaoSQL
 
     Private cod_usuario_ As Integer
     Public Property cod_usuario() As Integer

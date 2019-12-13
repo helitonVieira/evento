@@ -1,5 +1,5 @@
 ﻿Public Class FrmInventarioRapido
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim clGeral As New ClGeral
     Dim atualizar As Integer = 1
     Dim inventario As New ClInventarioRapido

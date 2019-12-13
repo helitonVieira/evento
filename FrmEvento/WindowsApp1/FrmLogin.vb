@@ -1,5 +1,5 @@
 ﻿Public Class FrmLogin
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim ds As New DataSet
     Dim clUsuario As New ClUsuario
 

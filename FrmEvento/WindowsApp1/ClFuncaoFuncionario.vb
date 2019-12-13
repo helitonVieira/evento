@@ -1,7 +1,7 @@
 ﻿Public Class ClFuncaoFuncionario
     Dim sql As String
     Dim ds, dsUltimo As New DataSet
-    Dim con As New ConexaoSQ
+    Dim con As New ConexaoSQL
     Dim ultimoFuncaoFuncionario As Integer
 
     Private cod_funcao_funcionario_ As Integer

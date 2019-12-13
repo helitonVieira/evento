@@ -25,23 +25,23 @@
         End Set
     End Property
     Public Sub Cadastrar()
-        sql = "Insert Into tab_animal_pelagem( cod_pelagem ,des_pelagem) Values (" & cod_pelagem & ",'" & des_pelagem & "')"
+        sql = "Insert Into tab_pelagem( cod_pelagem ,des_pelagem) Values (" & cod_pelagem & ",'" & des_pelagem & "')"
         con.Operar(sql)
     End Sub
 
     Public Sub Atualizar()
-        sql = "Update tab_animal_pelagem Set des_pelagem = '" & des_pelagem & "'  Where cod_pelagem = " & cod_pelagem & ""
+        sql = "Update tab_pelagem Set des_pelagem = '" & des_pelagem & "'  Where cod_pelagem = " & cod_pelagem & ""
         con.Operar(sql)
     End Sub
     Public Sub Excluir()
-        sql = " Delete from tab_animal_pelagem Where cod_pelagem =" & cod_pelagem & ""
+        sql = " Delete from tab_pelagem Where cod_pelagem =" & cod_pelagem & ""
         con.Operar(sql)
     End Sub
 
     Public Function Consultar(cod As Integer, desc As String)
         sql = "Select cod_pelagem,
                       des_pelagem
-               From tab_animal_pelagem
+               From tab_pelagem
                where ((des_pelagem like ('%" & desc & "%') )or ('' = '" & desc & "' ))  
                  and ((cod_pelagem = " & cod & " )or (0 = " & cod & "))
               order by des_pelagem"
@@ -49,21 +49,21 @@
         Return ds
     End Function
     Public Function ConsultarCodigo()
-        sql = "Select * From tab_animal_pelagem Where cod_pelagem =" & cod_pelagem & ""
+        sql = "Select * From tab_pelagem Where cod_pelagem =" & cod_pelagem & ""
         ds = con.Listar(sql)
         Return ds
     End Function
 
     Public Function ConsultarPesquisa(busca As String)
         sql = "Select * 
-              From tab_animal_pelagem
+              From tab_pelagem
               where des_pelagem like ('%" & busca & "%')               
               order by des_pelagem"
         ds = con.Listar(sql)
         Return ds
     End Function
     Public Function UltimoCadastrado()
-        sql = "Select coalesce(cast( max(cod_pelagem) as varchar(5)),0)as ultimo From tab_animal_pelagem"
+        sql = "Select coalesce(cast( max(cod_pelagem) as varchar(5)),0)as ultimo From tab_pelagem"
         dsUltimo = con.Listar(sql)
         Return dsUltimo
     End Function

@@ -1,5 +1,5 @@
 ﻿Public Class FrmItem
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim ds As New DataSet
     Dim item As New ClItem
     Dim atualizar As Integer = 1

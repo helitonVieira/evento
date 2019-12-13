@@ -3,7 +3,7 @@ Imports System.Data
 Imports System.Data.OleDb
 Imports System.IO
 Public Class FrmFuncaoFuncionario
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim ds, dsUltimo As New DataSet
     Dim funcao, funcao2 As New ClFuncaoFuncionario
     Dim atualizar As Integer = 1

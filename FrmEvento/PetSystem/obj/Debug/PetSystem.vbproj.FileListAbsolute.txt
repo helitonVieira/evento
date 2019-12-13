@@ -17,3 +17,4 @@ D:\source\repos\FrmEvento\PetSystem\obj\Debug\PetSystem.FrmAnimal.resources
 D:\source\repos\FrmEvento\PetSystem\obj\Debug\PetSystem.FrmEspecie.resources
 D:\source\repos\FrmEvento\PetSystem\obj\Debug\PetSystem.FrmPelagem.resources
 D:\source\repos\FrmEvento\PetSystem\obj\Debug\PetSystem.FrmRaca.resources
+D:\source\repos\FrmEvento\PetSystem\obj\Debug\PetSystem.FrmPesquisa.resources

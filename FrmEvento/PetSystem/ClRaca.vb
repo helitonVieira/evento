@@ -1,7 +1,6 @@
 ﻿Public Class ClRaca
     Dim sql As String
     Dim ds, dsUltimo As New DataSet
-
     Dim con As New Controles.ConexaoSQL
     Dim ultimo As Integer
 
@@ -25,23 +24,23 @@
         End Set
     End Property
     Public Sub Cadastrar()
-        sql = "Insert Into tab_animal_raca( cod_raca ,des_raca) Values (" & cod_raca & ",'" & des_raca & "')"
+        sql = "Insert Into tab_raca( cod_raca ,des_raca) Values (" & cod_raca & ",'" & des_raca & "')"
         con.Operar(sql)
     End Sub
 
     Public Sub Atualizar()
-        sql = "Update tab_animal_raca Set des_raca = '" & des_raca & "'  Where cod_raca = " & cod_raca & ""
+        sql = "Update tab_raca Set des_raca = '" & des_raca & "'  Where cod_raca = " & cod_raca & ""
         con.Operar(sql)
     End Sub
     Public Sub Excluir()
-        sql = " Delete from tab_animal_raca Where cod_raca =" & cod_raca & ""
+        sql = " Delete from tab_raca Where cod_raca =" & cod_raca & ""
         con.Operar(sql)
     End Sub
 
     Public Function Consultar(cod As Integer, desc As String)
         sql = "Select cod_raca,
                       des_raca
-               From tab_animal_raca
+               From tab_raca
                where ((des_raca like ('%" & desc & "%') )or ('' = '" & desc & "' ))  
                  and ((cod_raca = " & cod & " )or (0 = " & cod & "))
               order by des_raca"
@@ -49,21 +48,21 @@
         Return ds
     End Function
     Public Function ConsultarCodigo()
-        sql = "Select * From tab_animal_raca Where cod_raca =" & cod_raca & ""
+        sql = "Select * From tab_raca Where cod_raca =" & cod_raca & ""
         ds = con.Listar(sql)
         Return ds
     End Function
 
     Public Function ConsultarPesquisa(busca As String)
         sql = "Select * 
-              From tab_animal_raca
+              From tab_raca
               where des_raca like ('%" & busca & "%')               
               order by des_raca"
         ds = con.Listar(sql)
         Return ds
     End Function
     Public Function UltimoCadastrado()
-        sql = "Select coalesce(cast( max(cod_raca) as varchar(5)),0)as ultimo From tab_animal_raca"
+        sql = "Select coalesce(cast( max(cod_raca) as varchar(5)),0)as ultimo From tab_raca"
         dsUltimo = con.Listar(sql)
         Return dsUltimo
     End Function

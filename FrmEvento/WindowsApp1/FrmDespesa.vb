@@ -1,5 +1,5 @@
 ﻿Public Class FrmDespesa
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim ds As New DataSet
     Dim despesa As New ClDespesa
     Dim atualizar As Integer = 1

@@ -4,7 +4,7 @@ Imports System.Data.OleDb
 Imports System.IO
 Public Class FrmSecao
 
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim ds, dsUltimo As New DataSet
     Dim secao, secao2 As New ClSecaoItem
     Dim atualizar As Integer = 1

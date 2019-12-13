@@ -150,7 +150,7 @@
         gg==
 </value>
   </data>
-  <data name="Button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnLimpaVacina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EwAACxMBAJqcGAAAAPVJREFUSEvt1jsOAVEYxfEhlBLxWIJSpVNI7MAe1GqtktiISuIRiVJCoSR2oKBU
@@ -160,7 +160,7 @@
         bDSvPdrnKtErzQQ6/JUR2Os4dwHtrtiygZhVAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnSalvaVacina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
         1wAADdcBQiibeAAAAa9JREFUSEu11ksofGEYx/Fxy79kSRai/mQnuWRJuSwIWbBQspK1lXJJyHWjrJQF
@@ -173,7 +173,7 @@
         JopR+kMFGERUgGh5p6S0wqKewyQfVCz2AUxKXFMU4Hv8AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Button11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnExcluirVacina.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAE6
         9gABOvYBOrFXOgAAASFJREFUSEvt1TFKA0EYhuFVo40Ei5BSjCSksBSsPIApFXIDSTq1SCFE9AqK2oqV

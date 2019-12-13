@@ -1,5 +1,5 @@
 ﻿Public Class FrmPessoa
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim ds, dsDependente As New DataSet
     Dim pessoa, pessoa2 As New ClPessoa
 

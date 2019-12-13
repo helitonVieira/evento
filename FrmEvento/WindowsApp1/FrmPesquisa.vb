@@ -1,5 +1,5 @@
 ﻿Public Class FrmPesquisa
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim ds As New DataSet
     Dim item As New ClItem
     Dim inventario As New FrmInventarioRapido
@@ -40,8 +40,6 @@
         End Set
     End Property
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         carrega(tabela, "")
     End Sub
     Public Sub carrega(tabela As String, busca As String)

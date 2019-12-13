@@ -1,7 +1,7 @@
 ﻿Public Class ClTipoMovimento
     Dim sql As String
     Dim ds As New DataSet
-    Dim con As New ConexaoSQ
+    Dim con As New ConexaoSQL
 
     Private cod_tipo_movimento_ As Integer
     Public Property cod_tipo_movimento() As Integer

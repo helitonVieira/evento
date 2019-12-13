@@ -1,6 +1,6 @@
 ﻿Imports PetSystem.FrmControleParasita
 Public Class FrmPrincipal
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim dsParamSist, dsVenda, dsItem, dsPessoa, dsFormaPgto As New DataSet
     Dim item As New ClItem
     Dim clVenda As New ClVenda

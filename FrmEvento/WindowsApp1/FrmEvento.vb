@@ -1,5 +1,5 @@
 ﻿Public Class FrmEvento
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim ds, ds1, ds2 As New DataSet
     Dim evento As New ClEvento
     Dim ingresso As New ClIngresso

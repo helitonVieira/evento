@@ -1,5 +1,5 @@
 ﻿Public Class FrmImprimirIngressos
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim ds As New DataSet
     Dim evento As New ClEvento
     Dim Ingresso As New ClIngresso

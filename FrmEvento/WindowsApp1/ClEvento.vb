@@ -2,8 +2,8 @@
 
     Dim sql As String
         Dim ds As New DataSet
-        Dim con As New ConexaoSQ
-        Dim ultimoEvento As Integer
+    Dim con As New ConexaoSQL
+    Dim ultimoEvento As Integer
 
     Private cod_evento_ As Integer
     Public Property cod_evento() As Integer

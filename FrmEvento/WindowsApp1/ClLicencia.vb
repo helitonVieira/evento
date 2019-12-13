@@ -1,7 +1,7 @@
 ﻿Public Class ClLicencia
     Dim sql As String
     Dim ds As New DataSet
-    Dim con As New ConexaoSQ
+    Dim con As New ConexaoSQL
     Public dataVectoLicencia As String
 
     ' Dim ultimoItem As Integer

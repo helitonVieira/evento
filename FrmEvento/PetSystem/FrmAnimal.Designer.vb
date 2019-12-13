@@ -29,6 +29,11 @@ Partial Class FrmAnimal
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TxbCodAnimal = New Controles.TxbCodigo()
+        Me.TxbCodEspecie = New Controles.TxbCodigo()
+        Me.TxbCodPelagem = New Controles.TxbCodigo()
+        Me.txbcodRaca = New Controles.TxbCodigo()
+        Me.TxbCodProprietario = New Controles.TxbCodigo()
         Me.TxbDtaNasc = New Controles.TxbData()
         Me.BtnPesquisaPelagem = New System.Windows.Forms.Button()
         Me.TxbDesPelagem = New System.Windows.Forms.TextBox()
@@ -52,15 +57,19 @@ Partial Class FrmAnimal
         Me.TxbNomProprietario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.DgvAnimal = New System.Windows.Forms.DataGridView()
+        Me.Dgv = New System.Windows.Forms.DataGridView()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.LbSeqVacina = New System.Windows.Forms.Label()
+        Me.TxbCodVacina = New Controles.TxbCodigo()
+        Me.TxbDtaVacina = New Controles.TxbData()
+        Me.DtpDtaVacina = New System.Windows.Forms.DateTimePicker()
+        Me.BtnLimpaVacina = New System.Windows.Forms.Button()
+        Me.BtnSalvaVacina = New System.Windows.Forms.Button()
+        Me.BtnExcluirVacina = New System.Windows.Forms.Button()
+        Me.RbVacNao = New System.Windows.Forms.RadioButton()
+        Me.RbVacSim = New System.Windows.Forms.RadioButton()
         Me.BtnPesquisaVacina = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -70,7 +79,9 @@ Partial Class FrmAnimal
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.DgvContParasitario = New System.Windows.Forms.DataGridView()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.LbSeqParasita = New System.Windows.Forms.Label()
         Me.TxbPesoParasita = New Controles.TxbMonetario()
+        Me.TxbDoseParasita = New System.Windows.Forms.TextBox()
         Me.TxbCodParasita = New Controles.TxbCodigo()
         Me.TxbDtaProximaParasita = New Controles.TxbData()
         Me.DtpProximaParasita = New System.Windows.Forms.DateTimePicker()
@@ -80,14 +91,13 @@ Partial Class FrmAnimal
         Me.BtnSalvaParasita = New System.Windows.Forms.Button()
         Me.BtnExcluirParasita = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.TxbDoseParasita = New System.Windows.Forms.TextBox()
         Me.BtnPesquisaParasita = New System.Windows.Forms.Button()
         Me.TxbDesParasita = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.GbNavegador = New System.Windows.Forms.GroupBox()
         Me.BtnCsv = New System.Windows.Forms.Button()
         Me.BtnUltimoReg = New System.Windows.Forms.Button()
         Me.BtnAnterior = New System.Windows.Forms.Button()
@@ -98,18 +108,11 @@ Partial Class FrmAnimal
         Me.BtnLimpar = New System.Windows.Forms.Button()
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnExcluir = New System.Windows.Forms.Button()
-        Me.TxbCodProprietario = New Controles.TxbCodigo()
-        Me.TxbCodEspecie = New Controles.TxbCodigo()
-        Me.txbcodRaca = New Controles.TxbCodigo()
-        Me.TxbCodPelagem = New Controles.TxbCodigo()
-        Me.TxbDtaVacina = New Controles.TxbData()
-        Me.DtpDtaVacina = New System.Windows.Forms.DateTimePicker()
-        Me.TxbCodVacina = New Controles.TxbCodigo()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        CType(Me.DgvAnimal, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -117,12 +120,12 @@ Partial Class FrmAnimal
         Me.TabPage4.SuspendLayout()
         CType(Me.DgvContParasitario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.GbNavegador.SuspendLayout()
         Me.SuspendLayout()
         '
         'BtnControleParasitario
         '
-        Me.BtnControleParasitario.Location = New System.Drawing.Point(10, 145)
+        Me.BtnControleParasitario.Location = New System.Drawing.Point(10, 134)
         Me.BtnControleParasitario.Name = "BtnControleParasitario"
         Me.BtnControleParasitario.Size = New System.Drawing.Size(107, 28)
         Me.BtnControleParasitario.TabIndex = 3
@@ -131,7 +134,7 @@ Partial Class FrmAnimal
         '
         'BtnVacina
         '
-        Me.BtnVacina.Location = New System.Drawing.Point(10, 110)
+        Me.BtnVacina.Location = New System.Drawing.Point(10, 104)
         Me.BtnVacina.Name = "BtnVacina"
         Me.BtnVacina.Size = New System.Drawing.Size(107, 28)
         Me.BtnVacina.TabIndex = 2
@@ -153,7 +156,7 @@ Partial Class FrmAnimal
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Location = New System.Drawing.Point(123, 47)
+        Me.TabControl1.Location = New System.Drawing.Point(123, 19)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(465, 243)
@@ -172,9 +175,10 @@ Partial Class FrmAnimal
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.TxbCodAnimal)
+        Me.GroupBox1.Controls.Add(Me.TxbCodEspecie)
         Me.GroupBox1.Controls.Add(Me.TxbCodPelagem)
         Me.GroupBox1.Controls.Add(Me.txbcodRaca)
-        Me.GroupBox1.Controls.Add(Me.TxbCodEspecie)
         Me.GroupBox1.Controls.Add(Me.TxbCodProprietario)
         Me.GroupBox1.Controls.Add(Me.TxbDtaNasc)
         Me.GroupBox1.Controls.Add(Me.BtnPesquisaPelagem)
@@ -204,6 +208,41 @@ Partial Class FrmAnimal
         Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Principal"
+        '
+        'TxbCodAnimal
+        '
+        Me.TxbCodAnimal.Location = New System.Drawing.Point(77, 12)
+        Me.TxbCodAnimal.Name = "TxbCodAnimal"
+        Me.TxbCodAnimal.Size = New System.Drawing.Size(55, 20)
+        Me.TxbCodAnimal.TabIndex = 57
+        '
+        'TxbCodEspecie
+        '
+        Me.TxbCodEspecie.Location = New System.Drawing.Point(77, 81)
+        Me.TxbCodEspecie.Name = "TxbCodEspecie"
+        Me.TxbCodEspecie.Size = New System.Drawing.Size(55, 20)
+        Me.TxbCodEspecie.TabIndex = 56
+        '
+        'TxbCodPelagem
+        '
+        Me.TxbCodPelagem.Location = New System.Drawing.Point(77, 127)
+        Me.TxbCodPelagem.Name = "TxbCodPelagem"
+        Me.TxbCodPelagem.Size = New System.Drawing.Size(55, 20)
+        Me.TxbCodPelagem.TabIndex = 15
+        '
+        'txbcodRaca
+        '
+        Me.txbcodRaca.Location = New System.Drawing.Point(77, 104)
+        Me.txbcodRaca.Name = "txbcodRaca"
+        Me.txbcodRaca.Size = New System.Drawing.Size(55, 20)
+        Me.txbcodRaca.TabIndex = 12
+        '
+        'TxbCodProprietario
+        '
+        Me.TxbCodProprietario.Location = New System.Drawing.Point(77, 35)
+        Me.TxbCodProprietario.Name = "TxbCodProprietario"
+        Me.TxbCodProprietario.Size = New System.Drawing.Size(55, 20)
+        Me.TxbCodProprietario.TabIndex = 55
         '
         'TxbDtaNasc
         '
@@ -325,7 +364,7 @@ Partial Class FrmAnimal
         'BtnProprietario
         '
         Me.BtnProprietario.Image = CType(resources.GetObject("BtnProprietario.Image"), System.Drawing.Image)
-        Me.BtnProprietario.Location = New System.Drawing.Point(412, 11)
+        Me.BtnProprietario.Location = New System.Drawing.Point(412, 34)
         Me.BtnProprietario.Name = "BtnProprietario"
         Me.BtnProprietario.Size = New System.Drawing.Size(25, 22)
         Me.BtnProprietario.TabIndex = 3
@@ -370,24 +409,24 @@ Partial Class FrmAnimal
         'TxbNomAnimal
         '
         Me.TxbNomAnimal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TxbNomAnimal.Location = New System.Drawing.Point(77, 35)
+        Me.TxbNomAnimal.Location = New System.Drawing.Point(138, 12)
         Me.TxbNomAnimal.Name = "TxbNomAnimal"
-        Me.TxbNomAnimal.Size = New System.Drawing.Size(360, 20)
+        Me.TxbNomAnimal.Size = New System.Drawing.Size(299, 20)
         Me.TxbNomAnimal.TabIndex = 4
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 39)
+        Me.Label7.Location = New System.Drawing.Point(6, 16)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(38, 13)
+        Me.Label7.Size = New System.Drawing.Size(41, 13)
         Me.Label7.TabIndex = 15
-        Me.Label7.Text = "Nome:"
+        Me.Label7.Text = "Animal:"
         '
         'TxbNomProprietario
         '
         Me.TxbNomProprietario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TxbNomProprietario.Location = New System.Drawing.Point(138, 12)
+        Me.TxbNomProprietario.Location = New System.Drawing.Point(138, 35)
         Me.TxbNomProprietario.Name = "TxbNomProprietario"
         Me.TxbNomProprietario.Size = New System.Drawing.Size(273, 20)
         Me.TxbNomProprietario.TabIndex = 2
@@ -395,7 +434,7 @@ Partial Class FrmAnimal
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 16)
+        Me.Label2.Location = New System.Drawing.Point(6, 39)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 5
@@ -403,7 +442,7 @@ Partial Class FrmAnimal
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.DgvAnimal)
+        Me.TabPage2.Controls.Add(Me.Dgv)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -412,13 +451,13 @@ Partial Class FrmAnimal
         Me.TabPage2.Text = "Grid"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'DgvAnimal
+        'Dgv
         '
-        Me.DgvAnimal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvAnimal.Location = New System.Drawing.Point(3, 3)
-        Me.DgvAnimal.Name = "DgvAnimal"
-        Me.DgvAnimal.Size = New System.Drawing.Size(451, 211)
-        Me.DgvAnimal.TabIndex = 0
+        Me.Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv.Location = New System.Drawing.Point(3, 3)
+        Me.Dgv.Name = "Dgv"
+        Me.Dgv.Size = New System.Drawing.Size(451, 211)
+        Me.Dgv.TabIndex = 0
         '
         'TabPage3
         '
@@ -444,14 +483,15 @@ Partial Class FrmAnimal
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.LbSeqVacina)
         Me.GroupBox5.Controls.Add(Me.TxbCodVacina)
         Me.GroupBox5.Controls.Add(Me.TxbDtaVacina)
         Me.GroupBox5.Controls.Add(Me.DtpDtaVacina)
-        Me.GroupBox5.Controls.Add(Me.Button5)
-        Me.GroupBox5.Controls.Add(Me.Button6)
-        Me.GroupBox5.Controls.Add(Me.Button11)
-        Me.GroupBox5.Controls.Add(Me.RadioButton3)
-        Me.GroupBox5.Controls.Add(Me.RadioButton4)
+        Me.GroupBox5.Controls.Add(Me.BtnLimpaVacina)
+        Me.GroupBox5.Controls.Add(Me.BtnSalvaVacina)
+        Me.GroupBox5.Controls.Add(Me.BtnExcluirVacina)
+        Me.GroupBox5.Controls.Add(Me.RbVacNao)
+        Me.GroupBox5.Controls.Add(Me.RbVacSim)
         Me.GroupBox5.Controls.Add(Me.BtnPesquisaVacina)
         Me.GroupBox5.Controls.Add(Me.Label6)
         Me.GroupBox5.Controls.Add(Me.Label9)
@@ -463,54 +503,88 @@ Partial Class FrmAnimal
         Me.GroupBox5.TabIndex = 55
         Me.GroupBox5.TabStop = False
         '
-        'Button5
+        'LbSeqVacina
         '
-        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(401, 38)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(30, 31)
-        Me.Button5.TabIndex = 10
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.LbSeqVacina.AutoSize = True
+        Me.LbSeqVacina.Location = New System.Drawing.Point(144, 55)
+        Me.LbSeqVacina.Name = "LbSeqVacina"
+        Me.LbSeqVacina.Size = New System.Drawing.Size(57, 13)
+        Me.LbSeqVacina.TabIndex = 55
+        Me.LbSeqVacina.Text = "seqVacina"
+        Me.LbSeqVacina.Visible = False
         '
-        'Button6
+        'TxbCodVacina
         '
-        Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
-        Me.Button6.Location = New System.Drawing.Point(329, 38)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(30, 31)
-        Me.Button6.TabIndex = 8
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.TxbCodVacina.Location = New System.Drawing.Point(56, 15)
+        Me.TxbCodVacina.Name = "TxbCodVacina"
+        Me.TxbCodVacina.Size = New System.Drawing.Size(59, 20)
+        Me.TxbCodVacina.TabIndex = 54
         '
-        'Button11
+        'TxbDtaVacina
         '
-        Me.Button11.Image = CType(resources.GetObject("Button11.Image"), System.Drawing.Image)
-        Me.Button11.Location = New System.Drawing.Point(365, 38)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(30, 31)
-        Me.Button11.TabIndex = 9
-        Me.Button11.UseVisualStyleBackColor = True
+        Me.TxbDtaVacina.Location = New System.Drawing.Point(56, 38)
+        Me.TxbDtaVacina.MaxLength = 10
+        Me.TxbDtaVacina.Name = "TxbDtaVacina"
+        Me.TxbDtaVacina.Size = New System.Drawing.Size(66, 20)
+        Me.TxbDtaVacina.TabIndex = 4
         '
-        'RadioButton3
+        'DtpDtaVacina
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(282, 40)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(45, 17)
-        Me.RadioButton3.TabIndex = 7
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Não"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.DtpDtaVacina.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtpDtaVacina.Location = New System.Drawing.Point(124, 38)
+        Me.DtpDtaVacina.Name = "DtpDtaVacina"
+        Me.DtpDtaVacina.Size = New System.Drawing.Size(14, 20)
+        Me.DtpDtaVacina.TabIndex = 5
+        Me.DtpDtaVacina.Value = New Date(2018, 8, 31, 0, 0, 0, 0)
         '
-        'RadioButton4
+        'BtnLimpaVacina
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(240, 40)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(42, 17)
-        Me.RadioButton4.TabIndex = 6
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Sim"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.BtnLimpaVacina.Image = CType(resources.GetObject("BtnLimpaVacina.Image"), System.Drawing.Image)
+        Me.BtnLimpaVacina.Location = New System.Drawing.Point(401, 38)
+        Me.BtnLimpaVacina.Name = "BtnLimpaVacina"
+        Me.BtnLimpaVacina.Size = New System.Drawing.Size(30, 31)
+        Me.BtnLimpaVacina.TabIndex = 10
+        Me.BtnLimpaVacina.UseVisualStyleBackColor = True
+        '
+        'BtnSalvaVacina
+        '
+        Me.BtnSalvaVacina.Image = CType(resources.GetObject("BtnSalvaVacina.Image"), System.Drawing.Image)
+        Me.BtnSalvaVacina.Location = New System.Drawing.Point(329, 38)
+        Me.BtnSalvaVacina.Name = "BtnSalvaVacina"
+        Me.BtnSalvaVacina.Size = New System.Drawing.Size(30, 31)
+        Me.BtnSalvaVacina.TabIndex = 8
+        Me.BtnSalvaVacina.UseVisualStyleBackColor = True
+        '
+        'BtnExcluirVacina
+        '
+        Me.BtnExcluirVacina.Image = CType(resources.GetObject("BtnExcluirVacina.Image"), System.Drawing.Image)
+        Me.BtnExcluirVacina.Location = New System.Drawing.Point(365, 38)
+        Me.BtnExcluirVacina.Name = "BtnExcluirVacina"
+        Me.BtnExcluirVacina.Size = New System.Drawing.Size(30, 31)
+        Me.BtnExcluirVacina.TabIndex = 9
+        Me.BtnExcluirVacina.UseVisualStyleBackColor = True
+        '
+        'RbVacNao
+        '
+        Me.RbVacNao.AutoSize = True
+        Me.RbVacNao.Location = New System.Drawing.Point(282, 40)
+        Me.RbVacNao.Name = "RbVacNao"
+        Me.RbVacNao.Size = New System.Drawing.Size(45, 17)
+        Me.RbVacNao.TabIndex = 7
+        Me.RbVacNao.TabStop = True
+        Me.RbVacNao.Text = "Não"
+        Me.RbVacNao.UseVisualStyleBackColor = True
+        '
+        'RbVacSim
+        '
+        Me.RbVacSim.AutoSize = True
+        Me.RbVacSim.Location = New System.Drawing.Point(240, 40)
+        Me.RbVacSim.Name = "RbVacSim"
+        Me.RbVacSim.Size = New System.Drawing.Size(42, 17)
+        Me.RbVacSim.TabIndex = 6
+        Me.RbVacSim.TabStop = True
+        Me.RbVacSim.Text = "Sim"
+        Me.RbVacSim.UseVisualStyleBackColor = True
         '
         'BtnPesquisaVacina
         '
@@ -579,14 +653,15 @@ Partial Class FrmAnimal
         'DgvContParasitario
         '
         Me.DgvContParasitario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvContParasitario.Location = New System.Drawing.Point(3, 102)
+        Me.DgvContParasitario.Location = New System.Drawing.Point(3, 94)
         Me.DgvContParasitario.Name = "DgvContParasitario"
-        Me.DgvContParasitario.Size = New System.Drawing.Size(448, 110)
+        Me.DgvContParasitario.Size = New System.Drawing.Size(448, 118)
         Me.DgvContParasitario.TabIndex = 46
         '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.TxbPesoParasita)
+        Me.GroupBox4.Controls.Add(Me.TxbDoseParasita)
         Me.GroupBox4.Controls.Add(Me.TxbCodParasita)
         Me.GroupBox4.Controls.Add(Me.TxbDtaProximaParasita)
         Me.GroupBox4.Controls.Add(Me.DtpProximaParasita)
@@ -596,72 +671,89 @@ Partial Class FrmAnimal
         Me.GroupBox4.Controls.Add(Me.BtnSalvaParasita)
         Me.GroupBox4.Controls.Add(Me.BtnExcluirParasita)
         Me.GroupBox4.Controls.Add(Me.Label16)
-        Me.GroupBox4.Controls.Add(Me.Label14)
         Me.GroupBox4.Controls.Add(Me.Label13)
-        Me.GroupBox4.Controls.Add(Me.TxbDoseParasita)
         Me.GroupBox4.Controls.Add(Me.BtnPesquisaParasita)
         Me.GroupBox4.Controls.Add(Me.TxbDesParasita)
         Me.GroupBox4.Controls.Add(Me.Label11)
         Me.GroupBox4.Controls.Add(Me.Label10)
+        Me.GroupBox4.Controls.Add(Me.Label14)
+        Me.GroupBox4.Controls.Add(Me.LbSeqParasita)
         Me.GroupBox4.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(451, 97)
+        Me.GroupBox4.Size = New System.Drawing.Size(451, 85)
         Me.GroupBox4.TabIndex = 1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Controle Parasitário"
         '
+        'LbSeqParasita
+        '
+        Me.LbSeqParasita.AutoSize = True
+        Me.LbSeqParasita.Location = New System.Drawing.Point(336, 37)
+        Me.LbSeqParasita.Name = "LbSeqParasita"
+        Me.LbSeqParasita.Size = New System.Drawing.Size(76, 13)
+        Me.LbSeqParasita.TabIndex = 58
+        Me.LbSeqParasita.Text = "LbSeqParasita"
+        Me.LbSeqParasita.Visible = False
+        '
         'TxbPesoParasita
         '
-        Me.TxbPesoParasita.Location = New System.Drawing.Point(193, 17)
+        Me.TxbPesoParasita.Location = New System.Drawing.Point(212, 37)
         Me.TxbPesoParasita.Name = "TxbPesoParasita"
-        Me.TxbPesoParasita.Size = New System.Drawing.Size(80, 20)
-        Me.TxbPesoParasita.TabIndex = 2
+        Me.TxbPesoParasita.Size = New System.Drawing.Size(120, 20)
+        Me.TxbPesoParasita.TabIndex = 7
+        '
+        'TxbDoseParasita
+        '
+        Me.TxbDoseParasita.Location = New System.Drawing.Point(212, 59)
+        Me.TxbDoseParasita.Name = "TxbDoseParasita"
+        Me.TxbDoseParasita.Size = New System.Drawing.Size(120, 20)
+        Me.TxbDoseParasita.TabIndex = 8
         '
         'TxbCodParasita
         '
-        Me.TxbCodParasita.Location = New System.Drawing.Point(56, 40)
+        Me.TxbCodParasita.Location = New System.Drawing.Point(56, 15)
         Me.TxbCodParasita.Name = "TxbCodParasita"
         Me.TxbCodParasita.Size = New System.Drawing.Size(58, 20)
-        Me.TxbCodParasita.TabIndex = 3
+        Me.TxbCodParasita.TabIndex = 0
         '
         'TxbDtaProximaParasita
         '
-        Me.TxbDtaProximaParasita.Location = New System.Drawing.Point(187, 63)
+        Me.TxbDtaProximaParasita.Location = New System.Drawing.Point(56, 59)
         Me.TxbDtaProximaParasita.MaxLength = 10
         Me.TxbDtaProximaParasita.Name = "TxbDtaProximaParasita"
         Me.TxbDtaProximaParasita.Size = New System.Drawing.Size(66, 20)
-        Me.TxbDtaProximaParasita.TabIndex = 7
+        Me.TxbDtaProximaParasita.TabIndex = 5
         '
         'DtpProximaParasita
         '
         Me.DtpProximaParasita.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpProximaParasita.Location = New System.Drawing.Point(255, 63)
+        Me.DtpProximaParasita.Location = New System.Drawing.Point(124, 59)
         Me.DtpProximaParasita.Name = "DtpProximaParasita"
         Me.DtpProximaParasita.Size = New System.Drawing.Size(14, 20)
-        Me.DtpProximaParasita.TabIndex = 8
+        Me.DtpProximaParasita.TabIndex = 6
         Me.DtpProximaParasita.Value = New Date(2018, 8, 31, 0, 0, 0, 0)
         '
         'TxbDtaParasita
         '
-        Me.TxbDtaParasita.Location = New System.Drawing.Point(56, 17)
+        Me.TxbDtaParasita.Location = New System.Drawing.Point(56, 37)
         Me.TxbDtaParasita.MaxLength = 10
         Me.TxbDtaParasita.Name = "TxbDtaParasita"
         Me.TxbDtaParasita.Size = New System.Drawing.Size(66, 20)
-        Me.TxbDtaParasita.TabIndex = 1
+        Me.TxbDtaParasita.TabIndex = 3
         '
         'DtpDtaParasita
         '
         Me.DtpDtaParasita.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpDtaParasita.Location = New System.Drawing.Point(124, 17)
+        Me.DtpDtaParasita.Location = New System.Drawing.Point(124, 37)
         Me.DtpDtaParasita.Name = "DtpDtaParasita"
         Me.DtpDtaParasita.Size = New System.Drawing.Size(14, 20)
-        Me.DtpDtaParasita.TabIndex = 62
+        Me.DtpDtaParasita.TabIndex = 4
         Me.DtpDtaParasita.Value = New Date(2018, 8, 31, 0, 0, 0, 0)
         '
         'BtnLimparParasita
         '
         Me.BtnLimparParasita.Image = CType(resources.GetObject("BtnLimparParasita.Image"), System.Drawing.Image)
-        Me.BtnLimparParasita.Location = New System.Drawing.Point(418, 62)
+        Me.BtnLimparParasita.Location = New System.Drawing.Point(418, 48)
         Me.BtnLimparParasita.Name = "BtnLimparParasita"
         Me.BtnLimparParasita.Size = New System.Drawing.Size(30, 31)
         Me.BtnLimparParasita.TabIndex = 11
@@ -670,7 +762,7 @@ Partial Class FrmAnimal
         'BtnSalvaParasita
         '
         Me.BtnSalvaParasita.Image = CType(resources.GetObject("BtnSalvaParasita.Image"), System.Drawing.Image)
-        Me.BtnSalvaParasita.Location = New System.Drawing.Point(357, 62)
+        Me.BtnSalvaParasita.Location = New System.Drawing.Point(357, 48)
         Me.BtnSalvaParasita.Name = "BtnSalvaParasita"
         Me.BtnSalvaParasita.Size = New System.Drawing.Size(30, 31)
         Me.BtnSalvaParasita.TabIndex = 9
@@ -679,7 +771,7 @@ Partial Class FrmAnimal
         'BtnExcluirParasita
         '
         Me.BtnExcluirParasita.Image = CType(resources.GetObject("BtnExcluirParasita.Image"), System.Drawing.Image)
-        Me.BtnExcluirParasita.Location = New System.Drawing.Point(388, 62)
+        Me.BtnExcluirParasita.Location = New System.Drawing.Point(388, 48)
         Me.BtnExcluirParasita.Name = "BtnExcluirParasita"
         Me.BtnExcluirParasita.Size = New System.Drawing.Size(30, 31)
         Me.BtnExcluirParasita.TabIndex = 10
@@ -688,93 +780,85 @@ Partial Class FrmAnimal
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(161, 21)
+        Me.Label16.Location = New System.Drawing.Point(179, 41)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(34, 13)
         Me.Label16.TabIndex = 57
         Me.Label16.Text = "Peso:"
         '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(143, 67)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(47, 13)
-        Me.Label14.TabIndex = 55
-        Me.Label14.Text = "Próxima:"
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(5, 66)
+        Me.Label13.Location = New System.Drawing.Point(178, 63)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(35, 13)
         Me.Label13.TabIndex = 52
         Me.Label13.Text = "Dose:"
         '
-        'TxbDoseParasita
-        '
-        Me.TxbDoseParasita.Enabled = False
-        Me.TxbDoseParasita.Location = New System.Drawing.Point(56, 63)
-        Me.TxbDoseParasita.Name = "TxbDoseParasita"
-        Me.TxbDoseParasita.Size = New System.Drawing.Size(80, 20)
-        Me.TxbDoseParasita.TabIndex = 6
-        '
         'BtnPesquisaParasita
         '
         Me.BtnPesquisaParasita.Image = CType(resources.GetObject("BtnPesquisaParasita.Image"), System.Drawing.Image)
-        Me.BtnPesquisaParasita.Location = New System.Drawing.Point(423, 39)
+        Me.BtnPesquisaParasita.Location = New System.Drawing.Point(423, 14)
         Me.BtnPesquisaParasita.Name = "BtnPesquisaParasita"
         Me.BtnPesquisaParasita.Size = New System.Drawing.Size(25, 22)
-        Me.BtnPesquisaParasita.TabIndex = 5
+        Me.BtnPesquisaParasita.TabIndex = 2
         Me.BtnPesquisaParasita.UseVisualStyleBackColor = True
         '
         'TxbDesParasita
         '
         Me.TxbDesParasita.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TxbDesParasita.Location = New System.Drawing.Point(118, 40)
+        Me.TxbDesParasita.Location = New System.Drawing.Point(118, 15)
         Me.TxbDesParasita.Name = "TxbDesParasita"
         Me.TxbDesParasita.Size = New System.Drawing.Size(302, 20)
-        Me.TxbDesParasita.TabIndex = 4
+        Me.TxbDesParasita.TabIndex = 1
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(5, 43)
+        Me.Label11.Location = New System.Drawing.Point(0, 18)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(38, 13)
+        Me.Label11.Size = New System.Drawing.Size(58, 13)
         Me.Label11.TabIndex = 49
-        Me.Label11.Text = "Nome:"
+        Me.Label11.Text = "Descrição:"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(5, 20)
+        Me.Label10.Location = New System.Drawing.Point(0, 41)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(33, 13)
         Me.Label10.TabIndex = 46
         Me.Label10.Text = "Data:"
         '
-        'GroupBox2
+        'Label14
         '
-        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(0, 63)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(47, 13)
+        Me.Label14.TabIndex = 55
+        Me.Label14.Text = "Próxima:"
+        '
+        'GbNavegador
+        '
+        Me.GbNavegador.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox2.Controls.Add(Me.BtnCsv)
-        Me.GroupBox2.Controls.Add(Me.BtnUltimoReg)
-        Me.GroupBox2.Controls.Add(Me.BtnAnterior)
-        Me.GroupBox2.Controls.Add(Me.BtnProximo)
-        Me.GroupBox2.Controls.Add(Me.BtnPrimeiroReg)
-        Me.GroupBox2.Controls.Add(Me.BtnGrid)
-        Me.GroupBox2.Controls.Add(Me.BtnPesquisa)
-        Me.GroupBox2.Controls.Add(Me.BtnLimpar)
-        Me.GroupBox2.Controls.Add(Me.BtnSalvar)
-        Me.GroupBox2.Controls.Add(Me.BtnExcluir)
-        Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(589, 46)
-        Me.GroupBox2.TabIndex = 27
-        Me.GroupBox2.TabStop = False
+        Me.GbNavegador.BackColor = System.Drawing.Color.White
+        Me.GbNavegador.Controls.Add(Me.BtnCsv)
+        Me.GbNavegador.Controls.Add(Me.BtnUltimoReg)
+        Me.GbNavegador.Controls.Add(Me.BtnAnterior)
+        Me.GbNavegador.Controls.Add(Me.BtnProximo)
+        Me.GbNavegador.Controls.Add(Me.BtnPrimeiroReg)
+        Me.GbNavegador.Controls.Add(Me.BtnGrid)
+        Me.GbNavegador.Controls.Add(Me.BtnPesquisa)
+        Me.GbNavegador.Controls.Add(Me.BtnLimpar)
+        Me.GbNavegador.Controls.Add(Me.BtnSalvar)
+        Me.GbNavegador.Controls.Add(Me.BtnExcluir)
+        Me.GbNavegador.Location = New System.Drawing.Point(0, 0)
+        Me.GbNavegador.Name = "GbNavegador"
+        Me.GbNavegador.Size = New System.Drawing.Size(589, 46)
+        Me.GbNavegador.TabIndex = 27
+        Me.GbNavegador.TabStop = False
         '
         'BtnCsv
         '
@@ -871,64 +955,13 @@ Partial Class FrmAnimal
         Me.BtnExcluir.TabIndex = 3
         Me.BtnExcluir.UseVisualStyleBackColor = True
         '
-        'TxbCodProprietario
-        '
-        Me.TxbCodProprietario.Location = New System.Drawing.Point(77, 12)
-        Me.TxbCodProprietario.Name = "TxbCodProprietario"
-        Me.TxbCodProprietario.Size = New System.Drawing.Size(55, 20)
-        Me.TxbCodProprietario.TabIndex = 55
-        '
-        'TxbCodEspecie
-        '
-        Me.TxbCodEspecie.Location = New System.Drawing.Point(77, 81)
-        Me.TxbCodEspecie.Name = "TxbCodEspecie"
-        Me.TxbCodEspecie.Size = New System.Drawing.Size(55, 20)
-        Me.TxbCodEspecie.TabIndex = 9
-        '
-        'txbcodRaca
-        '
-        Me.txbcodRaca.Location = New System.Drawing.Point(77, 104)
-        Me.txbcodRaca.Name = "txbcodRaca"
-        Me.txbcodRaca.Size = New System.Drawing.Size(55, 20)
-        Me.txbcodRaca.TabIndex = 12
-        '
-        'TxbCodPelagem
-        '
-        Me.TxbCodPelagem.Location = New System.Drawing.Point(77, 127)
-        Me.TxbCodPelagem.Name = "TxbCodPelagem"
-        Me.TxbCodPelagem.Size = New System.Drawing.Size(55, 20)
-        Me.TxbCodPelagem.TabIndex = 15
-        '
-        'TxbDtaVacina
-        '
-        Me.TxbDtaVacina.Location = New System.Drawing.Point(56, 38)
-        Me.TxbDtaVacina.MaxLength = 10
-        Me.TxbDtaVacina.Name = "TxbDtaVacina"
-        Me.TxbDtaVacina.Size = New System.Drawing.Size(66, 20)
-        Me.TxbDtaVacina.TabIndex = 4
-        '
-        'DtpDtaVacina
-        '
-        Me.DtpDtaVacina.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpDtaVacina.Location = New System.Drawing.Point(124, 38)
-        Me.DtpDtaVacina.Name = "DtpDtaVacina"
-        Me.DtpDtaVacina.Size = New System.Drawing.Size(14, 20)
-        Me.DtpDtaVacina.TabIndex = 5
-        Me.DtpDtaVacina.Value = New Date(2018, 8, 31, 0, 0, 0, 0)
-        '
-        'TxbCodVacina
-        '
-        Me.TxbCodVacina.Location = New System.Drawing.Point(56, 15)
-        Me.TxbCodVacina.Name = "TxbCodVacina"
-        Me.TxbCodVacina.Size = New System.Drawing.Size(58, 20)
-        Me.TxbCodVacina.TabIndex = 1
-        '
         'FrmAnimal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(591, 295)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(591, 265)
+        Me.Controls.Add(Me.GbNavegador)
         Me.Controls.Add(Me.BtnControleParasitario)
         Me.Controls.Add(Me.BtnVacina)
         Me.Controls.Add(Me.BtnPrincipal)
@@ -941,7 +974,7 @@ Partial Class FrmAnimal
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
-        CType(Me.DgvAnimal, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
@@ -951,7 +984,7 @@ Partial Class FrmAnimal
         CType(Me.DgvContParasitario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
+        Me.GbNavegador.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -984,15 +1017,15 @@ Partial Class FrmAnimal
     Friend WithEvents TxbNomProprietario As Windows.Forms.TextBox
     Friend WithEvents Label2 As Windows.Forms.Label
     Friend WithEvents TabPage2 As Windows.Forms.TabPage
-    Friend WithEvents DgvAnimal As Windows.Forms.DataGridView
+    Friend WithEvents Dgv As Windows.Forms.DataGridView
     Friend WithEvents TabPage3 As Windows.Forms.TabPage
     Friend WithEvents GroupBox3 As Windows.Forms.GroupBox
     Friend WithEvents GroupBox5 As Windows.Forms.GroupBox
-    Friend WithEvents Button5 As Windows.Forms.Button
-    Friend WithEvents Button6 As Windows.Forms.Button
-    Friend WithEvents Button11 As Windows.Forms.Button
-    Friend WithEvents RadioButton3 As Windows.Forms.RadioButton
-    Friend WithEvents RadioButton4 As Windows.Forms.RadioButton
+    Friend WithEvents BtnLimpaVacina As Windows.Forms.Button
+    Friend WithEvents BtnSalvaVacina As Windows.Forms.Button
+    Friend WithEvents BtnExcluirVacina As Windows.Forms.Button
+    Friend WithEvents RbVacNao As Windows.Forms.RadioButton
+    Friend WithEvents RbVacSim As Windows.Forms.RadioButton
     Friend WithEvents BtnPesquisaVacina As Windows.Forms.Button
     Friend WithEvents Label6 As Windows.Forms.Label
     Friend WithEvents Label9 As Windows.Forms.Label
@@ -1013,7 +1046,7 @@ Partial Class FrmAnimal
     Friend WithEvents TxbDesParasita As Windows.Forms.TextBox
     Friend WithEvents Label11 As Windows.Forms.Label
     Friend WithEvents Label10 As Windows.Forms.Label
-    Protected WithEvents GroupBox2 As Windows.Forms.GroupBox
+    Protected WithEvents GbNavegador As Windows.Forms.GroupBox
     Protected WithEvents BtnCsv As Windows.Forms.Button
     Protected WithEvents BtnUltimoReg As Windows.Forms.Button
     Protected WithEvents BtnAnterior As Windows.Forms.Button
@@ -1033,9 +1066,12 @@ Partial Class FrmAnimal
     Friend WithEvents DtpDtaParasita As Windows.Forms.DateTimePicker
     Friend WithEvents TxbCodPelagem As Controles.TxbCodigo
     Friend WithEvents txbcodRaca As Controles.TxbCodigo
-    Friend WithEvents TxbCodEspecie As Controles.TxbCodigo
     Friend WithEvents TxbCodProprietario As Controles.TxbCodigo
     Friend WithEvents TxbDtaVacina As Controles.TxbData
     Friend WithEvents DtpDtaVacina As Windows.Forms.DateTimePicker
+    Friend WithEvents TxbCodEspecie As Controles.TxbCodigo
+    Friend WithEvents TxbCodAnimal As Controles.TxbCodigo
     Friend WithEvents TxbCodVacina As Controles.TxbCodigo
+    Friend WithEvents LbSeqVacina As Windows.Forms.Label
+    Friend WithEvents LbSeqParasita As Windows.Forms.Label
 End Class

@@ -1,5 +1,5 @@
 ﻿Public Class FrmParametroSistema
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim ds As New DataSet
     Dim paramSistem As New ClParametroSistema
 

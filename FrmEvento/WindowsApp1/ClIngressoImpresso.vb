@@ -1,7 +1,7 @@
 ﻿Public Class ClIngressoImpresso
     Dim sql As String
     Dim ds As New DataSet
-    Dim con As New ConexaoSQ
+    Dim con As New ConexaoSQL
 
     Private seq_impressao_ As Integer
     Public Property seq_impressao() As Integer

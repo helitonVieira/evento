@@ -2,7 +2,7 @@
 
     Dim sql As String
         Dim ds As New DataSet
-        Dim con As New ConexaoSQ
+    Dim con As New ConexaoSQL
     Dim ultimoEmpresa As Integer
 
     Private cod_empresa_ As Integer

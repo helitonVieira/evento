@@ -4,7 +4,7 @@ Imports System.Data.OleDb
 Imports System.IO
 Public Class FrmCategoria
 
-    Dim conectar As New ConexaoSQ
+    Dim conectar As New ConexaoSQL
     Dim ds, dsUltimo As New DataSet
     Dim categoria, categoria2 As New ClCategoriaItem
     Dim atualizar As Integer = 1

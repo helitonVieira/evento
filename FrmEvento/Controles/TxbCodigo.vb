@@ -21,8 +21,6 @@ Public Class TxbCodigo
             If IsNumeric(Me.Text) = False Then
                 MessageBox.Show("Formato incorreto de número", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Select()
-            Else
-                Me.Text = FormatNumber(Convert.ToDouble(Me.Text), 2)
             End If
         End If
     End Sub
