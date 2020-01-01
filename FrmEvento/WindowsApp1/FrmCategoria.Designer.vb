@@ -102,14 +102,15 @@ Partial Class FrmCategoria
         'BtSecao
         '
         Me.BtSecao.Image = CType(resources.GetObject("BtSecao.Image"), System.Drawing.Image)
-        Me.BtSecao.Location = New System.Drawing.Point(372, 45)
+        Me.BtSecao.Location = New System.Drawing.Point(372, 44)
         Me.BtSecao.Name = "BtSecao"
-        Me.BtSecao.Size = New System.Drawing.Size(25, 21)
+        Me.BtSecao.Size = New System.Drawing.Size(25, 22)
         Me.BtSecao.TabIndex = 41
         Me.BtSecao.UseVisualStyleBackColor = True
         '
         'txbDesSecao
         '
+        Me.txbDesSecao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txbDesSecao.Location = New System.Drawing.Point(131, 45)
         Me.txbDesSecao.Name = "txbDesSecao"
         Me.txbDesSecao.Size = New System.Drawing.Size(240, 20)

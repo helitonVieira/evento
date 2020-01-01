@@ -4,7 +4,7 @@
     Dim evento As New ClEvento
     Dim ingresso As New ClIngresso
     Dim ingressoPessoa As New ClIngressoPessoa
-    Dim item As New ClItem
+    Dim item As New ClItem1
     Dim venda As New ClVenda
     Dim atualizar As Integer = 1
     Dim atualizarIngresso As Integer = 1
@@ -245,8 +245,8 @@
     End Sub
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
-        Dim principal As New FrmPrincipal
-        principal.imprimiRelResumoVenda(e, TxtCodEvento.Text, TxtNome1.Text & " " & TxtNome2.Text & " " & TxtNome3.Text, "P")
+        Dim pdv2 As New FrmPDV2
+        pdv2.imprimiRelResumoVenda(e, TxtCodEvento.Text, TxtNome1.Text & " " & TxtNome2.Text & " " & TxtNome3.Text, "P")
         Exit Sub
 
         Dim reportFont2 As Font = New Drawing.Font("Time New Roman", 8)

@@ -31,7 +31,10 @@ Partial Class FrmLogin
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -64,6 +67,7 @@ Partial Class FrmLogin
         'BtCancelar
         '
         Me.BtCancelar.BackColor = System.Drawing.Color.White
+        Me.BtCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtCancelar.ForeColor = System.Drawing.Color.White
         Me.BtCancelar.Image = CType(resources.GetObject("BtCancelar.Image"), System.Drawing.Image)
         Me.BtCancelar.Location = New System.Drawing.Point(45, 64)
@@ -83,8 +87,10 @@ Partial Class FrmLogin
         '
         'BtEntrar
         '
-        Me.BtEntrar.BackColor = System.Drawing.Color.White
-        Me.BtEntrar.ForeColor = System.Drawing.Color.White
+        Me.BtEntrar.BackColor = System.Drawing.Color.Transparent
+        Me.BtEntrar.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.BtEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtEntrar.ForeColor = System.Drawing.Color.Transparent
         Me.BtEntrar.Image = CType(resources.GetObject("BtEntrar.Image"), System.Drawing.Image)
         Me.BtEntrar.Location = New System.Drawing.Point(10, 64)
         Me.BtEntrar.Name = "BtEntrar"
@@ -122,13 +128,36 @@ Partial Class FrmLogin
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Usuário:"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(275, -29)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(110, 110)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(285, 81)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(82, 13)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "(34)99645-1318"
+        '
         'FrmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(288, 107)
+        Me.ClientSize = New System.Drawing.Size(387, 107)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmLogin"
@@ -136,7 +165,9 @@ Partial Class FrmLogin
         Me.Text = "Login"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -148,4 +179,6 @@ Partial Class FrmLogin
     Friend WithEvents CbExibirSenha As CheckBox
     Friend WithEvents BtCancelar As Button
     Friend WithEvents BtEntrar As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label3 As Label
 End Class

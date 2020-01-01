@@ -1,7 +1,7 @@
 ﻿Public Class FrmPdv1
     Dim conectar As New ConexaoSQL
     Dim dsParamSist, dsVenda, dsItem, dsPessoa, dsFormaPgto, ds As New DataSet
-    Dim item As New ClItem
+    Dim item As New ClItem1
     Dim clVenda As New ClVenda
     Dim evento As New ClEvento
     Dim pessoa As New ClPessoa

@@ -4,7 +4,7 @@
     Dim despesa As New ClDespesa
     Dim atualizar As Integer = 1
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtPresquisa.Click
+    Private Sub BtnPesquisa_Click(sender As Object, e As EventArgs) Handles BtnPesquisa.Click
         If TxbCodDespesa.Text = "" Then
             despesa.cod_despesa = 0
         Else
@@ -75,7 +75,7 @@
 
     End Sub
 
-    Private Sub BtSalvar_Click(sender As Object, e As EventArgs) Handles BtSalvar.Click
+    Private Sub BtSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
         Try
             'Dim ultimo As DataSet
             ' ultimo = despesa.ConsultarDespesaVenda
@@ -142,7 +142,7 @@
         End Try
     End Sub
 
-    Private Sub BtExcluir_Click_1(sender As Object, e As EventArgs) Handles BtExcluir.Click
+    Private Sub BtExcluir_Click_1(sender As Object, e As EventArgs) Handles BtnExcluir.Click
         If MsgBox("Deseja excluir o despesa" & TxbNomDespesa.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
             Try
                 despesa.cod_despesa = TxbCodDespesa.Text
@@ -157,7 +157,7 @@
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtLimpar.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnLimpar.Click
         limpar()
 
     End Sub
@@ -306,7 +306,5 @@
         End If
     End Sub
 
-    Private Sub txbnomEvento_TextChanged(sender As Object, e As EventArgs) Handles txbnomEvento.TextChanged
 
-    End Sub
 End Class

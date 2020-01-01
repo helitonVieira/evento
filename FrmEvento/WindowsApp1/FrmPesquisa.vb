@@ -1,7 +1,7 @@
 ﻿Public Class FrmPesquisa
     Dim conectar As New ConexaoSQL
     Dim ds As New DataSet
-    Dim item As New ClItem
+    Dim item As New ClItem1
     Dim inventario As New FrmInventarioRapido
     Dim clTipoMovto As New ClTipoMovimento
     Dim clTipoDespesa As New ClTipoDespesa
@@ -19,6 +19,8 @@
     Dim ingressoImpresso As New ClIngressoImpresso
     Dim evento As New ClEvento
     Dim clFuncao_func As New ClFuncaoFuncionario
+    Dim clUnidade As New ClUnidade
+    Dim clMarca As New ClMarca
 
     Private cod_evento_ As Integer
     Public Property cod_evento() As Integer
@@ -74,8 +76,16 @@
                 ds = clCategoria.ConsultarPesquisa(busca)
             ElseIf tabela = "tab_subcategoria_item" Then
                 ds = clSubCategoria.ConsultarPesquisa(busca)
+            ElseIf tabela = "tab_fornecedor_item" Then
+                ds = pessoa.ConsultarPessoaFornecedor(busca)
             ElseIf tabela = "tab_funcao_func_pessoa" Then
                 ds = clFuncao_func.ConsultarFuncaoFuncionarioPesquisa(busca)
+            ElseIf tabela = "tab_unidade_item" Then
+                ds = clUnidade.ConsultarPesquisa(busca)
+            ElseIf tabela = "tab_unidade_item_barra" Then
+                ds = ClUnidade.ConsultarPesquisa(busca)
+            ElseIf tabela = "tab_marca_item" Then
+                ds = ClMarca.ConsultarPesquisa(busca)
             End If
             tab = ds.Tables(0)
             If tab.Rows.Count > 0 Then
@@ -156,12 +166,28 @@
             FrmSubCategoria.txbDesCategoria.Text = dgvBusca.CurrentRow.Cells(1).Value
         End If
         If tabela = "tab_subcategoria_item" Then
-            FrmItem.TxbCodSubCategoria.Text = dgvBusca.CurrentRow.Cells(0).Value
-            FrmItem.txbDesSubCategoria.Text = dgvBusca.CurrentRow.Cells(1).Value
+            FrmItem.txbCodSubcategoria.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmItem.TxbDesSubcategoria.Text = dgvBusca.CurrentRow.Cells(1).Value
+        End If
+        If tabela = "tab_unidade_item" Then
+            FrmItem.TxbCodUnidade.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmItem.TxbDesUnidade.Text = dgvBusca.CurrentRow.Cells(1).Value
+        End If
+        If tabela = "tab_marca_item" Then
+            FrmItem.TxbCodMarca.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmItem.TxbDesMarca.Text = dgvBusca.CurrentRow.Cells(1).Value
         End If
         If tabela = "tab_funcao_func_pessoa" Then
             FrmPessoa.TxbCodFuncaoFunc.Text = dgvBusca.CurrentRow.Cells(0).Value
             FrmPessoa.txbDesFuncaoFunc.Text = dgvBusca.CurrentRow.Cells(1).Value
+        End If
+        If tabela = "tab_fornecedor_item" Then
+            FrmItem.TxbCodFornecedor.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmItem.TxbNomFornecedor.Text = dgvBusca.CurrentRow.Cells(1).Value
+        End If
+        If tabela = "tab_unidade_item_barra" Then
+            FrmItem.TxbUnidadeBarra.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmItem.TxbDesUnidadeBarra.Text = dgvBusca.CurrentRow.Cells(1).Value
         End If
 
         Me.Close()

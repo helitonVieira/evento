@@ -23,13 +23,75 @@
         End Set
     End Property
 
+    Private val_img_ingresso_tamanho_altura_ As Integer
+    Public Property val_img_ingresso_tamanho_altura() As Integer
+        Get
+            Return val_img_ingresso_tamanho_altura_
+        End Get
+        Set(ByVal value As Integer)
+            val_img_ingresso_tamanho_altura_ = value
+        End Set
+    End Property
+
+    Private val_img_ingresso_tamanho_largura_ As Integer
+    Public Property val_img_ingresso_tamanho_largura() As Integer
+        Get
+            Return val_img_ingresso_tamanho_largura_
+        End Get
+        Set(ByVal value As Integer)
+            val_img_ingresso_tamanho_largura_ = value
+        End Set
+    End Property
+
+    Private val_img_ingresso_margem_esquerda_ As Integer
+    Public Property val_img_ingresso_margem_esquerda() As Integer
+        Get
+            Return val_img_ingresso_margem_esquerda_
+        End Get
+        Set(ByVal value As Integer)
+            val_img_ingresso_margem_esquerda_ = value
+        End Set
+    End Property
+
+    Private val_img_ingresso_margem_cabecalho_ As Integer
+    Public Property val_img_ingresso_margem_cabecalho() As Integer
+        Get
+            Return val_img_ingresso_margem_cabecalho_
+        End Get
+        Set(ByVal value As Integer)
+            val_img_ingresso_margem_cabecalho_ = value
+        End Set
+    End Property
+
+
+
     Public Sub Cadastrar()
-        sql = "Insert Into tab_parametro_sistema(val_dimFontProduto,val_dimFontIngresso ) Values ('" & dimFontProduto & "','" & dimFontIngresso & "')"
+        sql = "Insert Into tab_parametro_sistema(val_dimFontProduto,
+                                                 val_dimFontIngresso,
+                                                 val_img_ingresso_tamanho_altura 
+                                                 val_img_ingresso_tamanho_largura
+                                                 val_img_ingresso_margem_esquerda
+                                                 val_img_ingresso_margem_cabecalho)
+
+                                         Values ('" & dimFontProduto & "',
+                                                 '" & dimFontIngresso & "',
+                                                  " & val_img_ingresso_tamanho_altura & ",
+                                                  " & val_img_ingresso_tamanho_largura & ",
+                                                  " & val_img_ingresso_margem_esquerda & ",
+                                                  " & val_img_ingresso_margem_cabecalho & ")"
+
         con.Operar(sql)
     End Sub
 
     Public Sub Atualizar()
-        sql = "Update tab_parametro_sistema Set val_dimFontProduto = '" & dimFontProduto & "', val_dimFontIngresso = '" & dimFontIngresso & "'"
+        sql = "Update tab_parametro_sistema 
+                Set val_dimFontProduto = '" & dimFontProduto & "', 
+                    val_dimFontIngresso = '" & dimFontIngresso & "',
+                    val_img_ingresso_tamanho_altura = " & val_img_ingresso_tamanho_altura & ",
+                    val_img_ingresso_tamanho_largura = " & val_img_ingresso_tamanho_largura & ",
+                    val_img_ingresso_margem_esquerda = " & val_img_ingresso_margem_esquerda & ",
+                    val_img_ingresso_margem_cabecalho = " & val_img_ingresso_margem_cabecalho
+
         con.Operar(sql)
     End Sub
     Public Function consultarParametro()

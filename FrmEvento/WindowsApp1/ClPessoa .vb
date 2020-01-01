@@ -377,7 +377,15 @@
         ds = con.Listar(sql)
         Return ds
     End Function
-
+    Public Function ConsultarPessoaFornecedor(busca As String)
+        sql = "Select * From tab_pessoa
+                where ind_fornecedor = 'S' 
+                  and ind_ativo = 'S'
+                  and nom_pessoa like ('%" & busca & "%')
+               order by nom_pessoa"
+        ds = con.Listar(sql)
+        Return ds
+    End Function
     Public Function ConsultarPessoaCliente(busca As String)
         sql = "Select cod_pessoa,nom_pessoa From tab_pessoa
                 where ind_cliente = 'S' 

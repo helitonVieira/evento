@@ -116,6 +116,12 @@
         Return ds
     End Function
 
+    Public Function ConsultarEmpresaFantasia()
+        sql = "Select cod_empresa, nom_fantasia From tab_empresa"
+        ds = con.Listar(sql)
+        Return ds
+    End Function
+
     Public Function ConsultarEmpresaCodigo()
         sql = "Select * From tab_evento where  cod_evento =" & cod_empresa & ""
         ds = con.Listar(sql)

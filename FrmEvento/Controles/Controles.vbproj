@@ -68,6 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexaoSQL.vb" />
+    <Compile Include="FrmPadrao.Designer.vb">
+      <DependentUpon>FrmPadrao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPadrao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TxbDescricao .vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TxbData.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -103,6 +112,9 @@
     <EmbeddedResource Include="FrmCad1Padrao.resx">
       <DependentUpon>FrmCad1Padrao.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPadrao.resx">
+      <DependentUpon>FrmPadrao.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -120,6 +132,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

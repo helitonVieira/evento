@@ -51,11 +51,11 @@ Partial Class FrmAnimal
         Me.TxbObservacao = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.DtpDtaNasc = New System.Windows.Forms.DateTimePicker()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.TxbNomAnimal = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TxbNomProprietario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Dgv = New System.Windows.Forms.DataGridView()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
@@ -79,7 +79,6 @@ Partial Class FrmAnimal
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.DgvContParasitario = New System.Windows.Forms.DataGridView()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.LbSeqParasita = New System.Windows.Forms.Label()
         Me.TxbPesoParasita = New Controles.TxbMonetario()
         Me.TxbDoseParasita = New System.Windows.Forms.TextBox()
         Me.TxbCodParasita = New Controles.TxbCodigo()
@@ -97,6 +96,7 @@ Partial Class FrmAnimal
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.LbSeqParasita = New System.Windows.Forms.Label()
         Me.GbNavegador = New System.Windows.Forms.GroupBox()
         Me.BtnCsv = New System.Windows.Forms.Button()
         Me.BtnUltimoReg = New System.Windows.Forms.Button()
@@ -197,11 +197,11 @@ Partial Class FrmAnimal
         Me.GroupBox1.Controls.Add(Me.TxbObservacao)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.DtpDtaNasc)
-        Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.TxbNomAnimal)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.TxbNomProprietario)
         Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Location = New System.Drawing.Point(9, 3)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(442, 209)
@@ -397,15 +397,6 @@ Partial Class FrmAnimal
         Me.DtpDtaNasc.TabIndex = 8
         Me.DtpDtaNasc.Value = New Date(2018, 8, 31, 0, 0, 0, 0)
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(294, 62)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(55, 13)
-        Me.Label8.TabIndex = 18
-        Me.Label8.Text = "Dta.Nasc:"
-        '
         'TxbNomAnimal
         '
         Me.TxbNomAnimal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -439,6 +430,15 @@ Partial Class FrmAnimal
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Proprietário:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(303, 62)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(55, 13)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Dta.Nasc:"
         '
         'TabPage2
         '
@@ -539,8 +539,10 @@ Partial Class FrmAnimal
         '
         'BtnLimpaVacina
         '
+        Me.BtnLimpaVacina.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLimpaVacina.ForeColor = System.Drawing.Color.Transparent
         Me.BtnLimpaVacina.Image = CType(resources.GetObject("BtnLimpaVacina.Image"), System.Drawing.Image)
-        Me.BtnLimpaVacina.Location = New System.Drawing.Point(401, 38)
+        Me.BtnLimpaVacina.Location = New System.Drawing.Point(402, 38)
         Me.BtnLimpaVacina.Name = "BtnLimpaVacina"
         Me.BtnLimpaVacina.Size = New System.Drawing.Size(30, 31)
         Me.BtnLimpaVacina.TabIndex = 10
@@ -548,8 +550,10 @@ Partial Class FrmAnimal
         '
         'BtnSalvaVacina
         '
+        Me.BtnSalvaVacina.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSalvaVacina.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSalvaVacina.Image = CType(resources.GetObject("BtnSalvaVacina.Image"), System.Drawing.Image)
-        Me.BtnSalvaVacina.Location = New System.Drawing.Point(329, 38)
+        Me.BtnSalvaVacina.Location = New System.Drawing.Point(340, 38)
         Me.BtnSalvaVacina.Name = "BtnSalvaVacina"
         Me.BtnSalvaVacina.Size = New System.Drawing.Size(30, 31)
         Me.BtnSalvaVacina.TabIndex = 8
@@ -557,8 +561,10 @@ Partial Class FrmAnimal
         '
         'BtnExcluirVacina
         '
+        Me.BtnExcluirVacina.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcluirVacina.ForeColor = System.Drawing.Color.Transparent
         Me.BtnExcluirVacina.Image = CType(resources.GetObject("BtnExcluirVacina.Image"), System.Drawing.Image)
-        Me.BtnExcluirVacina.Location = New System.Drawing.Point(365, 38)
+        Me.BtnExcluirVacina.Location = New System.Drawing.Point(372, 38)
         Me.BtnExcluirVacina.Name = "BtnExcluirVacina"
         Me.BtnExcluirVacina.Size = New System.Drawing.Size(30, 31)
         Me.BtnExcluirVacina.TabIndex = 9
@@ -684,16 +690,6 @@ Partial Class FrmAnimal
         Me.GroupBox4.TabIndex = 1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Controle Parasitário"
-        '
-        'LbSeqParasita
-        '
-        Me.LbSeqParasita.AutoSize = True
-        Me.LbSeqParasita.Location = New System.Drawing.Point(336, 37)
-        Me.LbSeqParasita.Name = "LbSeqParasita"
-        Me.LbSeqParasita.Size = New System.Drawing.Size(76, 13)
-        Me.LbSeqParasita.TabIndex = 58
-        Me.LbSeqParasita.Text = "LbSeqParasita"
-        Me.LbSeqParasita.Visible = False
         '
         'TxbPesoParasita
         '
@@ -839,6 +835,16 @@ Partial Class FrmAnimal
         Me.Label14.TabIndex = 55
         Me.Label14.Text = "Próxima:"
         '
+        'LbSeqParasita
+        '
+        Me.LbSeqParasita.AutoSize = True
+        Me.LbSeqParasita.Location = New System.Drawing.Point(336, 37)
+        Me.LbSeqParasita.Name = "LbSeqParasita"
+        Me.LbSeqParasita.Size = New System.Drawing.Size(76, 13)
+        Me.LbSeqParasita.TabIndex = 58
+        Me.LbSeqParasita.Text = "LbSeqParasita"
+        Me.LbSeqParasita.Visible = False
+        '
         'GbNavegador
         '
         Me.GbNavegador.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -862,6 +868,7 @@ Partial Class FrmAnimal
         '
         'BtnCsv
         '
+        Me.BtnCsv.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCsv.Font = New System.Drawing.Font("Microsoft Sans Serif", 5.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCsv.Location = New System.Drawing.Point(176, 10)
         Me.BtnCsv.Name = "BtnCsv"
@@ -874,6 +881,8 @@ Partial Class FrmAnimal
         '
         Me.BtnUltimoReg.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.BtnUltimoReg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BtnUltimoReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnUltimoReg.ForeColor = System.Drawing.Color.Transparent
         Me.BtnUltimoReg.Image = CType(resources.GetObject("BtnUltimoReg.Image"), System.Drawing.Image)
         Me.BtnUltimoReg.Location = New System.Drawing.Point(312, 10)
         Me.BtnUltimoReg.Name = "BtnUltimoReg"
@@ -883,6 +892,8 @@ Partial Class FrmAnimal
         '
         'BtnAnterior
         '
+        Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAnterior.ForeColor = System.Drawing.Color.Transparent
         Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
         Me.BtnAnterior.Location = New System.Drawing.Point(244, 10)
         Me.BtnAnterior.Name = "BtnAnterior"
@@ -892,6 +903,8 @@ Partial Class FrmAnimal
         '
         'BtnProximo
         '
+        Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnProximo.ForeColor = System.Drawing.Color.Transparent
         Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
         Me.BtnProximo.Location = New System.Drawing.Point(278, 10)
         Me.BtnProximo.Name = "BtnProximo"
@@ -901,6 +914,8 @@ Partial Class FrmAnimal
         '
         'BtnPrimeiroReg
         '
+        Me.BtnPrimeiroReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPrimeiroReg.ForeColor = System.Drawing.Color.Transparent
         Me.BtnPrimeiroReg.Image = CType(resources.GetObject("BtnPrimeiroReg.Image"), System.Drawing.Image)
         Me.BtnPrimeiroReg.Location = New System.Drawing.Point(210, 10)
         Me.BtnPrimeiroReg.Name = "BtnPrimeiroReg"
@@ -912,6 +927,8 @@ Partial Class FrmAnimal
         '
         Me.BtnGrid.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.BtnGrid.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.BtnGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnGrid.ForeColor = System.Drawing.Color.Transparent
         Me.BtnGrid.Image = CType(resources.GetObject("BtnGrid.Image"), System.Drawing.Image)
         Me.BtnGrid.Location = New System.Drawing.Point(142, 10)
         Me.BtnGrid.Name = "BtnGrid"
@@ -921,6 +938,8 @@ Partial Class FrmAnimal
         '
         'BtnPesquisa
         '
+        Me.BtnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPesquisa.ForeColor = System.Drawing.Color.Transparent
         Me.BtnPesquisa.Image = CType(resources.GetObject("BtnPesquisa.Image"), System.Drawing.Image)
         Me.BtnPesquisa.Location = New System.Drawing.Point(74, 10)
         Me.BtnPesquisa.Name = "BtnPesquisa"
@@ -930,6 +949,8 @@ Partial Class FrmAnimal
         '
         'BtnLimpar
         '
+        Me.BtnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLimpar.ForeColor = System.Drawing.Color.Transparent
         Me.BtnLimpar.Image = CType(resources.GetObject("BtnLimpar.Image"), System.Drawing.Image)
         Me.BtnLimpar.Location = New System.Drawing.Point(108, 10)
         Me.BtnLimpar.Name = "BtnLimpar"
@@ -939,6 +960,8 @@ Partial Class FrmAnimal
         '
         'BtnSalvar
         '
+        Me.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSalvar.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
         Me.BtnSalvar.Location = New System.Drawing.Point(6, 10)
         Me.BtnSalvar.Name = "BtnSalvar"
@@ -948,6 +971,8 @@ Partial Class FrmAnimal
         '
         'BtnExcluir
         '
+        Me.BtnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
         Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
         Me.BtnExcluir.Location = New System.Drawing.Point(40, 10)
         Me.BtnExcluir.Name = "BtnExcluir"

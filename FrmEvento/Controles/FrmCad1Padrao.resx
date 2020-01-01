@@ -130,18 +130,6 @@
         4InP7XjYcb4ApLCJLKLvLrQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtnAnterior.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAYAAAAiwE4nAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAJF
-        egACRXoBHUJzfAAAAWBJREFUSEvd1r1Kw1AYxvFoFVoR0VK3RhFxFJwcnAQ378GhgltnL0E3282PqxAU
-        UfAGnLwDcXIRFRQEv/0/8B4I5VR7khiKL/wIlHOehyZNk+jfTBzHdSxgGmX7OP8hvIQ5bOEEO1jEsC3J
-        bwgdRxMXeMGXHfdRs2XZh7BBzGITV3iHypxj1G15tiFoCMs4gMqSRc4ZpmxL+iGkinXc4BO+MslWyOZR
-        LOEIj/CVJKUrZNMAJrCGc7zBV9ApvJANZeha7eEBvuBuwgpZrFPYwCnu4Av9Se+FLBzBKi7xDF/gb4IK
-        53FoG9MKKtQNvYtX+MJ60cenVMPi4n40btigv7AZbOAavuBuwgs1bCruxu8cAipo4xa+kqTshRpCdG1X
-        LPAeH/i7Qg1BxT2e3BBW3AM4OYTqD16PLX3bJ6hMx21UbVm+Q7B7iVKJ7tsW9BJVsiX5D+E6xWPQK+Ik
-        7I0tir4Bo7RLtfBvvrYAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="BtnProximo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAYAAAAiwE4nAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAJF
@@ -165,6 +153,18 @@
         9BnW27GGa9PXhP8QCbUujEM+7U/S20C+IRLqBfRjBVfIurXzDzGh7+++IO3QK2clt/kq7mHfgReY0q0q
         VtF5iAl7sh5aw7pFhQPb7+1JFEU/n9ENwp4ezGAb+1hASZdVWGjVPxJDmIB+kUHwAatiiSxK0M//AAAA
         AElFTkSuQmCC
+</value>
+  </data>
+  <data name="BtnAnterior.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAYAAAAiwE4nAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAJF
+        egACRXoBHUJzfAAAAWBJREFUSEvd1r1Kw1AYxvFoFVoR0VK3RhFxFJwcnAQ378GhgltnL0E3282PqxAU
+        UfAGnLwDcXIRFRQEv/0/8B4I5VR7khiKL/wIlHOehyZNk+jfTBzHdSxgGmX7OP8hvIQ5bOEEO1jEsC3J
+        bwgdRxMXeMGXHfdRs2XZh7BBzGITV3iHypxj1G15tiFoCMs4gMqSRc4ZpmxL+iGkinXc4BO+MslWyOZR
+        LOEIj/CVJKUrZNMAJrCGc7zBV9ApvJANZeha7eEBvuBuwgpZrFPYwCnu4Av9Se+FLBzBKi7xDF/gb4IK
+        53FoG9MKKtQNvYtX+MJ60cenVMPi4n40btigv7AZbOAavuBuwgs1bCruxu8cAipo4xa+kqTshRpCdG1X
+        LPAeH/i7Qg1BxT2e3BBW3AM4OYTqD16PLX3bJ6hMx21UbVm+Q7B7iVKJ7tsW9BJVsiX5D+E6xWPQK+Ik
+        7I0tir4Bo7RLtfBvvrYAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="BtnGrid.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

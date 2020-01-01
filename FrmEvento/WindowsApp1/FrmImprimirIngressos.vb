@@ -11,6 +11,8 @@
     Dim posicaoNome As Integer = 0
     Dim numIngresso As Integer
     Dim cod_evento As Integer
+    Dim diminFontIngresso, val_img_ingresso_tamanho_altura, val_img_ingresso_tamanho_largura,
+       val_img_ingresso_margem_esquerda, val_img_ingresso_margem_cabecalho As Integer
 
 
 
@@ -100,6 +102,19 @@
         InsereEnter(Me)
     End Sub
 
+    Private Sub CbFonte_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbFonte.SelectedIndexChanged
+        LbFonte.Font = New Font(CbFonte.Text, 16.0F, System.Drawing.FontStyle.Bold)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnOK.Click
+        TxtCodItem.Visible = True
+        TxtQtde.Enabled = True
+        DgvEvento.Enabled = True
+        CbFonte.Enabled = False
+        BtnOK.Enabled = False
+        TxtCodItem.Select()
+    End Sub
+
     Public Sub salvar()
 
         '   TxtCodItem.Select()
@@ -162,9 +177,6 @@
         End If
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
 
     Private Sub DgvEvento_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvEvento.CellClick
         Try
@@ -180,10 +192,20 @@
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpar()
         atualizarDados()
-
-    End Sub
-
-    Private Sub GroupBoxVendas_Enter(sender As Object, e As EventArgs) Handles GroupBoxVendas.Enter
+        Dim tabela As DataRow
+        ds = paramSistem.consultarParametro()
+        tabela = ds.Tables(0).Rows(0)
+        diminFontIngresso = tabela.Item(1)
+        val_img_ingresso_tamanho_altura = tabela.Item(2)
+        val_img_ingresso_tamanho_largura = tabela.Item(3)
+        val_img_ingresso_margem_esquerda = tabela.Item(4)
+        val_img_ingresso_margem_cabecalho = tabela.Item(5)
+        TxtCodItem.Visible = False
+        TxtQtde.Enabled = False
+        DgvEvento.Enabled = False
+        CbFonte.Enabled = True
+        BtnOK.Enabled = True
+        CbFonte.Select()
 
     End Sub
 
@@ -239,10 +261,7 @@
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
         Try
-            Dim tabela As DataRow
-            ds = paramSistem.consultarParametro()
-            tabela = ds.Tables(0).Rows(0)
-            Dim diminFontIngresso As Integer = tabela.Item(1)
+
 
             Dim ds1 As New DataSet
             ds1 = emp.ConsultarEmpresa
@@ -255,7 +274,7 @@
             Dim reportFont4 As Font = New Drawing.Font("Time New Roman", 4)
             Dim reportFont6 As Font = New Drawing.Font("Time New Roman", 6)
             Dim reportFont14 As Font = New Drawing.Font("Time New Roman", 14)
-            Dim reportFont20 As Font = New Drawing.Font("Time New Roman", diminFontIngresso)
+            Dim reportFont20 As Font = New Drawing.Font(CbFonte.Text, diminFontIngresso)
             Dim reportFont8 As Font = New Drawing.Font("Time New Roman", 8)
             Dim numero As Int16 = 99
             Dim newImageEmpresa As Image
@@ -266,16 +285,13 @@
                 newImageEmpresa = Image.FromFile("C:\evento\imagem\logoEmpresa.jpg")
 
             End Try
-            Dim x1 As Integer = 96
-            Dim y1 As Integer = 0
-            Dim width1 As Integer = 110
-            Dim height1 As Integer = 110
+
             ' Draw image to screen.
-            e.Graphics.DrawImage(newImageEmpresa, x1, y1, width1, height1)
+            e.Graphics.DrawImage(newImageEmpresa, val_img_ingresso_margem_esquerda, val_img_ingresso_margem_cabecalho, val_img_ingresso_tamanho_altura, val_img_ingresso_tamanho_largura)
             e.Graphics.DrawString(numIngresso, reportFont14, Brushes.Black, 230, 0)
 
-            e.Graphics.DrawString(nomEmpresa & " " & nomEmpresa & " " & nomEmpresa, reportFont6, Brushes.Black, 0, 0)
-            e.Graphics.DrawString(nomEmpresa & " " & nomEmpresa & " " & nomEmpresa, reportFont6, Brushes.Black, 0, 10)
+            e.Graphics.DrawString(nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa, reportFont6, Brushes.Black, 0, 0)
+            e.Graphics.DrawString(nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & nomEmpresa & " " & " " & nomEmpresa, reportFont6, Brushes.Black, 0, 10)
 
 
             e.Graphics.DrawString(nome1, reportFont20, Brushes.Black, paramSistem.posicaoTamanho20(nome1.Count), 115)
@@ -285,9 +301,10 @@
             Dim totalIngresso As String = ""
             totalIngresso = "R$ " & valTotalItem & ".00"
             e.Graphics.DrawString(totalIngresso, reportFont14, Brushes.Black, paramSistem.posicaoTamanho14(totalIngresso.Count) + 10, 255)
+
             e.Graphics.DrawString(obs1, reportFont8, Brushes.Black, 5, 285)
             e.Graphics.DrawString(obs2, reportFont8, Brushes.Black, 5, 305)
-            e.Graphics.DrawString("Válido apenas para dia:" & dtaEvento, reportFont8, Brushes.Black, 20, 335)
+            e.Graphics.DrawString("Válido apenas para dia:" & dtaEvento, reportFont8, Brushes.Black, 20, 385)
             Dim newImage As Image = Image.FromFile("C:\evento\imagem\CODBARRA.png")
 
             ' Create coordinates for upper-left corner

@@ -8,3 +8,4 @@ D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.xml
 D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.pdb
 D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.FrmCad1Padrao.resources
 D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.vbprojAssemblyReference.cache
+D:\source\repos\FrmEvento\Controles\obj\Debug\Controles.FrmPadrao.resources

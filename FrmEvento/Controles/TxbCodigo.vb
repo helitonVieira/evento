@@ -7,12 +7,15 @@ Public Class TxbCodigo
             e.Handled = True
         ElseIf e.KeyChar = CChar(ChrW(Asc("."))) Then
             e.Handled = True
+        ElseIf e.KeyChar = CChar(ChrW(Asc("-"))) Then
+            e.Handled = False
         ElseIf Char.IsLetter(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsPunctuation(e.KeyChar) Then
             e.Handled = True
         ElseIf Char.IsSymbol(e.KeyChar) Then
             e.Handled = True
+
         End If
     End Sub
 

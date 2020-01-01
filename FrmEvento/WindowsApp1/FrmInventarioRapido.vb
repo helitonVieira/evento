@@ -4,7 +4,7 @@
     Dim atualizar As Integer = 1
     Dim inventario As New ClInventarioRapido
     Dim clEvento As New ClEvento
-    Dim clItem As New ClItem
+    Dim clItem As New ClItem1
     Dim clTipoMovimento As New ClTipoMovimento
     Dim ds As New DataSet
     Public desItem As String

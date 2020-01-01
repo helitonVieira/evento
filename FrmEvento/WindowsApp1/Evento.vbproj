@@ -142,6 +142,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClItemCodigoBarra.vb" />
+    <Compile Include="ClItemPrecoVenda.vb" />
+    <Compile Include="ClItemFornecedor.vb" />
+    <Compile Include="ClItem.vb" />
+    <Compile Include="ClMarca.vb" />
+    <Compile Include="ClUnidade.vb" />
     <Compile Include="ClSubCategoriaItem.vb" />
     <Compile Include="ClCategoriaItem.vb" />
     <Compile Include="ClSecaoItem.vb" />
@@ -168,6 +174,30 @@
     <Compile Include="ClUsuario.vb" />
     <Compile Include="ClVenda.vb" />
     <Compile Include="ConexaoSQL.vb" />
+    <Compile Include="FrmEscolhaEmpresa.Designer.vb">
+      <DependentUpon>FrmEscolhaEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEscolhaEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMarca.Designer.vb">
+      <DependentUpon>FrmMarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmItem.Designer.vb">
+      <DependentUpon>FrmItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPDV2.Designer.vb">
+      <DependentUpon>FrmPDV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPDV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmAlmoxarifado.Designer.vb">
       <DependentUpon>FrmAlmoxarifado.vb</DependentUpon>
     </Compile>
@@ -196,6 +226,12 @@
       <DependentUpon>FrmFuncaoFuncionario.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmFuncaoFuncionario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPagamento.Designer.vb">
+      <DependentUpon>FrmPagamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPagamento.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPdv1.Designer.vb">
@@ -270,14 +306,14 @@
     <Compile Include="FrmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmItem.vb">
+    <Compile Include="FrmItem1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmItem.Designer.vb">
-      <DependentUpon>FrmItem.vb</DependentUpon>
+    <Compile Include="FrmItem1.Designer.vb">
+      <DependentUpon>FrmItem1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClItem.vb" />
+    <Compile Include="ClItem1.vb" />
     <Compile Include="FrmSecao.Designer.vb">
       <DependentUpon>FrmSecao.vb</DependentUpon>
     </Compile>
@@ -290,6 +326,13 @@
     <Compile Include="FrmSubCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmUnidade.Designer.vb">
+      <DependentUpon>FrmUnidade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUnidade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModParametroSistema.vb" />
     <Compile Include="ModTabEnter.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -315,6 +358,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmEscolhaEmpresa.resx">
+      <DependentUpon>FrmEscolhaEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMarca.resx">
+      <DependentUpon>FrmMarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmItem.resx">
+      <DependentUpon>FrmItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPDV2.resx">
+      <DependentUpon>FrmPDV2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAlmoxarifado.resx">
       <DependentUpon>FrmAlmoxarifado.vb</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFuncaoFuncionario.resx">
       <DependentUpon>FrmFuncaoFuncionario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPagamento.resx">
+      <DependentUpon>FrmPagamento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPdv1.resx">
       <DependentUpon>FrmPdv1.vb</DependentUpon>
@@ -363,8 +421,8 @@
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmItem.resx">
-      <DependentUpon>FrmItem.vb</DependentUpon>
+    <EmbeddedResource Include="FrmItem1.resx">
+      <DependentUpon>FrmItem1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRelListaItens.resx">
       <DependentUpon>FrmRelListaItens.vb</DependentUpon>
@@ -374,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSubCategoria.resx">
       <DependentUpon>FrmSubCategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnidade.resx">
+      <DependentUpon>FrmUnidade.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

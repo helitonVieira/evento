@@ -228,6 +228,8 @@ CREATE TABLE TAB_FORMA_PAGTO_PDV (
     COD_PESSOA_SACADO          INTEGER,   
 );
 
+ 
+
 insert into TAB_FORMA_PAGTO_PDV values ('DINHEIRO',1 );
 insert into TAB_FORMA_PAGTO_PDV values ('CARTAO CREDITO',2 );
 insert into TAB_FORMA_PAGTO_PDV values ('CARTAO DEBITO',2 );
@@ -364,28 +366,199 @@ alter table tab_animal add constraint ref_raca foreign key (cod_raca) references
 alter table tab_animal add constraint ref_pelagem foreign key (cod_pelagem) references tab_pelagem  (cod_pelagem);
 
 
-create table tab_animal_vacinacao (
-	         seq_vacinacao integer not null,
-                 cod_vacina integer  not null,
+create table tab_animal_vacina (
+	     seq_vacina integer not null,
+         cod_vacina integer  not null,
 		 cod_animal integer not null,
-		 dta_vencimento date not null,
+		 dta_vacina date not null,
 		 ind_vacinado char(1),		
-		 primary key (seq_vacinacao));  		 
+		 primary key (seq_vacina));  		 
 		 	
-alter table tab_animal_vacinacao add constraint ref_vacina foreign key (cod_vacina) references tab_vacina (cod_vacina);
-alter table tab_animal_vacinacao add constraint ref_cod_animal foreign key (cod_animal) references tab_animal (cod_animal);
-alter table tab_animal_vacinacao add constraint chk_ind_vacinado check (ind_vacinado in ('S','N'));
+alter table tab_animal_vacina add constraint ref_tab_vacina foreign key (cod_vacina) references tab_vacina (cod_vacina);
+alter table tab_animal_vacina add constraint ref_tab_animal foreign key (cod_animal) references tab_animal (cod_animal);
+alter table tab_animal_vacina add constraint chk_ind_vacinado check (ind_vacinado in ('S','N'));
 
 create table tab_animal_controle_parasita (
 	     seq_controle integer not null,
              cod_controle_parasita integer  not null,
+             cod_animal integer not null,
              dta_controle date not null,
-	     val_peso double precision,
+	     qtd_peso double precision,
              des_dose varchar(30),
 	     dta_proxima date,	
 	     primary key (seq_controle));  		 
 		 	
 alter table tab_animal_controle_parasita add constraint ref_controle_parasita foreign key (cod_controle_parasita) references tab_controle_parasita (cod_controle_parasita);
+alter table tab_animal_controle_parasita add constraint ref_tab_animal_parasita foreign key (cod_animal) references tab_animal (cod_animal);
+
+
+ALTER TABLE tab_parametro_sistema ADD val_img_ingresso_tamanho_altura integer ;
+ALTER TABLE tab_parametro_sistema ADD val_img_ingresso_tamanho_largura integer ;
+ALTER TABLE tab_parametro_sistema ADD val_img_ingresso_margem_esquerda integer ;
+ALTER TABLE tab_parametro_sistema ADD val_img_ingresso_margem_cabecalho integer ;
+
+
+update tab_parametro_sistema set val_img_ingresso_tamanho_altura = 0 ,								 
+val_img_ingresso_tamanho_largura= 0 ,								 
+val_img_ingresso_margem_esquerda= 0 ,							 
+val_img_ingresso_margem_cabecalho = 0 ;
+
+create table tab_marca(
+cod_marca integer not null , 
+des_marca varchar(60) not null,		
+primary key (cod_marca)); 
+
+create table tab_unidade (
+ cod_unidade integer not null,
+ des_unidade varchar(60),
+ sgl_unidade varchar(5),
+ num_fator_conversao double precision,
+ primary key (cod_unidade));
+
+create table tab_item_old
+(cod_item integer, 
+ des_item varchar(50) not null,
+ val_preco_venda double precision,
+ val_custo double precision,
+ ind_ativo char(1),
+ cod_evento integer);
+
+
+ insert into tab_item_old (cod_item , 
+		des_item, 
+		val_preco_venda,
+		val_custo ,
+		ind_ativo ,
+		cod_evento )
+ select cod_item , 
+		des_item, 
+		val_preco_venda,
+		val_custo ,
+		ind_ativo ,
+		cod_evento from tab_item ; 
+
+		
+drop table tab_item
+
+
+create table tab_item
+(cod_item integer not null, 
+ des_item varchar(50) not null,
+ cod_subcategoria integer not null,
+ cod_barra varchar(30),
+ cod_referencia varchar(30),
+ cod_unidade integer,
+ ind_tipo char(1),
+ qtd_estoque_minimo double precision,
+ qtd_estoque_maximo double precision,
+ cod_marca integer,
+ ind_ativo char(1) 
+ primary key (cod_item));
+
+ insert into tab_item  select a.cod_item ,a.des_item ,1, cod_item,cod_item,1,'I',0,10000,0,'S' from tab_item_old a ;
+
+ drop table tab_item_old;
+
+  
+  create table tab_preco_venda (
+ seq_preco_venda integer not null,
+ cod_item integer not null,
+ cod_empresa integer not null,
+ dta_inicio date not null,
+ val_preco_a double precision,
+ val_preco_b double precision,
+ val_preco_c double precision,
+ val_preco_d double precision,
+ cod_pessoa integer,
+ cod_forma_pagamento integer,
+ primary key(seq_preco_venda))
+
+ alter table tab_preco_venda add constraint ref_tab_item foreign key (cod_item) references tab_item (cod_item);
+ alter table tab_preco_venda add constraint ref_tab_empresa foreign key (cod_empresa) references tab_empresa (cod_empresa);
+ alter table tab_preco_venda add constraint ref_tab_pessoa foreign key (cod_pessoa) references tab_pessoa (cod_pessoa);
+alter table tab_forma_pagto_pdv add constraint pk_cod_forma_pagamento primary key (cod_forma_pagto);
+ alter table tab_preco_venda add constraint ref_forma_pagamento foreign key (cod_forma_pagamento) references tab_forma_pagamento (cod_forma_pagamento);
+
+
+ create table tab_item_fornecedor(
+seq_item_fornecedor integer not null,
+cod_item integer not null,
+cod_pessoa_fornecedor integer not null,
+cod_barra varchar(30),
+cod_referencia varchar(30),
+primary key (seq_item_fornecedor));
+
+alter table tab_item_fornecedor add constraint fk_item foreign key (cod_item) references tab_item (cod_item);
+alter table tab_item_fornecedor add constraint fk_pessoa foreign key (cod_pessoa_fornecedor) references tab_pessoa (cod_pessoa);
+
+create table tab_item_cod_barra(
+cod_item integer not null,
+cod_barra varchar(30) not null ,
+cod_referencia varchar(30),
+cod_unidade integer ,
+des_item varchar(60),
+primary key (cod_barra));
+
+alter table tab_item_cod_barra add constraint fk_item_codBarra foreign key (cod_item) references tab_item (cod_item);
+alter table tab_item_cod_barra add constraint fk_unidade foreign key (cod_unidade) references tab_unidade (cod_unidade);
+
+
+ create trigger tbi_item_cod_barra
+on tab_item
+for insert 
+as 
+BEGIN
+
+SET NOCOUNT ON
+  -- inserindo codigo de barra 
+  IF ( (select coalesce(COUNT(*),0) from tab_item_cod_barra where cod_barra = (SELECT COD_BARRA FROM INSERTED))<1)
+			
+    DECLARE
+	@cod_item integer,
+    @cod_barra varchar(30) ,
+    @cod_referencia varchar(30),
+    @cod_unidade integer ,
+    @des_item varchar(60)
+    
+	begin
+      SELECT @cod_item = cod_item,
+	   @cod_barra = cod_barra,
+	   @cod_referencia = cod_referencia,
+	   @cod_unidade = cod_unidade,
+	   @des_item = des_item FROM INSERTED
+ 	end  
+    insert into tab_item_cod_barra values (@cod_item,@cod_barra,@cod_referencia,@cod_unidade,@des_item)
+
+END
+GO  ;
+
+
+
+create trigger tbu_item_cod_barra
+on tab_item
+after update
+as 
+BEGIN
+SET NOCOUNT ON
+
+  -- caso codigo barra alterado
+  IF  (  (SELECT COD_BARRA FROM INSERTED) <> (SELECT COD_BARRA FROM DELETED ) and 
+  (select coalesce(COUNT(*),0) from tab_item_cod_barra where cod_barra = (SELECT COD_BARRA FROM INSERTED))<1)
+				
+    DECLARE	
+    @cod_barra varchar(30)    
+    
+	begin
+      SELECT @cod_barra = cod_barra FROM INSERTED
+ 	end  
+    UPDATE tab_item_cod_barra SET cod_barra = @cod_barra where cod_barra = (SELECT COD_BARRA FROM DELETED)
+
+END
+GO
+  
+
+
+
 
 
 

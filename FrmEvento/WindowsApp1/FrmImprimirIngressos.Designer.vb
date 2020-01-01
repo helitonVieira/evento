@@ -24,7 +24,12 @@ Partial Class FrmImprimirIngressos
     Private Sub InitializeComponent()
         Me.DgvEvento = New System.Windows.Forms.DataGridView()
         Me.GroupBoxVendas = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.LbFonte = New System.Windows.Forms.Label()
+        Me.CbFonte = New System.Windows.Forms.ComboBox()
+        Me.BtnOK = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtCodItem = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -33,6 +38,7 @@ Partial Class FrmImprimirIngressos
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         CType(Me.DgvEvento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxVendas.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -44,10 +50,10 @@ Partial Class FrmImprimirIngressos
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DgvEvento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvEvento.Location = New System.Drawing.Point(6, 89)
+        Me.DgvEvento.Location = New System.Drawing.Point(6, 129)
         Me.DgvEvento.Name = "DgvEvento"
         Me.DgvEvento.ReadOnly = True
-        Me.DgvEvento.Size = New System.Drawing.Size(740, 198)
+        Me.DgvEvento.Size = New System.Drawing.Size(740, 201)
         Me.DgvEvento.TabIndex = 0
         '
         'GroupBoxVendas
@@ -56,44 +62,97 @@ Partial Class FrmImprimirIngressos
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBoxVendas.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GroupBoxVendas.Controls.Add(Me.GroupBox2)
         Me.GroupBoxVendas.Controls.Add(Me.GroupBox1)
         Me.GroupBoxVendas.Controls.Add(Me.DgvEvento)
         Me.GroupBoxVendas.Location = New System.Drawing.Point(2, 0)
         Me.GroupBoxVendas.Name = "GroupBoxVendas"
-        Me.GroupBoxVendas.Size = New System.Drawing.Size(752, 293)
+        Me.GroupBoxVendas.Size = New System.Drawing.Size(752, 336)
         Me.GroupBoxVendas.TabIndex = 12
         Me.GroupBoxVendas.TabStop = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.LbFonte)
+        Me.GroupBox2.Controls.Add(Me.CbFonte)
+        Me.GroupBox2.Controls.Add(Me.BtnOK)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 9)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(740, 39)
+        Me.GroupBox2.TabIndex = 9
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Fonte"
+        '
+        'LbFonte
+        '
+        Me.LbFonte.AutoSize = True
+        Me.LbFonte.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbFonte.Location = New System.Drawing.Point(361, 8)
+        Me.LbFonte.Name = "LbFonte"
+        Me.LbFonte.Size = New System.Drawing.Size(224, 25)
+        Me.LbFonte.TabIndex = 28
+        Me.LbFonte.Text = "ESCOLHA DA FONTE"
+        '
+        'CbFonte
+        '
+        Me.CbFonte.FormattingEnabled = True
+        Me.CbFonte.Items.AddRange(New Object() {"Algerian", "Arial", "Arial Rounded MT", "Blackadder ITC", "Cambria Math", "Castellar", "Colonna MT", "Edwardian Script ITC", "Harlow Solid", "Mistral", "Old English Text MT", "Ravie", "Times New Roman", "Vivaldi"})
+        Me.CbFonte.Location = New System.Drawing.Point(17, 12)
+        Me.CbFonte.Name = "CbFonte"
+        Me.CbFonte.Size = New System.Drawing.Size(282, 21)
+        Me.CbFonte.TabIndex = 1
+        Me.CbFonte.Text = "Time New Roman"
+        '
+        'BtnOK
+        '
+        Me.BtnOK.Location = New System.Drawing.Point(305, 12)
+        Me.BtnOK.Name = "BtnOK"
+        Me.BtnOK.Size = New System.Drawing.Size(30, 21)
+        Me.BtnOK.TabIndex = 2
+        Me.BtnOK.Text = "OK"
+        Me.BtnOK.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.TxtCodItem)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.LbDescricao)
         Me.GroupBox1.Controls.Add(Me.TxtQtde)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 45)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(740, 71)
+        Me.GroupBox1.Size = New System.Drawing.Size(740, 78)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ingressos"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(441, 62)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(293, 13)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = """Configurações da fonte e imagem no parametro do sistema"""
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(6, 16)
+        Me.Label1.Location = New System.Drawing.Point(12, 14)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(63, 25)
+        Me.Label1.Size = New System.Drawing.Size(92, 25)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Item:"
+        Me.Label1.Text = "Evento:"
         '
         'TxtCodItem
         '
-        Me.TxtCodItem.Location = New System.Drawing.Point(81, 18)
+        Me.TxtCodItem.Location = New System.Drawing.Point(158, 16)
         Me.TxtCodItem.Name = "TxtCodItem"
         Me.TxtCodItem.Size = New System.Drawing.Size(100, 20)
         Me.TxtCodItem.TabIndex = 1
@@ -103,24 +162,24 @@ Partial Class FrmImprimirIngressos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(6, 42)
+        Me.Label2.Location = New System.Drawing.Point(12, 36)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 25)
+        Me.Label2.Size = New System.Drawing.Size(140, 25)
         Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Qtde:"
+        Me.Label2.Text = "Quantidade:"
         '
         'LbDescricao
         '
         Me.LbDescricao.AutoSize = True
         Me.LbDescricao.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbDescricao.Location = New System.Drawing.Point(187, 16)
+        Me.LbDescricao.Location = New System.Drawing.Point(258, 14)
         Me.LbDescricao.Name = "LbDescricao"
         Me.LbDescricao.Size = New System.Drawing.Size(0, 25)
         Me.LbDescricao.TabIndex = 5
         '
         'TxtQtde
         '
-        Me.TxtQtde.Location = New System.Drawing.Point(81, 44)
+        Me.TxtQtde.Location = New System.Drawing.Point(158, 39)
         Me.TxtQtde.Name = "TxtQtde"
         Me.TxtQtde.Size = New System.Drawing.Size(100, 20)
         Me.TxtQtde.TabIndex = 2
@@ -134,13 +193,15 @@ Partial Class FrmImprimirIngressos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(757, 294)
+        Me.ClientSize = New System.Drawing.Size(757, 337)
         Me.Controls.Add(Me.GroupBoxVendas)
         Me.Name = "FrmImprimirIngressos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmImprimirIngressos"
         CType(Me.DgvEvento, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBoxVendas.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -156,4 +217,9 @@ Partial Class FrmImprimirIngressos
     Friend WithEvents TxtQtde As TextBox
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents CbFonte As ComboBox
+    Friend WithEvents BtnOK As Button
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents LbFonte As Label
 End Class

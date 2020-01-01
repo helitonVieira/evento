@@ -86,6 +86,7 @@ Partial Class FrmFuncaoFuncionario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(439, 283)
         Me.Name = "FrmFuncaoFuncionario"
+        Me.Text = "FrmFuncaoFuncionario"
         Me.GroupBox2.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
