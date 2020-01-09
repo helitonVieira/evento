@@ -321,7 +321,7 @@ Public Class FrmSecao
         FrmPesquisa.tabela = "tab_almoxarifado_secao"
         FrmPesquisa.ShowDialog()
     End Sub
-    Private Overloads Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellClick
+    Private Overloads Sub Dgv_DoubleClick(sender As Object, e As EventArgs) Handles Dgv.DoubleClick
         Me.TxbCodigo.Text = Dgv.CurrentRow.Cells(0).Value
         Me.TxbDescricao.Text = Dgv.CurrentRow.Cells(1).Value
         Me.TxbCodAlmoxarifado.Text = Dgv.CurrentRow.Cells(2).Value
@@ -330,9 +330,9 @@ Public Class FrmSecao
         Me.Height = 162
         Me.TxbDescricao.Select()
     End Sub
-    Private Overloads Sub Dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellEnter
-        i = Dgv.CurrentRow.Index
-        carregaFormulario()
+    Private Overloads Sub Dgv_CellEnter(sender As Object, e As EventArgs) Handles Dgv.CellEnter
+        '  i = Dgv.CurrentRow.Index
+        ' carregaFormulario()
     End Sub
 
 End Class

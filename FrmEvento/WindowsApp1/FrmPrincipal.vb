@@ -9,7 +9,6 @@ Public Class FrmPrincipal
     Dim frmAnimal As New PetSystem.FrmAnimal
     Public codEvento, nomEmpresa, nomEvento As String
     Dim despesa As New ClDespesa
-
     Public Sub licenciaVerifica()
         ClLicencia.verificarLicencia()
 
@@ -34,7 +33,6 @@ Public Class FrmPrincipal
         End Try
 
     End Sub
-
     Private Sub ResumoVendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResumoVendasToolStripMenuItem.Click
         If codEvento = "" Then
             MsgBox("Um evento tem que estar logado")
@@ -48,14 +46,12 @@ Public Class FrmPrincipal
     End Sub
     Private Sub PessoaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PessoaToolStripMenuItem.Click
         FrmPessoa.Show()
+        FrmPessoa.WindowState = FormWindowState.Normal
     End Sub
-
     Private Sub InventarioRapidoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InventarioRapidoToolStripMenuItem.Click
         FrmInventarioRapido.Show()
+        FrmInventarioRapido.WindowState = FormWindowState.Normal
     End Sub
-
-
-
     Private Sub RelMargemDeLucroBrutoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelMargemDeLucroBrutoToolStripMenuItem.Click
         If codEvento = "" Then
             MsgBox("selecione um evento para busca")
@@ -67,13 +63,10 @@ Public Class FrmPrincipal
         Catch ex As Exception
         End Try
     End Sub
-
-
     Private Sub PrintDocument2_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument2.PrintPage
         Dim eventoFrm As New FrmEvento
         eventoFrm.relMargemLucro(e, codEvento, nomEvento)
     End Sub
-
     Private Sub RelResumoIngressosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelResumoIngressosToolStripMenuItem.Click
         If codEvento = "" Then
             MsgBox("selecione um evento para busca")
@@ -86,10 +79,6 @@ Public Class FrmPrincipal
         End Try
     End Sub
 
-    Private Sub DespesaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DespesaToolStripMenuItem.Click
-        FrmDespesa.Show()
-    End Sub
-
     Private Sub RelDespesaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelDespesaToolStripMenuItem.Click
         FrmPesquisa.tabela = "tab_evento_principal"
         FrmPesquisa.ShowDialog()
@@ -99,7 +88,6 @@ Public Class FrmPrincipal
             MsgBox("erro")
         End Try
     End Sub
-
     Private Sub PrintDocumentDespesa_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocumentDespesa.PrintPage
         imprimiRelDespesa(e, codEvento, nomEvento)
     End Sub
@@ -108,10 +96,10 @@ Public Class FrmPrincipal
         Dim reportFont2 As Font = New Drawing.Font("Time New Roman", 8)
         Dim reportFont10 As Font = New Drawing.Font("Time New Roman", 10)
         Dim reportFont12 As Font = New Drawing.Font("Time New Roman", 12)
-        despesa.cod_evento = codEvento
+        '   despesa.cod_evento = codEvento
         Dim tabela As DataTable
         Dim dsDespesa As New DataSet
-        dsDespesa = despesa.ConsultaRelDespesa()
+        '   dsDespesa = despesa.ConsultaRelDespesa()
 
         tabela = dsDespesa.Tables(0)
         Dim Row As DataRow
@@ -165,7 +153,6 @@ Public Class FrmPrincipal
             e.Graphics.DrawString(val_total, reportFont10, Brushes.Black, 250, x)
         End If
     End Sub
-
     Public Sub imprimirIngresso()
         Try
             licenciaVerifica()
@@ -178,11 +165,9 @@ Public Class FrmPrincipal
 
         End Try
     End Sub
-
     Private Sub VendasToolStripMenuItem_MouseEnter(sender As Object, e As EventArgs) Handles VendasToolStripMenuItem.MouseEnter, BarToolStripMenuItem.MouseEnter
         VendasToolStripMenuItem.ForeColor = BackColor
     End Sub
-
     Private Sub PDV1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PDV1ToolStripMenuItem.Click
         licenciaVerifica()
 
@@ -202,89 +187,108 @@ Public Class FrmPrincipal
         End Try
 
     End Sub
-
-    Private Sub AnimalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnimalToolStripMenuItem.Click
-        frmAnimal.Show()
-    End Sub
-
     Private Sub EspécieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EspécieToolStripMenuItem.Click
         frmEspecie.ShowDialog()
+        frmEspecie.WindowState = FormWindowState.Normal
     End Sub
-
-    Private Sub ParasitaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ParasitaToolStripMenuItem.Click
-        frmContoleParasita.ShowDialog()
-    End Sub
-
-    Private Sub VacinaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VacinaToolStripMenuItem.Click
-        frmVacina.ShowDialog()
-    End Sub
-
     Private Sub PelagemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PelagemToolStripMenuItem.Click
         frmPelagem.ShowDialog()
+        frmPelagem.WindowState = FormWindowState.Normal
     End Sub
-
-    Private Sub ItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItemToolStripMenuItem.Click
-
-        FrmItem.Show()
-    End Sub
-
-    Private Sub EventoToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles EventoToolStripMenuItem2.Click
-
-        FrmEvento.Show()
-    End Sub
-
     Private Sub ImprimirIngressoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ImprimirIngressoToolStripMenuItem1.Click
         imprimirIngresso()
     End Sub
-
     Private Sub ParametrosSistemaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ParametrosSistemaToolStripMenuItem.Click
         FrmParametroSistema.ShowDialog()
+        FrmParametroSistema.WindowState = FormWindowState.Normal
     End Sub
-
     Private Sub LicençaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LicençaToolStripMenuItem.Click
         FrmLicencia.ShowDialog()
+        FrmLicencia.WindowState = FormWindowState.Normal
     End Sub
-
-    Private Sub FunçãoFuncionarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FunçãoFuncionarioToolStripMenuItem.Click
-        FrmFuncaoFuncionario.ShowDialog()
-    End Sub
-
     Private Sub AlmoxarifadoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AlmoxarifadoToolStripMenuItem1.Click
         FrmAlmoxarifado.ShowDialog()
+        FrmAlmoxarifado.WindowState = FormWindowState.Normal
     End Sub
-
     Private Sub SeçãoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SeçãoToolStripMenuItem.Click
         FrmSecao.Show()
+        FrmSecao.WindowState = FormWindowState.Normal
     End Sub
-
     Private Sub FrmPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         FrmLogin.Close()
-    End Sub
 
+    End Sub
     Private Sub CategoriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategoriaToolStripMenuItem.Click
         FrmCategoria.Show()
+        FrmCategoria.WindowState = FormWindowState.Normal
     End Sub
-
     Private Sub AlmoxarifadoToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FrmAlmoxarifado.ShowDialog()
+        FrmAlmoxarifado.WindowState = FormWindowState.Normal
     End Sub
-
     Private Sub UnidadeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UnidadeToolStripMenuItem.Click
         FrmUnidade.ShowDialog()
+        FrmUnidade.WindowState = FormWindowState.Normal
     End Sub
-
     Private Sub MarcaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MarcaToolStripMenuItem.Click
         FrmMarca.ShowDialog()
+        FrmMarca.WindowState = FormWindowState.Normal
     End Sub
+    Private Sub ItemToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ItemToolStripMenuItem1.Click
+        FrmItem.Show()
+        FrmItem.WindowState = FormWindowState.Normal
+    End Sub
+    Private Sub VacinaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VacinaToolStripMenuItem1.Click
+        frmVacina.ShowDialog()
+        frmVacina.WindowState = FormWindowState.Normal
+    End Sub
+    Private Sub ParasitaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ParasitaToolStripMenuItem1.Click
+        frmContoleParasita.ShowDialog()
+        frmContoleParasita.WindowState = FormWindowState.Normal
+    End Sub
+    Private Sub AnimalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnimalToolStripMenuItem.Click
+        frmAnimal.Show()
+        frmAnimal.WindowState = FormWindowState.Normal
+    End Sub
+    Private Sub EspecíeCaixaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EspecíeCaixaToolStripMenuItem.Click
+        FrmEspecieCaixa.Show()
+        FrmEspecieCaixa.WindowState = FormWindowState.Normal
+    End Sub
+    Private Sub DespesaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DespesaToolStripMenuItem1.Click
+        FrmDespesas.Show()
+        FrmDespesas.WindowState = FormWindowState.Normal
 
+    End Sub
+    Private Sub ReceitaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ReceitaToolStripMenuItem1.Click
+        FrmReceita.Show()
+        FrmReceita.WindowState = FormWindowState.Normal
+    End Sub
+    Private Sub FunçãoFuncionárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FunçãoFuncionárioToolStripMenuItem.Click
+        FrmFuncaoFuncionario.ShowDialog()
+        FrmFuncaoFuncionario.WindowState = FormWindowState.Normal
+    End Sub
+    Private Sub TipoDespesaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoDespesaToolStripMenuItem.Click
+        FrmTipoDespesa.Show()
+        FrmTipoDespesa.WindowState = FormWindowState.Normal
+    End Sub
+    Private Sub BancoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BancoToolStripMenuItem1.Click
+        FrmBanco.Show()
+        FrmBanco.WindowState = FormWindowState.Normal
+    End Sub
+    Private Sub TipoParcelamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TipoParcelamentoToolStripMenuItem.Click
+        FrmTipoParcelamento.Show()
+        FrmTipoParcelamento.WindowState = FormWindowState.Normal
+    End Sub
+    Private Sub EventoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EventoToolStripMenuItem1.Click
+        FrmEvento.Show()
+        FrmEvento.WindowState = FormWindowState.Normal
+    End Sub
     Private Sub SubCategoriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubCategoriaToolStripMenuItem.Click
         FrmSubCategoria.Show()
+        FrmSubCategoria.WindowState = FormWindowState.Normal
     End Sub
-
     Private Sub RaçaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RaçaToolStripMenuItem.Click
         frmRaca.ShowDialog()
+        frmRaca.WindowState = FormWindowState.Normal
     End Sub
-
-
-
 End Class

@@ -20,12 +20,19 @@ Public Class TxbMonetario
         If Me.Text <> "" Then
             If IsNumeric(Me.Text) = False Then
                 MessageBox.Show("Formato incorreto de número", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Text = "0,00"
                 Me.Select()
             Else
                 Me.Text = FormatNumber(Convert.ToDouble(Me.Text), 2)
             End If
-
-
+        Else
+            Me.Text = "0,00"
         End If
+    End Sub
+    Private Sub TxbMonetario_val(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        If Me.Text = "" Then
+            Me.Text = "0,00"
+        End If
+        Me.Text = FormatNumber(Convert.ToDouble(Me.Text), 2)
     End Sub
 End Class

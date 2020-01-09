@@ -216,11 +216,7 @@ create table tab_ingresso_pessoa
  dta_entrega date 
  primary key (seq_lancamento));
 
-cod_pessoa_favorecido
-create table tab_tipo_despesa
-(cod_tipo_despesa integer identity not null, 
- des_tipo_despesa varchar(60)
- primary key (cod_tipo_despesa));
+
 
 CREATE TABLE TAB_FORMA_PAGTO_PDV (
     COD_FORMA_PAGTO            INTEGER identity NOT NULL,
@@ -554,10 +550,135 @@ SET NOCOUNT ON
     UPDATE tab_item_cod_barra SET cod_barra = @cod_barra where cod_barra = (SELECT COD_BARRA FROM DELETED)
 
 END
-GO
+GO ; 
+
+
+
   
+create table tab_especie_caixa(
+cod_especie integer not null,
+des_especie varchar(60) not null,
+ind_ativo char(1),
+primary key (cod_especie));
+
+alter table tab_especie_caixa add constraint chk_especie_ativo check (ind_ativo in ('S','N'));
+
+insert into tab_especie_caixa VALUES (1,'DINHEIRO','S');
+
+create table tab_tipo_despesa (
+cod_tipo_despesa integer not null ,
+des_tipo_despesa varchar(60) not null,
+ind_tipo char(1) not null,
+ind_ativo char(1),
+primary key (cod_tipo_despesa));  
+
+alter table tab_tipo_despesa add constraint chk_despesa_ativo check (ind_ativo in ('S','N'));
+alter table tab_tipo_despesa add constraint chk_despesa_tipo check (ind_tipo in ('A','F','I'));
+
+create table tab_despesa(
+seq_despesa integer not null,
+cod_empresa integer not null,
+dta_despesa date not null,
+num_documento varchar(30),
+val_despesa double precision,
+cod_tipo_despesa integer not null,
+cod_pessoa_favorecido integer not null,
+des_observacao varchar(255),
+cod_recebimento_especie integer,
+val_recebimento_especie double precision,
+dta_liquidacao date,
+val_total double precision,
+val_desconto double precision,
+val_desconto_porcentagem double precision,
+val_despesa_acessoria double precision,
+val_multa double precision,
+val_juros double precision,
+val_juros_porcentagem double precision,
+val_acrescimo double precision,
+primary key (seq_despesa));
+
+alter table tab_despesa add constraint fk_tipo_despesa foreign key (cod_tipo_despesa) references tab_tipo_despesa (cod_tipo_despesa);
+alter table tab_despesa add constraint fk_despesa_pessoa foreign key (cod_pessoa_favorecido) references tab_pessoa (cod_pessoa);
+alter table tab_despesa add constraint fk_despesa_especie foreign key (cod_recebimento_especie) references tab_pessoa (cod_pessoa);
+
+create table tab_estado(
+cod_estado integer not null,
+nom_estado varchar(60) not null,
+sgl_estado varchar(2) not null,
+nom_pais varchar(60) not null ,
+primary key (cod_estado));
+
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (4, 'ACRE', 'AC', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (5, 'ALAGOAS', 'AL', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (6, 'AMAPA', 'AP', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (7, 'AMAZONAS', 'AM', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (8, 'BAHIA', 'BA', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (9, 'CEARA', 'CE', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (10, 'DISTRITO FEDERAL', 'DF', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (3, 'ESPIRITO SANTO', 'ES', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (99, 'EXTERIOR', 'EX', 'OUTRO');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (11, 'GOIAS', 'GO', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (12, 'MARANHAO', 'MA', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (13, 'MATO GRASSO', 'MT', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (14, 'MATO GROSSO DO SUL', 'MS', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (15, 'MINAS GERAIS', 'MG', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (2, 'PARA', 'PA', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (16, 'PARAIBA', 'PB', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (17, 'PARANA', 'PR', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (18, 'PERNAMBUCO', 'PE', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (19, 'PIAUI', 'PI', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (20, 'RIO DE JANEIRO', 'RJ', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (21, 'RIO GRANDE DO NORTE', 'RN', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (22, 'RIO GRANDE DO SUL', 'RS', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (23, 'RONDONIA', 'RO', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (24, 'RORAIMA', 'RR', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (25, 'SANTA CATARINA', 'SC', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (1, 'SAO PAULO', 'SP', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (26, 'SERGIPE', 'SE', 'BRASIL');
+INSERT INTO TAB_ESTADO (COD_ESTADO, NOM_ESTADO, SGL_ESTADO, NOM_PAIS) VALUES (27, 'TOCANTINS', 'TO', 'BRASIL');
+
+create table tab_cidade (
+cod_cidade integer not null,
+nom_cidade varchar(60) not null,
+cod_estado integer not null,
+primary key (cod_cidade));
+
+create table tab_cidade (
+cod_cidade integer not null,
+nom_cidade varchar(60) not null,
+cod_estado integer not null,
+primary key (cod_cidade));
 
 
+create table tab_banco (
+cod_banco integer not null, 
+nom_banco varchar(60) not null,
+primary key (cod_banco));
+
+create table tab_pagamento_banco(
+seq_pagamento integer not null,
+seq_despesa integer,
+cod_banco integer not null,
+num_agencia varchar(15),
+num_conta varchar(15),
+dta_pre_datado date ,
+val_pago double precision,
+primary key (seq_pagamento));
+
+create table tab_tipo_parcelamento(
+cod_tipo integer not null,
+des_tipo varchar(60)
+primary key (cod_tipo));
+
+create table tab_pagamento_parcelado(
+seq_pagamento integer not null,
+seq_despesa integer,
+seq_titulo integer,
+dta_vencimento date,
+val_pagamento double precision,
+val_juros double precision,
+val_juros_porcentagem double precision,
+primary key (seq_pagamento));
 
 
 

@@ -1,6 +1,6 @@
 ﻿Public Class ClTipoDespesa
     Dim sql As String
-    Dim ds As New DataSet
+    Dim ds, dsUltimo As New DataSet
     Dim con As New ConexaoSQL
 
     Private cod_tipo_despesa_ As Integer
@@ -21,41 +21,73 @@
             des_tipo_despesa_ = value
         End Set
     End Property
-    Private ind_entrada_ As String
-    Public Property ind_entrada() As String
+    Private ind_tipo_ As String
+    Public Property ind_tipo() As String
         Get
-            Return ind_entrada_
+            Return ind_tipo_
         End Get
         Set(ByVal value As String)
-            ind_entrada_ = value
+            ind_tipo_ = value
         End Set
     End Property
-    Public Sub CadastrarTipoDespesa()
-        sql = "Insert Into tab_tipo_despesa(cod_tipo_despesa,	des_tipo_despesa) Values ('" & cod_tipo_despesa & "' , '" & des_tipo_despesa & "')"
+
+    Private ind_ativo_ As String
+    Public Property ind_ativo() As String
+        Get
+            Return ind_ativo_
+        End Get
+        Set(ByVal value As String)
+            ind_ativo_ = value
+        End Set
+    End Property
+    Public Sub Cadastrar()
+        sql = "Insert Into tab_tipo_despesa Values (" & cod_tipo_despesa & " , '" & des_tipo_despesa & "','" & ind_tipo & "' , '" & ind_ativo & "')"
         con.Operar(sql)
     End Sub
 
-    Public Sub AtualizarTipoDespesa()
-        sql = "Update tab_tipo_despesa Set des_tipo_despesa = '" & des_tipo_despesa & "'  Where cod_tipo_despesa = " & cod_tipo_despesa & ""
+    Public Sub Atualizar()
+        sql = "Update tab_tipo_despesa Set des_tipo_despesa = '" & des_tipo_despesa & "' ,
+                                           ind_tipo = '" & ind_tipo & "',
+                                           ind_ativo = '" & ind_ativo & "'  
+                                     Where cod_tipo_despesa = " & cod_tipo_despesa & ""
         con.Operar(sql)
     End Sub
-    Public Sub ExcluirTipoDespesa()
+    Public Sub Excluir()
         sql = " Delete from tab_tipo_despesa Where cod_tipo_despesa =" & cod_tipo_despesa & ""
         con.Operar(sql)
     End Sub
+    Public Function Consultar(cod As Integer, desc As String, ind_tipo As String, ind_ativo As String)
 
-    Public Function ConsultarTipoDespesa(busca As String)
+        sql = "Select a.cod_tipo_despesa,
+                      a.des_tipo_despesa,
+                      a.ind_tipo, 
+                      a.ind_ativo
+               From tab_tipo_despesa a
+                where ((a.des_tipo_despesa like ('%" & desc & "%') )or ('' = '" & desc & "' ))  
+                 and ((a.cod_tipo_despesa = " & cod & " )or (0 = " & cod & "))
+                 and ((a.ind_tipo = '" & ind_tipo & "' )or ('' = '" & ind_tipo & "'))
+                 and ((a.ind_ativo = '" & ind_ativo & "' )or ('' = '" & ind_ativo & "'))
+              order by a.des_tipo_despesa"
+        ds = con.Listar(sql)
+        Return ds
+    End Function
+
+    Public Function ConsultarPesquisa(busca As String)
         sql = "Select * From tab_tipo_despesa
                 where des_tipo_despesa like ('%" & busca & "%')
                  order by des_tipo_despesa"
         ds = con.Listar(sql)
         Return ds
     End Function
-    Public Function ConsultarTipoDespesaCodigo()
+    Public Function ConsultarCodigo()
         sql = "Select * From tab_tipo_despesa Where cod_tipo_despesa =" & cod_tipo_despesa & ""
         ds = con.Listar(sql)
         Return ds
     End Function
-
+    Public Function UltimoCadastrado()
+        sql = "Select coalesce(cast( max(cod_tipo_despesa) as varchar(5)),0)as ultimo From tab_tipo_despesa"
+        dsUltimo = con.Listar(sql)
+        Return dsUltimo
+    End Function
 
 End Class

@@ -127,6 +127,7 @@ Partial Class FrmPessoa
         Me.BtnDependente = New System.Windows.Forms.Button()
         Me.BtnFuncionario = New System.Windows.Forms.Button()
         Me.BtnPrincipal = New System.Windows.Forms.Button()
+        Me.BtnCidade = New System.Windows.Forms.Button()
         Me.GbNavegador.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -276,6 +277,7 @@ Partial Class FrmPessoa
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.BtnCidade)
         Me.GroupBox1.Controls.Add(Me.TxbDtaNasc)
         Me.GroupBox1.Controls.Add(Me.DtpDtaNasc)
         Me.GroupBox1.Controls.Add(Me.TxbCep)
@@ -432,7 +434,7 @@ Partial Class FrmPessoa
         Me.TxbNomCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxbNomCidade.Location = New System.Drawing.Point(138, 180)
         Me.TxbNomCidade.Name = "TxbNomCidade"
-        Me.TxbNomCidade.Size = New System.Drawing.Size(311, 20)
+        Me.TxbNomCidade.Size = New System.Drawing.Size(284, 20)
         Me.TxbNomCidade.TabIndex = 14
         '
         'TxbCodCidade
@@ -1132,10 +1134,12 @@ Partial Class FrmPessoa
         '
         'BtnBuscaFuncaoFunc
         '
+        Me.BtnBuscaFuncaoFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnBuscaFuncaoFunc.ForeColor = System.Drawing.Color.Black
         Me.BtnBuscaFuncaoFunc.Image = CType(resources.GetObject("BtnBuscaFuncaoFunc.Image"), System.Drawing.Image)
-        Me.BtnBuscaFuncaoFunc.Location = New System.Drawing.Point(427, 14)
+        Me.BtnBuscaFuncaoFunc.Location = New System.Drawing.Point(429, 15)
         Me.BtnBuscaFuncaoFunc.Name = "BtnBuscaFuncaoFunc"
-        Me.BtnBuscaFuncaoFunc.Size = New System.Drawing.Size(25, 22)
+        Me.BtnBuscaFuncaoFunc.Size = New System.Drawing.Size(23, 20)
         Me.BtnBuscaFuncaoFunc.TabIndex = 3
         Me.BtnBuscaFuncaoFunc.UseVisualStyleBackColor = True
         '
@@ -1183,6 +1187,17 @@ Partial Class FrmPessoa
         Me.BtnPrincipal.TabIndex = 31
         Me.BtnPrincipal.Text = "Principal"
         Me.BtnPrincipal.UseVisualStyleBackColor = True
+        '
+        'BtnCidade
+        '
+        Me.BtnCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCidade.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.BtnCidade.Image = CType(resources.GetObject("BtnCidade.Image"), System.Drawing.Image)
+        Me.BtnCidade.Location = New System.Drawing.Point(425, 180)
+        Me.BtnCidade.Name = "BtnCidade"
+        Me.BtnCidade.Size = New System.Drawing.Size(24, 20)
+        Me.BtnCidade.TabIndex = 46
+        Me.BtnCidade.UseVisualStyleBackColor = True
         '
         'FrmPessoa
         '
@@ -1326,4 +1341,5 @@ Partial Class FrmPessoa
     Friend WithEvents TxbSalarioFunc As Controles.TxbMonetario
     Friend WithEvents TxbDtaAdmissaoFunc As Controles.TxbData
     Friend WithEvents DtpAdmissaoFunc As DateTimePicker
+    Friend WithEvents BtnCidade As Button
 End Class

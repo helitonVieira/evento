@@ -379,8 +379,8 @@ Public Class FrmItem
                 ElseIf ds.Tables(0).Rows(i)("ind_tipo").ToString = "I" Then
                     CbTipoItem.Text = "INSUMO"
                 End If
-                TxbEstoqueMin.Text = ds.Tables(0).Rows(i)("qtd_estoque_minimo").ToString
-                TxbEstoqueMax.Text = ds.Tables(0).Rows(i)("qtd_estoque_maximo").ToString
+                TxbEstoqueMin.Text = FormatNumber(Convert.ToDouble(ds.Tables(0).Rows(i)("qtd_estoque_minimo").ToString), 2)
+                TxbEstoqueMax.Text = FormatNumber(Convert.ToDouble(ds.Tables(0).Rows(i)("qtd_estoque_maximo").ToString), 2)
                 If ds.Tables(0).Rows(i)("cod_marca").ToString <> "0" Then
                     TxbCodMarca.Text = ds.Tables(0).Rows(i)("cod_marca").ToString
                     TxbDesMarca.Text = ds.Tables(0).Rows(i)("des_marca").ToString
@@ -438,10 +438,10 @@ Public Class FrmItem
             msg = msg & vbCrLf & "Tipo Item" & vbCrLf & "Anterior: " & ind_tipo_old & vbCrLf & " Nova : " & CbTipoItem.Text
         End If
 
-        If qtd_estoque_minimo_old <> TxbEstoqueMin.Text Then
+        If FormatNumber(Convert.ToDouble(qtd_estoque_minimo_old), 2) <> FormatNumber(Convert.ToDouble(TxbEstoqueMin.Text), 2) Then
             msg = msg & vbCrLf & "Estoque Mínimo" & vbCrLf & "Anterior: " & qtd_estoque_minimo_old & vbCrLf & " Nova : " & TxbEstoqueMin.Text
         End If
-        If qtd_estoque_maximo_old <> TxbEstoqueMax.Text Then
+        If FormatNumber(Convert.ToDouble(qtd_estoque_maximo_old), 2) <> FormatNumber(Convert.ToDouble(TxbEstoqueMax.Text), 2) Then
             msg = msg & vbCrLf & "Estoque Máximo" & vbCrLf & "Anterior: " & qtd_estoque_maximo_old & vbCrLf & " Nova : " & TxbEstoqueMax.Text
         End If
         If (cod_marca_old <> TxbCodMarca.Text) And (TxbCodMarca.Text = "" And cod_marca_old <> "0") Then

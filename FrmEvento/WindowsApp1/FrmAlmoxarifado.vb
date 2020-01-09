@@ -222,11 +222,6 @@ Public Class FrmAlmoxarifado
         carregaFormulario()
     End Sub
 
-    Private Sub TxbCodigo_TextChanged_1(sender As Object, e As EventArgs)
-        If Not IsNumeric(TxbCodigo.Text) Then
-            TxbCodigo.Text = ""
-        End If
-    End Sub
 
     Private Sub BtnCsv_Click(sender As Object, e As EventArgs) Handles BtnCsv.Click
         Try
@@ -302,21 +297,11 @@ Public Class FrmAlmoxarifado
 
     End Sub
 
-    Private Sub TxbCodigo_TextChanged(sender As Object, e As EventArgs)
-        If Not IsNumeric(TxbCodigo.Text) Then
-            TxbCodigo.Text = ""
-        End If
-    End Sub
-    Private Overloads Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellClick
+    Private Sub Dgv_CellClick(sender As Object, e As EventArgs) Handles Dgv.DoubleClick
         Me.TxbCodigo.Text = Dgv.CurrentRow.Cells(0).Value
         Me.TxbDescricao.Text = Dgv.CurrentRow.Cells(1).Value
         TabControl1.SelectedIndex = 0
         Me.Height = 145
         Me.TxbDescricao.Select()
     End Sub
-    Private Overloads Sub Dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellEnter
-        i = Dgv.CurrentRow.Index
-        carregaFormulario()
-    End Sub
-
 End Class

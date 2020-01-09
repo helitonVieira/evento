@@ -54,13 +54,11 @@ Public Class FrmCategoria
             Dgv.DataSource = ds.Tables(0)
             formatarGrid()
             carregaFormulario()
-
         End If
     End Sub
 
     Private Sub BtSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
         salvaRegistro()
-
     End Sub
     Public Sub salvaRegistro()
         Try
@@ -116,7 +114,6 @@ Public Class FrmCategoria
                 limpar()
             Catch ex As Exception
                 MsgBox("Erro ao excluir , " & ex.Message & "!", MsgBoxStyle.Critical, "Erro")
-
             End Try
         End If
     End Sub
@@ -148,15 +145,12 @@ Public Class FrmCategoria
                 .Columns(1).Width = 150
                 .Columns(0).Width = 40
                 .Columns(1).Width = 150
-
             End With
 
         Catch ex As Exception
 
         End Try
     End Sub
-
-
     Public Sub carregaFormulario()
         Try
             limpar()
@@ -321,11 +315,16 @@ Public Class FrmCategoria
         FrmPesquisa.tabela = "tab_secao_categoria"
         FrmPesquisa.ShowDialog()
     End Sub
+    Private Sub Dgv_DoubleClick(sender As Object, e As EventArgs) Handles Dgv.DoubleClick
+        Try
+            TxbCodigo.Text = Dgv.CurrentRow.Cells(0).Value
+            TxbDescricao.Text = Dgv.CurrentRow.Cells(1).Value
 
-    Private Overloads Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs)
-
+            TabControl1.SelectedIndex = 0
+            Me.Height = 145
+            Me.TxbCodigo.Select()
+        Catch ex As Exception
+        End Try
     End Sub
-    Private Overloads Sub Dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs)
 
-    End Sub
 End Class

@@ -9,7 +9,7 @@
     Dim atualizarDependente As Integer = 1
     Dim i As Integer = 0
     Dim cod_pessoa_old, nom_pessoa_old, nom_fantasia_old, num_cnpj_cpf_old, num_ie_rg_old,
-        dta_nascimento_old, des_logradouro_old, des_complemento_old, cod_cidade_old,
+        dta_nascimento_old, des_logradouro_old, des_complemento_old, cod_cidade_old, nom_cidade_old,
         nom_bairro_old, num_cep_old, num_telefone_1_old, num_telefone_2_old, num_telefone_3_old,
         des_observacao_old, dta_cadastro_old, ind_cliente_old, ind_fornecedor_old,
         ind_funcionario_old, ind_ativo_old, des_email_old, ind_pe_old As String
@@ -28,6 +28,12 @@
     Private Sub DtpDtaDemissaoFunc_TextChanged(sender As Object, e As EventArgs) Handles DtpDtaDemissaoFunc.TextChanged
         TxbDtaDemissaoFunc.Text = DtpDtaDemissaoFunc.Value.ToShortDateString
     End Sub
+
+    Private Sub BtCidade_Click(sender As Object, e As EventArgs) Handles BtnCidade.Click
+        FrmPesquisa.tabela = "tab_cidade_pessoa"
+        FrmPesquisa.ShowDialog()
+    End Sub
+
     Private Sub DtpDtaReajusteFunc_TextChanged(sender As Object, e As EventArgs) Handles DtpDtaReajusteFunc.TextChanged
         TxbDtaReajusteFunc.Text = DtpDtaReajusteFunc.Value.ToShortDateString
     End Sub
@@ -544,18 +550,20 @@
             .Columns(6).HeaderText = "LOGRADOURO"
             .Columns(7).HeaderText = "COMPLEMENTO"
             .Columns(8).HeaderText = "COD.CIDADE"
-            .Columns(9).HeaderText = "BAIRRO"
-            .Columns(10).HeaderText = "CEP"
-            .Columns(11).HeaderText = "TELEFONE_1"
-            .Columns(12).HeaderText = "TELEFONE_2"
-            .Columns(13).HeaderText = "TELEFONE_3"
-            .Columns(14).HeaderText = "OBSERVACAO"
-            .Columns(15).HeaderText = "DTA.CADASTRO"
-            .Columns(16).HeaderText = "CLIENTE"
-            .Columns(17).HeaderText = "FORNECEDOR"
-            .Columns(18).HeaderText = "FUNCIONARIO"
-            .Columns(19).HeaderText = "ATIVO"
-            .Columns(20).HeaderText = "EMAIL"
+            .Columns(9).HeaderText = "NOM.CIDADE"
+            .Columns(10).HeaderText = "BAIRRO"
+            .Columns(11).HeaderText = "CEP"
+            .Columns(12).HeaderText = "TELEFONE_1"
+            .Columns(13).HeaderText = "TELEFONE_2"
+            .Columns(14).HeaderText = "TELEFONE_3"
+            .Columns(15).HeaderText = "CONTATO"
+            .Columns(16).HeaderText = "OBSERVACAO"
+            .Columns(17).HeaderText = "DTA.CADASTRO"
+            .Columns(18).HeaderText = "CLIENTE"
+            .Columns(19).HeaderText = "FORNECEDOR"
+            .Columns(20).HeaderText = "FUNCIONARIO"
+            .Columns(21).HeaderText = "ATIVO"
+            .Columns(22).HeaderText = "EMAIL"
             .Columns(0).Width = 40
             .Columns(1).Width = 200
             .Columns(2).Width = 60
@@ -577,6 +585,8 @@
             .Columns(18).Width = 60
             .Columns(19).Width = 60
             .Columns(20).Width = 60
+            .Columns(21).Width = 60
+            .Columns(22).Width = 60
         End With
     End Sub
 
@@ -629,12 +639,13 @@
             TxbRua.Text = ds.Tables(0).Rows(i)("des_logradouro").ToString
             TxbComplemento.Text = ds.Tables(0).Rows(i)("des_complemento").ToString
             TxbCodCidade.Text = ds.Tables(0).Rows(i)("cod_cidade").ToString
-            TxbNomCidade.Text = "UBERLANDIA"
+            TxbNomCidade.Text = ds.Tables(0).Rows(i)("nom_cidade").ToString
             TxbBairro.Text = ds.Tables(0).Rows(i)("nom_bairro").ToString
             TxbCep.Text = ds.Tables(0).Rows(i)("num_cep").ToString
             TxbFone1.Text = ds.Tables(0).Rows(i)("num_telefone_1").ToString
             TxbFone2.Text = ds.Tables(0).Rows(i)("num_telefone_2").ToString
             TxbFone3.Text = ds.Tables(0).Rows(i)("num_telefone_3").ToString
+
             TxbObservacao.Text = ds.Tables(0).Rows(i)("des_observacao").ToString
             If ds.Tables(0).Rows(i)("ind_cliente").ToString = "S" Then
                 CkbCliente.Checked = True
@@ -663,25 +674,7 @@
             TxbEmail.Text = ds.Tables(0).Rows(i)("des_email").ToString
 
 
-            cod_pessoa_old = ds.Tables(0).Rows(i)("cod_pessoa").ToString
-            nom_pessoa_old = ds.Tables(0).Rows(i)("nom_pessoa").ToString
-            nom_fantasia_old = ds.Tables(0).Rows(i)("nom_fantasia").ToString
-            num_cnpj_cpf_old = ds.Tables(0).Rows(i)("num_cnpj_cpf").ToString
-            num_ie_rg_old = ds.Tables(0).Rows(i)("num_ie_rg").ToString
-            des_logradouro_old = ds.Tables(0).Rows(i)("des_logradouro").ToString
-            des_complemento_old = ds.Tables(0).Rows(i)("des_complemento").ToString
-            cod_cidade_old = ds.Tables(0).Rows(i)("cod_cidade").ToString
-            nom_bairro_old = ds.Tables(0).Rows(i)("nom_bairro").ToString
-            num_cep_old = ds.Tables(0).Rows(i)("num_cep").ToString
-            num_telefone_1_old = ds.Tables(0).Rows(i)("num_telefone_1").ToString
-            num_telefone_2_old = ds.Tables(0).Rows(i)("num_telefone_2").ToString
-            num_telefone_3_old = ds.Tables(0).Rows(i)("num_telefone_3").ToString
-            des_observacao_old = ds.Tables(0).Rows(i)("des_observacao").ToString
-            ind_cliente_old = ds.Tables(0).Rows(i)("ind_cliente").ToString
-            ind_fornecedor_old = ds.Tables(0).Rows(i)("ind_fornecedor").ToString
-            ind_funcionario_old = ds.Tables(0).Rows(i)("ind_funcionario").ToString
-            ind_ativo_old = ds.Tables(0).Rows(i)("ind_ativo").ToString
-            des_email_old = ds.Tables(0).Rows(i)("des_email").ToString
+            carregaPessoaOld()
 
             '**************************************
             'FUNCIONARIO
@@ -762,6 +755,40 @@
         End Try
     End Sub
 
+    Private Sub carregaPessoaOLd()
+        cod_pessoa_old = TxbCodPessoa.Text
+        nom_pessoa_old = TxbNomPessoa.Text
+        nom_fantasia_old = TxbNomFantasia.Text
+        num_cnpj_cpf_old = TxbCnpjCpf.Text
+        num_ie_rg_old = TxbIeRg.Text
+        des_logradouro_old = TxbRua.Text
+        des_complemento_old = TxbComplemento.Text
+        cod_cidade_old = TxbCodCidade.Text
+        nom_cidade_old = TxbNomCidade.Text
+        nom_bairro_old = TxbBairro.Text
+        num_cep_old = TxbCep.Text
+        num_telefone_1_old = TxbFone1.Text
+        num_telefone_2_old = TxbFone2.Text
+        num_telefone_3_old = TxbFone3.Text
+        des_observacao_old = TxbObservacao.Text
+        If CkbFornecedor.Checked = True Then
+            ind_fornecedor_old = True
+        Else
+            ind_fornecedor_old = False
+        End If
+        If CkbFuncionario.Checked = True Then
+            ind_funcionario_old = True
+        Else
+            ind_funcionario_old = False
+        End If
+        If CkbAtivo.Checked = True Then
+            ind_ativo_old = True
+        Else
+            ind_ativo_old = False
+        End If
+        des_email_old = ds.Tables(0).Rows(i)("des_email").ToString
+    End Sub
+
     Private Sub FrmItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpar()
         BtnPrincipal.Enabled = False
@@ -771,9 +798,71 @@
         TxbCodPessoa.Select()
     End Sub
 
-    Private Sub DgvPessoa_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvPessoa.CellClick
-        carregaFormulario()
+    Private Sub DgvPessoa_DoubleClick(sender As Object, e As EventArgs) Handles DgvPessoa.DoubleClick
+        Try
+            TxbCodPessoa.Text = DgvPessoa.CurrentRow.Cells(0).Value
+            TxbNomPessoa.Text = DgvPessoa.CurrentRow.Cells(1).Value
+            TxbNomFantasia.Text = DgvPessoa.CurrentRow.Cells(2).Value
+            TxbCnpjCpf.Text = DgvPessoa.CurrentRow.Cells(3).Value
+            TxbIeRg.Text = DgvPessoa.CurrentRow.Cells(4).Value
+
+            Try
+                TxbDtaNasc.Text = DgvPessoa.CurrentRow.Cells(5).Value
+                TxbDtaNasc.Text = TxbDtaNasc.Text.Substring(0, 10)
+                If TxbDtaNasc.Text = "01/01/1900" Then
+                    TxbDtaNasc.Text = ""
+                    dta_nascimento_old = ""
+                Else
+                    dta_nascimento_old = TxbDtaNasc.Text
+                End If
+            Catch ex As Exception
+                TxbDtaDemissaoFunc.Text = ""
+                dta_nascimento_old = ""
+            End Try
+
+
+            TxbRua.Text = DgvPessoa.CurrentRow.Cells(6).Value
+            TxbComplemento.Text = DgvPessoa.CurrentRow.Cells(7).Value
+            TxbCodCidade.Text = DgvPessoa.CurrentRow.Cells(8).Value
+            TxbNomCidade.Text = DgvPessoa.CurrentRow.Cells(9).Value
+            TxbBairro.Text = DgvPessoa.CurrentRow.Cells(10).Value
+            TxbCep.Text = DgvPessoa.CurrentRow.Cells(11).Value
+            TxbFone1.Text = DgvPessoa.CurrentRow.Cells(12).Value
+            TxbFone2.Text = DgvPessoa.CurrentRow.Cells(13).Value
+            TxbFone3.Text = DgvPessoa.CurrentRow.Cells(14).Value
+            TxbObservacao.Text = DgvPessoa.CurrentRow.Cells(15).Value
+            If DgvPessoa.CurrentRow.Cells(0).Value = "S" Then
+                CkbCliente.Checked = True
+            Else
+                CkbCliente.Checked = False
+            End If
+            If DgvPessoa.CurrentRow.Cells(0).Value = "S" Then
+                CkbFornecedor.Checked = True
+                'btnFornecedor.enable = true
+            Else
+                CkbFornecedor.Checked = False
+                'btnFornecedor.enable = False
+            End If
+            If DgvPessoa.CurrentRow.Cells(16).Value = "S" Then
+                CkbFuncionario.Checked = True
+                BtnFuncionario.Enabled = True
+            Else
+                CkbFuncionario.Checked = False
+                BtnFuncionario.Enabled = False
+            End If
+            If DgvPessoa.CurrentRow.Cells(17).Value = "S" Then
+                CkbAtivo.Checked = True
+            Else
+                CkbAtivo.Checked = False
+            End If
+            TxbEmail.Text = DgvPessoa.CurrentRow.Cells(18).Value
+
+        Catch ex As Exception
+        End Try
         TxbNomPessoa.Select()
+        TabControl1.SelectedIndex = 0
+        carregaPessoaOld()
+
     End Sub
 
     Private Sub TxbCodigo_TextChanged(sender As Object, e As EventArgs) Handles TxbCodPessoa.TextChanged
@@ -835,9 +924,6 @@
         End If
     End Sub
 
-    Private Sub DgvPessoa_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DgvPessoa.CellContentClick
-        TabControl1.SelectedIndex = 0
-    End Sub
     Public Sub verificarAuteracaoPessoa()
         Dim msg As String = ""
         If TxbCodPessoa.Text = "" Or atualizar = 1 Then

@@ -105,7 +105,6 @@ D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\pt-BR\Microsoft.VisualStudio
 D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\pt-BR\Microsoft.VisualStudio.GraphModel.resources.dll
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\Evento.vbprojAssemblyReference.cache
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.exe.config
-D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmDespesa.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmPdv1.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmPesquisa.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmEscolherEvento.resources
@@ -140,10 +139,16 @@ D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\PetSystem.pdb
 D:\source\repos\FrmEvento\WindowsApp1\bin\x86\Debug\PetSystem.xml
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmCategoria.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmSubCategoria.resources
-D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmPagamento.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmPDV2.resources
-D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmItem1.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmItem.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmUnidade.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmMarca.resources
 D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmEscolhaEmpresa.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmDespesas.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmEspecieCaixa.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmPagamentoRecebimento.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmReceita.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmTipoDespesa.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmDataFinal.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmBanco.resources
+D:\source\repos\FrmEvento\WindowsApp1\obj\x86\Debug\WindowsApp1.FrmTipoParcelamento.resources

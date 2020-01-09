@@ -200,7 +200,7 @@ Partial Class FrmCad1Padrao
         Me.TabControl1.Location = New System.Drawing.Point(7, 24)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(424, 256)
+        Me.TabControl1.Size = New System.Drawing.Size(424, 257)
         Me.TabControl1.TabIndex = 21
         '
         'TabPage1
@@ -210,7 +210,7 @@ Partial Class FrmCad1Padrao
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(416, 230)
+        Me.TabPage1.Size = New System.Drawing.Size(416, 231)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -261,7 +261,7 @@ Partial Class FrmCad1Padrao
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 93)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(406, 133)
+        Me.GroupBox1.Size = New System.Drawing.Size(406, 134)
         Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.TabStop = False
         '

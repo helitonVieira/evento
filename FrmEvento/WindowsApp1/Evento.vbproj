@@ -142,11 +142,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClPagamentoParcelado.vb" />
+    <Compile Include="ClTipoParcelamento.vb" />
+    <Compile Include="ClBanco.vb" />
+    <Compile Include="ClPagamentoBanco.vb" />
     <Compile Include="ClItemCodigoBarra.vb" />
+    <Compile Include="ClDespesa.vb" />
     <Compile Include="ClItemPrecoVenda.vb" />
     <Compile Include="ClItemFornecedor.vb" />
     <Compile Include="ClItem.vb" />
     <Compile Include="ClMarca.vb" />
+    <Compile Include="ClEspecieCaixa.vb" />
+    <Compile Include="ClCidade.vb" />
     <Compile Include="ClUnidade.vb" />
     <Compile Include="ClSubCategoriaItem.vb" />
     <Compile Include="ClCategoriaItem.vb" />
@@ -162,7 +169,6 @@
     <Compile Include="ClEvento.vb" />
     <Compile Include="ClGeral.vb" />
     <Compile Include="ClInventarioRapido.vb" />
-    <Compile Include="ClDespesa.vb" />
     <Compile Include="ClPessoa .vb" />
     <Compile Include="ClLicencia.vb" />
     <Compile Include="ClParametroSistema.vb" />
@@ -174,10 +180,34 @@
     <Compile Include="ClUsuario.vb" />
     <Compile Include="ClVenda.vb" />
     <Compile Include="ConexaoSQL.vb" />
+    <Compile Include="FrmBanco.Designer.vb">
+      <DependentUpon>FrmBanco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBanco.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDataFinal.Designer.vb">
+      <DependentUpon>FrmDataFinal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDataFinal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDespesas.Designer.vb">
+      <DependentUpon>FrmDespesas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDespesas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmEscolhaEmpresa.Designer.vb">
       <DependentUpon>FrmEscolhaEmpresa.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmEscolhaEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEspecieCaixa.Designer.vb">
+      <DependentUpon>FrmEspecieCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEspecieCaixa.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMarca.Designer.vb">
@@ -190,6 +220,12 @@
       <DependentUpon>FrmItem.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPagamentoRecebimento.Designer.vb">
+      <DependentUpon>FrmPagamentoRecebimento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPagamentoRecebimento.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPDV2.Designer.vb">
@@ -216,22 +252,10 @@
     <Compile Include="FrmCadPadrao.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDespesa.Designer.vb">
-      <DependentUpon>FrmDespesa.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDespesa.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FrmFuncaoFuncionario.Designer.vb">
       <DependentUpon>FrmFuncaoFuncionario.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmFuncaoFuncionario.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPagamento.Designer.vb">
-      <DependentUpon>FrmPagamento.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPagamento.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPdv1.Designer.vb">
@@ -276,6 +300,12 @@
     <Compile Include="FrmPessoa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmReceita.Designer.vb">
+      <DependentUpon>FrmReceita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReceita.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmRelListaItens.Designer.vb">
       <DependentUpon>FrmRelListaItens.vb</DependentUpon>
     </Compile>
@@ -306,13 +336,6 @@
     <Compile Include="FrmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmItem1.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmItem1.Designer.vb">
-      <DependentUpon>FrmItem1.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ClItem1.vb" />
     <Compile Include="FrmSecao.Designer.vb">
       <DependentUpon>FrmSecao.vb</DependentUpon>
@@ -326,12 +349,25 @@
     <Compile Include="FrmSubCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmTipoDespesa.Designer.vb">
+      <DependentUpon>FrmTipoDespesa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTipoDespesa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTipoParcelamento.Designer.vb">
+      <DependentUpon>FrmTipoParcelamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTipoParcelamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmUnidade.Designer.vb">
       <DependentUpon>FrmUnidade.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmUnidade.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ModVariavelGlobal.vb" />
     <Compile Include="ModParametroSistema.vb" />
     <Compile Include="ModTabEnter.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -358,14 +394,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmBanco.resx">
+      <DependentUpon>FrmBanco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDataFinal.resx">
+      <DependentUpon>FrmDataFinal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDespesas.resx">
+      <DependentUpon>FrmDespesas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEscolhaEmpresa.resx">
       <DependentUpon>FrmEscolhaEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEspecieCaixa.resx">
+      <DependentUpon>FrmEspecieCaixa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMarca.resx">
       <DependentUpon>FrmMarca.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmItem.resx">
       <DependentUpon>FrmItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPagamentoRecebimento.resx">
+      <DependentUpon>FrmPagamentoRecebimento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPDV2.resx">
       <DependentUpon>FrmPDV2.vb</DependentUpon>
@@ -379,14 +430,8 @@
     <EmbeddedResource Include="FrmCadPadrao.resx">
       <DependentUpon>FrmCadPadrao.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDespesa.resx">
-      <DependentUpon>FrmDespesa.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmFuncaoFuncionario.resx">
       <DependentUpon>FrmFuncaoFuncionario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPagamento.resx">
-      <DependentUpon>FrmPagamento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPdv1.resx">
       <DependentUpon>FrmPdv1.vb</DependentUpon>
@@ -421,8 +466,8 @@
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmItem1.resx">
-      <DependentUpon>FrmItem1.vb</DependentUpon>
+    <EmbeddedResource Include="FrmReceita.resx">
+      <DependentUpon>FrmReceita.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRelListaItens.resx">
       <DependentUpon>FrmRelListaItens.vb</DependentUpon>
@@ -432,6 +477,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSubCategoria.resx">
       <DependentUpon>FrmSubCategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTipoDespesa.resx">
+      <DependentUpon>FrmTipoDespesa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTipoParcelamento.resx">
+      <DependentUpon>FrmTipoParcelamento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUnidade.resx">
       <DependentUpon>FrmUnidade.vb</DependentUpon>

@@ -45,17 +45,21 @@ Public Class FrmSubCategoria
         If cod_old = "" Then
             cod_old = 0
         End If
-        Dim tabela As DataTable
-        ds = subcategoria.Consultar(cod_old, desc_old, cod_categoria_old)
-        tabela = ds.Tables(0)
+        Try
+            Dim tabela As DataTable
+            ds = subcategoria.Consultar(cod_old, desc_old, cod_categoria_old)
+            tabela = ds.Tables(0)
 
-        If tabela.Rows.Count > 0 Then
-            Dgv.DataSource = Nothing
-            Dgv.DataSource = ds.Tables(0)
-            formatarGrid()
-            carregaFormulario()
+            If tabela.Rows.Count > 0 Then
+                Dgv.DataSource = Nothing
+                Dgv.DataSource = ds.Tables(0)
+                formatarGrid()
+                carregaFormulario()
 
-        End If
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub BtSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
@@ -321,10 +325,16 @@ Public Class FrmSubCategoria
         FrmPesquisa.tabela = "tab_categoria_subcategoria"
         FrmPesquisa.ShowDialog()
     End Sub
-    Private Overloads Sub Dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellClick
-
+    Private Overloads Sub Dgv_DoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.DoubleClick
+        Try
+            TxbCodigo.Text = Dgv.CurrentRow.Cells(0).Value
+            TxbDescricao.Text = Dgv.CurrentRow.Cells(1).Value
+            TxbCodCategoria.Text = Dgv.CurrentRow.Cells(2).Value
+            txbDesCategoria.Text = Dgv.CurrentRow.Cells(3).Value
+            tab_control1Selelct()
+            Me.TxbCodigo.Select()
+        Catch ex As Exception
+        End Try
     End Sub
-    Private Overloads Sub Dgv_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv.CellEnter
 
-    End Sub
 End Class

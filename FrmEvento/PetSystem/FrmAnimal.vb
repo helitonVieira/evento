@@ -233,6 +233,8 @@ Public Class FrmAnimal
         frmPesquisa.ShowDialog()
         TxbCodProprietario.Text = ModuleVariavelGlobal.pesquisaCodigo
         TxbNomProprietario.Text = ModuleVariavelGlobal.pesquisaNome
+        ModuleVariavelGlobal.pesquisaCodigo = ""
+        ModuleVariavelGlobal.pesquisaNome = ""
 
     End Sub
 
@@ -764,7 +766,7 @@ Public Class FrmAnimal
                     RbVacNao.Checked = True
                 End If
             Else
-                atualizar = 1
+                atualizarVacina = 1
             End If
         Catch ex As Exception
         End Try
@@ -783,7 +785,7 @@ Public Class FrmAnimal
         TxbDtaProximaParasita.Text = DtpProximaParasita.Value.ToShortDateString
     End Sub
 
-    Private Sub DgvContParasitario_CellClick(sender As Object, e As Windows.Forms.DataGridViewCellEventArgs) Handles DgvContParasitario.CellClick
+    Private Sub DgvContParasitario_DoubleClick(sender As Object, e As Windows.Forms.DataGridViewCellEventArgs) Handles DgvContParasitario.DoubleClick
         Try
             LbSeqParasita.Text = DgvContParasitario.CurrentRow.Cells(0).Value
             Me.TxbCodParasita.Text = DgvContParasitario.CurrentRow.Cells(1).Value

@@ -11,7 +11,7 @@
     Dim posicaoNome As Integer = 0
     Dim numIngresso As Integer
     Dim cod_evento As Integer
-    Dim diminFontIngresso, val_img_ingresso_tamanho_altura, val_img_ingresso_tamanho_largura,
+    Dim tamFontIngresso, val_img_ingresso_tamanho_altura, val_img_ingresso_tamanho_largura,
        val_img_ingresso_margem_esquerda, val_img_ingresso_margem_cabecalho As Integer
 
 
@@ -31,8 +31,6 @@
         If nome3 = "Null" Then
             nome3 = ""
         End If
-
-
     End Sub
     Public Sub atualizarDados()
         '  conectar.Conectar()
@@ -45,7 +43,6 @@
             formatarGrid()
         End If
         limpar()
-
     End Sub
     Public Sub formatarGrid()
         With DgvEvento
@@ -94,18 +91,13 @@
         salvar()
         TxtCodItem.Select()
     End Sub
-
-
-
     Private Sub FrmImprimirIngresso_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         'TECLA ENTER
         InsereEnter(Me)
     End Sub
-
     Private Sub CbFonte_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbFonte.SelectedIndexChanged
         LbFonte.Font = New Font(CbFonte.Text, 16.0F, System.Drawing.FontStyle.Bold)
     End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnOK.Click
         TxtCodItem.Visible = True
         TxtQtde.Enabled = True
@@ -114,20 +106,13 @@
         BtnOK.Enabled = False
         TxtCodItem.Select()
     End Sub
-
     Public Sub salvar()
-
-        '   TxtCodItem.Select()
+        carregaParametro()
         Try
             IngressoImpresso.cod_evento = cod_evento
 
             IngressoImpresso.seq_ingresso = TxtCodItem.Text
-            'verificar qtd
-            If TxtQtde.Text = "" Then
-                IngressoImpresso.qtd_impressa = "1"
-            Else
-                IngressoImpresso.qtd_impressa = TxtQtde.Text.Replace(",", ".")
-            End If
+
             'verificar valor custo
             If valCustoTotal = "" Then
                 valCustoTotal = "0"
@@ -141,18 +126,22 @@
                 valTotalItem = valTotalItem.Replace(",", ".")
             End If
             IngressoImpresso.val_total_impresso = valTotalItem * IngressoImpresso.qtd_impressa
-            IngressoImpresso.InserirIngressoImpresso()
+            IngressoImpresso.qtd_impressa = "0"
 
             Dim qtdImpressa As Integer = numIngresso
             For index As Integer = 1 To TxtQtde.Text
                 numIngresso = qtdImpressa + index
                 imprimirLayout()
-
+                IngressoImpresso.qtd_impressa = IngressoImpresso.qtd_impressa + 1
             Next
+            IngressoImpresso.InserirIngressoImpresso()
             limpar()
             atualizarDados()
             TxtCodItem.Select()
         Catch ex As Exception
+            If IngressoImpresso.qtd_impressa > 0 Then
+                IngressoImpresso.InserirIngressoImpresso()
+            End If
             MsgBox("ERRO AO SALVAR EVENTO" & ex.Message, MsgBoxStyle.Critical, "Erro")
             TxtCodItem.Select()
         End Try
@@ -183,6 +172,7 @@
             TxtCodItem.Text = DgvEvento.CurrentRow.Cells(0).Value
             cod_evento = DgvEvento.CurrentRow.Cells(1).Value
             LbDescricao.Text = DgvEvento.CurrentRow.Cells(2).Value
+            numIngresso = DgvEvento.CurrentRow.Cells(11).Value
             TxtQtde.Enabled = True
             TxtQtde.Select()
         Catch ex As Exception
@@ -192,14 +182,7 @@
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         limpar()
         atualizarDados()
-        Dim tabela As DataRow
-        ds = paramSistem.consultarParametro()
-        tabela = ds.Tables(0).Rows(0)
-        diminFontIngresso = tabela.Item(1)
-        val_img_ingresso_tamanho_altura = tabela.Item(2)
-        val_img_ingresso_tamanho_largura = tabela.Item(3)
-        val_img_ingresso_margem_esquerda = tabela.Item(4)
-        val_img_ingresso_margem_cabecalho = tabela.Item(5)
+        carregaParametro()
         TxtCodItem.Visible = False
         TxtQtde.Enabled = False
         DgvEvento.Enabled = False
@@ -207,6 +190,16 @@
         BtnOK.Enabled = True
         CbFonte.Select()
 
+    End Sub
+    Private Sub carregaParametro()
+        Dim tabela As DataRow
+        ds = paramSistem.consultarParametro()
+        tabela = ds.Tables(0).Rows(0)
+        tamFontIngresso = tabela.Item(1)
+        val_img_ingresso_tamanho_altura = tabela.Item(2)
+        val_img_ingresso_tamanho_largura = tabela.Item(3)
+        val_img_ingresso_margem_esquerda = tabela.Item(5)
+        val_img_ingresso_margem_cabecalho = tabela.Item(4)
     End Sub
 
     Private Sub TxtQtde_Focus(sender As Object, e As EventArgs) Handles TxtQtde.GotFocus
@@ -262,19 +255,13 @@
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
         Try
 
+            Dim nomEmpresa As String = ModParametroSistema.nom_fantasia
 
-            Dim ds1 As New DataSet
-            ds1 = emp.ConsultarEmpresa
-            Dim linha As DataRow
-            linha = ds1.Tables(0).Rows(0)
-            Dim nomEmpresa As String = linha.Item(1).ToString
-
-            diminFontIngresso = 20 - (diminFontIngresso)
 
             Dim reportFont4 As Font = New Drawing.Font("Time New Roman", 4)
             Dim reportFont6 As Font = New Drawing.Font("Time New Roman", 6)
             Dim reportFont14 As Font = New Drawing.Font("Time New Roman", 14)
-            Dim reportFont20 As Font = New Drawing.Font(CbFonte.Text, diminFontIngresso)
+            Dim reportFont20 As Font = New Drawing.Font(CbFonte.Text, tamFontIngresso)
             Dim reportFont8 As Font = New Drawing.Font("Time New Roman", 8)
             Dim numero As Int16 = 99
             Dim newImageEmpresa As Image

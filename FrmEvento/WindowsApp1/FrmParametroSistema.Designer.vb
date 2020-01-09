@@ -26,21 +26,21 @@ Partial Class FrmParametroSistema
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.GbIngresso = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxbImgIngAltura = New Controles.TxbCodigo()
-        Me.TxbImgIngLargura = New Controles.TxbCodigo()
-        Me.TxbImgIngMargEsquerda = New Controles.TxbCodigo()
-        Me.TxbImgIngMargCabecalho = New Controles.TxbCodigo()
-        Me.txb_fontIngresso = New Controles.TxbCodigo()
-        Me.txbFontProduto = New Controles.TxbCodigo()
         Me.BtnGravar = New System.Windows.Forms.Button()
+        Me.txbFontProduto = New Controles.TxbCodigo()
+        Me.GbIngresso = New System.Windows.Forms.GroupBox()
+        Me.txb_fontIngresso = New Controles.TxbCodigo()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TxbImgIngMargCabecalho = New Controles.TxbCodigo()
+        Me.TxbImgIngMargEsquerda = New Controles.TxbCodigo()
+        Me.TxbImgIngLargura = New Controles.TxbCodigo()
+        Me.TxbImgIngAltura = New Controles.TxbCodigo()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -54,7 +54,7 @@ Partial Class FrmParametroSistema
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(500, 301)
+        Me.TabPage2.Size = New System.Drawing.Size(500, 292)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -82,14 +82,21 @@ Partial Class FrmParametroSistema
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'Label1
+        'BtnGravar
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 18)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(156, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Alterar tamanho fonte Produtos:"
+        Me.BtnGravar.Image = CType(resources.GetObject("BtnGravar.Image"), System.Drawing.Image)
+        Me.BtnGravar.Location = New System.Drawing.Point(451, 9)
+        Me.BtnGravar.Name = "BtnGravar"
+        Me.BtnGravar.Size = New System.Drawing.Size(31, 31)
+        Me.BtnGravar.TabIndex = 13
+        Me.BtnGravar.UseVisualStyleBackColor = True
+        '
+        'txbFontProduto
+        '
+        Me.txbFontProduto.Location = New System.Drawing.Point(172, 14)
+        Me.txbFontProduto.Name = "txbFontProduto"
+        Me.txbFontProduto.Size = New System.Drawing.Size(100, 20)
+        Me.txbFontProduto.TabIndex = 12
         '
         'GbIngresso
         '
@@ -103,14 +110,12 @@ Partial Class FrmParametroSistema
         Me.GbIngresso.TabStop = False
         Me.GbIngresso.Text = "Ingresso"
         '
-        'Label2
+        'txb_fontIngresso
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(8, 20)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(162, 13)
-        Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Alterar tamanho Fonte Ingressos:"
+        Me.txb_fontIngresso.Location = New System.Drawing.Point(172, 16)
+        Me.txb_fontIngresso.Name = "txb_fontIngresso"
+        Me.txb_fontIngresso.Size = New System.Drawing.Size(100, 20)
+        Me.txb_fontIngresso.TabIndex = 22
         '
         'GroupBox3
         '
@@ -122,69 +127,13 @@ Partial Class FrmParametroSistema
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.Label6)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(11, 35)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(276, 109)
         Me.GroupBox3.TabIndex = 21
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Imagem"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(11, 62)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(96, 13)
-        Me.Label6.TabIndex = 17
-        Me.Label6.Text = "Margem Esquerda:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(11, 85)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(102, 13)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Margem Cabeçalho:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 39)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(46, 13)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Largura:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(11, 16)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(37, 13)
-        Me.Label4.TabIndex = 13
-        Me.Label4.Text = "Altura:"
-        '
-        'TxbImgIngAltura
-        '
-        Me.TxbImgIngAltura.Location = New System.Drawing.Point(161, 13)
-        Me.TxbImgIngAltura.Name = "TxbImgIngAltura"
-        Me.TxbImgIngAltura.Size = New System.Drawing.Size(100, 20)
-        Me.TxbImgIngAltura.TabIndex = 23
-        '
-        'TxbImgIngLargura
-        '
-        Me.TxbImgIngLargura.Location = New System.Drawing.Point(161, 36)
-        Me.TxbImgIngLargura.Name = "TxbImgIngLargura"
-        Me.TxbImgIngLargura.Size = New System.Drawing.Size(100, 20)
-        Me.TxbImgIngLargura.TabIndex = 24
-        '
-        'TxbImgIngMargEsquerda
-        '
-        Me.TxbImgIngMargEsquerda.Location = New System.Drawing.Point(161, 59)
-        Me.TxbImgIngMargEsquerda.Name = "TxbImgIngMargEsquerda"
-        Me.TxbImgIngMargEsquerda.Size = New System.Drawing.Size(100, 20)
-        Me.TxbImgIngMargEsquerda.TabIndex = 25
         '
         'TxbImgIngMargCabecalho
         '
@@ -193,28 +142,80 @@ Partial Class FrmParametroSistema
         Me.TxbImgIngMargCabecalho.Size = New System.Drawing.Size(100, 20)
         Me.TxbImgIngMargCabecalho.TabIndex = 26
         '
-        'txb_fontIngresso
+        'TxbImgIngMargEsquerda
         '
-        Me.txb_fontIngresso.Location = New System.Drawing.Point(172, 16)
-        Me.txb_fontIngresso.Name = "txb_fontIngresso"
-        Me.txb_fontIngresso.Size = New System.Drawing.Size(100, 20)
-        Me.txb_fontIngresso.TabIndex = 22
+        Me.TxbImgIngMargEsquerda.Location = New System.Drawing.Point(161, 59)
+        Me.TxbImgIngMargEsquerda.Name = "TxbImgIngMargEsquerda"
+        Me.TxbImgIngMargEsquerda.Size = New System.Drawing.Size(100, 20)
+        Me.TxbImgIngMargEsquerda.TabIndex = 25
         '
-        'txbFontProduto
+        'TxbImgIngLargura
         '
-        Me.txbFontProduto.Location = New System.Drawing.Point(172, 14)
-        Me.txbFontProduto.Name = "txbFontProduto"
-        Me.txbFontProduto.Size = New System.Drawing.Size(100, 20)
-        Me.txbFontProduto.TabIndex = 12
+        Me.TxbImgIngLargura.Location = New System.Drawing.Point(161, 36)
+        Me.TxbImgIngLargura.Name = "TxbImgIngLargura"
+        Me.TxbImgIngLargura.Size = New System.Drawing.Size(100, 20)
+        Me.TxbImgIngLargura.TabIndex = 24
         '
-        'BtnGravar
+        'TxbImgIngAltura
         '
-        Me.BtnGravar.Image = CType(resources.GetObject("BtnGravar.Image"), System.Drawing.Image)
-        Me.BtnGravar.Location = New System.Drawing.Point(451, 9)
-        Me.BtnGravar.Name = "BtnGravar"
-        Me.BtnGravar.Size = New System.Drawing.Size(31, 31)
-        Me.BtnGravar.TabIndex = 13
-        Me.BtnGravar.UseVisualStyleBackColor = True
+        Me.TxbImgIngAltura.Location = New System.Drawing.Point(161, 13)
+        Me.TxbImgIngAltura.Name = "TxbImgIngAltura"
+        Me.TxbImgIngAltura.Size = New System.Drawing.Size(100, 20)
+        Me.TxbImgIngAltura.TabIndex = 23
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(22, 16)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(37, 13)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Altura:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(22, 39)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(46, 13)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Largura:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(22, 85)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(102, 13)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Margem Cabeçalho:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(22, 62)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(96, 13)
+        Me.Label6.TabIndex = 17
+        Me.Label6.Text = "Margem Esquerda:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(33, 20)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(133, 13)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Tamanho Fonte Ingressos:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(8, 18)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(156, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Alterar tamanho fonte Produtos:"
         '
         'TabControl1
         '

@@ -21,6 +21,10 @@
     Dim clFuncao_func As New ClFuncaoFuncionario
     Dim clUnidade As New ClUnidade
     Dim clMarca As New ClMarca
+    Dim clCidade As New ClCidade
+    Dim clEspecieCaixa As New ClEspecieCaixa
+    Dim clBanco As New ClBanco
+    Dim clTipoParcelamento As New ClTipoParcelamento
 
     Private cod_evento_ As Integer
     Public Property cod_evento() As Integer
@@ -54,7 +58,7 @@
             If tabela = "tab_item" Then
                 ds = item.ConsultarItemPesquisa(busca)
             ElseIf tabela = "tab_tipo_despesa" Then
-                ds = clTipoDespesa.ConsultarTipoDespesa(busca)
+                ds = clTipoDespesa.ConsultarPesquisa(busca)
             ElseIf tabela = "tab_tipo_movimento" Then
                 ds = clTipoMovto.ConsultarTipoMovtoPesquisa(busca)
             ElseIf tabela = "tab_pessoa" Or tabela = "tab_pessoa_despesa" Then
@@ -85,7 +89,17 @@
             ElseIf tabela = "tab_unidade_item_barra" Then
                 ds = ClUnidade.ConsultarPesquisa(busca)
             ElseIf tabela = "tab_marca_item" Then
-                ds = ClMarca.ConsultarPesquisa(busca)
+                ds = clMarca.ConsultarPesquisa(busca)
+            ElseIf tabela = "tab_cidade_pessoa" Then
+                ds = clCidade.ConsultarPesquisa(busca)
+            ElseIf tabela = "tab_pessoa_despesa" Then
+                ds = pessoa.ConsultarPessoa(busca)
+            ElseIf tabela = "tab_especie_pagamento" Then
+                ds = clEspecieCaixa.ConsultarPesquisa(busca)
+            ElseIf tabela = "tab_banco_pagamento" Then
+                ds = clBanco.ConsultarPesquisa(busca)
+            ElseIf tabela = "tab_tipo_parcelamento_pagamento" Then
+                ds = ClTipoParcelamento.ConsultarPesquisa(busca)
             End If
             tab = ds.Tables(0)
             If tab.Rows.Count > 0 Then
@@ -130,23 +144,13 @@
             FrmPrincipal.nomEvento = dgvBusca.CurrentRow.Cells(1).Value
         End If
         If tabela = "tab_pessoa_despesa" Then
-            FrmDespesa.TxbCodFavorecido.Text = dgvBusca.CurrentRow.Cells(0).Value
-            FrmDespesa.TxbNomFavorecido.Text = dgvBusca.CurrentRow.Cells(1).Value
-        End If
-
-        If tabela = "funcionarioDespesa" Then
-            FrmDespesa.TxbCodFuncionario.Text = dgvBusca.CurrentRow.Cells(0).Value
-            FrmDespesa.TxbNomFuncionario.Text = dgvBusca.CurrentRow.Cells(1).Value
-        End If
-
-        If tabela = "tab_evento_despesa" Then
-            FrmDespesa.TxbCodEvento.Text = dgvBusca.CurrentRow.Cells(0).Value
-            FrmDespesa.txbnomEvento.Text = dgvBusca.CurrentRow.Cells(1).Value
+            FrmDespesas.TxbCodFavorecido.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmDespesas.TxbNomFavorecido.Text = dgvBusca.CurrentRow.Cells(1).Value
         End If
 
         If tabela = "tab_tipo_despesa" Then
-            FrmDespesa.txbCodTipoDespesa.Text = dgvBusca.CurrentRow.Cells(0).Value
-            FrmDespesa.txbDesTipoDespesa.Text = dgvBusca.CurrentRow.Cells(1).Value
+            FrmDespesas.TxbCodTipo.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmDespesas.TxbDesTipo.Text = dgvBusca.CurrentRow.Cells(1).Value
         End If
 
         If tabela = "tab_tipo_movimento" Then
@@ -181,6 +185,10 @@
             FrmPessoa.TxbCodFuncaoFunc.Text = dgvBusca.CurrentRow.Cells(0).Value
             FrmPessoa.txbDesFuncaoFunc.Text = dgvBusca.CurrentRow.Cells(1).Value
         End If
+        If tabela = "tab_cidade_pessoa" Then
+            FrmPessoa.TxbCodCidade.Text = dgvBusca.CurrentRow.Cells(0).Value
+            FrmPessoa.TxbNomCidade.Text = dgvBusca.CurrentRow.Cells(1).Value
+        End If
         If tabela = "tab_fornecedor_item" Then
             FrmItem.TxbCodFornecedor.Text = dgvBusca.CurrentRow.Cells(0).Value
             FrmItem.TxbNomFornecedor.Text = dgvBusca.CurrentRow.Cells(1).Value
@@ -188,6 +196,10 @@
         If tabela = "tab_unidade_item_barra" Then
             FrmItem.TxbUnidadeBarra.Text = dgvBusca.CurrentRow.Cells(0).Value
             FrmItem.TxbDesUnidadeBarra.Text = dgvBusca.CurrentRow.Cells(1).Value
+        End If
+        If ((tabela = "tab_especie_pagamento") Or (tabela = "tab_banco_pagamento") Or (tabela = "tab_tipo_parcelamento_pagamento")) Then
+            ModVariavelGlobal.pesquisaCodigo = dgvBusca.CurrentRow.Cells(0).Value
+            ModVariavelGlobal.pesquisaNome = dgvBusca.CurrentRow.Cells(1).Value
         End If
 
         Me.Close()

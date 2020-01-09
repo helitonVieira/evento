@@ -114,6 +114,8 @@ Partial Class FrmSubCategoria
         '
         'BtCategoria
         '
+        Me.BtCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtCategoria.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.BtCategoria.Image = CType(resources.GetObject("BtCategoria.Image"), System.Drawing.Image)
         Me.BtCategoria.Location = New System.Drawing.Point(375, 45)
         Me.BtCategoria.Name = "BtCategoria"

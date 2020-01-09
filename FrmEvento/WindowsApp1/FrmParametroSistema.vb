@@ -47,8 +47,8 @@
             txb_fontIngresso.Text = tabela.Item(1).ToString
             TxbImgIngAltura.Text = tabela.Item(2).ToString
             TxbImgIngLargura.Text = tabela.Item(3).ToString
-            TxbImgIngMargEsquerda.Text = tabela.Item(4).ToString
-            TxbImgIngMargCabecalho.Text = tabela.Item(5).ToString
+            TxbImgIngMargEsquerda.Text = tabela.Item(5).ToString
+            TxbImgIngMargCabecalho.Text = tabela.Item(4).ToString
         Catch ex As Exception
 
         End Try

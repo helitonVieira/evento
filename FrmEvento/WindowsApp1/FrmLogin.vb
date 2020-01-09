@@ -53,7 +53,7 @@
                 ' MsgBox(linha.Item(1))
                 If linha.Item(1) = TxtUsuario.Text And linha.Item(2) = TxtSenha.Text Then
                     FrmEscolhaEmpresa.ShowDialog()
-                    FrmPrincipal.Show()
+                    FrmPrincipal.ShowDialog()
                     FrmPrincipal.LbNomeUsuario.Text = linha.Item(1)
                     FrmPrincipal.LbPermissaoUsuario.Text = linha.Item(3)
                     ModParametroSistema.nom_usuario = linha.Item(1)

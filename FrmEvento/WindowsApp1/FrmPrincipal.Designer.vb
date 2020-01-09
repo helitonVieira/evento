@@ -25,15 +25,25 @@ Partial Class FrmPrincipal
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.AdministrativoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DespesaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoDespesaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DespesaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReceitaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoReceitaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReceitaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EventoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PessoaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FunçãoFuncionarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FuncionárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FunçãoFuncionárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlmoxarifadoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SeçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CategoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SubCategoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ItemToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UnidadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MarcaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InventarioRapidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VendasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,14 +59,22 @@ Partial Class FrmPrincipal
         Me.EspécieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RaçaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PelagemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VacinaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ParasitaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VacinaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ParasitaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EventosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EventoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EventoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImprimirIngressoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParametrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParametrosSistemaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LicençaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FinanceiroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EspecíeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EspecíeCaixaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BancoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BancoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ParcelamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoParcelamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintDocRelResumoVenda = New System.Drawing.Printing.PrintDocument()
         Me.lbLicencia = New System.Windows.Forms.Label()
@@ -65,10 +83,7 @@ Partial Class FrmPrincipal
         Me.PrintDocumentDespesa = New System.Drawing.Printing.PrintDocument()
         Me.LbNomeUsuario = New System.Windows.Forms.Label()
         Me.LbPermissaoUsuario = New System.Windows.Forms.Label()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UnidadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.MarcaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -77,7 +92,7 @@ Partial Class FrmPrincipal
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Purple
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrativoToolStripMenuItem, Me.EventoToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.PetToolStripMenuItem, Me.EventosToolStripMenuItem, Me.ParametrosToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrativoToolStripMenuItem, Me.EventoToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.VendasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.PetToolStripMenuItem, Me.EventosToolStripMenuItem, Me.ParametrosToolStripMenuItem, Me.FinanceiroToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1094, 24)
@@ -86,7 +101,7 @@ Partial Class FrmPrincipal
         '
         'AdministrativoToolStripMenuItem
         '
-        Me.AdministrativoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DespesaToolStripMenuItem})
+        Me.AdministrativoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DespesaToolStripMenuItem, Me.ReceitaToolStripMenuItem})
         Me.AdministrativoToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.AdministrativoToolStripMenuItem.Name = "AdministrativoToolStripMenuItem"
         Me.AdministrativoToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
@@ -94,13 +109,45 @@ Partial Class FrmPrincipal
         '
         'DespesaToolStripMenuItem
         '
+        Me.DespesaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TipoDespesaToolStripMenuItem, Me.DespesaToolStripMenuItem1})
         Me.DespesaToolStripMenuItem.Name = "DespesaToolStripMenuItem"
-        Me.DespesaToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.DespesaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.DespesaToolStripMenuItem.Text = "Despesa"
+        '
+        'TipoDespesaToolStripMenuItem
+        '
+        Me.TipoDespesaToolStripMenuItem.Name = "TipoDespesaToolStripMenuItem"
+        Me.TipoDespesaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TipoDespesaToolStripMenuItem.Text = "Tipo Despesa"
+        '
+        'DespesaToolStripMenuItem1
+        '
+        Me.DespesaToolStripMenuItem1.Name = "DespesaToolStripMenuItem1"
+        Me.DespesaToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.DespesaToolStripMenuItem1.Text = "Despesa"
+        '
+        'ReceitaToolStripMenuItem
+        '
+        Me.ReceitaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TipoReceitaToolStripMenuItem, Me.ReceitaToolStripMenuItem1})
+        Me.ReceitaToolStripMenuItem.Name = "ReceitaToolStripMenuItem"
+        Me.ReceitaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReceitaToolStripMenuItem.Text = "Receita"
+        '
+        'TipoReceitaToolStripMenuItem
+        '
+        Me.TipoReceitaToolStripMenuItem.Name = "TipoReceitaToolStripMenuItem"
+        Me.TipoReceitaToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
+        Me.TipoReceitaToolStripMenuItem.Text = "Tipo Receita"
+        '
+        'ReceitaToolStripMenuItem1
+        '
+        Me.ReceitaToolStripMenuItem1.Name = "ReceitaToolStripMenuItem1"
+        Me.ReceitaToolStripMenuItem1.Size = New System.Drawing.Size(137, 22)
+        Me.ReceitaToolStripMenuItem1.Text = "Receita"
         '
         'EventoToolStripMenuItem
         '
-        Me.EventoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PessoaToolStripMenuItem})
+        Me.EventoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PessoaToolStripMenuItem, Me.FuncionárioToolStripMenuItem})
         Me.EventoToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.EventoToolStripMenuItem.Name = "EventoToolStripMenuItem"
         Me.EventoToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
@@ -108,16 +155,22 @@ Partial Class FrmPrincipal
         '
         'PessoaToolStripMenuItem
         '
-        Me.PessoaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FunçãoFuncionarioToolStripMenuItem})
         Me.PessoaToolStripMenuItem.Name = "PessoaToolStripMenuItem"
-        Me.PessoaToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
+        Me.PessoaToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
         Me.PessoaToolStripMenuItem.Text = "Pessoa"
         '
-        'FunçãoFuncionarioToolStripMenuItem
+        'FuncionárioToolStripMenuItem
         '
-        Me.FunçãoFuncionarioToolStripMenuItem.Name = "FunçãoFuncionarioToolStripMenuItem"
-        Me.FunçãoFuncionarioToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.FunçãoFuncionarioToolStripMenuItem.Text = "Função Funcionario"
+        Me.FuncionárioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FunçãoFuncionárioToolStripMenuItem})
+        Me.FuncionárioToolStripMenuItem.Name = "FuncionárioToolStripMenuItem"
+        Me.FuncionárioToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.FuncionárioToolStripMenuItem.Text = "Funcionário"
+        '
+        'FunçãoFuncionárioToolStripMenuItem
+        '
+        Me.FunçãoFuncionárioToolStripMenuItem.Name = "FunçãoFuncionárioToolStripMenuItem"
+        Me.FunçãoFuncionárioToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.FunçãoFuncionárioToolStripMenuItem.Text = "Função Funcionário"
         '
         'EstoqueToolStripMenuItem
         '
@@ -129,9 +182,9 @@ Partial Class FrmPrincipal
         '
         'ItemToolStripMenuItem
         '
-        Me.ItemToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlmoxarifadoToolStripMenuItem1, Me.SeçãoToolStripMenuItem, Me.CategoriaToolStripMenuItem, Me.SubCategoriaToolStripMenuItem, Me.ToolStripMenuItem2, Me.UnidadeToolStripMenuItem, Me.MarcaToolStripMenuItem})
+        Me.ItemToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlmoxarifadoToolStripMenuItem1, Me.SeçãoToolStripMenuItem, Me.CategoriaToolStripMenuItem, Me.SubCategoriaToolStripMenuItem, Me.ItemToolStripMenuItem1, Me.ToolStripMenuItem2, Me.UnidadeToolStripMenuItem, Me.MarcaToolStripMenuItem})
         Me.ItemToolStripMenuItem.Name = "ItemToolStripMenuItem"
-        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.ItemToolStripMenuItem.Text = "Item"
         '
         'AlmoxarifadoToolStripMenuItem1
@@ -158,10 +211,34 @@ Partial Class FrmPrincipal
         Me.SubCategoriaToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
         Me.SubCategoriaToolStripMenuItem.Text = "SubCategoria"
         '
+        'ItemToolStripMenuItem1
+        '
+        Me.ItemToolStripMenuItem1.Name = "ItemToolStripMenuItem1"
+        Me.ItemToolStripMenuItem1.Size = New System.Drawing.Size(270, 22)
+        Me.ItemToolStripMenuItem1.Text = "Item"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(270, 22)
+        Me.ToolStripMenuItem2.Text = "-------------------------------------------------"
+        '
+        'UnidadeToolStripMenuItem
+        '
+        Me.UnidadeToolStripMenuItem.Name = "UnidadeToolStripMenuItem"
+        Me.UnidadeToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
+        Me.UnidadeToolStripMenuItem.Text = "Unidade"
+        '
+        'MarcaToolStripMenuItem
+        '
+        Me.MarcaToolStripMenuItem.Name = "MarcaToolStripMenuItem"
+        Me.MarcaToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
+        Me.MarcaToolStripMenuItem.Text = "Marca"
+        '
         'InventarioRapidoToolStripMenuItem
         '
         Me.InventarioRapidoToolStripMenuItem.Name = "InventarioRapidoToolStripMenuItem"
-        Me.InventarioRapidoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InventarioRapidoToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.InventarioRapidoToolStripMenuItem.Text = "Inventario Rapido"
         '
         'VendasToolStripMenuItem
@@ -229,7 +306,7 @@ Partial Class FrmPrincipal
         '
         'PetToolStripMenuItem
         '
-        Me.PetToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AnimalToolStripMenuItem})
+        Me.PetToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AnimalToolStripMenuItem, Me.VacinaToolStripMenuItem1, Me.ParasitaToolStripMenuItem1})
         Me.PetToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.PetToolStripMenuItem.Name = "PetToolStripMenuItem"
         Me.PetToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
@@ -237,9 +314,9 @@ Partial Class FrmPrincipal
         '
         'AnimalToolStripMenuItem
         '
-        Me.AnimalToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EspécieToolStripMenuItem, Me.RaçaToolStripMenuItem, Me.PelagemToolStripMenuItem, Me.VacinaToolStripMenuItem, Me.ParasitaToolStripMenuItem})
+        Me.AnimalToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EspécieToolStripMenuItem, Me.RaçaToolStripMenuItem, Me.PelagemToolStripMenuItem})
         Me.AnimalToolStripMenuItem.Name = "AnimalToolStripMenuItem"
-        Me.AnimalToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
+        Me.AnimalToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.AnimalToolStripMenuItem.Text = "Animal"
         '
         'EspécieToolStripMenuItem
@@ -260,17 +337,17 @@ Partial Class FrmPrincipal
         Me.PelagemToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.PelagemToolStripMenuItem.Text = "Pelagem"
         '
-        'VacinaToolStripMenuItem
+        'VacinaToolStripMenuItem1
         '
-        Me.VacinaToolStripMenuItem.Name = "VacinaToolStripMenuItem"
-        Me.VacinaToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.VacinaToolStripMenuItem.Text = "Vacina"
+        Me.VacinaToolStripMenuItem1.Name = "VacinaToolStripMenuItem1"
+        Me.VacinaToolStripMenuItem1.Size = New System.Drawing.Size(162, 22)
+        Me.VacinaToolStripMenuItem1.Text = "Controle Vacina"
         '
-        'ParasitaToolStripMenuItem
+        'ParasitaToolStripMenuItem1
         '
-        Me.ParasitaToolStripMenuItem.Name = "ParasitaToolStripMenuItem"
-        Me.ParasitaToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.ParasitaToolStripMenuItem.Text = "Parasita"
+        Me.ParasitaToolStripMenuItem1.Name = "ParasitaToolStripMenuItem1"
+        Me.ParasitaToolStripMenuItem1.Size = New System.Drawing.Size(162, 22)
+        Me.ParasitaToolStripMenuItem1.Text = "Controle Parasita"
         '
         'EventosToolStripMenuItem
         '
@@ -282,10 +359,16 @@ Partial Class FrmPrincipal
         '
         'EventoToolStripMenuItem2
         '
-        Me.EventoToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImprimirIngressoToolStripMenuItem1})
+        Me.EventoToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EventoToolStripMenuItem1, Me.ImprimirIngressoToolStripMenuItem1})
         Me.EventoToolStripMenuItem2.Name = "EventoToolStripMenuItem2"
-        Me.EventoToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.EventoToolStripMenuItem2.Size = New System.Drawing.Size(109, 22)
         Me.EventoToolStripMenuItem2.Text = "Evento"
+        '
+        'EventoToolStripMenuItem1
+        '
+        Me.EventoToolStripMenuItem1.Name = "EventoToolStripMenuItem1"
+        Me.EventoToolStripMenuItem1.Size = New System.Drawing.Size(163, 22)
+        Me.EventoToolStripMenuItem1.Text = "Evento"
         '
         'ImprimirIngressoToolStripMenuItem1
         '
@@ -313,6 +396,53 @@ Partial Class FrmPrincipal
         Me.LicençaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.LicençaToolStripMenuItem.Text = "Licença"
         '
+        'FinanceiroToolStripMenuItem
+        '
+        Me.FinanceiroToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EspecíeToolStripMenuItem, Me.BancoToolStripMenuItem, Me.ParcelamentoToolStripMenuItem})
+        Me.FinanceiroToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.FinanceiroToolStripMenuItem.Name = "FinanceiroToolStripMenuItem"
+        Me.FinanceiroToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
+        Me.FinanceiroToolStripMenuItem.Text = "Financeiro"
+        '
+        'EspecíeToolStripMenuItem
+        '
+        Me.EspecíeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EspecíeCaixaToolStripMenuItem})
+        Me.EspecíeToolStripMenuItem.Name = "EspecíeToolStripMenuItem"
+        Me.EspecíeToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.EspecíeToolStripMenuItem.Text = "Especíe"
+        '
+        'EspecíeCaixaToolStripMenuItem
+        '
+        Me.EspecíeCaixaToolStripMenuItem.Name = "EspecíeCaixaToolStripMenuItem"
+        Me.EspecíeCaixaToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.EspecíeCaixaToolStripMenuItem.Text = "Especíe Caixa"
+        '
+        'BancoToolStripMenuItem
+        '
+        Me.BancoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BancoToolStripMenuItem1})
+        Me.BancoToolStripMenuItem.Name = "BancoToolStripMenuItem"
+        Me.BancoToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.BancoToolStripMenuItem.Text = "Banco"
+        '
+        'BancoToolStripMenuItem1
+        '
+        Me.BancoToolStripMenuItem1.Name = "BancoToolStripMenuItem1"
+        Me.BancoToolStripMenuItem1.Size = New System.Drawing.Size(110, 22)
+        Me.BancoToolStripMenuItem1.Text = "Bancos"
+        '
+        'ParcelamentoToolStripMenuItem
+        '
+        Me.ParcelamentoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TipoParcelamentoToolStripMenuItem})
+        Me.ParcelamentoToolStripMenuItem.Name = "ParcelamentoToolStripMenuItem"
+        Me.ParcelamentoToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.ParcelamentoToolStripMenuItem.Text = "Pagar/Receber"
+        '
+        'TipoParcelamentoToolStripMenuItem
+        '
+        Me.TipoParcelamentoToolStripMenuItem.Name = "TipoParcelamentoToolStripMenuItem"
+        Me.TipoParcelamentoToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.TipoParcelamentoToolStripMenuItem.Text = "Tipo Parcelamento"
+        '
         'lbLicencia
         '
         Me.lbLicencia.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -335,6 +465,7 @@ Partial Class FrmPrincipal
         Me.LbNomeUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LbNomeUsuario.AutoSize = True
         Me.LbNomeUsuario.BackColor = System.Drawing.Color.Transparent
+        Me.LbNomeUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LbNomeUsuario.ForeColor = System.Drawing.Color.White
         Me.LbNomeUsuario.Location = New System.Drawing.Point(937, 9)
         Me.LbNomeUsuario.Name = "LbNomeUsuario"
@@ -347,24 +478,13 @@ Partial Class FrmPrincipal
         Me.LbPermissaoUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LbPermissaoUsuario.AutoSize = True
         Me.LbPermissaoUsuario.BackColor = System.Drawing.Color.Transparent
+        Me.LbPermissaoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LbPermissaoUsuario.ForeColor = System.Drawing.Color.White
-        Me.LbPermissaoUsuario.Location = New System.Drawing.Point(840, 9)
+        Me.LbPermissaoUsuario.Location = New System.Drawing.Point(846, 9)
         Me.LbPermissaoUsuario.Name = "LbPermissaoUsuario"
         Me.LbPermissaoUsuario.Size = New System.Drawing.Size(39, 13)
         Me.LbPermissaoUsuario.TabIndex = 30
         Me.LbPermissaoUsuario.Text = "Label6"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(270, 22)
-        Me.ToolStripMenuItem2.Text = "-------------------------------------------------"
-        '
-        'UnidadeToolStripMenuItem
-        '
-        Me.UnidadeToolStripMenuItem.Name = "UnidadeToolStripMenuItem"
-        Me.UnidadeToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
-        Me.UnidadeToolStripMenuItem.Text = "Unidade"
         '
         'PictureBox2
         '
@@ -374,12 +494,6 @@ Partial Class FrmPrincipal
         Me.PictureBox2.Size = New System.Drawing.Size(571, 522)
         Me.PictureBox2.TabIndex = 28
         Me.PictureBox2.TabStop = False
-        '
-        'MarcaToolStripMenuItem
-        '
-        Me.MarcaToolStripMenuItem.Name = "MarcaToolStripMenuItem"
-        Me.MarcaToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
-        Me.MarcaToolStripMenuItem.Text = "Marca"
         '
         'FrmPrincipal
         '
@@ -432,15 +546,12 @@ Partial Class FrmPrincipal
     Friend WithEvents EspécieToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RaçaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PelagemToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents VacinaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ParasitaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ItemToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EventosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EventoToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents ImprimirIngressoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ParametrosSistemaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LicençaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FunçãoFuncionarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AlmoxarifadoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents SeçãoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CategoriaToolStripMenuItem As ToolStripMenuItem
@@ -451,4 +562,22 @@ Partial Class FrmPrincipal
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents UnidadeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MarcaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ItemToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents VacinaToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ParasitaToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents FinanceiroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EspecíeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EspecíeCaixaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TipoDespesaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DespesaToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ReceitaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TipoReceitaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReceitaToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents FuncionárioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FunçãoFuncionárioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BancoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BancoToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ParcelamentoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TipoParcelamentoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EventoToolStripMenuItem1 As ToolStripMenuItem
 End Class

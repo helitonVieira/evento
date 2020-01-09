@@ -153,7 +153,7 @@
         LbQtdDisponivel.Text = "0"
     End Sub
     Public Sub limparIngressoPessoa()
-        TxbSeqIP.Text = ""
+        TxbCodigoIP.Text = ""
         TxbCodImpressaoIP.Text = ""
         TxbDesImpressaoIP.Text = ""
         TxbCodPessoaIP.Text = ""
@@ -437,9 +437,9 @@
     End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles BtExcluirIngPessoa.Click
-        If MsgBox("Deseja excluir o ingresso" & TxbSeqIP.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
+        If MsgBox("Deseja excluir o ingresso" & TxbCodigoIP.Text & "?", MsgBoxStyle.YesNo, "Confirmação") = MsgBoxResult.Yes Then
             Try
-                ingressoPessoa.seq_lancamento = TxbSeqIP.Text
+                ingressoPessoa.seq_lancamento = TxbCodigoIP.Text
                 ingressoPessoa.ExcluirIngressoPessoa()
                 MsgBox("Excluido com sucesso", MsgBoxStyle.Information, "Informação")
                 atualizarIngressoPessoa()
@@ -510,7 +510,7 @@
                 limparIngressoPessoa()
                 atualizarIngressoPessoa()
             Else
-                ingressoPessoa.seq_lancamento = TxbSeqIP.Text
+                ingressoPessoa.seq_lancamento = TxbCodigoIP.Text
                 ingressoPessoa.AtualizarIngressoPessoa()
 
                 MsgBox("Alterado com sucesso", MsgBoxStyle.OkOnly, "Sucesso")
@@ -531,7 +531,7 @@
         Try
             limparIngressoPessoa()
             atualizarIngPessoa = 2
-            TxbSeqIP.Text = DgvIngressoPessoa.CurrentRow.Cells(0).Value
+            TxbCodigoIP.Text = DgvIngressoPessoa.CurrentRow.Cells(0).Value
             TxbDesImpressaoIP.Text = DgvIngressoPessoa.CurrentRow.Cells(2).Value
             TxbCodPessoaIP.Text = DgvIngressoPessoa.CurrentRow.Cells(3).Value
             TxbNomPessoaIP.Text = DgvIngressoPessoa.CurrentRow.Cells(4).Value
@@ -720,9 +720,9 @@
         End If
     End Sub
 
-    Private Sub TxbSeqIP_TextChanged(sender As Object, e As EventArgs) Handles TxbSeqIP.TextChanged
-        If Not IsNumeric(TxbSeqIP.Text) Then
-            TxbSeqIP.Text = ""
+    Private Sub TxbCodigoIP_TextChanged(sender As Object, e As EventArgs) Handles TxbCodigoIP.TextChanged
+        If Not IsNumeric(TxbCodigoIP.Text) Then
+            TxbCodigoIP.Text = ""
         End If
     End Sub
 

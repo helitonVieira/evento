@@ -86,7 +86,7 @@ Partial Class FrmEvento
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TxbCodImpressaoIP = New System.Windows.Forms.TextBox()
-        Me.TxbSeqIP = New System.Windows.Forms.TextBox()
+        Me.TxbCodigoIP = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TxbQtdEntregueIP = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -593,7 +593,7 @@ Partial Class FrmEvento
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.TxbCodImpressaoIP)
-        Me.GroupBox1.Controls.Add(Me.TxbSeqIP)
+        Me.GroupBox1.Controls.Add(Me.TxbCodigoIP)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.TxbQtdEntregueIP)
         Me.GroupBox1.Controls.Add(Me.Label16)
@@ -728,15 +728,15 @@ Partial Class FrmEvento
         Me.TxbCodImpressaoIP.Size = New System.Drawing.Size(59, 20)
         Me.TxbCodImpressaoIP.TabIndex = 12
         '
-        'TxbSeqIP
+        'TxbCodigoIP
         '
-        Me.TxbSeqIP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TxbSeqIP.Enabled = False
-        Me.TxbSeqIP.Location = New System.Drawing.Point(72, 19)
-        Me.TxbSeqIP.MaxLength = 18
-        Me.TxbSeqIP.Name = "TxbSeqIP"
-        Me.TxbSeqIP.Size = New System.Drawing.Size(59, 20)
-        Me.TxbSeqIP.TabIndex = 111
+        Me.TxbCodigoIP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxbCodigoIP.Enabled = False
+        Me.TxbCodigoIP.Location = New System.Drawing.Point(72, 19)
+        Me.TxbCodigoIP.MaxLength = 18
+        Me.TxbCodigoIP.Name = "TxbCodigoIP"
+        Me.TxbCodigoIP.Size = New System.Drawing.Size(59, 20)
+        Me.TxbCodigoIP.TabIndex = 111
         '
         'Label15
         '
@@ -885,7 +885,7 @@ Partial Class FrmEvento
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents TxbCodImpressaoIP As TextBox
-    Friend WithEvents TxbSeqIP As TextBox
+    Friend WithEvents TxbCodigoIP As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents TxbQtdEntregueIP As TextBox
     Friend WithEvents Label16 As Label

@@ -325,7 +325,29 @@
             COD_FUNCAO_FUNCIONARIO_OLD = Convert.ToInt16(COD_FUNCAO_FUNCIONARIO_OLD)
         End If
 
-        sql = "select   a.*,
+        sql = "select  a.COD_PESSOA   ,
+                        a.NOM_PESSOA     ,
+                        a.NOM_FANTASIA   ,
+                        a.NUM_CNPJ_CPF   ,
+                        a.NUM_IE_RG      ,
+                        a.DTA_NASCIMENTO ,
+                        a.DES_LOGRADOURO ,
+                        a.DES_COMPLEMENTO,
+                        a.COD_CIDADE     ,
+                        d.nom_cidade,
+                        a.NOM_BAIRRO     ,
+                        a.NUM_CEP        ,
+                        a.NUM_TELEFONE_1 ,
+                        a.NUM_TELEFONE_2 ,
+                        a.NUM_TELEFONE_3 ,
+                        a.NOM_CONTATO    ,
+                        a.DES_OBSERVACAO ,
+                        a.DTA_CADASTRO   ,
+                        a.IND_CLIENTE    ,
+                        a.IND_FORNECEDOR ,
+                        a.IND_FUNCIONARIO,
+                        a.IND_ATIVO      ,
+                        a.DES_EMAIL ,
                         b.cod_funcao_funcionario, 
                         c.des_funcao_funcionario,
                         b.val_salario,
@@ -336,8 +358,10 @@
                         b.dta_ultimo_reajuste,
                         b.des_observacao as des_observacao_func
                from tab_pessoa a
+              join tab_cidade d on (a.cod_cidade = d.cod_cidade)
                left  Join tab_pessoa_funcionario b on (a.cod_pessoa = b.cod_pessoa)
                left join tab_funcao_funcionario c on (c.cod_funcao_funcionario = b.cod_funcao_funcionario)
+
 
                where a.nom_pessoa like ('%" & NOM_PESSOA_OLD & "%') 
                  and ((a.cod_pessoa = " & COD_PESSOA_OLD & " )or (0 = " & COD_PESSOA_OLD & "))
